@@ -1,0 +1,138 @@
+<?php
+
+	$Css        = helper('Css');
+	$Javascript = helper('Javascript');
+	$Menu       = helper('Menu' , 'main' );
+	$SideMenu   = helper('Menu' , 'side' );
+	$Flash      = helper('Flash');
+	$Section    = helper('Section');
+
+	$Css->add('/css/screen.css');
+    $Javascript->add('/yammon/public/mootools/js/mootools.js');
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+	<head>
+		<title> <?= @$title; ?> </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<?= $Css->render(); ?>
+		<?= $Javascript->render( ); ?>
+
+	</head>
+	<body>
+
+		<!-- CONTAINER -->
+		<div id='container' class='<?= $this->get("layout-alt"); ?>'>
+
+			<!-- HEADER -->
+			<div id='header'>
+
+					<!-- NAVIGATION -->
+					<div id='navigation'>
+						<?= $Menu->render( array(
+
+						)); ?>
+					</div>
+					<!-- NAVIGATION -->
+
+			</div>
+			<!-- HEADER -->
+
+            <!-- INNER CONTAINER -->
+            <div id='inner-container'>
+
+                <!-- FLASH -->
+                <?php if( $Flash->has() ): ?>
+                 <div id='flash'>
+                    <?= $Flash->render() ; ?>
+                 </div>
+                <?php endif; ?>
+                <!-- FLASH -->
+
+                <!-- SIDEBAR -->
+                <div id='sidebar'>
+                    <div id='sidebar-inner'>
+
+                        <div id='sidebar-menu'>
+                            <?php if( !empty($SideMenu) ) : ?>
+                                <?= $SideMenu->render( array(
+                                    "max_depth" => 3    ,
+                                    "nested"    => false ,
+                                    "collapsed" => true ,
+                                    "highlight" => "exact" ,
+                                    "prefix"    => "&bull;" ,
+                                    "images"    => false ,
+                                )); ?>
+                            <?php endif; ?>
+                        </div>
+
+                        <?= $Section->render('floating-sidebar'); ?>
+
+                    </div>
+                </div>
+                <!-- SIDEBAR -->
+
+                <!-- CONTENT -->
+                <div id='content'>
+
+                    <div id='content-inner'>
+                        <?= $this->getContent(); ?>
+                    </div>
+
+                    <!-- FOOTER -->
+                    <div style='clear:both;'></div>
+                    <div id='footer'>
+                        <div id='footer-inner'>
+                            Yammon &copy; 2009 - <?= date('Y'); ?> , MA Web Group
+                        </div>
+                    </div>
+                    <!-- FOOTER -->
+
+                </div>
+                <!-- CONTENT -->
+
+                <div class='clear'></div>
+
+            </div>
+            <!-- INNER CONTAINER -->
+
+		</div>
+		<!-- CONTAINER -->
+
+
+		<script>
+
+			window.addEvent("scroll" , function(){
+
+                return;
+
+				var previous = $('inner-container');
+				var sidebar  = $("sidebar-inner");
+
+                if(!sidebar)
+                    return;
+
+				//Calculate the fold
+				var coords = previous.getCoordinates();
+				var size   = previous.getSize();
+				var fold   = coords.bottom;
+
+				var spos     = sidebar.getPosition();
+				var ssize    = sidebar.getSize();
+				var scroll   = window.getScroll();
+				var position = scroll.y < fold ? 'static' : 'fixed';
+
+				sidebar.setStyles({
+					position: position ,
+					top:      '0px' ,
+					left:     spos.x+'px'
+				});
+
+			});
+
+		</script>
+
+	</body>
+</html>
+
+

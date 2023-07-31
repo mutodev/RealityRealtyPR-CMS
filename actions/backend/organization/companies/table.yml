@@ -1,0 +1,64 @@
+source: FROM Company
+columns:
+
+    id:
+        label:   Id
+        source:  id
+        width:   30px
+
+    name:
+        label: Name
+        source: name
+
+    accounts:
+        label: <i class="fa fa-users" title="Accounts"></i>
+        source: total_accounts
+        decorator: Number
+        width: 56px
+        class: center hidden-xs
+
+    campaigns:
+        label: <i class="fa fa-bullhorn" title="Campaigns"></i>
+        source: total_campaigns
+        decorator: Number
+        width: 56px
+        class: center hidden-xs
+
+    resources_numbers:
+        label: '<span title="Phone numbers">#</span>'
+        source: total_resources_numbers
+        decorator: Number
+        width: 56px
+        class: center hidden-xs
+
+    resources_emails:
+        label: '<span title="Email addresses">@</span>'
+        source: total_resources_emails
+        decorator: Number
+        width: 56px
+        class: center hidden-xs
+
+    active:
+        label: Active
+        source: is_active
+        decorator: boolean
+        width: 56px
+        class: center hidden-xs
+
+    login:
+        label: ' '
+        width: 1px
+        content:  >
+            <a class="btn btn-primary btn-xs" href="<?= url('.login') ?>?id=%{id}">Access</a>
+
+    actions:
+        type: Actions
+        label: ' '
+        width: 1px
+        actions:
+
+            edit:
+                icon: pencil
+                label: Edit
+                link:  .edit?id=%{id}
+                permission: organization:company.manage

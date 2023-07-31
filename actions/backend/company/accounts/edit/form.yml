@@ -1,0 +1,205 @@
+class: form-bordered
+attributes:
+  role: form
+elements:
+  summary:
+    type: Summary
+
+  header_contact:
+    type: Header
+    label: Contact Information
+
+  first_name:
+    label: First Name
+    required: true
+    class: form-control
+
+  last_name:
+    label: Last Name
+    required: true
+    class: form-control
+
+  type:
+    type: Select
+    required: true
+    default: Broker
+    class: form-control
+    options:
+      Broker: Broker
+      Administrator: Administrator
+      Manager: Manager
+
+  position:
+    required: true
+    class: form-control
+
+  license:
+    class: form-control
+
+  photo_preview:
+    type: Content
+    content: ""
+
+  photo:
+    label: Photo
+    type: FileImageAsync
+    class: form-control
+
+  phone_container:
+    type: container
+    collect_errors: true
+    box_renderer:
+      type: 1Column
+      highlight: true
+      border: true
+      margin: "0"
+      padding: "0"
+    layout_renderer:
+      type: grid
+      columns: 2
+      class: ym-form-box-column2
+      style: "width: 100%;"
+
+    elements:
+      phone:
+        label: Phone
+        type: Phone
+        required: true
+        class: form-control
+
+      phone_ext:
+        label: Ext
+        type: Text
+        class: form-control
+        colwidth: 100px
+        validations:
+          RegularExpression:
+            regex: "/^[0-9#*w]+$/i"
+
+  email:
+    type: Email
+    label: Email
+    class: form-control
+
+  # phone2:
+  #     type:     Phone
+  #     label:    Alternate Phone
+  #     class:    form-control
+
+  header_specialties:
+    type: Header
+    label: Specialties
+
+  auction:
+    type: Checkbox
+
+  commercial:
+    type: Checkbox
+
+  resell:
+    type: Checkbox
+
+  short_sales:
+    type: Checkbox
+
+  new_developments:
+    type: Checkbox
+
+  luxury:
+    type: Checkbox
+
+  relocation:
+    type: Checkbox
+
+  foreclosure:
+    type: Checkbox
+
+  header_internal:
+    type: Header
+    label: Internal Information
+
+  internal_id:
+    label: Company Employer ID
+    class: form-control
+
+  branch_id:
+    label: Branch
+    type: Select
+    class: form-control
+    source: FROM Branch WHERE company_id = '<?= Auth::get()->getActiveCompany()->id ?>'
+    source_key: id
+    source_label: name
+
+  role_id:
+    label: Role
+    type: Select
+    empty: ""
+    class: form-control
+    required: true
+    source_callback: validSourcesQuery
+    source_key: id
+    source_label: name
+
+  header_extras:
+    type: Header
+    label: Landing
+
+  is_top_agent:
+    type: Checkbox
+    label: ""
+    text: Top Agent?
+    default: 0
+
+  show_all_properties:
+    type: Checkbox
+    label: ""
+    text: Show all properties in landing?
+    default: 1
+
+  header_credentials:
+    type: Header
+    label: Account Credentials
+
+  username:
+    label: Username
+    class: form-control
+    validations:
+      unique:
+        source: "Account.username"
+        source_id: id
+        message: There is already an account registered with this username
+        id: <?= get('id') ?>
+
+  password:
+    label: Password
+    type: Password
+    class: form-control
+    validations:
+      Password:
+        strong: false
+        min: 5
+
+  password_confirmation:
+    label: Password Confirmation
+    type: Password
+    class: form-control
+    validations:
+      equals:
+        element: password
+        message: %{label} and Password must be equal
+
+  active:
+    type: Checkbox
+    label: ""
+    text: Account is active
+    default: 1
+
+  show_in_list:
+    type: Checkbox
+    label: ""
+    text: Show in agents page
+    default: 1
+
+  buttons:
+    type: Buttons
+    class: form-group

@@ -1,0 +1,267 @@
+<style type="text/css">
+
+.pricing-table {
+  position: relative;
+  margin-bottom: 20px;
+}
+.pricing-table .title,
+.pricing-table .price,
+.pricing-table .button {
+  border-bottom: none !important;
+}
+.pricing-table .title {
+  color: #fff;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: bold;
+  padding: 5px 2px 10px 8px;
+}
+.pricing-table .price {
+  position: relative;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #F1F1F1;
+  padding: 15px;
+  text-align: center;
+}
+.pricing-table .price .currency-symbol {
+  position: relative;
+  top: -17px;
+  color: #77939a;
+}
+.pricing-table .price strong {
+  font-size: 44px;
+  line-height: 44px;
+  display: inline-block;
+}
+.pricing-table .price sup {
+  position: relative;
+  top: -20px;
+}
+.pricing-table .price em {
+  position: relative;
+  bottom: -2px;
+  font-size: 14px;
+  font-weight: normal;
+  color: #a3b6bb;
+}
+.pricing-table .button {
+  padding: 15px;
+  text-align: center;
+}
+
+.pricing-table .button.colored {
+  position: relative;
+}
+.pricing-table .button.colored:after {
+  bottom: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.pricing-table .button.colored:after {
+  border-width: 5px;
+  left: 50%;
+  margin-left: -5px;
+}
+.pricing-table ul {
+  position: relative;
+  list-style: none;
+  margin: 0;
+  z-index: 1;
+  padding: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.pricing-table ul li {
+  color: #77939a;
+  background-color: #ffffff;
+  padding: 10px;
+  border-bottom: 1px solid #F1F1F1;
+}
+.pricing-table.rounded ul {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+.pricing-table.rounded .title {
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-right-radius: 5px;
+}
+.pricing-table.rounded .button {
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-bottom-left-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-bottom-right-radius: 5px;
+}
+.pricing-table.rounded .button .btn {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.pricing-table.bordered ul {
+  border: 5px solid #E4E4E4;
+}
+
+.pricing-table.plain li {
+  color: #77939a;
+  background-color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+}
+.pricing-table.plain li.button {
+  border-bottom: none;
+}
+.pricing-table.plain .alt li {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #f8f9fa;
+}
+.pricing-table.plain .alt .price .currency-symbol,
+.pricing-table.plain .alt .price strong,
+.pricing-table.plain .alt .price sup,
+.pricing-table.plain .alt .price em {
+  color: #77939a;
+}
+.pricing-table.plain .alt-dark li {
+  color: #77939a;
+  background-color: #2c3e50;
+  border-bottom: 1px solid #2c3e50;
+}
+.pricing-table.plain.standout .price {
+  background-color: #ffffff;
+}
+.pricing-table.plain.standout .price .currency-symbol,
+.pricing-table.plain.standout .price strong,
+.pricing-table.plain.standout .price sup {
+  color: #77939a;
+}
+.pricing-table.plain.standout .price em {
+  color: #94aab0;
+}
+.pricing-table.plain.standout .alt .price {
+  color: #77939a;
+  background-color: #f8f9fa;
+}
+.pricing-table.plain.standout .alt-dark .price {
+  color: #77939a;
+  background-color: #2c3e50;
+}
+.pricing-table.hover-animation {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.pricing-table .alt li {
+  background-color: #f8f9fa;
+}
+.pricing-table .alt .price {
+  background-color: #F1F1F1;
+}
+.pricing-table .alt-dark {
+  color: #F1F1F1;
+}
+.pricing-table .alt-dark li {
+  background-color: #2c3e50;
+  border-bottom: 1px solid #273646;
+}
+.pricing-table .alt-dark .price {
+  background-color: #273646;
+}
+.pricing-table .title,
+.pricing-table .alt .title,
+.pricing-table .alt-dark .title {
+  background-color: #428BCA;
+}
+.pricing-table .button.colored {
+  background-color: #428BCA;
+}
+.pricing-table .button.colored:after {
+  border-color: transparent;
+  border-bottom-color: #428BCA;
+}
+.pricing-table.standout ul {
+  border: 5px solid #428BCA;
+}
+.pricing-table.standout .price {
+  background-color: #F1F1F1;
+  color: #77939A;
+}
+.pricing-table.hover-animation:hover {
+  margin-top: -5px;
+}
+.pricing-table.hover-animation:hover.bordered ul {
+  border: 5px solid #428BCA;
+}
+.pricing-table.hover-animation.standout:hover {
+  margin-top: -5px;
+}
+</style>
+
+
+<input type="hidden" name="csrfToken" value="<?= $csrfToken ?>" />
+<div class="row">
+
+<?php foreach ($Plans as $i => $Plan): ?>
+
+    <?php $isCurrent = ($Subscription->Plan && $Plan->id == $Subscription->Plan->id) ?>
+    <?php $isPopular = (count($Plans) == 1 || $i == count($Plans)-2) ?>
+    <?php $values    = $isCurrent ? $Subscription : $Plan ?>
+
+    <div class="col-md-<?= max(ceil(12 / count($Plans)), 4) ?> pricing-table bordered <?= ($isPopular ? 'standout' : '') ?>">
+        <ul>
+            <li class="title">
+                <?= $Plan->name ?>
+
+                <?php if ($isPopular): ?>
+                  <span class="label label-success pull-right" style="margin: 0 0 0 3px;"><i class="fa fa-star"></i> <?= t('Popular') ?></span>
+                <?php endif; ?>
+
+                <?php if ($isCurrent): ?>
+                  <span class="label label-info pull-right" style="margin: 0 0 0 3px;"><i class="fa fa-check"></i> <?= t('Current') ?></span>
+                <?php endif; ?>
+            </li>
+            <li class="price">
+                <span class="currency-symbol">$</span>
+                <strong><?= floor($Plan->price) ?></strong>
+                <sup><?= array_pop(explode('.', $Plan->price)) ?></sup>
+                <em>/<?= t('monthly') ?></em>
+            </li>
+            <li>
+                <span class="pull-right"><?= number_format($values->resource_numbers_qty) ?></span><?= t('Telephone numbers') ?>
+            </li>
+            <li>
+                <span class="pull-right"><?= number_format($values->resource_emails_qty) ?></span><?= t('Email Addresses') ?>
+            </li>
+            <li>
+                <span class="pull-right"><?= number_format($values->unit_minutes_qty) ?></span><?= t('Minutes') ?><br />
+                <small class="pull-right"><em>$<?= floatval($values->unit_minutes_price) ?></em></small> <small><em><?= t('Additional rate') ?></em></small>
+            </li>
+            <li>
+                <span class="pull-right"><?= number_format($values->unit_sms_qty) ?></span><?= t('Text messages') ?><br />
+                <small class="pull-right"><em>$<?= floatval($values->unit_sms_price) ?></em></small> <small><em><?= t('Additional rate') ?></em></small>
+            </li>
+            <li>
+                <span class="pull-right"><?= number_format($values->unit_emails_qty) ?></span><?= t('Emails') ?><br />
+                <small class="pull-right"><em>$<?= floatval($values->unit_emails_price) ?></em></small> <small><em><?= t('Additional rate') ?></em></small>
+            </li>
+            <li class="button">
+                <button name="id" value="<?= $Plan->id ?>" class="btn btn-large btn-success" <?= $isCurrent ? 'disabled="disabled"' : '' ?>>
+                    <?= $isCurrent ? t('Current Plan') : t('Select Plan') ?>
+                </button>
+            </li>
+        </ul>
+    </div>
+<?php endforeach ?>
+
+</div>

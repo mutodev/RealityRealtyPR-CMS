@@ -1,0 +1,34 @@
+name: login
+default_renderers:
+    box_renderer: 
+        type:      1Column
+        border:    false
+        highlight: false
+elements:
+    summary:
+
+    username:
+        label:    Username / Email
+        type:     Text
+        domname:  username
+        required: true
+
+    password:
+        label:    Password
+        type:     Password
+        domname:  password        
+        required: true
+
+    remember_me:
+        label:    ''
+        type:     Checkbox
+        domname:  remember_me        
+        text:     Remember me for two weeks
+        default:  true
+
+    buttons:
+        type:  buttons
+        buttons:
+            log_in:
+                class: 'positive button bigbutton'
+                label: Log in  

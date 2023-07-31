@@ -1,0 +1,144 @@
+class: form-bordered
+attributes:
+    role: form
+elements:
+
+    summary:
+        type: Summary
+
+    header_plan:
+        type:  Header
+        label: Plan
+
+    plan:
+        type:     Select
+        label:    Plan
+        empty:    false
+        default:  custom
+        source:   FROM BillingPlan WHERE chargebee_plan_id != 'custom' ORDER BY is_active DESC, iso_country_code ASC, name ASC
+        source_key_tpl: %{chargebee_plan_id}
+        source_label_tpl: %{iso_country_code} - %{name}
+        source_group_tpl: %{planGroupSelect:is_active}
+        source_group: is_active
+        class:    form-control
+        options:
+            custom: Custom
+
+    invoice_recipient:
+        type:     Select
+        label:    Invoice Recipient
+        empty:    false
+        required: true
+        class:    form-control
+        options:
+            0: Send invoice to Organization
+            1: Send invoice to Reality Realty
+
+    auto_collection:
+        type:     Select
+        label:    Auto Collection
+        empty:    false
+        required: true
+        class:    form-control
+        options:
+            on: 'On (Credit Card)'
+            off: 'Off (Check, Cash)'
+
+    custom_plan_container:
+        type:     Container
+        depends:  {.plan: custom}
+        box_renderer:
+            type: 1Column
+            border: false
+            margin: 0px
+            padding: 0px
+        elements:
+
+            header_custom_plan:
+                type:  Header
+                label: Custom Plan
+
+            # chargebee_subscription_id:
+            #     label:    ChargeBee Subscription ID
+            #     type:     Text
+            #     required: true
+            #     class:    form-control
+
+            custom_price:
+                label:    Custom price
+                type:     Number
+                required: true
+                class:    form-control
+
+            custom_provider:
+                type:     Hidden
+                default:  TWILIO
+
+            header_quantities:
+                type:  Header
+                label: Quantities
+
+            resource_numbers_qty:
+                label:    Phone numbers
+                type:     Number
+                required: true
+                class:    form-control
+                validations: [Integer]
+
+            resource_emails_qty:
+                label:    Email Addresses
+                type:     Number
+                required: true
+                class:    form-control
+                validations: [Integer]
+
+            header_units:
+                type:  Header
+                label: Limits
+
+            unit_minutes_qty:
+                label:    Amount of phone calls minutes (send/receive)
+                type:     Number
+                required: true
+                class:    form-control
+                validations: [Integer]
+
+            unit_sms_qty:
+                label:    Amount of phone SMS (send/receive)
+                type:     Number
+                required: true
+                class:    form-control
+                validations: [Integer]
+
+            unit_emails_qty:
+                label:    Amount of emails (send/receive)
+                type:     Number
+                required: true
+                class:    form-control
+                validations: [Integer]
+
+            header_costs:
+                type:  Header
+                label: Additional Costs
+
+            unit_minutes_price:
+                label:    Phone call minute price
+                type:     Number
+                required: true
+                class:    form-control
+
+            unit_sms_price:
+                label:    Phone SMS price
+                type:     Number
+                required: true
+                class:    form-control
+
+            unit_emails_price:
+                label:    Email price
+                type:     Number
+                required: true
+                class:    form-control
+
+    buttons:
+        type:  Buttons
+        class: form-group

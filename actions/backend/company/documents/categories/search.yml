@@ -1,0 +1,9 @@
+source: DocumentCategory
+default: advanced
+fields:
+    name:
+        label: Keywords
+        source: DocumentCategory.name
+        element:
+            type: Text
+            class: form-control

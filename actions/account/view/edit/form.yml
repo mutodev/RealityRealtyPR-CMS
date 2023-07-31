@@ -1,0 +1,44 @@
+class: form-bordered
+attributes:
+    role: form
+elements:
+    summary:
+
+    header_contact_listing:
+        type: header
+        label: Contact Information
+
+    first_name:
+        label:    First Name
+        required: true
+        class:    form-control
+
+    last_name:
+        label:    Last Name
+        required: true
+        class:    form-control
+
+    email:
+        label: Email
+        required: true
+        class:    form-control
+        validations:
+            unique:
+                source:    'Account.username'
+                source_id: id
+                message:   There is already an account registered with this email
+                id: <?= Auth::get('id') ?>
+
+    phone:
+        type:     Phone
+        required: true
+        class:    form-control
+
+    phone2:
+        type:     Phone
+        label:    Alternate Phone
+        class:    form-control
+
+    buttons:
+        type:  Buttons
+        class: form-group

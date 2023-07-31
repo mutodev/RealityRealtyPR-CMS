@@ -1,0 +1,275 @@
+<section class="about-us">
+
+
+    <div class="container mt20">
+        <div class="mt40 about-us__banner-wrapper ">
+            <img class="img-responsive" src="/img/stock/RR_Leaders.jpg" />
+            <div class="about-us__banner-slogan centered-title">
+                <p class="about-us__banner-slogan-title"><?= t('translation2020'); ?></p>
+                <p class="about-us__banner-slogan-title"><?= t('translation2021'); ?></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container about-us__breadcrumb">
+        <ol class="breadcrumb realty-breadcrumb">
+            <li><a href="<?= url('/') ?>"><?= t('translation321') ?></a></li>
+            <li class="active"><?= t('translation1001') ?></li>
+        </ol>
+    </div>
+    <div class="container">
+        <div class="row about-us__us">
+            <div class="col-md-6">
+                <h1 class="general__title"> <?= t('translation1001'); ?></h1>
+
+                <h3 class="general__subtitle"><?= t('translation1094'); ?></h3>
+
+                <p class="general__paragraph"><?= t('translation1095'); ?></p>
+                <p><?= t('translation1096'); ?></p>
+            </div>
+
+
+
+            <div class="col-md-offset-1 col-md-5">
+                <div class="about-us__us-quotes about-us__us-quote-left">
+                    <i class="fas fa-quote-left"></i>
+                </div>
+                <div class="about-us__us-wrapper">
+                    <h2 class="about-us__mission-vission-title"><?= t('translation202'); ?></h2>
+
+                    <p class="about-us__mission-vission-text"><?= t('translation1089'); ?></p>
+
+                    <h2 class="about-us__mission-vission-title"><?= t('translation204'); ?></h2>
+
+                    <p class="about-us__mission-vission-text"><?= t('translation1090'); ?></p>
+                </div>
+                <div class="about-us__us-quotes about-us__us-quote-right">
+                    <i class="fas fa-quote-right"></i>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="about-us__values">
+        <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="general__title"> <?= t('translation1097'); ?></h1>
+                    <h3 class="general__subtitle"><?= t('translation1098'); ?></h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 about-us__values-wrapper">
+                    <div class="about-us__values-title"><?= t('translation1099'); ?></div>
+                    <br />
+                    <p><?= t('translation2000'); ?></p>
+                </div>
+                <div class="col-md-4 about-us__values-wrapper">
+                    <div class="about-us__values-title"><?= t('translation2003'); ?></div>
+                    <br />
+                    <p><?= t('translation2004'); ?></p>
+                </div>
+                <div class="col-md-4 about-us__values-wrapper">
+                    <div class="about-us__values-title"><?= t('translation2001'); ?></div>
+                    <br />
+                    <p><?= t('translation2002'); ?></p>
+                </div>
+            </div>
+        </div>
+</div>
+    </div>
+    <div class="container about-us__leadership">
+        <div class="row">
+            <div class="col-md-12 centered-title">
+                <h1 class="general__title"> <?= t('translation2007'); ?></h1>
+                <h3 class="general__subtitle"><?= t('translation2008'); ?></h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8 centered-title">
+                <p ><?= t('translation2009'); ?></p>
+            </div>
+        </div>
+        <div class="row about-us__leadership-caribbean">
+            <div class="col-md-12 centered-title">
+                <p><?= t('translation2010'); ?></p>
+            </div>
+        </div>
+    </div>
+    <div class="container about-us__our-team">
+        <div class="row">
+            <div class="col-md-12 centered-title">
+                <h1 class="general__title"> <?= t('translation2011'); ?></h1>
+                <h3 class="general__subtitle"><?= t('translation2012'); ?></h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8 centered-title">
+                <p><?= t('translation2013'); ?></p>
+            </div>
+        </div>
+        <div class="row">
+
+            <style>
+                .about-us-agent {
+                    border: 1px solid #EFEFEF;
+                    width: 270px;
+                    margin: 0 auto;
+                }
+                .about-us-agent-image {
+                    width: 100%;
+                    height: 268px;
+                    overflow: hidden;
+                }
+                .about-us-description {
+                    padding: 0 10px 10px 10px;
+                }
+                .about-us-description h4 {
+                    margin-bottom: 3px;
+                }
+
+            </style>
+
+            <div class="container-fluid">
+                <div class="col-md-4">
+                    <div class="about-us-agent">
+                        <?php $image = $Brokers[0]->s3_photo ; ?>
+                        <img class="about-us-agent-image" src="<?php echo $image; ?>" />
+                        <div class="about-us-description text-center">
+                            <h4><?= $Brokers[0]->first_name . " ". $Brokers[0]->last_name; ?></h4>
+                            <span>  <?= $Brokers[0]->position; ?></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="about-us-agent">
+                        <?php $image = $Brokers[1]->s3_photo ; ?>
+                        <img class="about-us-agent-image" src="<?php echo $image; ?>" />
+                        <div class="about-us-description text-center">
+                            <h4><?= $Brokers[1]->first_name . " ". $Brokers[1]->last_name; ?></h4>
+                            <span>  <?= $Brokers[1]->position; ?></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="about-us-agent">
+                        <?php $image = $Brokers[2]->s3_photo ; ?>
+                        <img class="about-us-agent-image" src="<?php echo $image; ?>" />
+                        <div class="about-us-description text-center">
+                            <h4><?= $Brokers[2]->first_name . " ". $Brokers[2]->last_name; ?></h4>
+                            <span>  <?= $Brokers[2]->position; ?></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid mt20">
+                <div class="col-md-4">
+                    <div class="about-us-agent">
+                        <?php $image = $Brokers[3]->s3_photo ; ?>
+                        <img class="about-us-agent-image" src="<?php echo $image; ?>" />
+                        <div class="about-us-description text-center">
+                            <h4><?= $Brokers[3]->first_name . " ". $Brokers[3]->last_name; ?></h4>
+                            <span>  <?= $Brokers[3]->position; ?></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="about-us-agent">
+                        <?php $image = $Brokers[4]->s3_photo ; ?>
+                        <img class="about-us-agent-image" src="<?php echo $image; ?>" />
+                        <div class="about-us-description text-center">
+                            <h4><?= $Brokers[4]->first_name . " ". $Brokers[4]->last_name; ?></h4>
+                            <span>  <?= $Brokers[4]->position; ?></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="about-us-agent">
+                        <?php $image = $Brokers[5]->s3_photo ; ?>
+                        <img class="about-us-agent-image" src="<?php echo $image; ?>" />
+                        <div class="about-us-description text-center">
+                            <h4><?= $Brokers[5]->first_name . " ". $Brokers[3]->last_name; ?></h4>
+                            <span>  <?= $Brokers[5]->position; ?></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!--            --><?php //foreach ($Brokers as $key => $Agent) { ?>
+<!--                <div class="col-md-3">-->
+<!--                    <div class="about-us-agent">-->
+<!--                        --><?php //$image = $Agent->s3_photo ; ?>
+<!--                        <img class="about-us-agent-image" src="--><?php //echo $image; ?><!--" />-->
+<!--                        <div class="about-us-description text-center">-->
+<!--                            <h4>--><?//= $Agent->first_name . " ". $Agent->last_name; ?><!--</h4>-->
+<!--                            <span>  --><?//= $Agent->position; ?><!--</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            --><?php //} ?>
+
+
+        </div>
+    </div>
+    <div class="container about-us__our-clients">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-12 centered-title">
+                    <h1 class="general__title"> <?= t('translation2014'); ?></h1>
+                    <h3 class="general__subtitle"><?= t('translation2015'); ?></h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p><?= t('translation2016'); ?></p>
+            </div>
+        </div>
+    </div>
+<!--    <div class="about-us__sister-companies">-->
+<!--        <div class="container">-->
+<!--            <div class="row">-->
+<!--                <div class="col-md-12 centered-title">-->
+<!--                    <h1 class="general__title"> --><?//= t('translation2017'); ?><!--</h1>-->
+<!--                    <h3 class="general__subtitle">--><?//= t('translation2028'); ?><!--</h3>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+    <div class="container about-us__part-of-realty">
+        <div class="row">
+            <div class="col-md-12 centered-title">
+                <h1 class="general__title"> <?= t('translation2018'); ?></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8 centered-title">
+                <p><?= t('translation2019'); ?></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8 centered-title">
+                <?php if ($sent): ?>
+                    <h2><?= t('Gracias, te contactaremos a la brevedad'); ?></h2>
+                <?php endif ?>
+
+                <form class="about-us__part-of-realty-text" method="post">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input name="name" type="text" placeholder="Nombre Completo">
+                        </div>
+                        <div class="col-md-6">
+                            <input name="email" type="email" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <br><br>
+                            <button type="submit" class="about-us__part-of-realty-button">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

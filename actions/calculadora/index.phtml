@@ -1,0 +1,169 @@
+<?php
+
+Configure::write("seo.title"       , 'Calculadora Hipotecaria');
+Configure::write("seo.description" , 'Calculadora Hipotecaria' );
+?>
+
+<!-- TOP CONTENT -->
+
+        <div class="container grey">
+          <div id="top-content">
+            <div class="content">
+              <br />
+                <h1>Calculadora Hipotecaria</h1>
+
+                <br />
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                          <form id="load_calculator" action="" method="get">
+                              <div class="container-fluid">
+                                  <div class="row">
+                                      <div class="col-xs-12 col-sm-4">
+                                          <label for='loan_amt'> Precio de venta: </label><br />
+                                          <input id='loan_amt' type="text" placeholder="$" name='loan_amt' size='8' value="<?= $loan_amt ?>" />
+                                      </div>
+                                      <div class="col-xs-12 col-sm-4">
+                                          <label for='down_payment'> Cantidad de Pronto: </label><br />
+
+                                          <input type="text" placeholder="$" id='down_payment' name='down_payment' size='9' value="<?= $down_payment ?>" />
+                                      </div>
+                                      <div class="col-xs-12 col-sm-4">
+                                          <label>&nbsp;</label><br />
+                                          <select id='down_type' name='down_type'>
+                                              <option value='percent' <?php if ($down_type == 'percent') echo "selected='selected'" ?>> Porciento % </option>
+                                              <option value='dollars' <?php if ($down_type == 'dollars') echo "selected='selected'" ?>> Dolares $ </option>
+                                          </select>
+                                      </div>
+                                  </div>
+                                  <div class="row">
+                                      <div class="col-xs-12 col-sm-4">
+                                          <label for='years'> T&eacute;rmino (A&ntilde;os): </label><br />
+                                          <input type="text" placeholder="$" id='years' name='years' size='5' value="<?= $years ?>" />
+                                      </div>
+                                      <div class="col-xs-12 col-sm-4">
+                                          <label for='interest_rate'> Inter&eacute;s (%): </label><br />
+                                          <input type="text" placeholder="$" id='interest_rate' name='interest_rate' size='5' value="<?= $interest_rate ?>" />
+                                      </div>
+                                      <div class="col-xs-12 col-sm-4">
+                                          <label>&nbsp;</label><br />
+                                          <a href="/calculadora" class="normalBtn">Empezar</a>
+                                          <input type="submit" class="normalBtn pull-right" value="Calcular" />
+                                      </div>
+                                  </div>
+                              </div>
+                          </form>
+
+                      </div>
+
+                      <div class="col-xs-12 col-sm-6">
+                      <table class='styled'>
+                       <tr>
+                         <th>Pago mensual</th>
+                         <td>&nbsp;$<?= number_format( round($MortgageCalculator->getMonthlyPayment()) ) ?></td>
+                       </tr>
+                       <tr>
+                         <th>Pronto</th>
+                         <td>&nbsp;$<?= number_format( round($MortgageCalculator->getDownPayment()) ) ?></td>
+                       </tr>
+                       <tr>
+                         <th>Cantidad financiada</th>
+                         <td>&nbsp;$<?= number_format( round($MortgageCalculator->getInitialBalance()) ) ?></td>
+                       </tr>
+                       <tr>
+                         <th>Cantidad de pagos</th>
+                         <td>&nbsp;<?= number_format( round($MortgageCalculator->getNumberOfPayments()) ) ?></td>
+                       </tr>
+                     </table>
+                    </div>
+                </div>
+
+
+                <div class="clear"></div>
+
+            </div>
+        </div>
+
+
+  <!-- MAIN CONTENT -->
+    <div id="content" class="below">
+      <?php if ( isset( $_GET['loan_amt'] ) ): ?>
+        <br />
+          <div class="header">
+              <h4>Amortizaci&oacute;n</h4>
+          </div>
+
+        <table id="amortization_table" cellpadding="0" cellspacing="0" border="0" width="100%">
+
+          <?php $sums = array('interest' => 0, 'principal' => 0); ?>
+          <?php foreach($MortgageCalculator->calculate( ) as $paymentNumber => $details ): ?>
+
+          <?php if ( $paymentNumber % 12 == 0 ): ?>
+          <tr>
+            <th>Pago</th>
+            <th>Inter&eacute;s</th>
+            <th>Principal</th>
+            <th>Balance</th>
+          </tr>
+          <?php endif; ?>
+
+          <tr>
+            <td><strong><?= $paymentNumber + 1; ?></strong></td>
+            <td>$<?= number_format( round( $details['interest'] ) ) ?></td>
+            <td>$<?= number_format( round( $details['principal'] ) ) ?></td>
+            <td>$<?= number_format( round( $details['balance'] ) ) ?></td>
+          </tr>
+
+          <?php
+            $sums['interest']  += $details['interest'];
+            $sums['principal'] += $details['principal'];
+          ?>
+
+          <?php if ( ($paymentNumber + 1) % 12 == 0 ): ?>
+          <tr>
+            <td class="year_summary" colspan="4">
+              Gastos en intereses: <strong>$<?= number_format( round( $sums['interest'] ) ) ?></strong><br />
+              Aportaci&oacute;n al principal: <strong>$<?= number_format( round( $sums['principal'] ) ) ?></strong><br />
+              Total: <strong>$<?= number_format( round( $sums['interest'] + $sums['principal'] ) ) ?></strong>
+            </td>
+          </tr>
+
+          <?php $sums = array('interest' => 0, 'principal' => 0); ?>
+          <?php endif; ?>
+
+          <?php endforeach; ?>
+        </table>
+
+      <?php endif; ?>
+    </div>
+</div>
+
+<style type="text/css">
+#amortization_table {
+  border-right:  1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+#amortization_table td, #amortization_table th {
+  border-left: 1px solid #000;
+  border-top:  1px solid #000;
+
+  padding: 10px 10px;
+  text-align: right;
+  font-size:   14px;
+}
+
+#amortization_table td {
+  background-color: #fff;
+}
+
+#amortization_table th {
+  background-color: #F3F2F2;
+}
+
+#amortization_table .year_summary {
+  text-align: left;
+  background-color: #ECECEC;
+}
+
+</style>

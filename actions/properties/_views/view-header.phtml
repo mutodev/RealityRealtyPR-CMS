@@ -1,0 +1,28 @@
+<style>
+    .view-header {
+        background-image: url('/images/<?= $type ?>-header.jpg?v1');
+        background-size: cover;
+        background-position: center center;
+        margin-bottom: 20px;
+    }
+
+    .view-header .container {
+        position: relative;
+        height: 300px;
+    }
+
+
+
+    .view-image {
+        height: 100px;
+        position: absolute;
+        bottom: -50px;
+        right: 20px;
+    }
+</style>
+
+<div class="view-header">
+    <div class="container">
+        <img class="view-image" src="/img/specialized/<?= $type ?>.png" />
+    </div>
+</div>

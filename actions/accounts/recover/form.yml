@@ -1,0 +1,12 @@
+elements:
+    password:
+        element:  password
+        required: true
+        
+    confirm_password:
+        element:  password
+        required: true
+        
+    button:
+        element: button
+        label:   Reset Password

@@ -1,0 +1,65 @@
+<?php
+    $Section    = helper("Section");
+    
+    define('DISABLE_GLOBAL_CONTACT_FORM', true);
+?>
+
+<!-- TOP CONTENT -->
+
+        <div id="top-content">
+            <img src="/img/top-content-top.png" />
+            <div class="content">
+
+              <h1>Broker Login</h1>
+
+            </div>
+            <img src="/img/top-content-bottom.png" class="img-bottom" />
+        </div>
+
+<!-- MAIN CONTENT -->
+        <div id="content" class="below">
+
+            <br />
+            <form action="https://www.listmax.com/adm/xlogin.php" method="post" name="form1">
+      <br/><br/>
+<table width="335" cellspacing="0" cellpadding="1" border="0">
+        <tbody><tr>
+          <td width="110" align="right">Email:</td>
+            <td width="221"><input type="text" maxlength="55" size="20" id="user" name="user"/></td>
+          </tr>
+        <tr>
+          <td align="right">Password:</td>
+            <td><input type="password" maxlength="55" size="20" id="pass" name="pass"/></td>
+          </tr>
+        <tr>
+          <td align="center"> </td>
+          <td align="left">
+          <input type="hidden" value="realityrealty" name="temp"/>
+          <input type="hidden" value="http://realityrealtypr.com/broker-login" name="pag"/>
+</td>
+     	</tr>
+	<tr>
+          <td align="center" colspan="2"><p>
+            <input type="submit" value="Login" name="Submit"/>
+          </p>
+            </td>
+          </tr>
+        </tbody></table></form>
+
+
+        </div>
+
+<style type="text/css">
+
+form.contact textarea.msg {
+  width: 340px;
+}
+
+</style>
+
+<?= $Section->start("javascriptFooter"); ?>
+<?= $Section->render("javascriptFooter"); ?>
+
+
+
+<?= $Section->end(); ?>

@@ -1,0 +1,36 @@
+<?php
+
+$Javascript = helper('Javascript');
+
+$Css = helper('Css');
+$Css->add('/css/morris.css');
+
+if(Auth::hasPermission('property.manage')){
+  $this->breadcrumbBtn = array(
+      'url'   => url('.edit'),
+      'label' => t('Lead'),
+      'icon'  => 'plus'
+  );
+}
+
+?>
+
+<div class="panel">
+    <div class="panel-body container-fluid">
+        <?= $Search->render(); ?>
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-body container-fluid">
+        <a class="btn btn-success btn-xs" href="<?= url('.edit') ?>">
+            <i class="fa fa-plus"></i>&nbsp;<?= t('Lead') ?>
+        </a>
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-body container-fluid">
+        <?= $Table->render(); ?>
+    </div>
+</div>

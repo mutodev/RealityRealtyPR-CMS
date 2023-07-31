@@ -1,0 +1,33 @@
+<?php
+
+$Javascript = helper('Javascript');
+
+$Css = helper('Css');
+$Css->add('/css/morris.css');
+
+if(Auth::hasPermission('document.manage')){
+$this->breadcrumbBtn = array(
+    'url'   => url('.edit?property_id='.$id),
+    'label' => t('Contract'),
+    'icon'  => 'plus'
+);
+}
+
+?>
+
+<?php if(Auth::hasPermission('document.manage')): ?>
+<div class="panel">
+    <div class="panel-body container-fluid">
+        <a class="btn btn-success btn-xs pull-left" href="<?= url('.edit?property_id='.$id) ?>">
+            <i class="fa fa-plus"></i>&nbsp;<?= t('Contract') ?>
+        </a>
+    </div>
+</div>
+<?php endif ?>
+
+<div class="panel">
+    <div class="panel-body container-fluid">
+        <?= $Table->render(); ?>
+    </div>
+</div>
+

@@ -1,0 +1,369 @@
+<?php
+$Section = helper("Section");
+
+Configure::write("seo.title", PropertyTable::title_property($Property));
+Configure::write("seo.description", $Property->description ? strip_tags($Property->description) : PropertyTable::title_property($Property));
+Configure::write("seo.canonical", PropertyTable::url_property($Property));
+?>
+
+<?php
+if ($landing) {
+    echo $this->partial($landing, compact("broker"));
+}
+?>
+
+<!-- TOP CONTENT -->
+<style>
+    #propertyContactForm select,
+    #propertyContactForm input[type="text"],
+    #propertyContactForm textarea {
+        border: solid #dddddd 1px;
+    }
+
+    .sidearAgent {
+        padding: 0 40px
+    }
+
+    .sidearAgent h2,
+    #similarPropertiesTitle {
+        display: block;
+        border-bottom: 1px solid #dddddd;
+        padding-bottom: 20px;
+        text-align: center;
+    }
+
+    #similarPropertiesTitle {
+        text-align: left;
+    }
+
+    .tab-content {
+        padding: 20px 0;
+    }
+
+    .nav-tabs-details .active a {
+        font-weight: bold;
+    }
+</style>
+
+<div class="container property-detail">
+    <div id="top-content">
+        <div class="content">
+
+            <div class="row margin-top">
+                <ol class="breadcrumb realty-breadcrumb">
+                    <li><a href="<?= url('/') ?>"><?= t('translation321') ?></a></li>
+                    <li><a href="<?= url('propiedades') ?>"><?= t('translation322') ?></a></li>
+                    <li class="active"><?= $Property->title ?></li>
+                </ol>
+            </div>
+
+            <div class="row margin-top">
+                <div class="col-xs-12 col-sm-8">
+                    <h1><?= $Property->title ?></h1>
+                    <p><?= $Property->Area->name ?></p>
+                </div>
+                <div class="col-xs-12 col-sm-4 title-side">
+                    <span>
+                        <a target="_blank" href="<?= url('..print?id=' . $Property->id.'&broker_id='.$Contact->id); ?>">
+                            <svg class="iconRR" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><defs><style>.cls-1{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.58px;}</style></defs><title>download_icon</title><line class="cls-1" x1="24.94" y1="30.75" x2="24.94" y2="14.32"/><line class="cls-1" x1="19.47" y1="24.6" x2="24.97" y2="30.75"/><line class="cls-1" x1="30.47" y1="24.6" x2="24.97" y2="30.75"/><path class="cls-1" d="M40.61,26v9.21c0,.25-.34.46-.8.46H10.24c-.45,0-.85-.21-.85-.46V26"/></svg><?= t('translation1043'); ?></a>
+                    </span>
+                    <span>
+                        <a class="addthis_button_compact"><svg class="iconRR" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><defs><style>.cls-1{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.58px;}</style></defs><title>share_icon</title><line class="cls-1" x1="18.01" y1="22.84" x2="31.94" y2="15.46"/><line class="cls-1" x1="18.01" y1="27.87" x2="31.69" y2="35.12"/><circle class="cls-1" cx="13.27" cy="25.35" r="5.37"/><circle class="cls-1" cx="36.73" cy="13.04" r="5.37"/><circle class="cls-1" cx="36.73" cy="36.96" r="5.37"/></svg> <?= t('translation1044'); ?></a>
+                    </span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <?= $this->partial('details', array('Property' => $Property, 'conditionsByType' => $conditionsByType)); ?>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-8 mt40">
+                <?= $this->partial('save-property', array('Property' => $Property, 'size' => 'small')); ?>
+                <?php if (count($Property->Photos)): ?>
+                    <?= $this->partial('gallery', array('Photos' => $Property->Photos)) ?>
+                <?php endif ?>
+
+                <div class="mt40">
+                    <div class="clearfix">
+
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs nav-tabs-details" role="tablist">
+                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab"
+                                                                      data-toggle="tab"><?= t('translation400'); ?></a></li>
+<!--                            <li class="with-margin" role="presentation"><a href="#profile" aria-controls="profile" role="tab"-->
+<!--                                                                           data-toggle="tab">--><?//= t('translation401'); ?><!--</a></li>-->
+<!--                            <li class="with-margin" role="presentation"><a href="#messages" aria-controls="messages" role="tab"-->
+<!--                                                                           data-toggle="tab">--><?//= t('translation402'); ?><!--</a></li>-->
+                            <?php if ($Property->for_sale == 1): ?>
+                            <li class="with-margin" role="presentation"><a href="#settings" aria-controls="settings" role="tab"
+                                                                           data-toggle="tab"><?= t('translation403'); ?></a></li>
+                            <?php endif; ?>
+                        </ul>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="home">
+                                <?php if ($Property->description) : ?>
+                                    <?= $Property->description; ?>
+                                <?php endif; ?>
+                            </div>
+<!--                            <div role="tabpanel" class="tab-pane" id="profile">dsad</div>-->
+<!--                            <div role="tabpanel" class="tab-pane" id="messages">dsa...</div>-->
+                            <?php if ($Property->for_sale == 1): ?>
+                            <div role="tabpanel" class="tab-pane" id="settings">
+                                <div class="row grey margin-top padding-bottom">
+                                    <div class="col-xs-12 nopadding">
+                                        <form id="load_calculator" action="" method="get">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-xs-12 col-sm-4">
+                                                        <label for='loan_amt'> <?= t('translation296'); ?>: </label><br/>
+                                                        <input id='loan_amt' type="text" placeholder="$" name='loan_amt'
+                                                               size='8'
+                                                               value="<?= round($Property->sale_price) ?>"/>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-4">
+                                                        <label for='down_payment'> <?= t('translation297'); ?>: </label><br/>
+
+                                                        <input type="text" placeholder="$" id='down_payment' name='down_payment'
+                                                               size='9'
+                                                               value="0"/>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-4">
+                                                        <label>&nbsp;</label><br/>
+                                                        <select id='down_type' name='down_type'>
+                                                            <option value='percent'> <?= t('translation298'); ?> %</option>
+                                                            <option value='dollars'
+                                                                    selected='selected'> <?= t('translation299'); ?>$
+                                                            </option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt10">
+                                                    <div class="col-xs-12 col-sm-4">
+                                                        <label for='years'> <?= t('translation300'); ?>: </label><br/>
+                                                        <input type="text" placeholder="$" id='years' name='years' size='5'
+                                                               value="<?php if ($Property->Category->type == 'Commercial'): ?>20<?php else: ?>30<?php endif ?>"/>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-4">
+                                                        <label for='interest_rate'> <?= t('translation301'); ?>
+                                                            (%): </label><br/>
+                                                        <input type="text" placeholder="$" id='interest_rate'
+                                                               name='interest_rate' size='5'
+                                                               value="5"/>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-4">
+                                                        <label>&nbsp;</label><br/>
+                                                        <input type="submit" class="normalBtn pull-right"
+                                                               value="<?= t('translation302'); ?>"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="row mt40">
+                                    <div class="col-xs-12">
+                                        <div class='container-fluid details styled' id="load_calculator_result">
+                                            <div class="row">
+                                                <div class="col-xs-5 nopadding"><?= t('translation167'); ?></div>
+                                                <div class="col-xs-7 nopadding" id="loan_amt_text"></div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-5 nopadding"><?= t('translation303'); ?></div>
+                                                <div class="col-xs-7 nopadding" id="down_payment_text"></div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-5 nopadding"><?= t('translation304'); ?></div>
+                                                <div class="col-xs-7 nopadding" id="final_loan_amt_text"></div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xs-12 nopadding">
+                                                    <?= t('translation305'); ?><br/>
+                                                    <span id="month_price_text"></span><br/>
+                                                    <a id="calculator_link" href="/calculadora"><?= t('translation306'); ?></a>
+                                                    <br/>
+                                                    <br/>
+
+                                                    <span class="red">* <?= t('translation307'); ?></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- #content -->
+                            </div>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+
+                <?php if ($SimilarProperties): ?>
+                <div class="mt40">
+                    <h2 id="similarPropertiesTitle"><?= t('translation1057'); ?></h2>
+
+                    <div class="row mt40">
+                        <?php foreach ($SimilarProperties as $SimilarProperty): ?>
+                        <div class="col-xs-12 col-sm-6 result result-even">
+                            <?= $this->partial('property', array('Property' => $SimilarProperty)); ?>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+                <?php endif; ?>
+            </div>
+
+            <div class="col-xs-12 col-sm-4">
+                <div class="container-fluid sidearAgent">
+                    <div class="row margin-top">
+                        <div class="col-xs-12 col-sm-12">
+                            <h2><?= t('translation1045'); ?></h2>
+                            <?= $this->partial('contact-info', compact('Property', 'Contact', 'SecondaryAgent')); ?>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12">
+                            <?php define('DISABLE_GLOBAL_CONTACT_FORM', true); ?>
+                            <form action="" method="post" class="contact form" id="propertyContactForm">
+
+                                <div class="form-group">
+                                    <label class="grey-font"><?= t('translation1046'); ?></label>
+                                    <input type="text" class='contactField name' name='var1' value=""/>
+                                </div>
+
+                                <!--                                <div class="form-group">-->
+                                <!--                                    <input type="text" class='contactField phone' name='var2' value=""-->
+                                <!--                                           placeholder="-->
+                                <? //= t('translation29'); ?><!--"/>-->
+                                <!--                                </div>-->
+
+                                <div style='display:none'>
+                                    <label class="grey-font"><?= t('translation1047'); ?></label>
+                                    <input name='email' value=""/>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="grey-font"><?= t('translation1047'); ?></label>
+                                    <input type="text" class='contactField mail' name='var3'/>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="grey-font"><?= t('translation1048'); ?></label>
+                                    <textarea class='contactField msg' name='var4'
+                                              placeholder="<?= t('translation294'); ?>"
+                                              rows="3"></textarea>
+                                </div>
+
+                                <input type='hidden' name='property_id' value='<?= $Property->id ?>'/>
+                                <input type='hidden' name='broker_id' value='<?= $Contact->id ?>'/>
+                                <input type='hidden' name='url'
+                                       value='<?= (!empty($_SERVER['HTTPS']) ? "https://" : "http://") . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>'/>
+
+                                <div class="form-group">
+                                    <input type="submit" class="normalBtn btn btn-block"
+                                           value="<?= t('translation32'); ?>"/>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <?php if ($Property->public_coordinates && $Property->latitude && $Property->longitude): ?>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12">
+                        <div class="mt40 sidearAgent">
+                            <h2><?= t('translation1049'); ?></h2>
+
+                            <img class="img-responsive mt40"
+                                 src="https://maps.googleapis.com/maps/api/staticmap?autoscale=1&size=300x400&maptype=roadmap&key=AIzaSyDN3LWxZqLR2kcGo8pCYj_7n9YJ0UGF7F0&format=png&visual_refresh=true&markers=size:small%7Ccolor:0xff0000%7Clabel:1%7C<?= $Property->latitude . ', ' . $Property->longitude ?>"/>
+                        </div>
+                        <?php endif ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?= $Section->start("javascriptFooter"); ?>
+<?= $Section->render("javascriptFooter"); ?>
+
+<!-- Photos **************************************************************** -->
+
+<script type="text/javascript">
+
+  function closeSendByEmail() {
+    //jQuery.fn.colorbox.close();
+    jAlert('<?= t('translation308'); ?>');
+  }
+
+  jQuery(document).ready(function () {
+
+    //jQuery(".sendByEmail").colorbox({width: "400px", height: "485px", iframe: true});
+
+    $('#myTabs a').click(function (e) {
+      e.preventDefault()
+      $(this).tab('show')
+    })
+
+
+    //jQuery("a[rel='photos']").colorbox({
+    //  maxWidth: "100%",
+    //  maxHeight: "100%",
+    //  scrolling: false,
+    //  current: "<?//= t('translation309'); ?>// {current} <?//= t('translation290'); ?>// {total}"
+    //});
+
+    jQuery('#album-pagination a').click(function () {
+      var groupClass = jQuery(this).attr('rel');
+
+      // Change current link
+      jQuery('#album-pagination a.current').toggleClass('current');
+      jQuery(this).toggleClass('current');
+
+      // Hide all photos
+      jQuery('#top-content .gallery a.thumbnail2').hide();
+      jQuery('#top-content .gallery a.' + groupClass).css('display', 'inline-block');
+
+      return false;
+    });
+
+    jQuery('#propertyContactForm').bind('submit.contactForm', function () {
+      sendContactForm('property', jQuery(this));
+      return false;
+    });
+
+
+    jQuery('#load_calculator').bind('submit.loanCalculator', function () {
+
+      var loan_amount = jQuery('#loan_amt').val();
+      var down_payment = jQuery('#down_payment').val();
+      var down_payment_type = jQuery('#down_type').val();
+      var years = jQuery('#years').val();
+      var interest_rate = jQuery('#interest_rate').val();
+
+      var payments = years * 12;
+      var down_payment_cal = (down_payment_type == 'dollars') ? down_payment : loan_amount * (down_payment / 100);
+      var amount_financed = loan_amount - down_payment_cal;
+      var interest_rate_cal = interest_rate / 100;
+      var month_interest_rate = interest_rate_cal / 12;
+
+      var month_payment = Math.round(Math.floor((amount_financed * month_interest_rate) / (1 - Math.pow((1 + month_interest_rate), (-1 * payments))) * 100) / 100);
+
+      jQuery('#loan_amt_text').html('$' + jQuery.currency(loan_amount, {c: 0}));
+      jQuery('#down_payment_text').html('$' + jQuery.currency(down_payment_cal, {c: 0}));
+      jQuery('#final_loan_amt_text').html('$' + jQuery.currency(amount_financed, {c: 0}));
+      jQuery('#month_price_text').html('$' + jQuery.currency(month_payment, {c: 0}));
+
+      jQuery('#calculator_link').attr('href', '/calculadora?loan_amt=' + loan_amount + '&down_payment=' + down_payment + '&down_type=' + down_payment_type + '&years=' + years + '&interest_rate=' + interest_rate);
+
+      return false;
+    });
+
+    jQuery('#load_calculator').trigger('submit.loanCalculator');
+
+
+  });
+</script>
+
+<?= $Section->end(); ?>

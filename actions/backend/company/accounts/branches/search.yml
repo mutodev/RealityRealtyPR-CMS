@@ -1,0 +1,6 @@
+source: Branch
+default: advanced
+fields:
+
+    name:
+        source: Branch.name

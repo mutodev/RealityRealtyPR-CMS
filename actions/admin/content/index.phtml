@@ -1,0 +1,13 @@
+<?php
+    $Header     = helper("header");
+    $Search     = helper("Search");
+?>
+
+<?= $Header->render( array(
+    "image"       => '/img/icon_content.png' ,
+    "title"       => t('Manage Content') ,
+)); ?>
+
+<?= $Search->render( ); ?>
+
+<?= $Table->render(); ?>

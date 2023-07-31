@@ -1,0 +1,40 @@
+source: FROM Lead LEFT JOIN Lead.Source LEFT JOIN Lead.Searches s LEFT JOIN s.Area LEFT JOIN s.Category ORDER BY Lead.created_at DESC
+columns:
+    name:
+        label: 'Name'
+        source: Lead.first_name
+        content: >
+                <strong>%{Lead.first_name} %{Lead.last_name}</strong>
+
+    contact:
+        source: Lead.phone
+        content: >
+            %{decorator: 'phone', Lead.phone}%{if: Lead.phone: '<br />'}
+            %{decorator: 'email', Lead.email}
+
+    alerts:
+        label: Looking For
+        source: Lead.notes
+        content: >
+            %{renderLooking:*}<br /><p>%{Lead.notes}</p>
+
+    source:
+        label: Source
+        source: Lead.Source.name
+        class: hidden-xs-down
+
+    created_at:
+        class: hidden-xs-down
+        label: Created
+        source: created_at
+        decorator: {name: 'LocalDateTime', format: 'short'}
+
+    actions:
+        type: Actions
+        label: ' '
+        width: 1px
+        actions:
+            edit:
+                icon: pencil
+                label: Edit
+                link:  '.edit?id=%{id}'

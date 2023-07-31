@@ -1,0 +1,46 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_URI} ^.*/blog/.*$
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /blog/
+
+## =========================================================================
+## Allow access to files in public without
+## specifying it in the path
+## http://example.org/public/myfile.txt == http://example.org/myfile.txt
+## you have to be careful as this can overshadow actions
+## =========================================================================
+RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -s [OR]
+RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -l [OR]
+RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -d
+RewriteRule ^(.+)$ /public%{REQUEST_URI} [L]
+
+## ========================================================================
+## Allow overwrite of yammon public files
+## ========================================================================
+RewriteCond %{REQUEST_URI} ^/yammon/public/.*$
+RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -s [OR]
+RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -l [OR]
+RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -d
+RewriteRule ^(.+)$ /public%{REQUEST_URI} [L]
+
+## ========================================================================
+## Compatibility with older versions of yammon
+## ========================================================================
+#RewriteRule ^yammon-public/(.*)$ /yammon/public/$1 [L]
+
+## ========================================================================
+## Allow access to folders named public
+## ========================================================================
+RewriteCond %{REQUEST_URI} ^.*/public/.*$
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.+)$ - [L]
+
+## ========================================================================
+## Route of everything to the entry script
+## ========================================================================
+RewriteRule .* index.php [L]
+

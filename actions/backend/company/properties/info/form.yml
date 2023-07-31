@@ -1,0 +1,103 @@
+class: form-bordered
+attributes:
+    role: form
+elements:
+
+    summary:
+        type: Summary
+
+    header_general:
+        type:  Header
+        label: General Information
+
+    year_built:
+        class:    form-control
+
+    exemption:
+        type: Select
+        class:    form-control
+        options:
+            1: Yes
+            0: No
+
+    exemption_comment:
+        class:    form-control
+        type:     Text
+        depends:
+            exemption: 1
+
+    header_details:
+        type:  Header
+        label: Details
+
+    header_financing:
+        type:  Header
+        label: Financing
+
+    financing_rural:
+        label: Rural
+        class:    form-control
+        type:          Select
+        options:
+            YES: Yes
+            NO: No
+
+    financing_fha:
+        class:    form-control
+        label: FHA
+        type:          Select
+        options:
+            YES: Yes
+            NO: No
+
+    financing_conventional:
+        class:    form-control
+        type:          Select
+        label: Conventional
+        options:
+            YES: Yes
+            NO: No
+
+    financing_vivienda:
+        class:    form-control
+        type:          Select
+        label: Vivienda
+        options:
+            YES: Yes
+            NO: No
+
+    financing_cash:
+        class:    form-control
+        label: Cash
+        type:          Select
+        options:
+            YES: Yes
+            NO: No
+
+    financing_loan_with_repairs:
+        class:    form-control
+        label: Loan with repairs
+        type:          Select
+        options:
+            YES: Yes
+            NO: No
+
+    financing_private:
+        class:    form-control
+        label: Private
+        type:          Select
+        options:
+            YES: Yes
+            NO: No
+
+    financing_assume_mortgage:
+        class:    form-control
+        type:          Select
+        label: Assume Mortgage
+        options:
+            YES: Yes
+            NO: No
+
+    buttons:
+        type:  Buttons
+        class: form-group

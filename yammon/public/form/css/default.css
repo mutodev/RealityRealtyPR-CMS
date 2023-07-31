@@ -1,0 +1,329 @@
+/* General Classes =========================== */
+.ym-form-clear{
+    clear: both;
+}
+
+/* Form ====================================== */
+.ym-form{
+    font-size: 1em;
+}
+
+/* Box ====================================== */
+.ym-form-box{
+
+}
+
+/* Box Border ================================ */    
+.ym-form-box-border{
+    border: 1px solid #efefef;
+}
+
+.ym-form-box-no-border{
+    border: 0;
+}
+
+/* Box Margin ================================ */    
+.ym-form-box-margin{
+    margin: 0 5px 5px 0;
+}
+
+.ym-form-box-no-margin{
+    margin: 0 5px 0px 0;
+}
+
+/* Box Padding =============================== */    
+.ym-form-box-padding > .ym-form-box-inner{
+    padding: 10px;
+}
+
+.ym-form-box-no-padding > .ym-form-box-inner{
+    padding: 0 0 0 0;
+}
+
+/* Box Active ====================== */
+.ym-form-box-active{
+    background: #FFFBEF url('/yammon/public/form/img/active_bg.png');        
+    _border:     1px solid #CA9A34;
+}
+
+
+
+/* Box Errors ======================== */
+.ym-form-box-error{
+    background: #FFF0F0 url('/yammon/public/form/img/error_bg.png');
+    _border:     1px solid #FFBFBF;     
+}
+
+/* Labels  =================================== */
+.ym-form-label{
+    font-weight: bold;
+}
+
+.ym-form-req-glyph{
+    font-weight: bold;
+    color:       red;
+}
+
+/* Description  ===================================== */    
+.ym-form-description{
+    display: block;
+}
+
+/* Description Inline =============================== */    
+.ym-form-description-inline{
+    padding:     3px 0;
+    font-size:   0.9em;
+}
+
+/* Description Boxed =============================== */    
+.ym-form-description-boxed{
+    font-size:   0.9em;
+    background:  #efefef;
+    border:      1px solid gray;
+    padding:     5px;
+}
+
+.ym-form-box-error .ym-form-description-boxed{
+    background: red;
+    border:     1px solid black;
+    color:      white;
+}
+
+/* Description Tooltip =========================== */ 
+.ym-form-description-tooltip{
+    display:      none;
+    position:     absolute;
+    font-weight:  normal;
+    max-width:    300px;
+    min-width:    125px;
+    color:        #3F3F3F;
+    background:   #FFFFCB;
+    border:       1px solid #CA9A34;
+    padding:      10px;
+    margin-left:  21px;
+    
+    -moz-box-shadow:    3px 3px 3px #8F8F8F;
+    box-shadow:         3px 3px 3px #8F8F8F;
+    
+    filter:          alpha(opacity=80);
+    -ms-filter:     "alpha(opacity=80)";
+    -khtml-opacity: 0.8;
+    -moz-opacity:   0.8;
+    opacity:        0.8;   
+    
+}
+
+.ym-form-description-tooltip-stem-border ,
+.ym-form-description-tooltip-stem{
+    position:           absolute;
+    top:                8px;
+    display:            block;
+    width:              0px;
+    height:             0px;
+    border-width:       10px;
+    border-style:       solid;
+    border-color:       transparent;   
+}
+    
+.ym-form-description-tooltip-stem-border{
+    left:               -21px;
+    border-right-color: #CA9A34;
+}            
+    
+.ym-form-description-tooltip-stem{
+    left:               -20px;
+    border-right-color: #FFFFCB;
+}
+
+.ym-form-box-active .ym-form-description-tooltip{
+    display:     inline-block;    
+}
+
+/*   Uncomment this to show description on hover 
+.ym-form-box:hover  .ym-form-description-tooltip{    
+    display:     inline-block;
+}
+*/
+
+.ym-form-box-error .ym-form-description-tooltip{
+    background: red;
+    border:     1px solid black;
+    color:      white;
+}
+
+.ym-form-box-error .ym-form-description-tooltip-stem-border{
+    border-right-color: black;
+}
+
+.ym-form-box-error .ym-form-description-tooltip-stem{
+    border-right-color: red;
+}
+
+/* Errors ==================================== */
+.ym-form-error{
+    font-weight:  bold;
+    font-size:    1.0em;
+    color:        red;
+    background:   transparent url('/yammon/public/form/img/error.png') top left no-repeat;
+    padding:      3px 0px 3px 20px;
+}
+
+/* Example  =================================== */    
+.ym-form-example{
+    font-size:  0.9em;
+    font-style: italic;
+    color:      #5F5F5F;
+    padding:    3px 0;
+}
+
+/* Header  ==================================== */
+.ym-form-header{
+    padding:       5px 10px;
+    margin:        10px 0;
+    border-bottom: 1px dotted #C0C0C0;
+    background:    #efefef;
+}
+
+.ym-form-header img{
+    float: left;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.ym-form-header h3{
+    margin:    0;
+    padding:   0;
+    font-size: 1.3em;
+    color:     #696969;
+}
+
+.ym-form-header p{
+    font-size: 14px;
+    color: #A9A9A9;    
+}
+   
+/* Summary  =================================== */
+.ym-form-summary{
+    font-weight:   bold;
+    border:        1px solid #EF5C04;
+    padding:       15px 20px 20px 30px;
+    background:    #FFF0F0 url('/yammon/public/form/img/error_bg.png');
+    color:         black;
+    margin-bottom: 10px;
+}
+
+.ym-form-summary ul{
+    font-weight:      normal;
+    margin:          5px 10px;
+    padding:         0;
+    list-style-type: none;
+}
+
+.ym-form-summary li{
+     margin:          0;
+     padding:         2px 3px;    
+}
+
+.ym-form-summary li a{
+    color:      red;
+    font-weight: bold;
+}
+   
+/* Text  ===================================== */    
+.ym-form-text ,
+.ym-form-textarea{
+
+    margin:                0;
+    padding:               3px 0;
+    
+    color:                 #3F3F3F;
+    background:            #FFFFFF;
+
+    border-color:          #7C7C7C #C3C3C3 #DDDDDD;
+    border-style:          solid;
+    border-width:          1px;
+    border-radius:         3px;
+    -moz-border-radius:    3px;
+    -webkit-border-radius: 3px;
+    
+}
+
+/* TextArea  ================================= */    
+.ym-form textarea{
+    padding:      0;
+    margin:       0;        
+    width:        400px;
+    height:       8em;
+}
+
+/* Placeholders  ================================= */
+::-webkit-input-placeholder {
+    color:    #999;
+}
+:-moz-placeholder {
+    color:    #999;
+}
+
+/* Select  =================================== */    
+
+
+/* Checkboxes /Radios  ================================ */    
+.ym-form-checkboxes-container ,
+.ym-form-radios-container{
+    display:     block;
+    margin:      0 0 4px 0;
+    white-space: nowrap;
+}
+
+.ym-form-checkboxes-container-inline ,    
+.ym-form-radios-container-inline{
+    display: inline;
+    margin:  0 5px 4px 0;
+}
+
+    .ym-form-radios-checkboxes label ,  
+    .ym-form-radios-container label{
+        font-weight: normal;
+        display:     inline;
+    }
+        
+/* Box 1 Column ============================== */
+.ym-form-box-1column .ym-form-label{
+    display: block;
+    margin-bottom: 4px;
+}
+
+/* Box 2 Column ============================== */    
+.ym-form-box-2column .ym-form-box-column1{
+    float:        left;
+    width:        115px;
+    margin-right: 10px;
+}    
+
+.ym-form-box-2column .ym-form-box-column2{
+    float:         left;
+}
+
+.ym-form-box-2column .ym-form-box-column2-inner{
+
+}
+    
+/* Box 3 Column ============================== */
+.ym-form-box-3column .ym-form-box-column1{
+    float:        left;
+    width:        115px;
+    margin-right: 10px;
+}    
+
+.ym-form-box-3column .ym-form-box-column2{
+    float:         left;        
+}
+    
+.ym-form-box-3column .ym-form-box-column2-inner{
+      
+}
+
+.ym-form-box-3column .ym-form-box-column3{
+    float:       left; 
+    width:       150px;
+}

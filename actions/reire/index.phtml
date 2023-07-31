@@ -1,0 +1,95 @@
+<div class="container grey padding-bottom justified">
+
+    <div class="row margin-top">
+        <div class="col-xs-12">
+            <h3 class="grey">REIRE</h3>
+        </div>
+    </div>
+
+    <div class="row padding-bottom margin-top">
+
+        <div class="col-xs-12 col-sm-12">
+
+            <p><?= t('translation253'); ?></p>
+
+            <p><?= t('translation254'); ?></p>
+
+            <p><?= t('translation255'); ?></p>
+
+            <p>
+                <ul>
+                    <li>
+                        <?= t('translation256'); ?>
+                    </li>
+                    <li>
+                        <?= t('translation257'); ?>
+                    </li>
+                </ul>
+            </p>
+        </div>
+        <div class="col-xs-12 col-sm-12">
+
+            <span><strong><?= t('translation202'); ?></strong></span>
+
+            <p>
+                <?= t('translation258'); ?>
+            </p>
+
+            <span><strong><?= t('translation204'); ?></strong></span>
+
+            <p>
+                <?= t('translation259'); ?>
+            </p>
+
+            <br />
+
+            <div class="hidden-xs">
+                <div class="news-header">
+                    <h3 class="nopadding"><span><?= t('translation16'); ?></span></h3>
+                </div>
+
+                <br />
+
+                <div class="container-fluid">
+                    <?php foreach($feeds as $key => $feed): ?>
+                        <div class="col-xs-12 col-sm-6">
+                            <div class="container-fluid nopadding">
+                                <div class="col-xs-12 col-sm-4 nopadding">
+                                    <?php if ($enclosure = $feed->get_enclosure()): ?>
+                                        <a href="<?php echo $feed->get_permalink(); ?>">
+                                            <img src="<?php echo $enclosure->get_thumbnail(); ?>" class="img-responsive" />
+                                        </a>
+                                    <?php endif; ?>
+                                </div>
+                                <div class="col-xs-12 col-sm-8 nopadding">
+                                    <h3 class="nopadding">
+                                        <a href="<?php echo $feed->get_permalink(); ?>" class="title"><?php echo trim( mb_substr( $feed->get_title(), 0, 40) ); ?>...
+                                        </a>
+                                    </h3>
+
+                                    <br />
+
+                                    <p>
+                                        <?php echo trim( mb_substr($feed->get_description(), 0, ($enclosure) ? 100 : 200 ) ); ?>...
+                                    </p>
+
+                                    <p>
+                                        <a href="<?php echo $feed->get_permalink(); ?>">Leer más</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+
+            <br />
+
+            <p>
+                <?= t('translation260'); ?>
+            </p>
+
+            <?= $this->partial('card', array('gerente' => $gerente)); ?>
+        </div>
+    </div>
+</div>

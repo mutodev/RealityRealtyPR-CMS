@@ -1,0 +1,98 @@
+ <div class="container-fluid contentpanel-nopadding">
+    <div class="row">
+        <div class="col-xs-12">
+
+            <?php if(Auth::hasPermission('organization:manage')): ?>
+            <h4><?=t("Organization Management");?></h4>
+            <?php endif ?>
+
+            <?php if(Auth::hasPermission('organization:manage')): ?>
+            <a class='btn btn-default' href='<?= url('.edit') ?>'>
+                <i class="fa fa-pencil-square-o"></i>
+                <?= t("Update Information"); ?>
+            </a>
+            <?php endif ?>
+
+            <?php if(Auth::hasPermission('organization:billing.access')): ?>
+            <a class='btn btn-default' href='<?= url('.billing.edit') ?>'>
+                <i class="fa fa-money"></i>
+                <?= t("Billing"); ?>
+            </a>
+            <?php endif ?>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-xs-12">
+            <h4><?=t("General Information");?></h4>
+
+            <table class='table'>
+                <tr>
+                    <th width="15%">
+                        <?= t('Name'); ?>:
+                    </th>
+                    <td>
+                        <?= $Organization->name; ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th width="15%">
+                        <?= t('Subscription plan'); ?>:
+                    </th>
+                    <td>
+                        <?= $Organization->is_active ? $Organization->Subscription->Plan->name : t('None'); ?>
+                    </td>
+                </tr>
+                <tr>
+                    <th width="15%">
+                        <?= t('Time zone'); ?>:
+                    </th>
+                    <td>
+                        <?= $Organization->timezone; ?>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<?php
+/*
+<br />
+
+<h4><?=t("Plans");?></h4>
+<div style="max-width: 1000px;">
+    <form id="changePlan" action="<?= url('.billing.plan') ?>" method="post">
+    <input type="hidden" name="id" value="" />
+    <?= $this->partial('plans', array('Subscription' => $Organization->Subscription, 'country' => 'PR')) ?>
+    </form>
+</div>
+*/
+?>
+
+<?php ob_start() ?>
+<script type="text/javascript">
+
+    jQuery(document).ready(function() {
+
+        <?php if ($Organization->Subscription): ?>
+        jQuery('#changePlan').submit(function(e) {
+
+            e.preventDefault();
+
+            var currentForm = this;
+
+            bootbox.confirm('<?= t("Are you want to change your subscription plan?") ?>', function(result) {
+                if (result) {
+                    currentForm.submit();
+                }
+            });
+        });
+        <?php endif ?>
+
+        jQuery('#changePlan button').click(function(e) {
+            jQuery('#changePlan input[name=id]').val( jQuery(this).val() );
+        });
+    });
+</script>
+<?php helper('Javascript')->addInline(ob_get_clean(), false);

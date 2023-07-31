@@ -1,0 +1,29 @@
+source: FROM Account LEFT JOIN Account.Roles r WHERE r.id = 'system.admin'
+columns:
+    name:
+        label: Name
+        source: first_name
+        content: %{first_name} %{last_name}
+
+    email:
+        source: email
+        decorator: email
+
+    phone:
+        source: phone
+        decorator: phone
+
+    active:
+        label: Active
+        source: active
+        decorator: boolean
+
+    actions:
+        label: ''
+        width: 1px
+        type: Actions
+        actions:
+            edit:
+                icon: pencil
+                label: Edit
+                link:  .edit?id=%{id}

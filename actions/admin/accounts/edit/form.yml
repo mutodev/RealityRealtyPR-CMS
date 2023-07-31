@@ -1,0 +1,69 @@
+name: Account
+elements:
+    
+    summary:
+        type: Summary
+    
+    header_general:
+        type:  Header
+        label: General Information
+    
+    first_name:
+        type:     Text
+        required: true
+        
+    last_name:
+        type:     Text
+        required: true
+            
+    header_account:
+        type:  Header
+        label: Account Information
+        
+    username:
+        type:        Text
+        label:       Username
+        description: The username to log in into the system
+        validations: 
+            Unique:
+                message:   This useraname is already taken
+                source:    Account.username
+                source_id: Account.id
+                id:        <?= get('id'); ?>
+            
+    password:
+        type:        Password
+        label:       Password
+        description: The password to log in into the system, please use a strong password
+        validations: 
+            Password:
+                strong: true
+        
+    password_confirmation:
+        type:        Password
+        label:       Password Confirmation
+        description: Retype the password for confirmation
+        validations: 
+            Equals:
+                element: password
+                message: Password and confirmation are not equal
+
+    active:
+        type:     Radios
+        inline:   true
+        options:
+                  1 : 'Active'
+                  0 : 'Inactive'
+        required: true
+
+    header_contact:
+        type: Header
+        label: Contact Information
+        
+    email:
+        type:  Email
+        label: Email
+        required: true
+       
+    buttons:
+        type: Buttons

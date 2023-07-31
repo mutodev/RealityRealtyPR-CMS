@@ -1,0 +1,6 @@
+elements:
+    email:
+        element: email
+    button:
+        element: button
+        label:   Recover Password

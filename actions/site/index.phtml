@@ -1,0 +1,15 @@
+<?php
+
+Configure::write("seo.title"       , $content->title );
+Configure::write("seo.description" , $content->title );
+
+?>
+
+<!-- MAIN CONTENT -->
+    <div id="content" class="below editable-content">
+
+      <h1><?= $content->title ?></h1>
+
+      <?= $content->text ?>
+
+    </div>

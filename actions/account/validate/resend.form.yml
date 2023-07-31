@@ -1,0 +1,14 @@
+elements:
+    email:
+        type:     Email
+        required: true
+        box_renderer: 
+            type: 1Column                            
+            border: false
+        label:    'Your email'
+    
+    resend:
+        type:     Button
+        class:    ''
+        image:    /img/icons/email.png        
+        label:    Resend Email

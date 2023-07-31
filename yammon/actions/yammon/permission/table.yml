@@ -1,0 +1,21 @@
+source: FROM Permission
+columns:
+    id:
+        source: id
+    group:    
+        source: group
+    name:
+        source: name
+    description:
+        source: description
+    resource:
+        source: resource
+    actions:
+        label: Actions
+        type:  actions
+        actions:
+            edit:
+                link:    .edit?=%{id}
+            delete:
+                link:    .delete?=%{id}                
+                confirm: true

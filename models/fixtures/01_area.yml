@@ -1,0 +1,2580 @@
+Area:
+  Area_1:
+    name_es: Adjuntas
+    name_en: Adjuntas
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Centro'
+    region_en: 'Center Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Adjuntas
+    city_en: Adjuntas
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_94
+    latitude: '18.18616200000000'
+    longitude: '-66.74554600000000'
+    id: '1'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '163'
+    rgt: '164'
+    level: '3'
+  Area_2:
+    name_es: Aguada
+    name_en: Aguada
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Oeste'
+    region_en: 'West Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Aguada
+    city_en: Aguada
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_98
+    latitude: '18.35779500000000'
+    longitude: '-67.17508600000000'
+    id: '2'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '127'
+    rgt: '128'
+    level: '3'
+  Area_3:
+    name_es: Aguadilla
+    name_en: Aguadilla
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Oeste'
+    region_en: 'West Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Aguadilla
+    city_en: Aguadilla
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_98
+    latitude: '18.46256200000000'
+    longitude: '-67.11977700000000'
+    id: '3'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '129'
+    rgt: '130'
+    level: '3'
+  Area_4:
+    name_es: 'Aguas Buenas'
+    name_en: 'Aguas Buenas'
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Centro'
+    region_en: 'Center Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: 'Aguas Buenas'
+    city_en: 'Aguas Buenas'
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_94
+    latitude: '18.25427600000000'
+    longitude: '-66.12728600000000'
+    id: '4'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '165'
+    rgt: '166'
+    level: '3'
+  Area_5:
+    name_es: Aibonito
+    name_en: Aibonito
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Centro'
+    region_en: 'Center Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Aibonito
+    city_en: Aibonito
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_94
+    latitude: '18.12832100000000'
+    longitude: '-66.26146800000000'
+    id: '5'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '167'
+    rgt: '168'
+    level: '3'
+  Area_6:
+    name_es: Arecibo
+    name_en: Arecibo
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Norte'
+    region_en: 'North Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Arecibo
+    city_en: Arecibo
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_97
+    latitude: '18.44363700000000'
+    longitude: '-66.66884000000000'
+    id: '6'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '45'
+    rgt: '46'
+    level: '3'
+  Area_7:
+    name_es: Arroyo
+    name_en: Arroyo
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Sur'
+    region_en: 'South Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Arroyo
+    city_en: Arroyo
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_99
+    latitude: '17.99738000000000'
+    longitude: '-66.05831300000000'
+    id: '7'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '67'
+    rgt: '68'
+    level: '3'
+  Area_8:
+    name_es: Añasco
+    name_en: Añasco
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Oeste'
+    region_en: 'West Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Anasco
+    city_en: Anasco
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_98
+    latitude: '18.28343000000000'
+    longitude: '-67.12675000000000'
+    id: '8'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '131'
+    rgt: '132'
+    level: '3'
+  Area_9:
+    name_es: Barceloneta
+    name_en: Barceloneta
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Norte'
+    region_en: 'North Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Barceloneta
+    city_en: Barceloneta
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_97
+    latitude: '18.44807400000000'
+    longitude: '-66.56166900000000'
+    id: '9'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '47'
+    rgt: '48'
+    level: '3'
+  Area_10:
+    name_es: Barranquitas
+    name_en: Barranquitas
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Centro'
+    region_en: 'Center Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Barranquitas
+    city_en: Barranquitas
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_94
+    latitude: '18.19349300000000'
+    longitude: '-66.30451000000000'
+    id: '10'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '169'
+    rgt: '170'
+    level: '3'
+  Area_11:
+    name_es: Bayamón
+    name_en: Bayamón
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Metro'
+    region_en: 'Metropolitan Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Bayamon
+    city_en: Bayamon
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_96
+    latitude: '18.38678100000000'
+    longitude: '-66.17076700000000'
+    id: '11'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '3'
+    rgt: '4'
+    level: '3'
+  Area_12:
+    name_es: 'Cabo Rojo'
+    name_en: 'Cabo Rojo'
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Oeste'
+    region_en: 'West Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: 'Cabo Rojo'
+    city_en: 'Cabo Rojo'
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_98
+    latitude: '18.03637100000000'
+    longitude: '-67.16113200000000'
+    id: '12'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '133'
+    rgt: '134'
+    level: '3'
+  Area_13:
+    name_es: Caguas
+    name_en: Caguas
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Metro'
+    region_en: 'Metropolitan Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Caguas
+    city_en: Caguas
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_96
+    latitude: '18.22816800000000'
+    longitude: '-66.04662200000000'
+    id: '13'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '5'
+    rgt: '6'
+    level: '3'
+  Area_14:
+    name_es: Camuy
+    name_en: Camuy
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Norte'
+    region_en: 'North Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Camuy
+    city_en: Camuy
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_97
+    latitude: '18.41469800000000'
+    longitude: '-66.86422200000000'
+    id: '14'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '49'
+    rgt: '50'
+    level: '3'
+  Area_15:
+    name_es: Canovanas
+    name_en: Canovanas
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Este'
+    region_en: 'East Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Canovanas
+    city_en: Canovanas
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_95
+    latitude: '18.32211400000000'
+    longitude: '-65.88390300000000'
+    id: '15'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '91'
+    rgt: '92'
+    level: '3'
+  Area_16:
+    name_es: Carolina
+    name_en: Carolina
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Metro'
+    region_en: 'Metropolitan Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Carolina
+    city_en: Carolina
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_96
+    latitude: '18.39751300000000'
+    longitude: '-65.95716100000000'
+    id: '16'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '7'
+    rgt: '10'
+    level: '3'
+  Area_17:
+    name_es: Cataño
+    name_en: Cataño
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Metro'
+    region_en: 'Metropolitan Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Catano
+    city_en: Catano
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_96
+    latitude: '18.43972600000000'
+    longitude: '-66.13869800000000'
+    id: '17'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '11'
+    rgt: '12'
+    level: '3'
+  Area_18:
+    name_es: Cayey
+    name_en: Cayey
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Centro'
+    region_en: 'Center Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Cayey
+    city_en: Cayey
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_94
+    latitude: '18.10401000000000'
+    longitude: '-66.15218100000000'
+    id: '18'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '171'
+    rgt: '172'
+    level: '3'
+  Area_19:
+    name_es: Ceiba
+    name_en: Ceiba
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Este'
+    region_en: 'East Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Ceiba
+    city_en: Ceiba
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_95
+    latitude: '18.25223100000000'
+    longitude: '-65.68031600000000'
+    id: '19'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '93'
+    rgt: '94'
+    level: '3'
+  Area_20:
+    name_es: Ciales
+    name_en: Ciales
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Centro'
+    region_en: 'Center Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Ciales
+    city_en: Ciales
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_94
+    latitude: '18.28745900000000'
+    longitude: '-66.51145700000000'
+    id: '20'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '173'
+    rgt: '174'
+    level: '3'
+  Area_21:
+    name_es: Cidra
+    name_en: Cidra
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Centro'
+    region_en: 'Center Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Cidra
+    city_en: Cidra
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_94
+    latitude: '18.17390200000000'
+    longitude: '-66.15999400000000'
+    id: '21'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '175'
+    rgt: '176'
+    level: '3'
+  Area_22:
+    name_es: Coamo
+    name_en: Coamo
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Sur'
+    region_en: 'South Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Coamo
+    city_en: Coamo
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_99
+    latitude: '18.08327900000000'
+    longitude: '-66.36174200000000'
+    id: '22'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '69'
+    rgt: '70'
+    level: '3'
+  Area_23:
+    name_es: Comerio
+    name_en: Comerio
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Centro'
+    region_en: 'Center Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Comerio
+    city_en: Comerio
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_94
+    latitude: '18.22286100000000'
+    longitude: '-66.22140000000000'
+    id: '23'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '177'
+    rgt: '178'
+    level: '3'
+  Area_24:
+    name_es: Corozal
+    name_en: Corozal
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Centro'
+    region_en: 'Center Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Corozal
+    city_en: Corozal
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_94
+    latitude: '18.29750500000000'
+    longitude: '-66.33756400000000'
+    id: '24'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '179'
+    rgt: '180'
+    level: '3'
+  Area_25:
+    name_es: Culebra
+    name_en: Culebra
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Este'
+    region_en: 'East Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Culebra
+    city_en: Culebra
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_95
+    latitude: '18.31100000000000'
+    longitude: '-65.30415300000000'
+    id: '25'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '95'
+    rgt: '96'
+    level: '3'
+  Area_26:
+    name_es: Dorado
+    name_en: Dorado
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Norte'
+    region_en: 'North Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Dorado
+    city_en: Dorado
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_97
+    latitude: '18.43383700000000'
+    longitude: '-66.28358900000000'
+    id: '26'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '51'
+    rgt: '52'
+    level: '3'
+  Area_27:
+    name_es: Fajardo
+    name_en: Fajardo
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Este'
+    region_en: 'East Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Fajardo
+    city_en: Fajardo
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_95
+    latitude: '18.31958700000000'
+    longitude: '-65.66810700000000'
+    id: '27'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '97'
+    rgt: '98'
+    level: '3'
+  Area_28:
+    name_es: Florida
+    name_en: Florida
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Norte'
+    region_en: 'North Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Florida
+    city_en: Florida
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_97
+    latitude: '18.36971000000000'
+    longitude: '-66.55865300000000'
+    id: '28'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '53'
+    rgt: '54'
+    level: '3'
+  Area_29:
+    name_es: Guanica
+    name_en: Guanica
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Oeste'
+    region_en: 'West Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Guanica
+    city_en: Guanica
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_98
+    latitude: '17.98621900000000'
+    longitude: '-66.91746000000000'
+    id: '29'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '135'
+    rgt: '136'
+    level: '3'
+  Area_30:
+    name_es: Guayama
+    name_en: Guayama
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Sur'
+    region_en: 'South Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Guayama
+    city_en: Guayama
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_99
+    latitude: '18.01405500000000'
+    longitude: '-66.13031600000000'
+    id: '30'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '71'
+    rgt: '72'
+    level: '3'
+  Area_31:
+    name_es: Guayanilla
+    name_en: Guayanilla
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Sur'
+    region_en: 'South Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Guayanilla
+    city_en: Guayanilla
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_99
+    latitude: '18.04047500000000'
+    longitude: '-66.79268900000000'
+    id: '31'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '73'
+    rgt: '74'
+    level: '3'
+  Area_32:
+    name_es: Guaynabo
+    name_en: Guaynabo
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Metro'
+    region_en: 'Metropolitan Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Guaynabo
+    city_en: Guaynabo
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_96
+    latitude: '18.34167100000000'
+    longitude: '-66.11488200000000'
+    id: '32'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '13'
+    rgt: '14'
+    level: '3'
+  Area_33:
+    name_es: Gurabo
+    name_en: Gurabo
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Este'
+    region_en: 'East Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Gurabo
+    city_en: Gurabo
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_95
+    latitude: '18.26853700000000'
+    longitude: '-65.97885200000000'
+    id: '33'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '99'
+    rgt: '100'
+    level: '3'
+  Area_34:
+    name_es: Hatillo
+    name_en: Hatillo
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Norte'
+    region_en: 'North Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Hatillo
+    city_en: Hatillo
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_97
+    latitude: '18.41033300000000'
+    longitude: '-66.78813400000000'
+    id: '34'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '55'
+    rgt: '56'
+    level: '3'
+  Area_35:
+    name_es: Hormigueros
+    name_en: Hormigueros
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Oeste'
+    region_en: 'West Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Hormigueros
+    city_en: Hormigueros
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_98
+    latitude: '18.13331900000000'
+    longitude: '-67.11304700000000'
+    id: '35'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '137'
+    rgt: '138'
+    level: '3'
+  Area_36:
+    name_es: Humacao
+    name_en: Humacao
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Este'
+    region_en: 'East Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Humacao
+    city_en: Humacao
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_95
+    latitude: '18.14451100000000'
+    longitude: '-65.81132600000000'
+    id: '36'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '101'
+    rgt: '104'
+    level: '3'
+  Area_37:
+    name_es: Isabela
+    name_en: Isabela
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Oeste'
+    region_en: 'West Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Isabela
+    city_en: Isabela
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_98
+    latitude: '18.44624300000000'
+    longitude: '-67.00201400000000'
+    id: '37'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '139'
+    rgt: '140'
+    level: '3'
+  Area_38:
+    name_es: Jayuya
+    name_en: Jayuya
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Centro'
+    region_en: 'Center Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Jayuya
+    city_en: Jayuya
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_94
+    latitude: '18.20629200000000'
+    longitude: '-66.58490500000000'
+    id: '38'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '181'
+    rgt: '182'
+    level: '3'
+  Area_39:
+    name_es: 'Juana Diaz'
+    name_en: 'Juana Diaz'
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Sur'
+    region_en: 'South Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: 'Juana Diaz'
+    city_en: 'Juana Diaz'
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_99
+    latitude: '18.04902500000000'
+    longitude: '-66.49675500000000'
+    id: '39'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '75'
+    rgt: '76'
+    level: '3'
+  Area_40:
+    name_es: Juncos
+    name_en: Juncos
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Este'
+    region_en: 'East Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Juncos
+    city_en: Juncos
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_95
+    latitude: '18.22271500000000'
+    longitude: '-65.90832900000000'
+    id: '40'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '105'
+    rgt: '106'
+    level: '3'
+  Area_41:
+    name_es: Lajas
+    name_en: Lajas
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Oeste'
+    region_en: 'West Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Lajas
+    city_en: Lajas
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_98
+    latitude: '18.00497200000000'
+    longitude: '-67.03727400000000'
+    id: '41'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '141'
+    rgt: '142'
+    level: '3'
+  Area_42:
+    name_es: Lares
+    name_en: Lares
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Centro'
+    region_en: 'Center Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Lares
+    city_en: Lares
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_94
+    latitude: '18.27817400000000'
+    longitude: '-66.86434400000000'
+    id: '42'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '183'
+    rgt: '184'
+    level: '3'
+  Area_43:
+    name_es: 'Las Marias'
+    name_en: 'Las Marias'
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Oeste'
+    region_en: 'West Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: 'Las Marias'
+    city_en: 'Las Marias'
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_98
+    latitude: '18.23903600000000'
+    longitude: '-66.97537300000000'
+    id: '43'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '143'
+    rgt: '144'
+    level: '3'
+  Area_44:
+    name_es: 'Las Piedras'
+    name_en: 'Las Piedras'
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Este'
+    region_en: 'East Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: 'Las Piedras'
+    city_en: 'Las Piedras'
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_95
+    latitude: '18.18695300000000'
+    longitude: '-65.86717200000000'
+    id: '44'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '107'
+    rgt: '108'
+    level: '3'
+  Area_45:
+    name_es: Loiza
+    name_en: Loiza
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Este'
+    region_en: 'East Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Loiza
+    city_en: Loiza
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_95
+    latitude: '18.41196400000000'
+    longitude: '-65.90277400000000'
+    id: '45'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '109'
+    rgt: '110'
+    level: '3'
+  Area_46:
+    name_es: Luquillo
+    name_en: Luquillo
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Este'
+    region_en: 'East Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Luquillo
+    city_en: Luquillo
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_95
+    latitude: '18.34275400000000'
+    longitude: '-65.72401000000000'
+    id: '46'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '111'
+    rgt: '112'
+    level: '3'
+  Area_47:
+    name_es: Manati
+    name_en: Manati
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Norte'
+    region_en: 'North Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Manati
+    city_en: Manati
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_97
+    latitude: '18.41943700000000'
+    longitude: '-66.48675400000000'
+    id: '47'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '57'
+    rgt: '58'
+    level: '3'
+  Area_48:
+    name_es: Maricao
+    name_en: Maricao
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Oeste'
+    region_en: 'West Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Maricao
+    city_en: Maricao
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_98
+    latitude: '18.15463800000000'
+    longitude: '-66.94755100000000'
+    id: '48'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '145'
+    rgt: '146'
+    level: '3'
+  Area_49:
+    name_es: Maunabo
+    name_en: Maunabo
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Este'
+    region_en: 'East Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Maunabo
+    city_en: Maunabo
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_95
+    latitude: '18.01608500000000'
+    longitude: '-65.92099800000000'
+    id: '49'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '113'
+    rgt: '114'
+    level: '3'
+  Area_50:
+    name_es: Mayagüez
+    name_en: Mayagüez
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Oeste'
+    region_en: 'West Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Mayaguez
+    city_en: Mayaguez
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_98
+    latitude: '18.20667800000000'
+    longitude: '-67.11280300000000'
+    id: '50'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '147'
+    rgt: '148'
+    level: '3'
+  Area_51:
+    name_es: Moca
+    name_en: Moca
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Oeste'
+    region_en: 'West Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Moca
+    city_en: Moca
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_98
+    latitude: '18.38567200000000'
+    longitude: '-67.08595400000000'
+    id: '51'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '149'
+    rgt: '150'
+    level: '3'
+  Area_52:
+    name_es: Morovis
+    name_en: Morovis
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Centro'
+    region_en: 'Center Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Morovis
+    city_en: Morovis
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_94
+    latitude: '18.31595300000000'
+    longitude: '-66.41556900000000'
+    id: '52'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '185'
+    rgt: '186'
+    level: '3'
+  Area_53:
+    name_es: Naguabo
+    name_en: Naguabo
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Este'
+    region_en: 'East Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Naguabo
+    city_en: Naguabo
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_95
+    latitude: '18.22789800000000'
+    longitude: '-65.75990200000000'
+    id: '53'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '115'
+    rgt: '116'
+    level: '3'
+  Area_54:
+    name_es: Naranjito
+    name_en: Naranjito
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Centro'
+    region_en: 'Center Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Naranjito
+    city_en: Naranjito
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_94
+    latitude: '18.29998800000000'
+    longitude: '-66.25355500000000'
+    id: '54'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '187'
+    rgt: '188'
+    level: '3'
+  Area_55:
+    name_es: Orocovis
+    name_en: Orocovis
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Centro'
+    region_en: 'Center Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Orocovis
+    city_en: Orocovis
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_94
+    latitude: '18.20648000000000'
+    longitude: '-66.43723000000000'
+    id: '55'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '189'
+    rgt: '190'
+    level: '3'
+  Area_56:
+    name_es: Patillas
+    name_en: Patillas
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Sur'
+    region_en: 'South Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Patillas
+    city_en: Patillas
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_99
+    latitude: '18.01909500000000'
+    longitude: '-66.00226800000000'
+    id: '56'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '77'
+    rgt: '78'
+    level: '3'
+  Area_57:
+    name_es: Peñuelas
+    name_en: Peñuelas
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Sur'
+    region_en: 'South Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Penuelas
+    city_en: Penuelas
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_99
+    latitude: '18.06288300000000'
+    longitude: '-66.72169700000000'
+    id: '57'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '79'
+    rgt: '80'
+    level: '3'
+  Area_58:
+    name_es: Ponce
+    name_en: Ponce
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Sur'
+    region_en: 'South Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Ponce
+    city_en: Ponce
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_99
+    latitude: '18.06964500000000'
+    longitude: '-66.62014800000000'
+    id: '58'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '81'
+    rgt: '82'
+    level: '3'
+  Area_59:
+    name_es: Quebradillas
+    name_en: Quebradillas
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Oeste'
+    region_en: 'West Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Quebradillas
+    city_en: Quebradillas
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_98
+    latitude: '18.43685100000000'
+    longitude: '-66.92254600000000'
+    id: '59'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '151'
+    rgt: '152'
+    level: '3'
+  Area_60:
+    name_es: Rincón
+    name_en: Rincón
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Oeste'
+    region_en: 'West Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Rincon
+    city_en: Rincon
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_98
+    latitude: '18.33020800000000'
+    longitude: '-67.23049200000000'
+    id: '60'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '153'
+    rgt: '154'
+    level: '3'
+  Area_61:
+    name_es: 'Rio Grande'
+    name_en: 'Rio Grande'
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Este'
+    region_en: 'East Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: 'Rio Grande'
+    city_en: 'Rio Grande'
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_95
+    latitude: '18.34821400000000'
+    longitude: '-65.82571000000000'
+    id: '61'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '117'
+    rgt: '118'
+    level: '3'
+  Area_62:
+    name_es: 'Sabana Grande'
+    name_en: 'Sabana Grande'
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Oeste'
+    region_en: 'West Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: 'Sabana Grande'
+    city_en: 'Sabana Grande'
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_98
+    latitude: '18.08060600000000'
+    longitude: '-66.94061100000000'
+    id: '62'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '155'
+    rgt: '156'
+    level: '3'
+  Area_63:
+    name_es: Salinas
+    name_en: Salinas
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Sur'
+    region_en: 'South Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Salinas
+    city_en: Salinas
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_99
+    latitude: '18.00425900000000'
+    longitude: '-66.26008700000000'
+    id: '63'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '83'
+    rgt: '84'
+    level: '3'
+  Area_64:
+    name_es: 'San German'
+    name_en: 'San German'
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Oeste'
+    region_en: 'West Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: 'San German'
+    city_en: 'San German'
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_98
+    latitude: '18.10586000000000'
+    longitude: '-67.04147000000000'
+    id: '64'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '157'
+    rgt: '158'
+    level: '3'
+  Area_65:
+    name_es: 'San Juan'
+    name_en: 'San Juan'
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Metro'
+    region_en: 'Metropolitan Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: 'San Juan'
+    city_en: 'San Juan'
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_96
+    latitude: '18.44748200000000'
+    longitude: '-66.06596600000000'
+    display: true
+    id: '65'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '15'
+    rgt: '36'
+    level: '3'
+  Area_66:
+    name_es: 'San Lorenzo'
+    name_en: 'San Lorenzo'
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Este'
+    region_en: 'East Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: 'San Lorenzo'
+    city_en: 'San Lorenzo'
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_95
+    latitude: '18.14906200000000'
+    longitude: '-65.96902300000000'
+    id: '66'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '119'
+    rgt: '120'
+    level: '3'
+  Area_67:
+    name_es: 'San Sebastian'
+    name_en: 'San Sebastian'
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Oeste'
+    region_en: 'West Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: 'San Sebastian'
+    city_en: 'San Sebastian'
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_98
+    latitude: '18.33050700000000'
+    longitude: '-66.97111400000000'
+    id: '67'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '159'
+    rgt: '160'
+    level: '3'
+  Area_68:
+    name_es: 'Santa Isabel'
+    name_en: 'Santa Isabel'
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Sur'
+    region_en: 'South Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: 'Santa Isabel'
+    city_en: 'Santa Isabel'
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_99
+    latitude: '17.98952000000000'
+    longitude: '-66.38905100000000'
+    id: '68'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '85'
+    rgt: '86'
+    level: '3'
+  Area_69:
+    name_es: 'Toa Alta'
+    name_en: 'Toa Alta'
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Norte'
+    region_en: 'North Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: 'Toa Alta'
+    city_en: 'Toa Alta'
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_97
+    latitude: '18.36139600000000'
+    longitude: '-66.24948000000000'
+    id: '69'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '59'
+    rgt: '60'
+    level: '3'
+  Area_70:
+    name_es: 'Toa Baja'
+    name_en: 'Toa Baja'
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Metro'
+    region_en: 'Metropolitan Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: 'Toa Baja'
+    city_en: 'Toa Baja'
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_96
+    latitude: '18.43283000000000'
+    longitude: '-66.20760800000000'
+    id: '70'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '37'
+    rgt: '40'
+    level: '3'
+  Area_71:
+    name_es: 'Trujillo Alto'
+    name_en: 'Trujillo Alto'
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Metro'
+    region_en: 'Metropolitan Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: 'Trujillo Alto'
+    city_en: 'Trujillo Alto'
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_96
+    latitude: '18.33666100000000'
+    longitude: '-65.99850700000000'
+    id: '71'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '41'
+    rgt: '42'
+    level: '3'
+  Area_72:
+    name_es: Utuado
+    name_en: Utuado
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Centro'
+    region_en: 'Center Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Utuado
+    city_en: Utuado
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_94
+    latitude: '18.26885600000000'
+    longitude: '-66.70210200000000'
+    id: '72'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '191'
+    rgt: '192'
+    level: '3'
+  Area_73:
+    name_es: 'Vega Alta'
+    name_en: 'Vega Alta'
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Norte'
+    region_en: 'North Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: 'Vega Alta'
+    city_en: 'Vega Alta'
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_97
+    latitude: '18.41193200000000'
+    longitude: '-66.33827300000000'
+    id: '73'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '61'
+    rgt: '62'
+    level: '3'
+  Area_74:
+    name_es: 'Vega Baja'
+    name_en: 'Vega Baja'
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Norte'
+    region_en: 'North Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: 'Vega Baja'
+    city_en: 'Vega Baja'
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_97
+    latitude: '18.43010200000000'
+    longitude: '-66.39912900000000'
+    id: '74'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '63'
+    rgt: '64'
+    level: '3'
+  Area_75:
+    name_es: Vieques
+    name_en: Vieques
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Este'
+    region_en: 'East Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Vieques
+    city_en: Vieques
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_95
+    latitude: '18.12767100000000'
+    longitude: '-65.44127700000000'
+    id: '75'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '121'
+    rgt: '122'
+    level: '3'
+  Area_76:
+    name_es: Villalba
+    name_en: Villalba
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Centro'
+    region_en: 'Center Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Villalba
+    city_en: Villalba
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_94
+    latitude: '18.12932100000000'
+    longitude: '-66.47284700000000'
+    id: '76'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '193'
+    rgt: '194'
+    level: '3'
+  Area_77:
+    name_es: Yabucoa
+    name_en: Yabucoa
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Este'
+    region_en: 'East Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Yabucoa
+    city_en: Yabucoa
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_95
+    latitude: '18.07120600000000'
+    longitude: '-65.89731400000000'
+    id: '77'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '123'
+    rgt: '124'
+    level: '3'
+  Area_78:
+    name_es: Yauco
+    name_en: Yauco
+    type: city
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Sur'
+    region_en: 'South Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Yauco
+    city_en: Yauco
+    area_es: null
+    area_en: null
+    Country: Area_89
+    Region: Area_99
+    latitude: '18.08359500000000'
+    longitude: '-66.85903900000000'
+    id: '78'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '87'
+    rgt: '88'
+    level: '3'
+  Area_79:
+    name_es: 'Hato Rey'
+    name_en: 'Hato Rey'
+    type: area
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Metro'
+    region_en: 'Metropolitan Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: 'San Juan'
+    city_en: 'San Juan'
+    area_es: 'Hato Rey'
+    area_en: 'Hato Rey'
+    Country: Area_89
+    Region: Area_96
+    City: Area_65
+    latitude: '18.42701339324871'
+    longitude: '-66.05890274047851'
+    id: '79'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '22'
+    rgt: '23'
+    level: '4'
+  Area_80:
+    name_es: 'Viejo San Juan'
+    name_en: 'Old San Juan'
+    type: area
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Metro'
+    region_en: 'Metropolitan Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: 'San Juan'
+    city_en: 'San Juan'
+    area_es: 'Viejo San Juan'
+    area_en: 'Old San Juan'
+    Country: Area_89
+    Region: Area_96
+    City: Area_65
+    latitude: '18.46650235648580'
+    longitude: '-66.11162424087524'
+    id: '80'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '34'
+    rgt: '35'
+    level: '4'
+  Area_81:
+    name_es: 'Rio Piedras'
+    name_en: 'Rio Piedras'
+    type: area
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Metro'
+    region_en: 'Metropolitan Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: 'San Juan'
+    city_en: 'San Juan'
+    area_es: 'Rio Piedras'
+    area_en: 'Rio Piedras'
+    Country: Area_89
+    Region: Area_96
+    City: Area_65
+    latitude: '18.40398754851876'
+    longitude: '-66.05203628540039'
+    id: '81'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '30'
+    rgt: '31'
+    level: '4'
+  Area_82:
+    name_es: Condado
+    name_en: Condado
+    type: area
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Metro'
+    region_en: 'Metropolitan Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: 'San Juan'
+    city_en: 'San Juan'
+    area_es: Condado
+    area_en: Condado
+    Country: Area_89
+    Region: Area_96
+    City: Area_65
+    latitude: '18.45477874601219'
+    longitude: '-66.06722831726074'
+    id: '82'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '18'
+    rgt: '19'
+    level: '4'
+  Area_83:
+    name_es: 'Isla Verde'
+    name_en: 'Isla Verde'
+    type: area
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Metro'
+    region_en: 'Metropolitan Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Carolina
+    city_en: Carolina
+    area_es: 'Isla Verde'
+    area_en: 'Isla Verde'
+    Country: Area_89
+    Region: Area_96
+    City: Area_16
+    latitude: '18.44654528059683'
+    longitude: '-66.03404939174652'
+    id: '83'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '8'
+    rgt: '9'
+    level: '4'
+  Area_84:
+    name_es: Levittown
+    name_en: Levittown
+    type: area
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Metro'
+    region_en: 'Metropolitan Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: 'Toa baja'
+    city_en: 'Toa baja'
+    area_es: Levittown
+    area_en: Levittown
+    Country: Area_89
+    Region: Area_96
+    City: Area_70
+    latitude: '18.45492122525148'
+    longitude: '-66.18345379829407'
+    id: '84'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '38'
+    rgt: '39'
+    level: '4'
+  Area_85:
+    name_es: Santurce
+    name_en: Santurce
+    type: area
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Metro'
+    region_en: 'Metropolitan Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: 'San Juan'
+    city_en: 'San Juan'
+    area_es: Santurce
+    area_en: Santurce
+    Country: Area_89
+    Region: Area_96
+    City: Area_65
+    latitude: '18.44613817688692'
+    longitude: '-66.06832265853882'
+    id: '85'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '32'
+    rgt: '33'
+    level: '4'
+  Area_86:
+    name_es: Miramar
+    name_en: Miramar
+    type: area
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Metro'
+    region_en: 'Metropolitan Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: 'San Juan'
+    city_en: 'San Juan'
+    area_es: Miramar
+    area_en: Miramar
+    Country: Area_89
+    Region: Area_96
+    City: Area_65
+    latitude: '18.45268225210747'
+    longitude: '-66.08441591262817'
+    id: '86'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '24'
+    rgt: '25'
+    level: '4'
+  Area_89:
+    name_es: 'Puerto Rico'
+    name_en: 'Puerto Rico'
+    type: country
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: null
+    region_en: null
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: null
+    city_en: null
+    area_es: null
+    area_en: null
+    latitude: '18.33106225839585'
+    longitude: '-66.04087829589844'
+    display: true
+    id: '89'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '1'
+    rgt: '196'
+    level: '1'
+  Area_94:
+    name_es: 'Area Centro'
+    name_en: 'Center Area'
+    type: region
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Centro'
+    region_en: 'Center Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: null
+    city_en: null
+    area_es: null
+    area_en: null
+    Country: Area_89
+    latitude: '18.22804696531403'
+    longitude: '-66.39999389648438'
+    id: null
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '162'
+    rgt: '195'
+    level: '2'
+  Area_95:
+    name_es: 'Area Este'
+    name_en: 'East Area'
+    type: region
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Este'
+    region_en: 'East Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: null
+    city_en: null
+    area_es: null
+    area_en: null
+    Country: Area_89
+    latitude: '18.23326439892249'
+    longitude: '-65.78063964843750'
+    id: null
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '90'
+    rgt: '125'
+    level: '2'
+  Area_96:
+    name_es: 'Area Metro'
+    name_en: 'Metropolitan Area'
+    type: region
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Metro'
+    region_en: 'Metropolitan Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: null
+    city_en: null
+    area_es: null
+    area_en: null
+    Country: Area_89
+    latitude: '18.37928885687765'
+    longitude: '-66.08551025390625'
+    id: null
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '2'
+    rgt: '43'
+    level: '2'
+  Area_97:
+    name_es: 'Area Norte'
+    name_en: 'North Area'
+    type: region
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Norte'
+    region_en: 'North Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: null
+    city_en: null
+    area_es: null
+    area_en: null
+    Country: Area_89
+    latitude: '18.40013942793085'
+    longitude: '-66.56478881835938'
+    id: null
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '44'
+    rgt: '65'
+    level: '2'
+  Area_98:
+    name_es: 'Area Oeste'
+    name_en: 'West Area'
+    type: region
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Oeste'
+    region_en: 'West Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: null
+    city_en: null
+    area_es: null
+    area_en: null
+    Country: Area_89
+    latitude: '18.22022052153290'
+    longitude: '-66.98364257812500'
+    id: null
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '126'
+    rgt: '161'
+    level: '2'
+  Area_99:
+    name_es: 'Area Sur'
+    name_en: 'South Area'
+    type: region
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Sur'
+    region_en: 'South Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: null
+    city_en: null
+    area_es: null
+    area_en: null
+    Country: Area_89
+    latitude: '18.07928448037665'
+    longitude: '-66.48101806640625'
+    id: null
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '66'
+    rgt: '89'
+    level: '2'
+  Area_Earth:
+    name_es: Tierra
+    name_en: Earth
+    type: root
+    country_es: null
+    country_en: null
+    region_es: null
+    region_en: null
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: null
+    city_en: null
+    area_es: null
+    area_en: null
+    latitude: null
+    longitude: null
+    id: 500
+    created_at: '0000-00-00 00:00:00'
+    updated_at: '0000-00-00 00:00:00'
+    lft: '0'
+    rgt: '209'
+    level: '0'
+  Area_241:
+    name_es: Cupey
+    name_en: Cupey
+    type: area
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Metro'
+    region_en: 'Metropolitan Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: 'San Juan'
+    city_en: 'San Juan'
+    area_es: Cupey
+    area_en: Cupey
+    Country: Area_89
+    Region: Area_96
+    City: Area_65
+    latitude: '18.37902413614915'
+    longitude: '-66.05509400367737'
+    id: '241'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '20'
+    rgt: '21'
+    level: '4'
+  Area_244:
+    name_es: Caimito
+    name_en: Caimito
+    type: area
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Metro'
+    region_en: 'Metropolitan Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: 'San Juan'
+    city_en: 'San Juan'
+    area_es: Caimito
+    area_en: Caimito
+    Country: Area_89
+    Region: Area_96
+    City: Area_65
+    latitude: '18.34067606703368'
+    longitude: '-66.07675552368164'
+    id: '244'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '16'
+    rgt: '17'
+    level: '4'
+  Area_245:
+    name_es: 'Palmas del Mar'
+    name_en: 'Palmas del Mar'
+    type: area
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Este'
+    region_en: 'East Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: Humacao
+    city_en: Humacao
+    area_es: 'Palmas del Mar'
+    area_en: 'Palmas del Mar'
+    Country: Area_89
+    Region: Area_95
+    City: Area_36
+    latitude: '18.33106225839585'
+    longitude: '-66.04087829589844'
+    id: '245'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '102'
+    rgt: '103'
+    level: '4'
+  Area_252:
+    name_es: 'Punta las Marias'
+    name_en: 'Punta las Marias'
+    type: area
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Metro'
+    region_en: 'Metropolitan Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: 'San Juan'
+    city_en: 'San Juan'
+    area_es: 'Punta las Marias'
+    area_en: 'Punta las Marias'
+    Country: Area_89
+    Region: Area_96
+    City: Area_65
+    latitude: '18.45274331539868'
+    longitude: '-66.03950500488281'
+    id: '252'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '28'
+    rgt: '29'
+    level: '4'
+  Area_254:
+    name_es: 'Puerta de Tierra'
+    name_en: 'Puerta de Tierra'
+    type: area
+    country_es: 'Puerto Rico'
+    country_en: 'Puerto Rico'
+    region_es: 'Area Metro'
+    region_en: 'Metropolitan Area'
+    state_es: null
+    state_en: null
+    county_es: null
+    county_en: null
+    city_es: 'San Juan'
+    city_en: 'San Juan'
+    area_es: 'Puerta de Tierra'
+    area_en: 'Puerta de Tierra'
+    Country: Area_89
+    Region: Area_96
+    City: Area_65
+    latitude: '18.44810413952821'
+    longitude: '-66.04214608658367'
+    id: '254'
+    created_at: '2010-07-12 10:47:11'
+    updated_at: '2010-07-12 10:47:11'
+    lft: '26'
+    rgt: '27'
+    level: '4'

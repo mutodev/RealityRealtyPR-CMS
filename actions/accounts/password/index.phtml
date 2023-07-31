@@ -1,0 +1,28 @@
+<?php
+    $this->set('title' , t('Recover your password') );
+?>
+
+<?php if( $sent ) : ?>
+
+    <h1> <?= t('Please check your email') ?> </h1>
+    <p>
+        <?= t('We have sent you an email with your credentials and a link
+        to change your password.  Please check your email, including your junk
+        mail folder.  If you don\'t recieve the email in a couple
+        of minutes then please') ?>
+        <a href='/accounts/password/'> <?= t('try again'); ?> </a>
+    </p>
+
+    <div id='lost_password'>
+        <a href='/accounts/password/'> <?= t('try again'); ?> </a> &nbsp;
+        <a href='/accounts/login/'> <?= t('return to login page'); ?> </a>
+    </div>
+
+<?php else: ?>
+    <?= $Form ?>
+
+    <div id='lost_password'>
+        <a href='/accounts/login/'> <?= t('return to login page'); ?> </a>
+    </div>
+    
+<?php endif; ?>

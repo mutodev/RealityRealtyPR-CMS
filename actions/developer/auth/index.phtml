@@ -1,0 +1,43 @@
+
+<h1> <?= t("Do you want to reload auth configuration ?"); ?> </h1>
+<p> <?= t("Do you want to reload auth configuration"); ?> </p>
+
+<form class='form' method='post'>
+
+    <input type='hidden' name='hidden' value='' />
+
+    <div class='form_buttons'>
+        <button class='button positive'> Generate </button>
+        <a href='../' class='button negative'> Cancel </a>
+    </div>
+</form>
+
+<table border='1'>
+    <thead>
+        <tr>
+            <th> id </th>            
+            <th> description </th>                        
+            <th> formula </th>
+            <th> default </th>            
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach( $Settings as $Setting ) : ?>
+            <tr>
+                <td>
+                    <?= str_repeat( "&nbsp;" , $Setting->level * 3 )."-" ?>                
+                    <?= $Setting->id; ?>
+                </td>
+                <td>
+                    <?= $Setting->description; ?>
+                </td>        
+                <td>
+                    <?= $Setting->formula; ?>
+                </td>        
+                <td>
+                    <?= $Setting->default_value; ?>
+                </td>        
+            </tr>
+        <?php endforeach; ?>
+    <tbody>
+</table>

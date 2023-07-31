@@ -1,0 +1,60 @@
+<?php
+    Configure::write("seo.title" , 'Proyectos Nuevos' );
+?>
+
+<!-- MAIN CONTENT -->
+<div class="container projects">
+    <div id="content">
+
+        <h2 class="header-grey">DEPARTAMENTO DE PROYECTOS NUEVOS</h2>
+
+        <?php $i=1; foreach ($Projects as $Project): ?>
+
+            <?php if ( !isset($cityName) || $cityName != $Project->getFullArea() ): ?>
+                <?php $cityName = $Project->getFullArea(); ?>
+                <?php $i=1; ?>
+                <div class="header row">
+                    <div class="col-xs-12">
+                        <h4><?= $cityName ?></h4>
+                    </div>
+                </div>
+            <?php endif; ?>
+
+           <div class="row result result-<?php echo ($i % 2) ? 'even' : 'odd' ?>">
+              <div class="result-img col-xs-12 col-sm-3">
+                <?php if ( $Project->getLogo() ): ?>
+                <a href='<?= $Project->getUrl() ?>' title='<?= $Project->nombre ?>, <?= $Project->pueblotxt ?>'>
+                    <img src='<?= $Project->getLogo() ?>' class="img-responsive" />
+                </a>
+                <?php else: ?>
+                    <img src='/images/filler.png' class="img-responsive" />
+                <?php endif; ?>
+                
+              </div>
+
+              <div class="result-content col-xs-12 col-sm-9">
+                    <h3><a href='<?= $Project->getUrl() ?>' title='<?= $Project->nombre ?>, <?= $Project->pueblotxt ?>'><?= $Project->nombre ?></a></h3>
+                    <h4> <?= $Project->pueblo ?> </h4>
+
+                    <div class="internal-number"><?= trim( substr( strip_tags($Project->description), 0, 240) ); ?>... <a href='<?= $Project->getUrl() ?>' title='<?= $Project->nombre ?>, <?= $Project->pueblotxt ?>'>ver detalles</a></div>
+
+                    <br />
+
+                    <?php if ( $Project->status_id == 2 ): ?>
+                      <span class="link"><?= $Project->status ?></span>
+                    <?php else: ?>
+                      <span class="link"><?= $Project->status ?></span>
+                    <?php endif; ?>
+
+                    <div class="result-extra-price" style="font-size: 13px;"><?= $Project->getPriceString() ?></div>
+                    <br />
+                    <a class="link" href='<?= $Project->getUrl() ?>' title='<?= $Project->nombre ?>, <?= $Project->pueblotxt ?>'>Ver Proyecto</a>
+              </div>
+          </div>
+
+
+        
+        <?php $i++; endforeach; ?>
+
+    </div>
+</div>

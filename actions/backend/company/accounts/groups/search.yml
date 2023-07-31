@@ -1,0 +1,6 @@
+source: AccountGroup
+default: advanced
+fields:
+
+    name:
+        source: AccountGroup.name

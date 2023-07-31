@@ -1,0 +1,21 @@
+#!/Applications/MAMP/bin/php/php7.2.8/bin/php -d html_errors=0
+<?php
+
+    define('APPLICATION_PATH' , realpath('../../../')."/" );
+    define('YAMMON_CLI'       , true );
+        
+    set_time_limit( 60*20 );
+    ini_set( 'memory_limit' , -1 );
+
+
+    require_once("../../yammon.php");
+    
+    $config = array('data_fixtures_path'  =>  DOCTRINE_FIXTURES_PATH ,
+                    'models_path'         =>  DOCTRINE_MODELS_PATH ,
+                    'migrations_path'     =>  DOCTRINE_MIGRATIONS_PATH,
+                    'sql_path'            =>  DOCTRINE_SQL_PATH,
+                    'yaml_schema_path'    =>  DOCTRINE_SCHEMA_PATH );
+
+    $cli = new Doctrine_Cli($config);
+    $cli->run($_SERVER['argv']);
+

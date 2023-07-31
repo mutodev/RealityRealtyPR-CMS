@@ -1,0 +1,131 @@
+<div id="contact">
+    <div class="container-fluid contact-h">
+        <div class="row">
+            <div class="container">
+                <div class="header">
+                    <h1><span><?= t('translation114'); ?></span></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+
+<!--
+            <div class="col-xs-12 col-sm-6 text-right nopadding contact-woman hidden-xs">
+                <div class="container-fluid service-phones padding-bottom">
+                    <div class="col-xs-6 col-sm-12 nopadding">
+                        <strong>Sucursal de Bayamón</strong>
+                          Edif. EVA Calle 17 S-5<br />Urb. Flamboyan Gardens, <br />Bayamon PR<br />
+                          (787) 780-1223<br />
+                          <a target="_blank" href="https://www.google.com/maps/dir/Current+Location/18.390904,-66.159378">Dirección</a>
+                    </div>
+                    <div class="col-xs-6 col-sm-12 nopadding">
+                        <strong>Sucursal Caguas</strong>
+                            Ave. Troche V-12<br />Caguas, PR 00725<br />
+                            (787) 745-8792<br />
+                    </div>
+                    <div class="col-xs-6 col-sm-12 nopadding">
+                        <strong>Sucursal Metro</strong>
+                          Carr. 176 Km 1.1<br />Ave. Ana G. Mendez, <br />San Juan, PR<br />
+                          (787) 758-1933<br />
+                          <a target="_blank" href="https://www.google.com/maps/dir/Current+Location/18.383118,-66.057167">Dirección</a>
+                    </div>
+                    <div class="col-xs-6 col-sm-12 nopadding">
+                        <strong>Sucursal San Juan</strong>
+                          1253 Ave. Fernandez Juncos<br />Esq. Roberto H. Todd<br />Pda. 18 <br />Santurce, PR<br />
+                          (787) 522-8777<br />
+                          <a target="_blank" href="https://www.google.com/maps/dir/Current+Location/18.448955,-66.075282">Dirección</a>
+                    </div>
+                </div>  
+            </div>
+
+            <div class="col-xs-12 col-sm-6 text-right nopadding visible-xs">
+                <div class="container-fluid service-phones padding-bottom">
+                    <div class="col-xs-6 col-sm-12 nopadding">
+                        <strong>Sucursal de Bayamón</strong>
+                          Edif. EVA Calle 17 S-5<br />Urb. Flamboyan Gardens<br />Bayamon PR<br />
+                          (787) 780-1223<br />
+                          <a target="_blank" href="https://www.google.com/maps/dir/Current+Location/18.390904,-66.159378">Dirección</a>
+                    </div>
+                    <div class="col-xs-6 col-sm-12 nopadding">
+                        <strong>Sucursal Caguas</strong>
+                            Ave. Troche V-12<br />Caguas, PR 00725<br />
+                            (787) 745-8792<br />
+                    </div>
+                    <div class="col-xs-6 col-sm-12 nopadding">
+                        <strong>Sucursal Metro</strong>
+                          Carr. 176 Km 1.1<br />Ave. Ana G. Mendez<br />San Juan, PR<br />
+                          (787) 758-1933<br />
+                          <a target="_blank" href="https://www.google.com/maps/dir/Current+Location/18.383118,-66.057167">Dirección</a>
+                    </div>
+                    <div class="col-xs-6 col-sm-12 nopadding">
+                        <strong>Sucursal San Juan</strong>
+                          1253 Ave. Fernandez Juncos<br />Esq. Roberto H. Todd<br />Pda. 18<br />Santurce, PR<br />
+                          (787) 522-8777<br />
+                          <a target="_blank" href="https://www.google.com/maps/dir/Current+Location/18.448955,-66.075282">Dirección</a>
+                    </div>
+                </div>  
+            </div>
+-->
+            <div class="col-xs-12 col-sm-12 map nopadding">
+                <div id="map-canvas"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid contact-h-form">
+        <div class="row">
+            <div class="container">
+                <div class="header hidden-xs">
+                    <h1><span><?= t('translation113'); ?></span></h1>
+                </div>
+
+                <h2 class="visible-xs"><span><?= t('translation113'); ?></span></h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-xs-12">
+                <p><?= t('translation25'); ?></p>
+                <br />
+            </div>
+        </div>
+
+        <form action="" method="post" class="contact form" id="mainContactForm">
+                            
+            <div class="row">
+                <div class="col-xs-12 col-xs-6">
+                    <div class="form-group">
+                        <input type="text" class='contactField name' name='var1' value="" placeholder="<?= t('translation27'); ?>" />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class='contactField mail' name='var3' placeholder="<?= t('translation28'); ?>" />
+                    </div>
+
+                    <input type="hidden" class='contactField mail' name='email' placeholder="<?= t('translation28'); ?>" />
+
+                    <div class="form-group">
+                        <input type="text" class='contactField phone' name='var2' value=""  placeholder="<?= t('translation29'); ?>" />
+                    </div>
+                </div>
+                <div class="col-xs-12 col-xs-6">
+                    <div class="form-group">
+                        <textarea class='contactField msg' name='var4' placeholder="<?= t('translation30'); ?>" rows="3"></textarea>
+                    </div>
+
+                    <div class="form-group pull-right">
+                        <input type="reset" class="normalBtn" value="Clear" />
+                        <span>|</span>
+                        <input type="submit" class="normalBtn" value="<?= t('translation32'); ?>" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

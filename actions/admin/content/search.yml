@@ -1,0 +1,8 @@
+source:   Content
+fields:
+
+    title:
+        source: Content.title
+
+    text:
+        source: Content.text

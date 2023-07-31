@@ -1,0 +1,117 @@
+source: FROM Property LEFT JOIN Property.Photos LEFT JOIN Property.Category LEFT JOIN Property.Contract LEFT JOIN Property.Area ORDER BY Property.updated_at DESC
+defaultSort: Property.end_at
+defaultSortDir: ASC
+columns:
+    photo:
+        source: id
+        width: 80px
+        align: center
+        style: 'text-align: center'
+        content: >
+            <div style="text-align: center">
+               <a target="_blank" href="/properties/view?force=1&id=%{Property.id}"><img src="%{Property.Photos.0.original}" height="100" /></a>
+            </div>
+
+    title:
+        label: 'Description'
+        source: Property.title
+        content: >
+            %{renderDescription:*}
+
+    city:
+        label: 'City'
+        source: Property.Area.city
+        content: >
+            %{renderArea:*}
+
+    details:
+        label: Details
+        content: >
+            %{renderDetails:*}
+
+    status:
+        class: hidden-xs-down
+        label: Status
+        source: Property.Contract.status
+        content: >
+            %{Property.Contract.status}
+
+    end_at:
+        class: hidden-xs-down
+        label: End
+        source: end_at
+        decorator: {name: 'LocalDateTime', format: 'short'}
+
+    updated_at:
+        class: hidden-xs-down
+        label: Updated
+        source: updated_at
+        decorator: {name: 'LocalDateTime', format: 'short'}
+
+    price:
+        source: sale_price
+        class: hidden-xs-down
+        content: >
+            %{renderPrice:*}
+
+    actions:
+        type: Actions
+        label: ' '
+        width: 1px
+        actions:
+            view:
+                icon: search
+                label: View
+                link:  '.view?id=%{id}'
+
+            edit:
+                icon: pencil
+                label: Edit
+                link:  '.edit?id=%{id}'
+                permission: property.manage
+
+            description:
+                icon: pencil
+                label: Edit Description
+                link:  '.description?id=%{id}'
+                permission: property.access
+
+            info:
+                icon: info-circle
+                label: Info
+                link:  '.info?id=%{id}'
+                permission: property.manage
+
+            internal:
+                icon: sticky-note-o
+                label: Internal
+                link:  '.internal?id=%{id}'
+                permission: property.manage
+
+            contract:
+                icon: file-text-o
+                label: Contract
+                link:  '.contract.edit?id=%{Property.Contract.id}&property_id=%{id}'
+                permission: property.manage
+
+            offers:
+                icon: tags
+                label: Offers
+                link:  '.offers?property_id=%{id}'
+                permission: property.manage
+
+            photos:
+                icon: camera
+                label: Photos
+                permission: property.manage
+                link:  '.photos?id=%{id}'
+
+            lead:
+                icon: plus
+                label: Lead
+                link:  '..leads.edit?property_id=%{id}'
+
+#            delete:
+#                label: '<i class="fa fa-trash-o"></i>'
+#                link:    .delete?id=%{id}
+#                confirm: true

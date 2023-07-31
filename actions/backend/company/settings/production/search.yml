@@ -1,0 +1,16 @@
+source: ProductionUnit
+default: advanced
+fields:
+    name:
+        source: ProductionUnit.name
+
+    active:
+        label: Status
+        source: ProductionUnit.is_active
+        element:
+            type: Select
+            class: form-control
+            default: 1
+            options:
+                1: Active
+                0: Inactive

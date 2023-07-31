@@ -1,0 +1,237 @@
+class: form-bordered
+attributes:
+  role: form
+elements:
+  summary:
+    type: Summary
+
+  header_general:
+    type: Header
+    label: General Information
+
+  start_at:
+    label: Start
+    required: true
+    class: form-control
+    format: "%M/%d/%Y%p"
+    output: Y-m-d
+    type: DateTime
+    #        timezone_input: <?= Configure::read('datetime.timezone')."\n" ?>
+    default: <?= strtotime('today 00:00:00 '.Configure::read('datetime.timezone'))."\n" ?>
+
+  end_at:
+    label: End
+    required: true
+    class: form-control
+    format: "%M/%d/%Y%p"
+    output: Y-m-d
+    type: DateTime
+    #        timezone_input: <?= Configure::read('datetime.timezone')."\n" ?>
+    default: <?= strtotime('today 00:00:00 '.Configure::read('datetime.timezone'))."\n" ?>
+
+  approved_at:
+    label: Approved
+    required: true
+    class: form-control
+    format: "%M/%d/%Y%p"
+    output: Y-m-d
+    type: DateTime
+    timezone_input: <?= Configure::read('datetime.timezone')."\n" ?>
+    default: <?= strtotime('today 00:00:00 '.Configure::read('datetime.timezone'))."\n" ?>
+
+  publish:
+    type: Checkbox
+    label: Publish listing
+
+  status:
+    type: Select
+    class: form-control
+    required: true
+    default: "Current Listing"
+    options:
+      Optioned: Optioned
+      Closed: Closed
+      Rented: Rented
+      Failed: Canceled
+      "Current Listing": Current Listing
+      "Out of Market": "Out of Market"
+
+  rent_agreed:
+    type: Price
+    depends:
+      .status: ["Rented"]
+
+  rent_deposit:
+    type: Price
+    depends:
+      .status: ["Rented"]
+
+  sale_agreed:
+    type: Price
+    depends:
+      .status: ["Closed", "Optioned"]
+
+  sale_commission:
+    type: Select
+    label: Sale Commission Type
+    class: form-control
+    default: null
+    options:
+      Fixed: Fixed
+      Percentage: Percentage
+
+  sale_value:
+    type: Number
+    label: Sale Commission (% for Percentage, $ for Fixed)
+    depends: .sale_commission
+
+  failed_reason:
+    type: Text
+    depends:
+      .status: Failed
+
+  header_contract:
+    type: Header
+    label: Contract Information
+
+  type:
+    type: Select
+    required: true
+    class: form-control
+    options:
+      Exclusive: Exclusive
+      "Semi Exclusive": "Semi Exclusive"
+      Open: Open
+      "Net Pay": "Net Pay"
+      Special: Special
+      Rental: Rental
+      Co-Broke: Co-Broke
+      Other: Other
+
+  rent_price:
+    type: Price
+    required: true
+    class: form-control
+    depends:
+      .type: Rental
+
+  account_id:
+    label: Primary Agent
+    required: true
+    class: form-control
+    type: Select
+    source_callback: companyAgents
+
+  secondary_account_id:
+    label: Secondary Agent
+    class: form-control
+    type: Select
+    source_callback: companyAgents
+
+  header_clients:
+    type: Header
+    label: Client
+
+  Client:
+    label: ""
+    type: SubForm
+    elements:
+      id:
+        type: Hidden
+
+      first_name:
+        label: First Name
+        required: true
+        class: form-control
+
+      last_name:
+        label: Last Name
+        required: true
+        class: form-control
+
+      phone_container:
+        type: container
+        collect_errors: true
+        box_renderer:
+          type: 1Column
+          highlight: true
+          border: true
+          margin: "0"
+          padding: "0"
+        layout_renderer:
+          type: grid
+          columns: 2
+          class: ym-form-box-column2
+          style: "width: 100%;"
+
+        elements:
+          phone:
+            label: Phone
+            type: Phone
+            required: true
+            class: form-control
+
+          phone_ext:
+            label: Ext
+            type: Text
+            class: form-control
+            colwidth: 100px
+            validations:
+              RegularExpression:
+                regex: "/^[0-9#*w]+$/i"
+
+      phone_container2:
+        type: container
+        collect_errors: true
+        box_renderer:
+          type: 1Column
+          highlight: true
+          border: true
+          margin: "0"
+          padding: "0"
+        layout_renderer:
+          type: grid
+          columns: 2
+          class: ym-form-box-column2
+          style: "width: 100%;"
+
+        elements:
+          phone2:
+            label: Phone
+            type: Phone
+            class: form-control
+
+          phone2_ext:
+            label: Ext
+            type: Text
+            class: form-control
+            colwidth: 100px
+            validations:
+              RegularExpression:
+                regex: "/^[0-9#*w]+$/i"
+
+      email:
+        type: Email
+        label: Email
+        class: form-control
+
+      address1:
+        label: Address
+        class: form-control
+
+      address2:
+        label: Address (cont)
+        class: form-control
+
+      area_id:
+        label: City
+        type: Select
+        source: FROM Area WHERE country_id = 89
+        class: form-control
+
+      postal_code:
+        class: form-control
+
+  buttons:
+    type: Buttons
+    class: form-group

@@ -1,0 +1,186 @@
+.about-us{
+
+    &__banner-wrapper{
+        position: relative;
+    }
+
+    &__breadcrumb{
+        margin-top:6rem;
+    }
+
+    &__banner-slogan{
+        position: absolute;        
+        background-color:rgba( $redColor, .9 );
+        padding:.9rem 2rem;
+        bottom: -6%;
+        left: 50%;
+        transform: translateX(-50%);
+
+    }
+      
+    &__banner-slogan-title{
+        color:white;
+        font-size: 1.2rem;
+        margin:0;
+        font-style: italic;
+    }
+
+    &__us{
+        padding: 8rem 0;
+    }
+
+
+    &__us-quote-left{
+        i{
+            position: absolute;
+            top:10%;
+            left:2;
+        }
+    }
+
+    &__us-quote-right{
+        text-align: right;
+        i{
+            position: absolute;
+            top:76%;
+            right: 8%;
+        }
+    }
+
+    &__us-quotes{
+        color:$redColor;
+        i{
+            font-size:3rem;
+        }
+
+    }
+
+    &__us-wrapper{
+        padding: 6rem;
+        position:relative;
+    }
+
+    &__mission-vission-title{
+        font-size:2.6rem;
+        font-weight: bold;
+    }
+
+    &__mission-vission-text{
+        font-style: italic;
+    }
+    
+    &__values{
+        padding:3rem;
+        background-color:$greyColor;
+        position: relative;
+        &:before { 
+            @include redTopBorder();
+        }
+        &:after { 
+            @include redBottomBorder();
+        }
+    }
+
+    &__sister-companies{
+        padding: 8rem 0;
+        background-color:$greyColor;
+        position: relative;
+        &:before { 
+            @include redTopBorder();
+        }
+        &:after { 
+            @include redBottomBorder();
+        }
+    }
+
+    &__values-title{
+        font-weight: bold;
+        margin-top:1rem;
+    }
+
+    &__values-wrapper{
+        padding: 2rem 4rem;
+    }
+
+    &__leadership{
+        padding: 8rem 0;
+        position: relative;
+        &:after { 
+            @include redBottomBorder();
+        }
+    }
+
+    &__director{
+        padding:.5rem .5rem;
+    }
+
+    &__director-wrapper{
+        width: 100%;
+        background-size:cover;
+        min-height: 260px;
+        padding-right: 2.3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        &:hover > .about-us__director-background{
+            opacity: 1;
+        }
+    }
+
+    &__director-background{
+        opacity: 0;
+        background-color: rgba(240, 70, 69, 0.9);
+        padding: 1rem 0 2rem 1.4rem;
+        p{
+            margin: 0;
+            color: #FFFFFF;
+        }
+    }
+
+    &__director-name
+    {
+        font-size: 1.8rem;
+    }
+
+    &__director-position
+    {
+        font-size: 1rem;
+    }
+
+    &__our-team{
+        padding: 8rem 0;
+    }
+    
+
+    &__leadership-caribbean{
+        p{
+            font-size:1rem;
+            font-weight: 700;
+        }
+    }
+
+    &__our-clients{
+        padding: 8rem 0;
+        position: relative;
+        &:before { 
+            @include redTopBorder();
+        }
+    }
+
+    &__part-of-realty{
+        padding: 8rem 0;
+    }
+
+    &__part-of-realty-button{
+        @include realtyButton();
+        margin-top:3rem;
+    }
+    
+    &__part-of-realty-text{
+        margin-top:3rem;
+        input[type=text]{
+            font-size:1.6rem;
+        }
+    }
+    
+}

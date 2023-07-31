@@ -1,0 +1,26 @@
+source: FROM PropertyTag
+columns:
+
+    name:
+        label: Name
+        source: name_en
+
+    core:
+        source: is_core
+        decorator: Boolean
+
+    active:
+        label: Active
+        class: hidden-xs-down
+        source: is_active
+        decorator: boolean
+
+    actions:
+        label: ''
+        width: 1px
+        type: Actions
+        actions:
+            edit:
+                icon: pencil
+                label: Edit
+                link:  .edit?id=%{id}

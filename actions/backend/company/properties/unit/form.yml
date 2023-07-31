@@ -1,0 +1,41 @@
+class: form-bordered
+attributes:
+    role: form
+elements:
+
+    summary:
+        type: Summary
+
+    header_general:
+        type:  Header
+        label: General Information
+
+    sqf:
+        class:    form-control
+        label: Square Feets
+
+    bathrooms:
+        class:    form-control
+        required: true
+
+    half_bathrooms:
+        class:    form-control
+
+    rooms:
+        class:    form-control
+        required: true
+
+    rent_price:
+        class:    form-control
+        type: Price
+
+    available_at:
+        class:    form-control
+        format:  '%M/%d/%Y%p - %h %a'
+        output:   Y-m-d H:i:s
+        type:     DateTime
+        timezone_input: <?= Configure::read('datetime.timezone')."\n" ?>
+
+    buttons:
+        type:  Buttons
+        class: form-group

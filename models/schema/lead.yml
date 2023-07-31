@@ -1,0 +1,214 @@
+LeadSource:
+    actAs:
+        Timestampable:     {}
+
+    columns:
+        id:
+            type:          integer
+            length:        11
+            primary:       true
+            unsigned:      true
+            autoincrement: true
+
+        name:
+            type:          string(255)
+            notnull:       true
+
+Lead:
+    actAs:
+        Timestampable:     {}
+
+    columns:
+        id:
+            type:          integer
+            length:        11
+            primary:       true
+            unsigned:      true
+            autoincrement: true
+
+        source_id:
+            type:          integer
+            length:        11
+            unsigned:      true
+
+        account_id:
+            type:          integer
+            length:        11
+            unsigned:      true
+
+        property_id:
+            type:          integer
+            length:        11
+            unsigned:      true
+
+        first_name:
+            type:          string(255)
+            notnull:       true
+
+        last_name:
+            type:          string(255)
+            notnull:       false
+
+        phone:
+            type:          string(255)
+            notnull:       false
+
+        email:
+            type:          string(255)
+            notnull:       false
+
+        type:
+            type:          enum
+            values:        ['Buyer', 'Seller', 'Rent']
+            notnull:       true
+
+        notes:
+            type: Text
+
+    relations:
+        Account:
+            class: Account
+            local: account_id
+            foreign: id
+
+        Source:
+            class: LeadSource
+            local: source_id
+            foreign: id
+
+        Property:
+            class: Property
+            local: property_id
+            foreign: id
+
+        Properties:
+            class:    Lead
+            refClass: PropertyLeadRelation
+            local:    lead_id
+            foreign:  property_id
+
+PropertyLeadRelation:
+    columns:
+        lead_id:
+            type:          integer
+            length:        11
+            primary:       true
+            unsigned:      true
+
+        property_id:
+            type:          integer
+            length:        11
+            primary:       true
+            unsigned:      true
+
+    relations:
+        Property:
+            class:    Property
+            local:    property_id
+            foreign:  id
+            onDelete: CASCADE
+            onUpdate: CASCADE
+
+        Lead:
+            class:    Lead
+            local:    lead_id
+            foreign:  id
+            onDelete: CASCADE
+            onUpdate: CASCADE
+
+LeadSearch:
+    actAs:
+        Timestampable:     {}
+
+    columns:
+        id:
+            type:          integer
+            length:        11
+            primary:       true
+            unsigned:      true
+            autoincrement: true
+
+        lead_id:
+            type:          integer
+            length:        11
+            unsigned:      true
+
+        area_id:
+            type:          integer
+            length:        11
+            unsigned:      true
+
+        category_id:
+            type:          integer
+            length:        11
+            unsigned:      true
+
+        lead_id:
+            type:          integer
+            length:        11
+            unsigned:      true
+
+        price_min:
+            type:          decimal(12,2)
+
+        price_max:
+            type:          decimal(12,2)
+
+    relations:
+        Lead:
+            class:    Lead
+            local:    lead_id
+            foreign:  id
+            foreignAlias: Searches
+            onDelete: CASCADE
+            onUpdate: CASCADE
+
+        Area:
+            class:    Area
+            local:    area_id
+            foreign:  id
+            onDelete: CASCADE
+            onUpdate: CASCADE
+
+        Category:
+            class:    PropertyCategory
+            local:    category_id
+            foreign:  id
+            onDelete: CASCADE
+            onUpdate: CASCADE
+
+LeadLog:
+    actAs:
+        Timestampable:     {}
+
+    columns:
+        id:
+            type:          integer
+            length:        11
+            primary:       true
+            unsigned:      true
+            autoincrement: true
+
+        account_id:
+            type:          integer
+            length:        11
+            unsigned:      true
+
+        lead_id:
+            type:          integer
+            length:        11
+            unsigned:      true
+
+        log:
+            type: Text
+
+    relations:
+        Account:
+            class: Account
+            local: account_id
+            foreign: id
+
+        Lead:
+            class: Lead
+            local: lead_id
+            foreign: id

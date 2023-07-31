@@ -1,0 +1,3 @@
+<?php
+
+redirect('.company.dashboard');

@@ -1,0 +1,95 @@
+class: form-bordered
+attributes:
+    role: form
+elements:
+
+    summary:
+        type: Summary
+
+    year:
+        label:    Year
+        required: true
+        type: Number
+        class:    form-control
+
+    listings_header:
+        type: Header
+        label: Listings
+
+    listings:
+        label:    Units
+        required: true
+        type: Number
+        class:    form-control
+
+    listings_volume:
+        label:    Volume
+        required: true
+        type: Number
+        class:    form-control
+
+    listings_price_average:
+        label:    Price Average
+        required: true
+        type: Number
+        class:    form-control
+
+    listings_commission_average:
+        label:    Commission Average
+        required: true
+        type: Number
+        class:    form-control
+
+    options_header:
+        type: Header
+        label: Options
+
+    options:
+        label:    Units
+        required: true
+        type: Number
+        class:    form-control
+
+    options_volume:
+        label:    Volume
+        required: true
+        type: Number
+        class:    form-control
+
+    closings_header:
+        type: Header
+        label: Closings
+
+    closings:
+        label:    Units
+        required: true
+        type: Number
+        class:    form-control
+
+    closings_volume:
+        label:    Volume
+        required: true
+        type: Number
+        class:    form-control
+
+    closings_earnings:
+        label:    Earnings
+        required: true
+        type: Number
+        class:    form-control
+
+    closings_price_average:
+        label:    Price Average
+        required: true
+        type: Number
+        class:    form-control
+
+    closings_commission_average:
+        label:    Commission Average
+        required: true
+        type: Number
+        class:    form-control
+
+    buttons:
+        type:  Buttons
+        class: form-group

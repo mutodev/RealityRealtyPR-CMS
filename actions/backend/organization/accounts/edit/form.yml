@@ -1,0 +1,132 @@
+class: form-bordered
+attributes:
+    role: form
+elements:
+
+    summary:
+        type: Summary
+
+    header_contact:
+        type:  Header
+        label: Contact Information
+
+    first_name:
+        label:    First Name
+        required: true
+        class:    form-control
+
+    last_name:
+        label:    Last Name
+        required: true
+        class:    form-control
+
+    role_id:
+        label: Role
+        type: Select
+        empty: ''
+        class: form-control
+        required: true
+        options:
+            organization.manager: Manager
+            organization.analyst: Analyst
+
+    phone_container:
+        type: container
+        collect_errors: true
+        box_renderer:
+            type: 1Column
+            highlight: true
+            border: true
+            margin: '0'
+            padding: '0'
+        layout_renderer:
+            type:    grid
+            columns: 2
+            class: ym-form-box-column2
+            style:   'width: 100%;'
+
+        elements:
+
+            phone:
+                label:    Phone
+                type:     Phone
+                required: true
+                class:    form-control
+
+            phone_ext:
+                label:    Ext
+                type:     Text
+                class:    form-control
+                colwidth: 100px
+                validations:
+                    RegularExpression:
+                        regex: '/^[0-9#*w]+$/i'
+
+    email:
+        type:     Email
+        label:    Email
+        class:    form-control
+
+    # phone2:
+    #     type:     Phone
+    #     label:    Alternate Phone
+    #     class:    form-control
+
+    header_credentials:
+        type:  Header
+        label: Account Credentials
+
+    username:
+        label:    Username
+        class:    form-control
+        validations:
+            unique:
+                source:    'Account.username'
+                source_id: id
+                message:   There is already an account registered with this username
+                id: <?= get('id') ?>
+
+    password:
+        label: Password
+        type:  Password
+        class:    form-control
+        validations:
+            Password:
+                strong: false
+                min:    5
+
+    password_confirmation:
+        label: Password Confirmation
+        type:  Password
+        class:    form-control
+        validations:
+          equals:
+             element: password
+             message: %{label} and Password must be equal
+
+    active:
+        type: Checkbox
+        label: ''
+        text: Account is active
+        default: 1
+
+    header_leadnotifications:
+        type:  Header
+        label: Notifications
+
+    receive_email_notifications:
+        type: Checkbox
+        label: ''
+        text: Receive notifications by email
+        default: 1
+
+    receive_sms_notifications:
+        type: Checkbox
+        label: ''
+        text: Receive notifications by SMS
+        example: <i>(Additional fees may apply per message)</i>
+        default: 0
+
+    buttons:
+        type:  Buttons
+        class: form-group

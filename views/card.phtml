@@ -1,0 +1,34 @@
+<?php if($gerente['s3_photo']): ?>
+<div class="<?php if ( !isset($title) ): ?>pull-left<?php endif ?>">
+    <img src='<?= $gerente->s3_photo ?>' height="<?php if ( !isset($title) ): ?>90<?php else: ?>150<?php endif ?>" />
+</div>
+<?php endif ?>
+<div class="<?php if ( !isset($title) ): ?> pull-left ml<?php endif ?>">
+    <strong><?= $gerente->getFullName() ?></strong>
+
+    <?php if ( isset($title) ): ?>
+        <br />
+        <span><?= $title ?></span>
+    <?php endif ?>
+
+    <?php if ( $gerente->phone ): ?>
+        <br />
+        <a href="tel:<?= $gerente->phone ?>">
+            <?= decorator('phone', $gerente->phone ) ?>
+        </a>
+    <?php endif; ?>
+
+<!--    --><?php //if ( $gerente->phone2 ): ?>
+<!--        <br />-->
+<!--        <a href="tel:--><?//= $gerente->phone ?><!--">-->
+<!--            --><?//= decorator('phone', $gerente->phone ) ?>
+<!--        </a>-->
+<!--    --><?php //endif; ?>
+
+    <?php if ( $gerente->email ): ?>
+        <br />
+      <a target="_blank" href="/contactenos?broker_id=<?= $gerente->id ?>"><span style="font-size: 20px;" class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <?= t('translation190'); ?></a>
+      </span>
+    <?php endif; ?>
+</div>
+<div class="clear"></div>

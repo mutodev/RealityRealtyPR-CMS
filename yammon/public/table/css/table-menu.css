@@ -1,0 +1,62 @@
+.context-menu{
+    position:         absolute;
+    left:             20px;
+    top:              20px;
+    width:            200px;
+    margin:           0;
+    padding:          0;
+    background:       #eee;
+    border:           1px solid #999;
+    border-left:      1px solid #8F8F8F;
+    border-bottom:    3px solid #8F8F8F;
+    -moz-box-shadow:  0 5px 5px -3px black;
+    box-shadow:       0 5px 5px -3px black;
+}
+
+.context-submenu{
+    top:  0;
+    left: 195px;
+}
+
+
+    .context-menu-item{
+        display:  block;
+        position: relative;
+        margin:   0;
+        padding:  0;
+        height:   2em;
+        color:    black;
+    }
+
+    .context-menu-item-disabled{
+        color: gray;
+    }
+
+    .context-menu-item-expandable{
+        background: transparent url('/yammon/public/table/img/menu-expand.gif') no-repeat scroll top right;
+    }
+
+        .context-menu-icon{
+            display:      block;
+            overflow:     hidden;
+            position:     absolute;
+            top:          5px;
+            left:         8px;
+            width:        16px;
+            height:       16px;
+        }
+        
+        .context-menu-label{
+            display:  block;
+            overflow: hidden;
+            position: absolute;
+            top:      0;
+            left:     30px;
+            right:    30px;
+            height:   1em;
+            padding:  .5em;
+        }
+
+    .context-menu-item-active{
+        background-color: #D9E8FB;
+    }

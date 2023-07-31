@@ -1,0 +1,56 @@
+# =============================================================
+# CONSOLE.yml reference
+#
+# The following configuration parses this command line:
+#
+#   command NAME --string=mystring --bool argument1 argument2
+#   command NAME -s mystring -b argument1 argument2
+#
+# =============================================================
+#
+# name:        name
+# description: Description of the command
+# version:     1.0
+# options:
+#   string:
+#       short_name:      '-s'
+#       long_name:       '--string'
+#       description:     'specify a string'
+#       action:          StoreString
+#       default:         'default value'
+#       help_name:       EXAMPLE
+#
+#   bool:
+#       short_name:      '-b'
+#       long_name:       '--bool'
+#       description:     'true of false flag'
+#       action:          StoreTrue
+#
+##  All Possible Options
+#   option:
+#       short_name:      '-o'
+#       long_name:       '--option'
+#       description:     'specify a string'
+#       action:          StoreString        # possible values StoreArray | StoreFalse | StoreFloat | StoreInt | StoreString | StoreTrue | Callback | Counter | Help | List | Password | Version
+#       default:         'option'
+#       help_name:       OPTION
+#       choices:         [choice1,choice2]
+#       list:            [list1 ,list2]
+#       add_list_option: false
+#
+# arguments:
+#   argument1:
+#       description:     'description of argument 1'
+#       multiple:        false
+#       optional:        false
+#       help_name:       ARGUMENT1
+#
+#   argument2:
+#       description:     'description of argument 2'
+#       multiple:        false
+#       optional:        false
+#       help_name:       ARGUMENT2
+
+name:         console
+description:  YAMMON Console Manager
+version:      1.1

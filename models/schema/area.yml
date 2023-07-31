@@ -1,0 +1,143 @@
+#==============================================================
+Area:
+  actAs:
+    Timestampable:
+    NestedSet:
+    Translatable:
+        languages: [en,es]
+        fields:
+            name:
+                type:    string
+                length:  255
+                notnull: true
+
+            country:
+                type:    string
+                length:  255
+                notnull: false
+
+            region:
+                type:    string
+                length:  255
+                notnull: false
+
+            state:
+                type:    string
+                length:  255
+                notnull: false
+
+            county:
+                type:    string
+                length:  255
+                notnull: false
+
+            city:
+                type:    string
+                length:  255
+                notnull: false
+
+            area:
+                type:    string
+                length:  255
+                notnull: false
+
+  columns:
+    id:
+      type:          integer
+      length:        11
+      unsigned:      1
+      primary:       true
+      autoincrement: true
+
+    type:
+      type:          enum
+      values:        [root,country,region,state,county,city,area]
+      notnull:       true
+
+    country_id:
+      type:          integer
+      length:        11
+      unsigned:      1
+      notnull:       false
+
+    region_id:
+      type:          integer
+      length:        11
+      unsigned:      1
+      notnull:       false
+
+    state_id:
+      type:          integer
+      length:        11
+      unsigned:      1
+      notnull:       false
+
+    county_id:
+      type:          integer
+      length:        11
+      unsigned:      1
+      notnull:       false
+
+    city_id:
+      type:          integer
+      length:        11
+      unsigned:      1
+      notnull:       false
+
+    latitude:
+      type:          decimal
+      length:        17
+      scale:         14
+      notnull:       false
+
+    longitude:
+      type:          decimal
+      length:        17
+      scale:         14
+      notnull:       false
+
+    display:
+        type:        boolean
+        notnull:     true
+        default:     false
+
+  relations:
+    Country:
+        class:    Area
+        type:     one
+        local:    country_id
+        foreign:  id
+        onDelete: SET NULL
+        onUpdate: CASCADE
+
+    Region:
+        class:    Area
+        type:     one
+        local:    region_id
+        foreign:  id
+        onDelete: SET NULL
+        onUpdate: CASCADE
+
+    State:
+        class:    Area
+        type:     one
+        local:    state_id
+        foreign:  id
+        onDelete: SET NULL
+        onUpdate: CASCADE
+
+    County:
+        class:    Area
+        type:     one
+        local:    county_id
+        foreign:  id
+        onDelete: SET NULL
+        onUpdate: CASCADE
+
+    City:
+        class:    Area
+        type:     one
+        local:    city_id
+        foreign:  id
+        onDelete: SET NULL
+        onUpdate: CASCADE

@@ -1,0 +1,92 @@
+source: Lead
+default: advanced
+fields:
+    name:
+        label: Keywords
+        source: [Lead.first_name, Lead.last_name, Lead.property_id]
+        element:
+            type: Text
+            class: form-control
+
+    date_from:
+        label: Date from
+        source: Lead.created_at
+        type: Date
+        operators:
+            - After
+        element:
+            type:     DateTime
+            format:   '%Y-%m-%d %g:%i %A %p'
+            split:    false
+            output:   'Y-m-d\tH:i:00'
+            class:    form-control
+            timezone_input: <?= Configure::read('datetime.timezone')."\n" ?>
+            default:  <?= strtotime('last month 00:00:00 '.Configure::read('datetime.timezone'))."\n" ?>
+
+    date_to:
+        label: Date to
+        source: Lead.created_at
+        type: Date
+        operators:
+            - Before
+        element:
+            type:     DateTime
+            format:   '%Y-%m-%d %g:%i %A %p'
+            split:    false
+            output:   'Y-m-d\tH:i:00'
+            class:    form-control
+            timezone_input: <?= Configure::read('datetime.timezone')."\n" ?>
+            default:  <?= strtotime('today 23:59:59 '.Configure::read('datetime.timezone'))."\n" ?>
+
+    type:
+        source: Lead.type
+        element:
+            type: Select
+            class: form-control
+            required: true
+            options:
+                CALL: Call
+                EMAIL: EMAIL
+                SMS: SMS
+                FACEBOOK: Facebook
+                'WALK-IN': 'Walk-in'
+
+    area:
+        label: Looking In
+        source: [Lead.Searches.area_id]
+        element:
+            type: Select
+            class: form-control
+            source: FROM Area WHERE country_id = 89
+            source_label: Area.name_es
+
+    category_id:
+        label: Looking For
+        source: Lead.Searches.category_id
+        element:
+            type: Select
+            class: form-control
+            source: FROM PropertyCategory
+            source_key: id
+            source_group: type
+
+    property_id:
+        label: 'Property #'
+        source: Lead.property_id
+
+    broker:
+        source: Lead.account_id
+        element:
+            type: Select
+            source: FROM Account
+            source_label_tpl: %{Account.getFullName}
+            class: form-control
+            source_group: Account.Branch.name
+
+    source_id:
+        label: Source
+        source: Lead.source_id
+        element:
+            type: Select
+            class: form-control
+            source: FROM LeadSource

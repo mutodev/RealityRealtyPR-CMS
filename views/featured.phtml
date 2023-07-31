@@ -1,0 +1,43 @@
+<style>
+    .sliderFeatured .slide-description {
+        position: absolute;
+        bottom: 0;
+        left: 30px;
+        color: white;
+    }
+
+    .sliderFeatured-image img {
+        min-height: 250px;
+    }
+    .sliderFeatured-image:after {
+        content: '\A';
+        position: absolute;
+        width: calc(100% - 30px);
+        height: 100%;
+        top: 0;
+        right: 15px;
+        left: 15px;
+        background: rgba(0,0,0,0.6);
+        opacity: .3;
+        transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+    }
+</style>
+<div class="sliderFeatured container-fluid">
+    <?php foreach($Properties as $k => $Property): ?>
+        <div class="col-xs-12 col-sm-4" style="position: relative;height: 248px;overflow: hidden;">
+            <a href="<?=  PropertyTable::url_property( $Property ) ?>" class="viewDetails"><?= t('translation1056') ?></a>
+            <a href="<?=  PropertyTable::url_property( $Property ) ?>">
+                <div>
+                    <div class="sliderFeatured-image">
+                        <img class="img-responsive" src="<?= $Property->getMainPhoto()->getThumborPhoto('large'); ?>" data-holder-rendered="true" />
+                    </div>
+                    <div class="slide-description">
+                        <strong><?= $Property->title ?></strong>
+                        <p><?= $Property->Area->name ?></p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    <?php endforeach; ?>
+</div>

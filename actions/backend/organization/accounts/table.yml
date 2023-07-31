@@ -1,0 +1,43 @@
+source: FROM Account LEFT JOIN Account.AccountGroupRelation LEFT JOIN Account.Roles
+columns:
+
+    id:
+        label:   "Id"
+        source:  id
+        width:   30px
+        content: "<strong>%{id}</strong>"
+
+    name:
+        label: Name
+        source: [first_name, last_name]
+        content: %{first_name} %{last_name}
+
+    email:
+        source: email
+        decorator: email
+        class: center hidden-xs
+
+    phone:
+        source: phone
+        decorator: phone
+        class: center hidden-xs
+
+    type:
+        source: Account.Roles.name
+        content: %{Roles.0.name}
+
+    active:
+        label: Active
+        source: active
+        decorator: boolean
+        class: center hidden-xs
+
+    actions:
+        label: ''
+        width: 1px
+        type: Actions
+        actions:
+            edit:
+                icon: pencil
+                label: Edit
+                link:  .edit?id=%{id}

@@ -1,0 +1,13 @@
+<?= $Search->render(); ?>
+
+<?php if(Auth::hasPermission('organization:account.manage')): ?>
+<div class="actions">
+    <div class="row">
+        <div class="col-xs-12">
+            <a class="btn btn-success btn-sm" href="<?= url('.edit') ?>"><i class="fa fa-plus"></i>&nbsp;&nbsp;<?= t('Add New Account') ?></a>
+        </div>
+    </div>
+</div>
+<?php endif ?>
+
+<?= $Table->render(); ?>

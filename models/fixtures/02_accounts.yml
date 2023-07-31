@@ -1,0 +1,201 @@
+#==== Permissions =============================================
+
+Permission:
+
+  perm_system_admin:
+    id:          system.admin
+    group:       System
+    name:        System Admin
+    description: System Admin
+
+  perm_backend_access:
+    id:          backend.access
+    group:       Backend
+    name:        Backend Access
+    description: Backend Access
+
+  perm_property_access:
+    id:          property.access
+    group:       property
+    name:        property Access
+    description: Access properties
+
+  perm_property_manager:
+    id:          property.manager
+    group:       property
+    name:        property Manage
+    description: Manage propertys
+
+  perm_property_manage:
+    id:          property.manage
+    group:       property
+    name:        property Manage
+    description: Manage properties
+
+  perm_account_access:
+    id:          account.access
+    group:       Account
+    name:        Account Access
+    description: Access Accounts
+
+  perm_account_manage:
+    id:          account.manage
+    group:       Account
+    name:        Account Manage
+    description: Manage Accounts
+
+  perm_account_manage_manager:
+    id:          account.manage.manager
+    group:       Account
+    name:        Account Manage Manager
+    description: Manage Managers Accounts
+
+  perm_company_access:
+    id:          company.access
+    group:       Company
+    name:        Company Access
+    description: Access Companies
+
+  perm_company_manage:
+    id:          company.manage
+    group:       Company
+    name:        Company Manage
+    description: Manage Companies
+
+  perm_company_document_access:
+    id:          document.access
+    group:       Documents
+    name:        Access Documents
+    description: Access Documents
+
+  perm_company_document_manage:
+    id:          document.manage
+    group:       Documents
+    name:        Manage Documents
+    description: Manage Documents
+
+#==== Roles ===================================================
+
+Role:
+  NestedSet: true
+
+  role_system_admin:
+    id:          system.admin
+    name:        System Administrator
+    description: System Administrator
+    Permissions:
+      - perm_system_admin
+
+  role_admin:
+    id:          organization.admin
+    name:        Admin
+    description: Admin
+    Permissions:
+      - perm_backend_access
+      - perm_property_access
+      - perm_property_manager
+      - perm_property_manage
+      - perm_account_access
+      - perm_account_manage
+      - perm_account_manage_manager
+      - perm_company_access
+      - perm_company_document_access
+      - perm_company_document_manage
+
+  role_manager:
+    id:          company.manager
+    name:        Manager
+    description: Manager
+    Permissions:
+      - perm_backend_access
+      - perm_property_access
+      - perm_property_manager
+      - perm_property_manage
+      - perm_account_access
+      - perm_account_manage
+      - perm_company_document_access
+      - perm_company_document_manage
+      - perm_company_access
+
+  role_agent:
+    id:          company.agent
+    name:        Agent
+    description: Agent
+    Permissions:
+      - perm_backend_access
+      - perm_property_access
+      - perm_property_manage
+      - perm_company_access
+      - perm_company_document_access
+
+#==== Organizations ==================================================
+
+Organization:
+    organization_acme:
+        name:          ACME Inc.
+        is_active:     true
+
+#==== Companies ==================================================
+
+Company:
+    company_acme:
+        name:          ACME Inc.
+        is_active:     true
+        Organization:  organization_acme
+
+#==== Accounts ==================================================
+
+Account:
+    account_system_admin:
+        first_name:    System
+        last_name:     Administrator
+        username:      admin
+        password_salt: 0]s
+        password_hash: 83a87025a8da73b7dc6457c9094461e1957a4994
+        sex:           M
+        email:         admin@manager.com
+        phone:     '+17872446640'
+        active:        1
+        Roles:         [role_system_admin]
+
+    account_company_admin:
+        first_name:    Company
+        last_name:     Administrator
+        username:      company
+        password_salt: 0]s
+        password_hash: 83a87025a8da73b7dc6457c9094461e1957a4994
+        sex:           M
+        email:         company@manager.com
+        phone:     '+17872446640'
+        active:        1
+        Company:       company_acme
+        Organization:  organization_acme
+        Roles:         [role_admin]
+
+    account_company_manager:
+        first_name:    Company
+        last_name:     Manager
+        username:      manager
+        password_salt: 0]s
+        password_hash: 83a87025a8da73b7dc6457c9094461e1957a4994
+        sex:           M
+        email:         manager@manager.com
+        phone:     '+17872446640'
+        active:        1
+        Company:       company_acme
+        Organization:  organization_acme
+        Roles:         [role_manager]
+
+    account_company_agent:
+        first_name:    Company
+        last_name:     Agent
+        username:      agent
+        password_salt: 0]s
+        password_hash: 83a87025a8da73b7dc6457c9094461e1957a4994
+        sex:           M
+        email:         agent@manager.com
+        phone:     '+17872446640'
+        active:        1
+        Company:        company_acme
+        Organization:  organization_acme
+        Roles:         [role_agent]

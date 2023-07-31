@@ -1,0 +1,18 @@
+div.session_flash{
+    padding:     1em;
+    font-size:   1.3em;
+    font-weight: bold;
+    padding:     10px;
+}
+
+	div.session_flash_success{
+    	background: #CFDFB5;;	
+	}
+
+	div.session_flash_warning{
+    	background: #FCFFDF;
+	}
+
+	div.session_flash_error{
+        background: #F8D5D5;
+	}

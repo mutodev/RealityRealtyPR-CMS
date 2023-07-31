@@ -1,0 +1,277 @@
+<?php
+$Section = helper("Section");
+
+Configure::write("seo.title", PropertyTable::title_search($searchFilter));
+?>
+
+<?php
+if ($landing) {
+    echo $this->partial($landing, compact("broker"));
+}
+
+if ($type) {
+    echo $this->partial("view-header", compact('type'));
+}
+?>
+
+<div class="container">
+    <ol class="breadcrumb realty-breadcrumb">
+        <li><a href="<?= url('/') ?>"><?= t('translation321') ?></a></li>
+
+        <?php if ($type) : ?>
+            <li><?= t('translation1019') ?></li>
+            <li class="active"><?= ucfirst($type) ?></li>
+        <?php else: ?>
+            <li class="active"><?= t('translation322') ?></li>
+        <?php endif ?>
+    </ol>
+</div>
+
+<style>
+    .specialized,
+    .specialized .container{
+        height: 350px;
+    }
+
+    .specialized .container {
+        position: relative;
+    }
+
+    .specialized-item {
+        position: absolute;
+        right: 100px;
+        bottom: -20px;
+        background: white;
+        padding: 10px;
+        -webkit-box-shadow: 0px 0px 12px -3px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 12px -3px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 12px -3px rgba(0,0,0,0.75);
+    }
+
+    .specialized-item img {
+        max-width: 250px;
+    }
+
+    .specialized {
+        background: url('/img/stock/<?= $section ?>.jpg') no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    .propertyDetails {
+        font-size: 11px;
+    }
+
+    .propertyDetails .mr10 svg {
+        width: 25px;
+        margin-bottom: -7px;
+    }
+
+    #searchForm {
+        font-size: 12px;
+    }
+
+    #searchForm .col-sm-4 select, #searchForm .col-sm-4 input {
+        height: 32px;
+    }
+</style>
+
+<?php if ($section) : ?>
+    <div class="specialized">
+        <div class="container">
+            <div class="specialized-item">
+                <img src="/img/specialized/<?= $section ?>.png" />
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
+
+<div class="container container-main-padding nav-box-shadow">
+    <div class="row list-search-form">
+        <form id="searchForm" action="" method="get" name="search" class="form form-horizontal">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-9">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4">
+                                <ul class="nav nav-tabs list-nav-tabs">
+                                    <li role="presentation" <?php if (PropertyTable::$defaultSearchFilters['sale_or_rent'] == 'sale'): ?>class="active"<?php endif ?>><a href="<?= url('propiedades.venta') ?>"><?= t('translation151') ?></a></li>
+                                    <li role="presentation" <?php if (PropertyTable::$defaultSearchFilters['sale_or_rent'] == 'rent'): ?>class="active"<?php endif ?>><a href="<?= url('propiedades.alquiler') ?>"><?= t('translation316') ?></a></li>
+                                    <li role="presentation" <?php if (empty(PropertyTable::$defaultSearchFilters['sale_or_rent'])): ?>class="active"<?php endif ?>><a href="<?= url('propiedades') ?>"><?= t('translation320') ?></a></li>
+                                </ul>
+                            </div>
+                            <div class="col-xs-12 col-sm-4">
+                                <select name="search[area]" class="searchField">
+                                    <option value=""><?= t('translation154'); ?></option>
+                                    <?php foreach ($propertyAreas as $key => $propertyArea): ?>
+                                        <option value="<?= $key ?>" <?php if ($searchFilter['area'] == $key) echo 'selected="selected"'; ?> ><?= $propertyArea ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                            <div class="col-xs-12 col-sm-4">
+                                <select id="price_from" name="search[price_from]" class="priceField searchField extendedField">
+                                    <option value='' class='sale'><?= t('translation157'); ?></option>
+
+                                    <?php for($i=250; $i <= 3500; $i+= 250): ?>
+                                        <option value='<?= $i ?>' class='rent' <? if ($searchFilter['price_from'] == $i) echo 'selected="selected"'; ?>>$<?= number_format($i) ?></option>
+                                    <?php endfor; ?>
+
+                                    <?php for($i=50000; $i <= 500000; $i+= 25000): ?>
+                                        <option value='<?= $i ?>' class='sale' <? if ($searchFilter['price_from'] == $i) echo 'selected="selected"'; ?>>$<?= number_format($i) ?></option>
+                                    <?php endfor; ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4">
+                                <input name="search[keywords]" type="text" value="<?= $searchFilter['keywords'] ?>" class="searchField useDefault" rel="<?= t('translation155'); ?>" placeholder="<?= t('translation155'); ?>" />
+                            </div>
+                            <div class="col-xs-12 col-sm-4">
+                                <input type='hidden' name='search[property_type]' value='' />
+                                <select name="search[property_type]" class="searchField">
+                                    <option value=""><?= t('translation153') ?></option>
+                                    <?php foreach ($propertyTypes as $typec => $types): ?>
+                                        <option value="<?= $typec ?>"><?= $typec ?></option>
+                                        <?php foreach($types as $option): ?>
+                                            <option value="<?= $typec.':'.$option['id'] ?>" <?php if ($category == $option['id']) echo 'selected="selected"'; ?>>&nbsp;- <?= $option['label']; ?></option>
+                                        <?php endforeach; ?>
+                                    <?php endforeach; ?>
+                                </select>
+
+                            </div>
+
+                            <div class="col-xs-12 col-sm-4">
+                                <select id="price_to" name="search[price_to]" class="priceField searchField extendedField">
+                                    <option value='' class='sale'><?= t('translation158'); ?></option>
+
+                                    <?php for($i=250; $i <= 3500; $i+= 250): ?>
+                                        <option value='<?= $i ?>' class='rent' <? if ($searchFilter['price_to'] == $i) echo 'selected="selected"'; ?>>$<?= number_format($i) ?></option>
+                                    <?php endfor; ?>
+
+                                    <?php for($i=50000; $i <= 500000; $i+= 25000): ?>
+                                        <option value='<?= $i ?>' class='sale' <? if ($searchFilter['price_to'] == (string)$i) echo 'selected="selected"'; ?>>$<?= number_format($i) ?></option>
+                                    <?php endfor; ?>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-3">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <button type="submit" class="button positive submitBtn submitBtnList"><?= t('translation129'); ?></button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <button class="button positive cleanBtnList"><?= t('translation141'); ?></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="hr-box-shadow"></div>
+
+
+<!-- == SORTER ============================= -->
+<script>
+  function onOrderChange( select ){
+    var href = select.options[ select.selectedIndex ].value;
+    window.location.href = href;
+  }
+</script>
+<?php
+$sorts = array(
+    t('translation166')                               => array('order' => 'name'    , 'asc' => '1' , 'page' => 0 ) ,
+    t('translation167')                                      => array('order' => 'price'   , 'asc' => '1' , 'page' => 0 ) ,
+    t('translation168')                                     => array('order' => 'rooms'   , 'asc' => '0' , 'page' => 0 ) ,
+    t('translation169')                                => array('order' => 'baths'   , 'asc' => '0' , 'page' => 0 ),
+
+    t('translation170')                                => array('order' => 'sqfeet'   , 'asc' => '0' , 'page' => 0 ),
+    t('translation171')                                => array('order' => 'sqmt'   , 'asc' => '0' , 'page' => 0 )
+);
+
+if($type != 'residential'){
+    unset($sorts[t('translation168')]);
+    unset($sorts[t('translation169')]);
+}
+
+$orders = array(
+    t('translation172')                               => array('order' =>     $order, 'asc' => '1' , 'page' => 0 ) ,
+    t('translation173')                                      => array('order' =>    $order, 'asc' => '0' , 'page' => 0 ) ,
+);
+?>
+
+<?= $this->partial($type ? $type : 'properties', compact('Properties', 'Pagination')); ?>
+
+<?php if ($FeaturedProperties && !$type): ?>
+<div class="mt40 container">
+    <h2 class="title"><?= t('translation1037') ?></h2>
+    <span><?= t('translation1038'); ?></span>
+
+    <div class="mt20">
+        <?= $this->partial('featured', array('Properties' => $FeaturedProperties)); ?>
+    </div>
+</div>
+<?php endif; ?>
+
+<?= $Section->start("javascriptFooter"); ?>
+<?= $Section->render("javascriptFooter"); ?>
+<script type="text/javascript">
+
+  var price_options_sale = null;
+  var price_options_rent = null;
+
+  jQuery(document).ready(function(){
+
+    jQuery("#sale_or_rent input").change(function() {
+      var mode = jQuery("#sale_or_rent input:checked").val();
+      update_prices(mode);
+    });
+
+    jQuery("#sale_or_rent input:eq(0)").trigger('change');
+
+
+  });
+
+  function update_prices( className ){
+
+    if( price_options_sale == null ){
+
+      price_options_sale = {};
+      price_options_rent = {};
+
+      jQuery('#price_from option').each(function(i, option){
+
+        if ( jQuery(option).attr('class') == 'sale' )
+          price_options_sale[ jQuery(option).attr('value') ] = jQuery(option).text();
+        else if ( jQuery(option).attr('class') == 'rent' )
+          price_options_rent[ jQuery(option).attr('value') ] = jQuery(option).text();
+        else{
+          price_options_sale[ jQuery(option).attr('value') ] = jQuery(option).text();
+          price_options_rent[ jQuery(option).attr('value') ] = jQuery(option).text();
+        }
+      });
+    }
+
+    var select1  = jQuery('#price_from');
+    var select2  = jQuery('#price_to');
+    var options  = className == 'rent' ? price_options_rent : price_options_sale;
+
+    var optionsHtml = '';
+    for( var k in options ){
+      optionsHtml += '<option value="' + k + '">' + options[k] + '</option>';
+    }
+
+    select1.html('<option value=""><?= t('translation157'); ?></option>' + optionsHtml);
+    select2.html('<option value=""><?= t('translation158'); ?></option>' + optionsHtml);
+  }
+
+</script>
+
+<?= $Section->end(); ?>

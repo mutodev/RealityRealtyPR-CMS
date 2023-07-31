@@ -1,0 +1,60 @@
+<style>
+
+    .sliderTopAgent .slideController {
+        display: block;
+        height: 100px;
+        width: 400px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .sliderTopAgent .carousel-control.left {
+        right: auto;
+    }
+
+    .sliderTopAgent .carousel-control.right {
+        left: auto;
+    }
+
+    .topAgentItem {
+        border: 1px solid #EFEFEF;
+        background: white;
+        text-align: center;
+        margin-bottom: 20px;
+        height: 350px;
+    }
+
+    .sliderTopAgent-image img {
+        min-height: 250px;
+    }
+
+
+    .sliderTopAgent .carousel-control {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: auto;
+        font-size: 20px;
+        color: #fff;
+        text-align: center;
+        text-shadow: 0 1px 2px rgba(0,0,0,.6);
+        background-color: rgba(0,0,0,0);
+        filter: alpha(opacity=50);
+        opacity: .5;
+    }
+</style>
+    <div class="container-fluid">
+        <?php foreach($TopAgents as $Agent): ?>
+            <a class="col-xs-12 col-sm-3" href="/top/<?= $Agent['username'] ?>">
+                <div class="topAgentItem">
+                    <div class="sliderTopAgent-image">
+                        <img class="img-responsive" alt="" src="<?= $Agent['s3_photo'] ?>" data-holder-rendered="true" />
+                    </div>
+                    <div class="slide-description" style="padding: 15px">
+                        <h4><?= $Agent['first_name'] . ' ' . $Agent['last_name'] ?></h4>
+                    </div>
+                </div>
+            </a>
+        <?php endforeach; ?>
+    </div>

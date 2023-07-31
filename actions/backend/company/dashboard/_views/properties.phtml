@@ -1,0 +1,21 @@
+<div class="panel">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            New Listings
+        </h3>
+    </div>
+    <div class="panel-body container-fluid">
+        <div class="row">
+            <?php foreach($Properties as $Property): ?>
+                <div class="col-xs-12 col-sm-2" style="height: 200px; text-align: center">
+                    <a target="_blank" href="<?= url('..properties.view?id='.$Property->id) ?>">
+                        <img src="<?= $Property->Photos[0]->original ?>" style="max-width: 100%; max-height: 100px;" />
+                        <br />
+                        <strong>#<?= $Property->id ?><br /><?= $Property->title ?></strong><br />
+                        <span><?= $Property->Area->name ?></span>
+                    </a>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</div>

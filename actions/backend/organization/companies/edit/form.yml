@@ -1,0 +1,30 @@
+class: form-bordered
+attributes:
+    role: form
+elements:
+
+    summary:
+        type: Summary
+
+    name:
+        label:    Name
+        required: true
+        class:    form-control
+
+    timezone:
+        label: Time zone
+        type: Select
+        class: form-control
+        required: true
+        source_callback: dateTimezonesList
+        default: America/Puerto_Rico
+
+    is_active:
+        type: Checkbox
+        label: ''
+        text: Company is active
+        default: 1
+
+    buttons:
+        type:  Buttons
+        class: form-group

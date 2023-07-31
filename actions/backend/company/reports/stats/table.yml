@@ -1,0 +1,24 @@
+source: FROM Property LEFT JOIN Property.Photos LEFT JOIN Property.Category LEFT JOIN Property.Contract LEFT JOIN Property.Area ORDER BY Property.end_at ASC
+columns:
+    photo:
+        source: id
+        width: 80px
+        align: center
+        style: 'text-align: center'
+        content: >
+            <div style="text-align: center">
+               <a target="_blank" href="/propiedades/view?force=1&id=%{Property.id}"><img src="%{Property.Photos.0.original}" height="50" /></a>
+            </div>
+
+    title:
+        label: 'Description'
+        source: title
+        content: >
+            %{renderDescription:*}
+
+    stats:
+        label: Views
+        content: >
+            %{renderStat:*}
+
+

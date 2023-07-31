@@ -1,0 +1,63 @@
+source: FROM Contract
+columns:
+    id:
+        label: 'ID #'
+        source: id
+        class: hidden-xs-down
+
+    type:
+        source: type
+        class: hidden-xs-down
+
+    status:
+        source: status
+        class: hidden-xs-down
+
+    price:
+        source: sale_price
+        content: >
+            %{renderSalerice:*}
+
+    approved_at:
+        class: hidden-xs-down
+        label: Approved
+        source: approved_at
+        decorator: {name: 'LocalDateTime', format: 'short-time'}
+
+    start_at:
+        class: hidden-xs-down
+        label: Start
+        source: start_at
+        decorator: {name: 'LocalDateTime', format: 'short'}
+
+    end_at:
+        label: End
+        source: end_at
+        decorator: {name: 'LocalDateTime', format: 'short'}
+
+    client:
+        source: client_id
+        class: hidden-xs-down
+        content: >
+            %{renderClient:*}
+
+    actions:
+        type: Actions
+        label: ' '
+        width: 1px
+        actions:
+
+            edit:
+                icon: pencil
+                label: Edit
+                link:  '.edit?id=%{id}&property_id=%{Contract.property_id}'
+
+            renew:
+                icon: refresh
+                label: Renew
+                link:  '.edit?parent_id=%{id}&property_id=%{Contract.property_id}'
+
+#            delete:
+#                label: '<i class="fa fa-trash-o"></i>'
+#                link:    .delete?id=%{id}
+#                confirm: true

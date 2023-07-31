@@ -1,0 +1,145 @@
+<style>
+@media print{
+    .site-menubar,
+    .hide-print,
+    .page-header{
+        display: none;
+    }
+
+    .page-content{
+        padding: 0 !important;
+    }
+
+    .page{
+        background-color: #fff;
+    }
+}
+
+.mbox {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 10px 100px 10px 25px;
+    padding-left: 20px;
+}
+
+.mbox span {
+    margin-left: 5px;
+}
+</style>
+
+<div class="panel hide-print">
+    <div class="panel-body container-fluid">
+    <?= $Search->render(); ?>
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-body container-fluid">
+        <h3><?= t('Summary'); ?></h3>
+        <!-- Browsers Vists Table -->
+        <table class="table table-bordered margin-bottom-0">
+            <thead>
+            <tr>
+                <?php foreach($summary as $year => $f): ?>
+                <th align="center" colspan="7">
+                    <?= $year ?>
+                </th>
+                <?php endforeach; ?>
+            </tr>
+            <tr>
+                <?php foreach($summary as $year => $f): ?>
+                    <?php foreach($f as $type => $g): ?>
+                        <th colspan="<?= count($g) ?>">
+                            <?= ucfirst(str_replace('_', ' ', $type)) ?>
+                        </th>
+                    <?php endforeach; ?>
+                <?php endforeach; ?>
+            </tr>
+            <tr>
+                <?php foreach($summary as $year => $f): ?>
+                    <?php foreach($f as $type => $g): ?>
+                        <?php foreach($g as $stat => $value): ?>
+                        <th>
+                            <?= ucfirst(str_replace('_', ' ', $stat)) ?>
+                        </th>
+                        <?php endforeach; ?>
+                    <?php endforeach; ?>
+                <?php endforeach; ?>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <?php foreach($summary as $year => $f): ?>
+                        <?php foreach($f as $type => $g): ?>
+                            <?php foreach($g as $stat => $value): ?>
+                            <td>
+                                <?= number_format($value) ?>
+                            </td>
+                            <?php endforeach; ?>
+                        <?php endforeach; ?>
+                    <?php endforeach; ?>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<?php foreach($charts as $name => $nameChart): ?>
+    <div class="panel">
+        <div class="panel-body container-fluid">
+            <div class="row">
+                <?php foreach($nameChart as $type => $reportData): ?>
+                    <div class="col-xs-12 col-sm-6">
+                        <h3><?= $report[$name]['title']; ?> - <?= ucfirst(str_replace('_', ' ', $type)) ?></h3>
+
+                        <div id="<?= $name ?>-<?= $type ?>"></div>
+                        <div id="<?= $name ?>-<?= $type ?>-legend"></div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>
+
+<?php ob_start(); ?>
+<script type="text/javascript">
+  function formatMoney(n, c, d, t) {
+    var c = isNaN(c = Math.abs(c)) ? 2 : c,
+      d = d == undefined ? "." : d,
+      t = t == undefined ? "," : t,
+      s = n < 0 ? "-" : "",
+      i = String(parseInt(n = Math.abs(Number(n) || 0).toFixed(c))),
+      j = (j = i.length) > 3 ? j % 3 : 0;
+
+    return (s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : ""));
+  };
+</script>
+<?php foreach($charts as $name => $nameChart): ?>
+    <?php foreach ($nameChart as $type => $reportData): ?>
+        <script type="text/javascript">
+          var graph = Morris.Bar({
+            element: '<?= $name ?>-<?= $type ?>',
+            data: <?= json_encode(array_values($reportData)) ?>,
+            redraw: true,
+            xkey: 'year',
+            ykeys: <?= json_encode($labels) ?>,
+            labels: <?= json_encode($labels) ?>,
+            fillOpacity: 0.6,
+            hideHover: 'auto',
+            behaveLikeLine: true,
+            resize: true,
+            barColors: ['#34495E', '#26B99A',  '#666', '#3498DB']
+          });
+
+          jQuery('#<?= $name ?>-<?= $type ?>').resize(function () { graph.redraw(); });
+
+          graph.options.labels.forEach(function(label, i){
+            var legendlabel= jQuery('<span style="display: inline-block;">'+label+'</span>')
+            var legendItem = jQuery('<div class="mbox"></div>').css('background-color', graph.options.barColors[i]).append(legendlabel)
+            jQuery('#<?= $name ?>-<?= $type ?>-legend').append(legendItem)
+          })
+        </script>
+    <?php endforeach; ?>
+<?php endforeach; ?>
+<?php helper('Javascript')->addInline(ob_get_clean(), false); ?>

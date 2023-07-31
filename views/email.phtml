@@ -1,0 +1,13 @@
+<?php
+
+$len    = mb_strlen( $email );
+$result = '';
+
+for($i = 0; $i < $len; $i++) {
+    $letter  = mb_substr( $email, $i, 1 );
+    $result .= chr( ord($letter) + 1 );
+}
+
+echo $result;
+
+?>

@@ -1,0 +1,83 @@
+<?php
+    $Header     = helper("header");
+?>
+
+<?= $Header->render( array(
+    "image"       => '/img/icon_settings.png' ,
+    "title"       => t('Dashboard')
+)); ?>
+
+<div class="dashTitle">Properties</div>
+<div class="dashBox">
+
+    <a href="/blog/wp-admin/">
+        <img src="/img/dashboard/wordpress.png" />
+        <span>Blog Administration</span>
+    </a>
+
+    <a href="/admin/content/">
+        <img src="/img/dashboard/content.png" />
+        <span>Content</span>
+    </a>
+
+    <a href="/admin/slideshow">
+        <img src="/img/dashboard/slideshow.png" />
+        <span>Slideshow</span>
+    </a>
+
+    <a href="/admin/accounts/">
+        <img src="/img/dashboard/accounts.png" />
+        <span>Accounts</span>
+    </a>
+
+    <div style="clear: both;"></div>
+</div>
+
+
+
+<style type="text/css">
+.dashBox {
+    border:         1px solid #DDDDDD;
+    border-top:     0px;
+    margin-bottom:  20px;
+    padding:        5px;
+    text-align:     center;
+    vertical-align: middle;
+}
+
+.dashTitle {
+    background:  transparent url('../img/bkg_dashboard.gif') repeat-x left top;
+    color:       #111111;
+    font-size:   14px;
+    font-weight: bold;
+    margin:      0;
+    padding:     7px 7px 4px 7px;
+}
+
+.dashBox a {
+    border:          1px solid #DDDDDD;
+    color:           #333333 !important;
+    display:         block;
+    float:           left;
+    height:          97px !important;
+    padding:         2px 5px 1px;
+    margin:          5px;
+    text-decoration: none;
+    vertical-align:  middle;
+    width:           108px !important;
+}
+
+.dashBox a:hover {
+    background-color: #f1e8e6;
+    border:           1px solid #c1482c;
+}
+
+.dashBox a img {
+    margin-top:13px;
+}
+
+.dashBox a span {
+    display:block;
+    padding-top:3px;
+}
+</style>

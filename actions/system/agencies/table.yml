@@ -1,0 +1,29 @@
+source: FROM Agency
+columns:
+
+    id:
+        label:   Id
+        source:  id
+        width:   30px
+
+    name:
+        label: Name
+        source: name
+
+    active:
+        label: Active
+        source: is_active
+        decorator: boolean
+        width: 56px
+        class: center
+
+    actions:
+        type: Actions
+        label: ' '
+        width: 1px
+        actions:
+
+            login:
+                icon: 'pencil'
+                label: edit
+                link:  .edit?id=%{id}

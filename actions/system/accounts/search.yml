@@ -1,0 +1,12 @@
+source: Account
+default: advanced
+fields:
+    first_name:
+        source: Account.first_name
+
+    email:
+        source: Account.email
+
+    active:
+        label: Status
+        source: Account.active

@@ -1,0 +1,39 @@
+class: form-bordered
+attributes:
+    role: form
+elements:
+
+    summary:
+        type: Summary
+
+    name:
+        label:    Name
+        required: true
+        class:    form-control
+
+    subdomain:
+        label:    Subdomain
+        required: true
+        class:    form-control
+
+    logo:
+        label: Logo
+        type: FileImageAsync
+        max_width: 450
+        example: The recommended dimension is 450x96
+
+    email_logo:
+        label: Email Logo
+        type: FileImageAsync
+        max_width: 450
+        example: The recommended dimension is 450x96
+
+    is_active:
+        type: Checkbox
+        label: ''
+        text: Agency is active
+        default: 1
+
+    buttons:
+        type:  Buttons
+        class: form-group

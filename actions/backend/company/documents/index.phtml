@@ -1,0 +1,59 @@
+<?php
+
+$Javascript = helper('Javascript');
+
+$Css = helper('Css');
+$Css->add('/css/morris.css');
+
+if(Auth::hasPermission('document.manage')){
+  $this->breadcrumbBtn = array(
+      'url'   => url('.edit'),
+      'label' => t('Document'),
+      'icon'  => 'plus'
+  );
+}
+
+?>
+
+<?php if(Auth::hasPermission('document.manage')): ?>
+    <div class="panel">
+        <div class="panel-body container-fluid">
+            <a class="btn btn-success btn-xs" href="<?= url('.edit') ?>">
+                <i class="fa fa-plus"></i>&nbsp;<?= t('Document') ?>
+            </a>
+            <a class="btn btn-primary btn-xs" href="<?= url('.categories') ?>">
+                <i class="fa fa-plus"></i>&nbsp;<?= t('Manage Categories') ?>
+            </a>
+        </div>
+    </div>
+<?php endif ?>
+
+<div class="panel">
+    <div class="panel-body container-fluid">
+        <ul>
+            <?php foreach($DocumentCategories as $ParentCategory): ?>
+                <li>
+                    <?= $ParentCategory->name ?>
+                    <ul>
+                        <?php foreach($ParentCategory->Childs as $DocumentCategory): ?>
+                            <li>
+                                <?= $DocumentCategory->name ?>
+                                <ul>
+                                    <?php foreach($DocumentCategory->Documents as $Document): ?>
+                                        <li>
+                                            <a target="_blank" href="https://s3.amazonaws.com/app-propiedades/<?= $Document->path ?>"><?= $Document->name ?></a>
+
+                                            <?php if(Auth::hasPermission('document.manage')): ?>
+                                                  <a style="color: black; margin-left: 15px;" href="<?= url('.edit?id='.$Document->id) ?>">Edit</a> | <a style="color: black; margin-left: 15px;" onclick="return confirm('Are you sure?')" href="<?= url('.delete?id='.$Document->id) ?>">Delete</a>
+                                            <?php endif ?>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</div>

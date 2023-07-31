@@ -1,0 +1,10 @@
+<?php
+$Header     = helper("Header");
+?>
+
+<?= $Header->render( array(
+"image"       => '/img/icon_content.png' ,
+'title'       => $edit ? t('Edit Content') : t('Create Content')
+)); ?>
+
+<?= $Form->render(); ?>

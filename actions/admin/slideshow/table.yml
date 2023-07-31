@@ -1,0 +1,52 @@
+source:         FROM Slideshow
+defaultSort:    id
+defaultSortDir: DESC
+columns:
+
+    id:
+        source:   id
+        label:    Id
+        width:    55px
+
+    title:
+        source:   title
+        label:    Title
+        width:    auto
+        hideable: false
+
+    actions:
+        source:
+        label:     Actions
+        class:     actions
+        width:     100px
+        sortable:  false
+        groupable: false
+        hideable:  false
+        content:   %{template_actions:*}
+
+<?php
+
+function template_actions ( $Obj ) {
+    $actions = '';
+
+    $actions .= "<a href='/admin/slideshow/edit/?id=".$Obj->id."'>";
+    $actions .= "  <img src='/img/actions/edit.png' alt='edit' title='edit' />";
+    $actions .= "</a>";
+    $actions .= "&nbsp;";
+
+    $actions .= "<a href='/admin/slideshow/feature/?id=".$Obj->id."'>";
+    $actions .= "  <img src='/img/actions/sticky_".($Obj->is_sticky ? 'on' : 'off').".png' alt='sticky' title='sticky' />";
+    $actions .= "</a>";
+    $actions .= "&nbsp;";
+    
+    if ( $Obj->is_deletable ) {
+        $actions .= "<a href='/admin/slideshow/delete/?id=".$Obj->id."' onclick='return confirm(\"Are you sure?\")'>";
+        $actions .= "  <img src='/img/actions/delete.png' alt='delete' title='delete' />";
+        $actions .= "</a>";
+        $actions .= "&nbsp;";
+    }
+
+    return $actions;
+}
+
+?>

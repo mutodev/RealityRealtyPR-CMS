@@ -1,0 +1,439 @@
+class: form-bordered
+attributes:
+  role: form
+elements:
+  summary:
+    type: Summary
+
+  header_general:
+    type: Header
+    label: General Information
+
+  title_es:
+    label: Title (Spanish)
+    type: Text
+    required: true
+    class: form-control
+
+  title_en:
+    label: Title (English)
+    type: Text
+    class: form-control
+
+  category_type:
+    label: Property Type
+    type: Select
+    class: form-control
+    required: true
+    options:
+      Residential: Residential
+      Commercial: Commercial
+      Land: Land
+
+  category_id:
+    label: Category
+    type: Select
+    required: true
+    class: form-control
+    source_nested: .category_type
+    source_callback: get_categories
+    depends: .category_type
+
+  Tags:
+    type: CheckBoxes
+    source: FROM PropertyTag
+
+  description_es:
+    label: Description (Spanish)
+    type: TextArea
+    classes: form-control
+
+  description_en:
+    label: Description (English)
+    type: TextArea
+    classes: form-control
+
+  header_address:
+    type: Header
+    label: Address
+
+  address1:
+    label: Address
+    class: form-control
+
+  address2:
+    label: Address (cont)
+    class: form-control
+
+  area_id:
+    label: City
+    type: Select
+    source: FROM Area WHERE country_id = 89
+    class: form-control
+
+  postal_code:
+    class: form-control
+
+  sqm:
+    class: form-control
+    label: Square Meters
+
+  sqf:
+    class: form-control
+    label: Square Feet
+
+  cuerdas:
+    class: form-control
+    label: Cuerdas
+
+  mixed_use_residential:
+    label: Mixed Use Residential Units
+    class: form-control
+    depends:
+      .category_id: 10
+
+  mixed_use_commercial:
+    label: Mixed Use Commercial Units
+    class: form-control
+    depends:
+      .category_id: 10
+
+  rooms:
+    class: form-control
+    label: Bedrooms
+    type: Number
+    required: true
+    depends:
+      .category_id:
+        callback: dependResidential
+      .category_type:
+        callback: dependResidential
+
+  bathrooms:
+    class: form-control
+    required: true
+    depends:
+      .category_id:
+        callback: dependResidential
+      .category_type:
+        callback: dependResidential
+
+  have_parkings:
+    type: Select
+    class: form-control
+    options:
+      1: Yes
+      0: No
+
+  parkings:
+    class: form-control
+    type: Number
+    label: Parkings Quantity
+    depends:
+      have_parkings: 1
+
+  lead_required:
+    type: Checkbox
+    label: Lead Required
+
+  lead_year:
+    label: Year
+    type: Number
+    depends:
+      .lead_required: 1
+
+  internal_number:
+    label: Listing ID
+    type: Text
+    required: true
+
+  header_location:
+    type: Header
+    label: Location Zoning and Taxes
+
+  coordinates:
+    type: Container
+    label: ""
+    layout_renderer:
+      type: horizontal
+    default_renderers:
+      box_renderer:
+        type: 1Column
+        highlight: false
+        border: false
+        margin: "0"
+        padding: "0"
+    elements:
+      public_coordinates:
+        type: CheckBox
+
+      latitude:
+        class: form-control
+
+      longitude:
+        class: form-control
+
+  catastro:
+    class: form-control
+
+  zonification:
+    class: form-control
+    type: Text
+    label: Zoning
+    depends:
+      .category_type: ["Commercial", "Land"]
+
+  flood_zone:
+    class: form-control
+    type: Text
+    label: Flood Zone
+
+  header_sale:
+    type: Header
+    label: Sale Information
+
+  for_sale:
+    type: Checkbox
+    inline: true
+
+  sale_price:
+    type: Price
+    class: form-control
+    depends:
+      .for_sale: 1
+
+  sale_price_type:
+    class: form-control
+    default: SQF
+    depends:
+      .for_sale: 1
+      .category_type: ["Commercial", "Land"]
+    options:
+      SQF: SQF
+      SQM: SQM
+      CUERDAS: CUERDAS
+
+  is_short_sale:
+    label: Short Sale
+    type: Checkbox
+    depends:
+      .for_sale: 1
+
+  short_sale_container:
+    type: Container
+    default_renderers:
+      box_renderer:
+        type: 1Column
+        highlight: false
+        border: false
+        margin: "0"
+        padding: "0"
+    depends:
+      .is_short_sale: 1
+    elements:
+      short_sale_loan_number:
+        type: Text
+        label: Loan Number
+
+      short_sale_bank_id:
+        type: Select
+        label: Bank
+        source_callback: getBanks
+        class: form-control
+
+  is_relocation:
+    label: Relocation
+    type: Checkbox
+    depends:
+      .for_sale: 1
+
+  relocation_company_id:
+    type: Select
+    label: Company
+    source_callback: getCompanies
+    class: form-control
+    depends:
+      .is_relocation: 1
+
+  is_resale:
+    label: Resale
+    type: Checkbox
+    depends:
+      .for_sale: 1
+
+  is_repossessed:
+    type: Checkbox
+    label: REO
+    depends:
+      .for_sale: 1
+
+  repo_container:
+    type: Container
+    default_renderers:
+      box_renderer:
+        type: 1Column
+        highlight: false
+        border: false
+        margin: "0"
+        padding: "0"
+    depends:
+      .is_repossessed: 1
+    elements:
+      source_id:
+        label: REO ID
+        required: true
+
+      repossessed_at:
+        class: form-control
+        format: "%M/%d/%Y%p"
+        output: Y-m-d
+        type: DateTime
+        timezone_input: <?= Configure::read('datetime.timezone')."\n" ?>
+        default: <?= strtotime('today 00:00:00 '.Configure::read('datetime.timezone'))."\n" ?>
+
+      source_type:
+        class: form-control
+        required: true
+        type: Select
+        options:
+          INVESTOR: Investor
+          BANK: Bank
+
+      repossessed_investor_id:
+        type: Select
+        label: Investor
+        source_callback: getInvestor
+        class: form-control
+        depends:
+          .source_type: INVESTOR
+
+      repossessed_bank_id:
+        type: Select
+        label: Bank
+        source_callback: getBanks
+        class: form-control
+        depends:
+          .source_type: BANK
+
+  header_rent:
+    type: Header
+    label: Rent Information
+
+  for_rent:
+    type: Checkbox
+
+  rent_price:
+    class: form-control
+    type: Price
+    depends:
+      .for_rent: 1
+
+  rent_price_type:
+    class: form-control
+    default: SQF
+    depends:
+      .for_rent: 1
+      .category_type: ["Commercial", "Land"]
+    options:
+      SQF: SQF
+      SQM: SQM
+      CUERDAS: CUERDAS
+
+  is_rent_long_term:
+    type: Checkbox
+    label: Long Term
+    depends:
+      .for_rent: 1
+
+  is_rent_short_term:
+    type: Checkbox
+    label: Short Term
+    depends:
+      .for_rent: 1
+
+  header_maintenance:
+    type: Header
+    label: Maintenance Information (HOA Monthly)
+
+  maintenance:
+    type: Select
+    class: form-control
+    options:
+      1: Yes
+      0: No
+
+  maintenance_price:
+    label: Monthly Price
+    class: form-control
+    depends:
+      maintenance: 1
+
+  maintenance_complex:
+    type: Select
+    label: Anual Complex Maintenance
+    class: form-control
+    options:
+      1: Yes
+      0: No
+
+  maintenance_complex_price:
+    type: Price
+    class: form-control
+    depends:
+      maintenance_complex: 1
+
+  header_production:
+    type: Header
+    label: Production
+
+  production_unit_id:
+    label: Unit
+    type: Select
+    source: FROM ProductionUnit
+    class: form-control
+
+  account_id:
+    label: Primary Agent
+    type: Select
+    source_callback: filterAgents
+    class: form-control
+
+  secondary_account_id:
+    label: Secondary Agent
+    type: Select
+    source_callback: filterAgents
+    class: form-control
+
+  tertiary_account_id:
+    label: Tertiary Agent
+    type: Select
+    source_callback: filterAgents
+    class: form-control
+    depends:
+      category_type: Commercial
+
+  marketing_header:
+    type: Header
+    label: Marketing
+
+  is_featured:
+    label: Featured?
+    type: Checkbox
+
+  header_flyer:
+    type: Header
+    label: Flyer
+
+  flyer_description_es:
+    label: Description (Spanish)
+    type: TextArea
+    classes: form-control
+
+  flyer_description_en:
+    label: Description (English)
+    type: TextArea
+    classes: form-control
+
+  buttons:
+    type: Buttons
+    class: form-group

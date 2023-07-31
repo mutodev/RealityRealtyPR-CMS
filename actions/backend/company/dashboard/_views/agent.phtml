@@ -1,0 +1,165 @@
+<?php if(Auth::get()->is_top_agent): ?>
+    <div class="alert alert-success">
+        <?= t('Congratulations you are a Top Producer, share your landing page'); ?>: <a href="/top/<?= Auth::get()->username ?>" target="_blank">
+            http://realityrealtypr.com/top/<?= Auth::get()->username ?>
+        </a>
+    </div>
+<?php endif ?>
+
+<?= $this->partial('properties', compact('Properties')) ?>
+
+<?= $this->partial('documents', compact('Properties')) ?>
+
+<div class="panel">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            Quick Access
+        </h3>
+    </div>
+    <div class="panel-body container-fluid">
+        <a class="btn btn-success btn-sm pull-left" href="<?= url('..leads.edit') ?>">
+            <i class="fa fa-plus"></i>&nbsp;<?= t('Add New Lead') ?>
+        </a>
+        <a class="btn btn-primary btn-sm pull-left" href="<?= url('..profile') ?>">
+            <i class="fa fa-pencil"></i>&nbsp;<?= t('Edit Profile') ?>
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <?php foreach ($goalStats as $month => $monthData): ?>
+        <?php foreach ($monthData as $name => $reportData): ?>
+            <div class="col-xs-12 col-sm-4">
+                <div class="card card-shadow card-completed-options">
+                    <div class="card-block p-30">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="counter text-left blue-grey-700">
+                                    <div class="counter-label mt-10"><?= $reportData['title']; ?>
+                                    </div>
+                                    <div class="counter-number font-size-40 mt-10">
+                                        <?= number_format($reportData['total']) ?>/<?= number_format($reportData['goal']) ?>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="pie-progress pie-progress-sm" data-plugin="pieProgress" data-valuemax="100"
+                                     data-barcolor="#57c7d4" data-size="100" data-barsize="10"
+                                     data-goal="<?= min(intval(@($reportData['total'] / $reportData['goal']) * 100), 100) ?>" aria-valuenow="<?= min(intval(@($reportData['total'] / $reportData['goal']) * 100), 100); ?>" role="progressbar">
+                                        <span class="pie-progress-number blue-grey-700 font-size-20">
+                                          %<?= intval(@($reportData['total'] / $reportData['goal']) * 100) ?>
+                                        </span>
+                                </div>
+                            </div>
+                        </div>
+                        <?php if(in_array($name, ['listings', 'closings'])): ?>
+                            <div class="row">
+                                <table class="table">
+                                    <tr>
+                                        <th>
+
+                                        </th>
+                                        <th>
+                                            <?= t('Current'); ?>
+                                        </th>
+                                        <th>
+                                            <?= t('Goal'); ?>
+                                        </th>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <?= t('Volume'); ?>
+                                        </th>
+                                        <td>
+                                            <?= @number_format($reportData['volume']) ?>
+                                        </td>
+                                        <td>
+                                            <?= @number_format($reportData["goal_volume"]) ?>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <?= t('Price Average'); ?>
+                                        </th>
+                                        <td>
+                                            $<?= @number_format($reportData['price_average'] / $reportData['total']) ?>
+                                        </td>
+                                        <td>
+                                            $<?= @number_format($reportData["goal_price_average"]) ?>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <?= t('Commission Average'); ?>
+                                        </th>
+                                        <td>
+                                            <?= $reportData['commission_average'] ?>
+                                        </td>
+                                        <td>
+                                            <?= @number_format($reportData["goal_commission_average"] / $reportData['total']) ?>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        <?php endif ?>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    <?php endforeach; ?>
+</div>
+
+<div class="row">
+    <div class="col-xs-12">
+        <div class="panel" id="followers">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    Recent leads
+                </h3>
+                <div class="panel-actions panel-actions-keep">
+                    <div class="dropdown">
+                        <a class="panel-action" id="examplePanelDropdown" data-toggle="dropdown" href="#" aria-expanded="false" role="button"><i class="icon wb-more-vertical" aria-hidden="true"></i></a>
+                        <div class="dropdown-menu dropdown-menu-bullet dropdown-menu-right" aria-labelledby="examplePanelDropdown" role="menu">
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-flag" aria-hidden="true"></i> Action</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-print" aria-hidden="true"></i> Another action</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-heart" aria-hidden="true"></i> Something else here</a>
+                            <a class="dropdown-item" href="javascript:void(0)" role="menuitem"><i class="icon wb-share" aria-hidden="true"></i> Separated link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group list-group-dividered list-group-full h-300 scrollable is-enabled scrollable-vertical" data-plugin="scrollable" style="position: relative;">
+                    <div data-role="container" class="scrollable-container" style="height: 300px; width: 463px;">
+                        <div data-role="content" class="scrollable-content" style="width: 448px;">
+                            <?php foreach ($Leads as $Lead): ?>
+                            <li class="list-group-item">
+                                <div class="media">
+                                    <div class="media-body w-full">
+                                        <div>
+                                            <span><?= $Lead->getFullName() ?></span>
+                                        </div>
+                                        <small><?= decorator('email', $Lead->email); ?></small>
+                                        <?php if ($Lead->phone): ?>
+                                            <div>
+                                                <?= decorator('phone', $Lead->phone) ?>
+                                            </div>
+                                        <?php endif; ?>
+                                        <?php if ($Lead->property_id): ?>
+                                            <div>
+                                                <?= t('Looking For Property #'); ?><?= $Lead->property_id ?>
+                                            </div>
+                                        <?php endif; ?>
+                                        <p><?= $Lead->notes ?></p>
+                                        <strong><small><?= Util::tdateLocal('F/d g:i A', $Lead->created_at) ?></small></strong>
+                                    </div>
+                                </div>
+                            </li>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

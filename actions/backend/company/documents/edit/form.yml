@@ -1,0 +1,35 @@
+class: form-bordered
+attributes:
+    role: form
+elements:
+
+    summary:
+        type: Summary
+
+    header_general:
+        type:  Header
+        label: General Information
+
+    name:
+        type:     Text
+        required: true
+        class:    form-control
+
+    description:
+        type:     TextArea
+        class:    form-control
+
+    category_id:
+        type: Select
+        label: Category
+        class:    form-control
+
+    path:
+        type: FileAsync
+        max_file_size: 100mb
+        class:    form-control
+
+
+    buttons:
+        type:  Buttons
+        class: form-group

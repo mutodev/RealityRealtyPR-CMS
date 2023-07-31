@@ -1,0 +1,60 @@
+class: form-bordered
+attributes:
+    role: form
+elements:
+
+    summary:
+        type: Summary
+
+    head_extras:
+        type: Header
+        label: Extras
+
+    conditions:
+        type: SubForm
+
+    head_references:
+        type: Header
+        label: References
+
+    department_id:
+        label: Department
+        type: Select
+        class: form-control
+        source: FROM Department
+
+    internal_number:
+        type: Text
+    
+    cpr_number:
+        type: Text
+
+    co_number:
+        type: Text
+
+    mls_number:
+        type: Text
+
+    head_notes:
+        type: Header
+        label: Notes
+
+    internal_notes:
+        type: TextArea
+        class: form-control
+
+    showing_instructions:
+        type: TextArea
+        class: form-control
+
+    key_number:
+        type: Text
+        class: form-control
+
+    key_box:
+        type: Text
+        class: form-control
+
+    buttons:
+        type:  Buttons
+        class: form-group

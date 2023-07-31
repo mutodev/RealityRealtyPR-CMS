@@ -1,0 +1,12 @@
+name: password
+elements:
+    summary:
+
+    email:
+        box_renderer: 
+            type:   1Column
+            border: false
+        required:     true            
+        type:         Email
+        label:        'What is the email you used to register your account?'
+

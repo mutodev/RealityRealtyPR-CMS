@@ -1,0 +1,49 @@
+class: form-bordered
+attributes:
+    role: form
+elements:
+
+
+    summary:
+        type: Summary
+
+    header:
+        type:  Header
+        label: Phone numbers
+
+    company_id:
+        label: Company
+        type: Select
+        source: From Company
+        required: true
+
+    provider:
+        label: Provider
+        type: Select
+        required: true
+        options:
+            TWILIO: Twilio
+            PLIVO: Plivo
+            NEXMO: Nexmo
+            TROPO: Tropo
+            VOIPMS: Voip.ms
+            BROADVOX: Broadvox
+
+    mediums:
+        label: Mediums
+        type: CheckBoxes
+        required: true
+        default: [CALL,SMS]
+        options:
+            CALL: Voice
+            SMS: SMS
+
+    numbers:
+        label:    Phone numbers
+        type:     TextArea
+        required: true
+        description: One number per line
+
+    buttons:
+        type:  Buttons
+        class: form-group

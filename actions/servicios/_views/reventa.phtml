@@ -1,0 +1,40 @@
+<div class="service-detail padding-bottom justified">
+    <div class="row padding-bottom margin-top">
+        <div class="col-xs-12 col-sm-3">
+            <?= $this->partial('serviceMenu', ['services' => $services]); ?>
+        </div>
+        <div class="col-xs-12 col-sm-9">
+            <h1 class="general__title"><?= $services[$activeService] ?></h1>
+
+            <div class="mt20 service-icon reventa-icon"></div>
+
+            <p class="mt20">Contamos con una fuerza de venta sobre 80 agentes alrededor de la isla, con un alto estándar profesional y especializados en los diferentes tipos de transacciones de bienes raíces. Al comunicarse con nosotros, uno de nuestros agentes le visitará y evaluará su propiedad y situación y le orientará sobre las mejores alternativas de venta y/o alquiler disponible según su necesidad.</p>
+
+            <div class="mt40">
+                <h2 class="general__title">Ciclo de ventas = Excelencia</h2>
+            </div>
+
+            <img class="img-responsive mt20" src="/images/sellcycle.png" />
+
+            <div class="grey-bg">
+                <h2 class="m0">Entre los servicios que ofrecemos se encuentran</h2>
+
+                <ul class="grey-bg-list">
+                    <li>Servicio al Comprador</li>
+                    <li>Servicio al Vendedor</li>
+                    <li>Análisis y evaluacion de tasa de absorción (TA) Análisis de Mercado (CMA)</li>
+                    <li>Desarrollo y plan de mercadeo para la venta Arrendamiento de propiedades</li>
+                    <li>Administración de Propiedades de Arrendamiento Evaluación y asesoría de riesgo en arrendamiento Arrendamiento con Opción a Compra</li>
+                </ul>
+            </div>
+
+            <p class="mt20">Nuestro compromiso de excelencia lo define la experiencia de los clientes con nuestros servicios, desde la primera llamada hasta más allá de los cierres.</p>
+
+            <h3 class="mt20">Para más información, comunícate con nosotros:</h3>
+
+            <div class="mt20">
+                <?= $this->partial('card', array('gerente' => Doctrine::getTable('Account')->find(30168))); ?>
+            </div>
+        </div>
+    </div>
+</div>

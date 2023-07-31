@@ -1,0 +1,15 @@
+{
+    "require": {
+        "php": "~5.6.0",
+        "ext-gd": "*",
+        "league/flysystem": "~0.5",
+        "aws/aws-sdk-php": "~2.7",
+        "phpoffice/phpexcel": "~1.8",
+        "plasmaconduit/luhn": "0.1.*",
+        "videlalvaro/php-amqplib": "2.5.*",
+        "oyatel/amazon-s3-php-class": "dev-master"
+    },
+    "require-dev": {
+        "vlucas/phpdotenv": "~1.0"
+    }
+}

@@ -1,0 +1,29 @@
+elements: 
+
+    host:
+        label:       Database Host
+        default:     localhost
+        description: The hostname of the server where the database is hosted
+
+    port:
+        label:       Database Port
+        default:     3306
+        description: The port where the database is server accepts connection
+
+    name:
+        label:       Database Name
+        default:     ''
+        description: The name of the database
+
+    username:
+        label:       Database Name
+        default:     ''
+        description: Username used to connect to the database
+        
+    password:
+        label:       Database Password
+        default:     ''
+        description: Password used to connect to the database
+                                
+    buttons:
+        element: buttons

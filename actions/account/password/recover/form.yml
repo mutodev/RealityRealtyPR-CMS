@@ -1,0 +1,27 @@
+default_renderers:
+    box_renderer: 
+        type:      1Column
+        border:    false
+        highlight: false
+elements:
+    summary:
+
+    password:
+        label:    New Password
+        type:     Password
+        example:  at least 6 characters, including a number/special character
+        required: true
+        validations:
+            password:
+                min:     6
+                message: %{label} is not valid password
+
+    confirm_password:
+        label:    Confirm New Password
+        type:     Password
+        example:  repeat your password so we can check its right
+        required: true
+        validations:
+            equals:
+                element: password
+                message: %{label} and Password must be equal

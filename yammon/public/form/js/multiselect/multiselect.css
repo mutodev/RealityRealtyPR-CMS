@@ -1,0 +1,63 @@
+.yammon-form-checkboxes-select {
+	font-size: 12px;
+	font-family: Helvetica, sans-serif;
+	display: block;
+	position: relative;
+    border:   1px solid #808080;
+}
+.yammon-form-checkboxes-select .monitor {
+	/* background: url("monitor-left.png") top left no-repeat; */
+	width: auto;
+	line-height: 18px;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+.yammon-form-checkboxes-select .monitor div {
+	/* background: url("../../img/") top right no-repeat; */
+    background: url("../../img/dropdown.gif") no-repeat right center white;
+	padding: 0 18px 0 4px;
+}
+.yammon-form-checkboxes-select .monitor div div {
+	/* background: url("monitor-center.png") top left repeat-x; */
+    background-image: none;
+    background-color: #fff;
+	padding: 1px 0 0 0;
+	margin: 0;
+}
+/*
+.yammon-form-checkboxes-select .monitor.active { background: url("monitor-left-active.png") top left no-repeat; }
+.yammon-form-checkboxes-select .monitor.active div { background: url("monitor-right-active.png") top right no-repeat; }
+.yammon-form-checkboxes-select .monitor.active div div { background: url("monitor-center-active.png") top right repeat-x; }
+*/
+
+.yammon-form-checkboxes-select ul {
+	position: absolute;
+	z-index: 1000;
+	top: 18px;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	width: 99%;
+	max-height: 230px;
+	overflow: hidden;
+	list-style: none;
+	background-color: #FFF;
+	border-top: 1px solid #ccc;
+	border-left: 3px solid #ccc;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+	_height: 230px; /* IE */
+}
+.yammon-form-checkboxes-select ul li {
+	padding: 0px 3px;
+}
+.yammon-form-checkboxes-select ul li.hover,
+.yammon-form-checkboxes-select ul li.selected.hover {
+	background-color: #6DBAF0;
+	color: white;
+}
+.yammon-form-checkboxes-select ul li.selected {
+	background-color: #3875D7;
+	color: white;
+}

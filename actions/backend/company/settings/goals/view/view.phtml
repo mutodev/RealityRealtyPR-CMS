@@ -1,0 +1,59 @@
+<div class="panel">
+    <div class="panel-body container-fluid">
+        <label class="m-0"><?= t('Year') ?>:</label>
+        <select onchange="window.location.href=this.value">
+            <?php foreach ($Goals as $Row): ?>
+                <option <?= $Row->year == $year ? 'selected="selected"': '' ?> value="<?= url('.').'?account_id='.get('account_id').'&production_unit_id='.get('production_unit_id').'&year='.$Row->year ?>">
+                    <?= $Row->year ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+        <label class="m-0"><?= t('Month') ?>:</label>
+        <select onchange="window.location.href=this.value">
+            <?php foreach (range(1, 12) as $m): ?>
+                <option <?= str_pad($m, 2, '0', STR_PAD_LEFT) == $month ? 'selected="selected"': '' ?> value="<?= url('.').'?account_id='.get('account_id').'&production_unit_id='.get('production_unit_id').'&month='.$m ?>">
+                    <?= DateTime::createFromFormat('!m', str_pad($m, 2, '0', STR_PAD_LEFT))->format("F") ?>
+                </option>
+            <?php endforeach; ?>
+        </select>
+        &nbsp;&nbsp;
+        <?php if ($Goal): ?>
+        <a class="btn btn-primary btn-xs text-right" href="<?= url('..edit?id='.$Goal->id.'&account_id='.get('account_id').'&production_unit_id='.get('production_unit_id')); ?>"><i class="fa fa-plus"></i>&nbsp;&nbsp;<?= t('Edit Goal') ?></a>
+        <?php endif ?>
+        <a class="btn btn-success btn-xs text-right" href="<?= url('..edit?account_id='.get('account_id').'&production_unit_id='.get('production_unit_id')); ?>"><i class="fa fa-plus"></i>&nbsp;&nbsp;<?= t('Add New Goal') ?></a>
+    </div>
+</div>
+
+<?php if ($Goal): ?>
+<div class="panel">
+    <div class="panel-body container-fluid">
+        <?php foreach ($summary as $month => $monthData): ?>
+            <div class="row">
+                <?php foreach ($monthData as $name => $reportData): ?>
+                    <div class="col-xs-12 col-sm-4 p-10">
+                        <div class="pie-progress pie-progress-lg" data-plugin="pieProgress" data-barcolor="#589ffc"
+                             data-size="200" data-barsize="14" data-goal="<?= $reportData['goal'] ?>"
+                             aria-valuemax="<?= $reportData['goal'] ?>" aria-valuenow="<?= $reportData['total'] ?>"
+                             role="progressbar">
+                            <div class="pie-progress-content">
+                                <div class="pie-progress-number"><?= intval(@($reportData['total'] / $reportData['goal']) * 100) ?>
+                                    %
+                                </div>
+                                <div class="pie-progress-label"><?= $reportData['title']; ?>
+                                    (<?= $reportData['total'] ?>/<?= $reportData['goal'] ?>)
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
+<?php endif ?>
+
+<?php ob_start(); ?>
+<script type="text/javascript">
+
+</script>
+<?php helper('Javascript')->addInline(ob_get_clean(), false); ?>

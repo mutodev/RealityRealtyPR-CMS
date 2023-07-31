@@ -1,0 +1,39 @@
+<div class="service-detail padding-bottom justified">
+    <div class="row padding-bottom margin-top">
+        <div class="col-xs-12 col-sm-3">
+            <?= $this->partial('serviceMenu', ['services' => $services]); ?>
+        </div>
+        <div class="col-xs-12 col-sm-9">
+            <h1 class="general__title"><?= $services[$activeService] ?></h1>
+
+            <div class="mt20 service-icon short-sales-icon"></div>
+
+            <p class="mt20">Somos la alternativa de solución para los dueños de propiedades que están en peligro de ser ejecutadas. Por definición un Short Sale es viable bajo dos condiciones:</p>
+
+            <ul class="secondary-list">
+                <li>Que exista disminución, falta o limitación de ingresos para cumplir con el pago de su hipoteca</li>
+                <li>Que el balance de la hipoteca sea superior al precio de mercado</li>
+            </ul>
+
+            <div class="mt40">
+                <p>Reality Realty cuenta con personal especializado para trabajar su caso exitosamente a través de nuestro servicio de Short-Sale, negociando con el banco y/o inversionista, en su representación, la venta por debajo del balance y utilizando los parámetros y especificaciones de Loss & Mitigation para cada tipo de producto de financiamiento hipotecario.</p>
+            </div>
+
+            <div class="grey-bg">
+                <h2 class="m0">Las ventajas de lograr un “short sale”</h2>
+
+                <ul class="grey-bg-list">
+                    <li>Te libera de la deuda con el banco.</li>
+                    <li>Minimiza el impacto en el crédito.</li>
+                    <li>Puedes volver a comprar casa en corto tiempo.</li>
+                </ul>
+            </div>
+
+            <h3 class="mt20">Para más información, comunícate con nosotros:</h3>
+
+            <div class="mt20">
+                <?= $this->partial('card', array('gerente' => Doctrine::getTable('Account')->find(15798))); ?>
+            </div>
+        </div>
+    </div>
+</div>

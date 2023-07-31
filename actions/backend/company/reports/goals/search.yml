@@ -1,0 +1,29 @@
+source: Contract
+default: advanced
+fields:
+    year:
+        label: Year
+        source: Contract.approved_at
+        element:
+            type:     Select
+            class:    form-control
+            source_callback: getYears
+            default: <?= date('Y') ?>
+
+    month:
+        label: Month
+        source: Contract.approved_at
+        element:
+            type:     Select
+            class:    form-control
+            empty: All months
+            source_callback: getMonths
+
+    production_unit_id:
+          label: Production Unit
+          source: Contract.Property.production_unit_id
+          element:
+              type: Select
+              class: form-control
+              source: FROM ProductionUnit
+              source_label: ProductionUnit.name

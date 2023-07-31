@@ -1,0 +1,15 @@
+source: PropertyCategory
+default: advanced
+fields:
+    name:
+        source: PropertyCategory.name
+
+    type:
+        source: PropertyCategory.type
+        element:
+            type: Select
+            class: form-control
+            options:
+                Residential: Residential
+                Commercial: Commercial
+                Land: Land

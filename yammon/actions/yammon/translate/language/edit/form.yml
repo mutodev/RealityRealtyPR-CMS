@@ -1,0 +1,21 @@
+elements:
+
+    summary:
+        type: summary
+
+    language:
+        type:     Text
+        required: true
+
+    code:
+        type:     Text
+        required: true
+        example:  'Examples: en, en-us, en-uk'
+
+    charset:
+        type:     Text
+        required: true
+        default:  utf-8
+
+    buttons:
+        type: Buttons

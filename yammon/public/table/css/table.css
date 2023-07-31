@@ -1,0 +1,284 @@
+/* == Container =================== */
+.yammon-table-container{
+   border:  1px solid gray;
+   padding: 1px;
+}
+
+/* == Table ======================= */
+.yammon-table{
+    margin:             0;
+    width:              100%;
+    border-spacing:     0;
+    border-collapse:    collapse; 
+/*    table-layout:       fixed; */
+}
+
+/* == Head ======================= */
+.yammon-table-thead{
+}
+
+/* == Headers =================== */    
+.yammon-table-header{
+    color:               black;
+    font-weight:         bold;
+    font-size:           1.1em;
+    text-align:          left;
+    vertical-align:      middle;
+    padding:             0;
+    border:              1px solid white;
+    background:          #F9F9F9 url('../img/header-row.gif') scroll repeat-x bottom left;    
+}
+
+.yammon-table-header-first{
+
+}
+
+.yammon-table-header-last{
+
+}
+
+.yammon-table-header-even{
+
+}
+
+.yammon-table-header-odd{
+
+}
+
+.yammon-table-header-sortable{
+
+}
+
+.yammon-table-header-groupable{
+
+}
+
+.yammon-table-header-hideable{
+
+}
+
+.yammon-table-header-sorted{
+    background: #EBF3FD url('../img/header-row-over.gif') scroll repeat-x bottom left;
+}
+
+.yammon-table-header:hover{
+    background: #EBF3FD url('../img/header-row-over.gif') scroll repeat-x bottom left;
+}
+
+.yammon-table-header a ,
+.yammon-table-header a:link    ,
+.yammon-table-header a:visited ,
+.yammon-table-header a:hover   ,
+.yammon-table-header span{
+    display:             block;
+    margin:              0 20px 0 0;
+    padding:             8px;
+    white-space:         nowrap;
+    text-decoration:     none;
+    overflow:            hidden;
+    font-weight:         bold;
+    color:               #333;    
+}
+
+.yammon-table-header img{
+    width:          1em;
+    height:         1em;            
+    vertical-align: middle;
+}
+
+/* == Drop Down =========================== */
+.yammon-table-dropdown{
+
+}
+
+.yammon-table-header:hover .yammon-table-dropdown{
+    background: transparent url('../img/header-button.gif') scroll no-repeat center right;
+}
+
+/* == Body ================================ */    
+.yammon-table-tbody{
+    color: #3F3F3F;    
+}
+
+/* == Rows ================================ */        
+.yammon-table-row{
+
+}
+
+.yammon-table-row-first{
+
+}
+
+.yammon-table-row-last{
+
+}
+
+.yammon-table-row-headers{
+
+}
+
+.yammon-table-row-empty{
+
+}
+
+.yammon-table-row-group{
+
+}
+     
+.yammon-table-row-odd{
+
+}
+
+.yammon-table-row-even{
+
+}
+
+.yammon-table-row-extra{
+
+}
+
+/* == Columns ================================ */    
+.yammon-table-column{
+    text-align:     left;
+    padding:        8px;
+    border:         1px solid white;
+    vertical-align: top;    
+}
+
+.yammon-table-column-first{
+
+}
+
+.yammon-table-column-last{
+
+}
+
+.yammon-table-column-group{
+    text-align:    left;
+    font-size:     1.3em;
+    padding:       10px;      
+    border-bottom: 2px solid #2C57B2;    
+}
+
+.yammon-table-column-sorted{
+
+}
+
+.yammon-table-column-odd-sorted{
+
+}
+
+.yammon-table-column-odd{
+
+}
+
+.yammon-table-column-even{
+
+}
+
+.yammon-table-column-extra{
+    padding: 0;
+}
+
+.yammon-table-column-empty{
+    font-weight:    bold;
+    font-size:      1.3em;
+    background:     #f8f8f8 !important;    
+    height:         200px;
+    vertical-align: middle;
+    text-align:     center;    
+    padding:        20px;
+}
+
+.yammon-table-empty-message{
+
+}
+
+.yammon-table-empty-clear-search{
+    display: block;
+}
+
+.yammon-table-row-even .yammon-table-column{
+    background: #E8EDFF;    
+}
+
+.yammon-table-row-odd .yammon-table-column{
+    background: #F5F5F5;    
+}
+
+.yammon-table-row-odd .yammon-table-column-sorted{
+
+}
+
+.yammon-table-row-even .yammon-table-column-sorted{
+    background: #E2E7F8;
+}    
+
+.yammon-table-row:hover .yammon-table-column{
+    
+}
+
+/* Crop ------------------------------------------------ */
+/*
+.yammon-table-column-container{
+   text-overflow:ellipsis;
+   white-space:  nowrap;
+   overflow:     hidden;
+   width:        100%;
+}
+/*
+
+/* Expander --------------------------------------------- */
+.yammon-table-expander-all ,
+.yammon-table-expander{
+    min-width:    16px;
+    min-height:   16px;
+    height:       auto !important;
+    height:       16px;
+    padding-left: 25px;
+    cursor:       pointer;
+    background:   transparent url(/yammon/public/table/img/collapse.png) no-repeat top left;    
+}
+
+.yammon-table-expander-all-collapsed ,
+.yammon-table-expander-collapsed{
+    background: transparent url(/yammon/public/table/img/expand.png) no-repeat top left;
+}
+
+/* Tree ------------------------------------------------- */
+.yammon-table-tree-icon{
+    min-width:    16px;
+    min-height:   16px;
+    height:       auto !important;
+    height:       16px;
+    padding-left: 25px;
+    cursor:       pointer;
+}
+
+.yammon-table-tree-icon-open{
+    background:   transparent url(/yammon/public/table/img/tree-open.png) no-repeat top left;
+}
+
+.yammon-table-tree-icon-closed{
+    background:   transparent url(/yammon/public/table/img/tree-closed.png) no-repeat top left;
+}
+
+.yammon-table-tree-icon-leaf{
+    background:   transparent url(/yammon/public/table/img/tree-leaf.png) no-repeat top left;
+}
+        
+/* Table Top -------------------------------------------- */
+        
+.table-top{
+    width: 100%;
+}
+
+.table-top-summary{
+    padding:    10px 0;
+    text-align: left;
+}
+
+.table-top-pager{
+    padding:    10px 0;
+    text-align: right;
+}

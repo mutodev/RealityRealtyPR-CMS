@@ -1,0 +1,37 @@
+elements:
+  name:
+    label: Nombre y Apellidos
+    required: true
+
+  phone:
+    label: Teléfono de Contacto
+    type: Phone
+    required: true
+
+  email:
+    type: Email
+    label: Correo Electrónico
+
+  property_type:
+    label: Tipo de Propiedad
+    type: Select
+    required: true
+    options:
+      Residencial: Residencial
+      Comercial: Comercial
+      Terreno: Terreno
+
+  address:
+    label: Dirección de la propiedad
+    type: Text
+    required: true
+
+  city:
+    label: Municipio
+    type: Text
+    required: true
+
+  save:
+    type: Button
+    label: Enviar
+

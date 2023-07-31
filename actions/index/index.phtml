@@ -1,0 +1,343 @@
+<?php
+$Section = helper('Section');
+?>
+<style>
+    .specializedItem {
+        -webkit-box-shadow: 0px 0px 33px -7px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 0px 33px -7px rgba(0,0,0,0.75);
+        box-shadow: 0px 0px 15px -7px rgba(0,0,0,0.75);
+        padding: 0 20px 20px 20px;
+    }
+
+    .pageTop {
+        /*background-image: url('/img/stock/Home_Preliminar.png');*/
+        /*background-size: cover;*/
+        /*background: black;*/
+        color: white !important;
+        overflow: hidden;
+        background: #00000069;
+        position: relative;
+        height: 557px !important;
+    }
+
+    .pageTopHeader {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 9000;
+        background: rgba(0,0,0,0.5);
+    }
+
+    #slider {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 8000;
+        height: 557px !important;
+    }
+
+    #bgvid {
+        display: block !important;
+    }
+
+    .pageTop video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -100;
+        transform: translateX(-50%) translateY(-50%);
+        background: url('//demosthenes.info/assets/images/polina.jpg') no-repeat black;
+        background-size: cover;
+        transition: 1s opacity;
+        opacity: .8;
+    }
+
+    #specializedIcon {
+        margin-bottom: -6px;
+    }
+
+    .header-top .navbar-nav>li>a,
+    .header-top .navbar-nav>li>a:hover,
+    .tell-us,
+    #navbar .grey,
+    .navbar-default .navbar-text {
+        border-color: white;
+        color: white;
+    }
+
+    .pageTop .fab,
+    .pageTop #navbar a,
+    .pageTop a.pull-left,
+    .pageTop a.pull-right {
+        color: white !important;
+    }
+
+    .pageTop .navbar-brand {
+        background: url('/new/logo_rr_white.svg') no-repeat !important;
+    }
+
+    .homeSearch {
+        padding: 70px 0 0 0;
+    }
+
+    @media (min-width: 768px) {
+        .services-right {
+            padding: 100px 0px 0 60px;
+        }
+    }
+
+    @media (max-width: 767px){
+        .homeSearch {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+
+        .homeSearch .col-sm-2 {
+            margin-top: 5px;
+            padding-left: 0px !important;
+        }
+    }
+
+    .specializedHome {
+        margin-top: 140px;
+    }
+
+    .specializedHome a,
+    .specializedHome a:hover {
+        font-size: 2rem;
+        margin-bottom: 80px;
+        color: white;
+        text-decoration: none;
+    }
+
+    .subscribeHome input {
+        width: 100% !important;
+    }
+
+    .subscribeHome .normalBtn {
+        width: 200px !important;
+        margin: 0 auto;
+        color: white;
+    }
+
+    .title {
+        font-size: 2.5em;
+    }
+
+    .spacerHome {
+        background: red;
+        height: 2px;
+        width: 200px;
+        margin: 0 auto 0 auto;
+    }
+
+    #navbar .dropdown-menu a {
+        color: black !important;
+    }
+</style>
+<?= $Section->start("top"); ?>
+<div class="homeSearch search-form">
+    <h1><?= t('translation1025'); ?></h1>
+    <?= $this->partial('search', array('url' => url('propiedades'))) ?>
+
+    <div class="mt40 text-center pb40">
+        <span><?= t('translation1028'); ?></span><br /><br />
+        <i style="font-size: 20px;" class="fas fa-long-arrow-alt-down"></i>
+    </div>
+</div>
+<?= $Section->end(); ?>
+
+<div class="container" id="contentHome">
+    <div class="spacerHome"></div>
+
+    <div class="text-center pt40 pb40">
+        <h3><?= t('translation2025'); ?></h3>
+        <p style="max-width: 700px; margin: 0 auto"><?= t('translation2026'); ?></p>
+    </div>
+
+    <?php if ($Properties->count()): ?>
+    <div class="spacerHome"></div>
+
+    <div class="hidden-xs row mt40">
+        <div class="col-xs-12 content-item">
+            <div class="text-center pb30">
+                <h1 class="m0 font-bold"><?= t('translation1037') ?></h1>
+                <span><?= t('translation1038'); ?></span>
+            </div>
+
+            <div class="container-fluid mt40">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <?= $this->partial('featured', compact('Properties')) ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hidden-xs spacerHome mt40"></div>
+    <?php endif; ?>
+
+    <div class="row mt40">
+        <div class="col-xs-12 content-item">
+            <div class="container-fluid mt40">
+                <div class="row pb40">
+                    <div class="col-xs-12 text-center">
+                        <h1 class="m0 font-bold"><?= t('translation1058'); ?></h1>
+                        <h3 class="m0"><?= t('translation1094'); ?></h3>
+                    </div>
+                </div>
+                <?= $this->partial('services', compact('services')); ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+    <div class="spacerHome mt80"></div>
+
+    <div class="row mt40">
+        <div class="col-xs-12 content-item">
+            <div class="container-fluid mt40">
+                <div class="row pb40">
+                    <div class="col-xs-12 text-center">
+                        <h1 class="m0 font-bold"><?= str_replace('%year', date('Y'), t('translation2027')); ?></h1>
+                    </div>
+                </div>
+                <?= $this->partial('top-agents'); ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+    <div class="spacerHome mt80"></div>
+
+    <div class="row mt40 subscribeHome">
+        <div class="col-xs-12 content-item">
+            <div class="text-center pb40">
+                <h1 class="m0 font-bold"><?= t('translation1033') ?></h1>
+                <p><?= t('translation1034'); ?></p>
+            </div>
+
+            <div class="container-fluid mt40">
+                <?php if ($sent): ?>
+                    <h2><?= t('Gracias, te contactaremos a la brevedad'); ?></h2>
+                <?php endif ?>
+
+                <form class="form-inline search-form clearfix" method="post">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="col-xs-12 col-sm-6">
+                                <input name="name" type="text" class="form-control"
+                                       placeholder="<?= t('translation1036'); ?>">
+                            </div>
+                            <div class="col-xs-12 col-sm-6">
+                                <input name="email" type="email" class="form-control"
+                                       placeholder="<?= t('translation1032'); ?>">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt40">
+                        <div class="col-xs-12 text-center" style="padding-right: 0; padding-left: 5px;">
+                            <input type="submit" class="normalBtn btn btn-default" value="<?= t('translation1035') ?>"/>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<style>
+    .body-blackout {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .65);
+        display: none;
+        z-index: 999999;
+    }
+
+    .body-blackout.is-blacked-out {
+        display: block;
+    }
+
+    .popup-modal {
+        max-height: 650px;
+        max-width: 650px;
+        background-color: #fff;
+        position: absolute;
+        left: 50%;
+        top: 10%;
+        transform: translate(-50%, -50%);
+        padding: 0;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 300ms ease-in-out;
+        z-index: 9999999;
+    }
+
+    @media only screen and (max-width: 650px) {
+        .popup-modal {
+            max-height: 650px;
+            max-width: 650px;
+            left: 0;
+            top: 0;
+            transform: translate(0, 0);
+        }
+    }
+
+    .popup-modal.is--visible {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .popup-modal__close {
+        position: absolute;
+        font-size: 1.2rem;
+        right: -10px;
+        top: -10px;
+        cursor: pointer;
+    }
+</style>
+
+<div class="body-blackout"></div>
+
+<div class="popup-modal shadow" data-popup-modal="one">
+    <i class="fas fa-2x fa-times text-white bg-primary p-3 popup-modal__close"></i>
+    <a href="https://youtu.be/dkdLxhYQhOE" target="_blank">
+        <img src="/images/bannerclaro-01.png" width="100%" />
+    </a>
+</div>
+
+<script type="text/javascript">
+  const modalCloseTrigger = document.querySelector('.popup-modal__close')
+  const bodyBlackout = document.querySelector('.body-blackout')
+
+  document.addEventListener("DOMContentLoaded", function(){
+    const popupModal = document.querySelector(`[data-popup-modal="one"]`)
+
+    popupModal.classList.add('is--visible')
+    bodyBlackout.classList.add('is-blacked-out')
+
+    popupModal.querySelector('.popup-modal__close').addEventListener('click', () => {
+      popupModal.classList.remove('is--visible')
+      bodyBlackout.classList.remove('is-blacked-out')
+    })
+
+    bodyBlackout.addEventListener('click', () => {
+      // TODO: Turn into a function to close modal
+      popupModal.classList.remove('is--visible')
+      bodyBlackout.classList.remove('is-blacked-out')
+    })
+  });
+</script>

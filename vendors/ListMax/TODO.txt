@@ -1,0 +1,3 @@
+- Normalizar y traducir los fields de Predisenadas
+- New Developments No tiene todos los campos
+- Cambiar el api a que solo use images.listmax.com DONE

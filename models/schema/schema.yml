@@ -1,0 +1,1375 @@
+ProductionUnit:
+  actAs:
+    Timestampable: {}
+  columns:
+    id:
+      type: integer
+      length: 11
+      primary: true
+      unsigned: true
+      autoincrement: true
+
+    name:
+      type: string
+      length: 255
+
+    is_active:
+      type: boolean
+      default: true
+      notnull: true
+
+Entity:
+  actAs:
+    Timestampable: {}
+  columns:
+    id:
+      type: integer
+      length: 11
+      primary: true
+      unsigned: true
+      autoincrement: true
+
+    name:
+      type: string
+      length: 255
+
+    type:
+      type: enum
+      values: [BANK, INVESTOR, COMPANY]
+
+    start_at:
+      type: timestamp
+
+    end_at:
+      type: timestamp
+
+    agreement:
+      type: enum
+      values: [Exclusive, Semi-Exclusive, Open]
+
+    commission:
+      type: decimal
+
+    referral_fee:
+      type: decimal
+
+    is_active:
+      type: boolean
+      default: true
+      notnull: true
+
+EntityContact:
+  columns:
+    id:
+      type: integer
+      length: 11
+      primary: true
+      unsigned: true
+      autoincrement: true
+
+    entity_id:
+      type: integer
+      length: 11
+      unsigned: true
+
+    name:
+      type: string(255)
+      notnull: true
+
+    email:
+      type: string(255)
+      notnull: false
+
+    phone:
+      type: string(255)
+      notnull: false
+
+    phone_ext:
+      type: string(255)
+      notnull: false
+
+    position:
+      type: string(255)
+
+    notes:
+      type: Text
+
+  relations:
+    Entity:
+      class: Entity
+      local: entity_id
+      foreign: id
+      foreignAlias: Contacts
+
+Property:
+  actAs:
+    Timestampable: {}
+    Translatable:
+      languages: [en, es]
+      fields:
+        title:
+          type: string
+          length: 255
+          notnull: true
+
+        description:
+          type: text
+
+        flyer_description:
+          type: text
+  columns:
+    id:
+      type: integer
+      length: 11
+      primary: true
+      unsigned: true
+      autoincrement: true
+
+    category_id:
+      type: integer
+      length: 11
+      unsigned: 1
+
+    company_id:
+      type: integer
+      length: 11
+      unsigned: 1
+
+    contract_id:
+      type: integer
+      length: 11
+      unsigned: 1
+
+    department_id:
+      type: integer
+      length: 11
+      unsigned: true
+
+    area_id:
+      type: integer
+      length: 11
+      unsigned: true
+
+    account_id:
+      type: integer
+      length: 11
+      unsigned: true
+
+    secondary_account_id:
+      type: integer
+      length: 11
+      unsigned: true
+
+    short_sale_bank_id:
+      type: integer
+      length: 11
+      unsigned: true
+
+    relocation_company_id:
+      type: integer
+      length: 11
+      unsigned: true
+
+    repossessed_bank_id:
+      type: integer
+      length: 11
+      unsigned: true
+
+    repossessed_investor_id:
+      type: integer
+      length: 11
+      unsigned: true
+
+    production_unit_id:
+      type: integer
+      length: 11
+      unsigned: true
+
+    source:
+      type: string(255)
+
+    source_id:
+      type: string(255)
+
+    for_sale:
+      type: boolean
+      default: false
+
+    sale_price:
+      type: decimal
+      length: 10
+      scale: 2
+
+    sale_price_type:
+      type: enum
+      values: [SQF, SQM]
+
+    for_rent:
+      type: boolean
+      default: false
+
+    rent_price:
+      type: decimal
+      length: 10
+      scale: 2
+
+    rent_price_type:
+      type: enum
+      values: [SQF, SQM]
+
+    is_rent_long_term:
+      type: boolean
+      default: false
+
+    is_rent_short_term:
+      type: boolean
+      default: false
+
+    is_rent_time_share:
+      type: boolean
+      default: false
+
+    is_short_sale:
+      type: boolean
+      default: false
+
+    public_coordinates:
+      type: boolean
+      default: false
+
+    short_sale_loan_number:
+      type: string(255)
+
+    is_relocation:
+      type: boolean
+      default: false
+
+    is_resale:
+      type: boolean
+      default: false
+
+    is_repossessed:
+      type: boolean
+      default: false
+
+    repossessed_at:
+      type: timestamp
+
+    address1:
+      type: string(255)
+
+    address2:
+      type: string(255)
+
+    postal_code:
+      type: string(255)
+
+    year_built:
+      type: integer
+      length: 10
+
+    maintenance:
+      type: boolean
+      default: false
+
+    maintenance_price:
+      type: decimal
+      length: 10
+      scale: 2
+
+    maintenance_complex:
+      type: boolean
+      default: false
+
+    maintenance_complex_price:
+      type: decimal
+      length: 10
+      scale: 2
+
+    exemption:
+      type: string(255)
+
+    exemption_comment:
+      type: string(255)
+
+    latitude:
+      type: string(255)
+
+    catastro:
+      type: string(255)
+
+    longitude:
+      type: string(255)
+
+    financing_rural:
+      type: enum
+      values: [YES, NO]
+
+    financing_fha:
+      type: enum
+      values: [YES, NO]
+
+    financing_conventional:
+      type: enum
+      values: [YES, NO]
+
+    financing_vivienda:
+      type: enum
+      values: [YES, NO]
+
+    financing_cash:
+      type: enum
+      values: [YES, NO]
+
+    financing_loan_with_repairs:
+      type: enum
+      values: [YES, NO]
+
+    financing_private:
+      type: enum
+      values: [YES, NO]
+
+    financing_assume_mortgage:
+      type: enum
+      values: [YES, NO]
+
+    status:
+      type: enum
+      values: [PUBLISHED, UNPUBLISHED]
+      default: "UNPUBLISHED"
+
+    start_at:
+      type: timestamp
+
+    end_at:
+      type: timestamp
+
+    bathrooms:
+      type: decimal(12,1)
+
+    rooms:
+      type: integer
+      length: 10
+
+    sqf:
+      type: decimal(12,2)
+
+    sqm:
+      type: decimal(12,2)
+
+    cuerdas:
+      type: decimal(12,2)
+
+    internal_number:
+      type: string
+      length: 255
+
+    cpr_number:
+      type: string
+      length: 255
+
+    co_number:
+      type: string
+      length: 255
+
+    mls_number:
+      type: string
+      length: 255
+
+    zonification:
+      type: string
+      length: 255
+
+    internal_notes:
+      type: Text
+
+    showing_instructions:
+      type: Text
+
+    key_number:
+      type: string
+      length: 255
+
+    key_box:
+      type: string
+      length: 255
+
+    have_parkings:
+      type: boolean
+      default: false
+
+    parkings:
+      type: integer
+      length: 4
+
+    floors:
+      type: integer
+      length: 4
+
+    flood_zone:
+      type: string
+      length: 255
+
+    mixed_use_commercial:
+      type: string
+      length: 255
+
+    mixed_use_residential:
+      type: string
+      length: 255
+
+    extra:
+      type: Text
+
+    is_optioned:
+      type: boolean
+      default: false
+
+    lead_required:
+      type: boolean
+      default: false
+
+    lead_year:
+      type: integer
+      length: 4
+
+    is_featured:
+      type: boolean
+      default: false
+
+  relations:
+    Category:
+      class: PropertyCategory
+      local: category_id
+      foreign: id
+
+    Company:
+      class: Company
+      local: company_id
+      foreign: id
+      onDelete: CASCADE
+      onUpdate: CASCADE
+
+    Contract:
+      class: Contract
+      local: contract_id
+      foreign: id
+      onDelete: SET NULL
+      onUpdate: CASCADE
+
+    Department:
+      class: Department
+      local: department_id
+      foreign: id
+
+    Area:
+      class: Area
+      local: area_id
+      foreign: id
+
+    Agent:
+      class: Account
+      local: account_id
+      foreign: id
+      foreignAlias: Properties
+
+    SecondaryAgent:
+      class: Account
+      local: secondary_account_id
+      foreign: id
+
+    ShortSaleBank:
+      class: Entity
+      local: short_sale_bank_id
+      foreign: id
+
+    RelocationCompany:
+      class: Entity
+      local: relocation_company_id
+      foreign: id
+
+    RepossessedBank:
+      class: Entity
+      local: repossessed_bank_id
+      foreign: id
+
+    RepossessedInvestor:
+      class: Entity
+      local: repossessed_investor_id
+      foreign: id
+
+    ProductionUnit:
+      class: ProductionUnit
+      local: production_unit_id
+      foreign: id
+
+    Conditions:
+      class: PropertyCondition
+      refClass: PropertyConditionRelation
+      local: property_id
+      foreign: condition_id
+
+    Tags:
+      class: PropertyTag
+      refClass: PropertyTagRelation
+      local: property_id
+      foreign: tag_id
+
+Contract:
+  actAs:
+    Timestampable: {}
+  columns:
+    id:
+      type: integer
+      length: 11
+      primary: true
+      unsigned: true
+      autoincrement: true
+
+    parent_id:
+      type: integer
+      length: 11
+      unsigned: true
+
+    client_id:
+      type: integer
+      length: 11
+      unsigned: true
+
+    option_client_id:
+      type: integer
+      length: 11
+      unsigned: true
+
+    rent_client_id:
+      type: integer
+      length: 11
+      unsigned: true
+
+    sale_client_id:
+      type: integer
+      length: 11
+      unsigned: true
+
+    secondary_client_id:
+      type: integer
+      length: 11
+      unsigned: true
+
+    account_id:
+      type: integer
+      length: 11
+      unsigned: true
+
+    secondary_account_id:
+      type: integer
+      length: 11
+      unsigned: true
+
+    tertiary_account_id:
+      type: integer
+      length: 11
+      unsigned: true
+
+    type:
+      type: enum
+      values: [Exclusive, "Semi Exclusive", Open, "Net Pay", Special, Rental, Co-Broke, Other]
+
+    sale_at:
+      type: timestamp
+
+    sale_price:
+      type: decimal(12,2)
+
+    sale_deposit:
+      type: decimal(12,2)
+
+    sale_agreed:
+      type: decimal(12,2)
+
+    sale_commission:
+      type: enum
+      values: [Percentage, Fixed]
+
+    sale_value:
+      type: decimal(12,2)
+
+    by_owner_commission:
+      type: enum
+      values: [Percentage, Fixed]
+
+    by_owner_value:
+      type: decimal(12,2)
+
+    rent_price:
+      type: decimal(12,2)
+
+    rent_deposit:
+      type: decimal(12,2)
+
+    rent_agreed:
+      type: decimal(12,2)
+
+    rent_start_at:
+      type: timestamp
+
+    rent_end_at:
+      type: timestamp
+
+    start_at:
+      type: timestamp
+
+    end_at:
+      type: timestamp
+
+    approved_at:
+      type: timestamp
+
+    status:
+      type: enum
+      values: ["Optioned", "Closed", "Failed", "Rented", "Current Listing", "Out of Market"]
+
+    publish:
+      type: boolean
+      default: false
+      notnull: false
+
+    failed_reason:
+      type: string(255)
+
+    option_start_at:
+      type: timestamp
+
+    option_end_at:
+      type: timestamp
+
+    option_deposit:
+      type: decimal(12,2)
+
+    is_cobroke:
+      type: boolean
+      default: false
+
+    cobroke_name:
+      type: string(255)
+
+    cobroke_email:
+      type: string(255)
+
+    cobroke_phone:
+      type: string(255)
+
+  relations:
+    Primary:
+      class: Account
+      local: account_id
+      foreign: id
+
+    Secondary:
+      class: Account
+      local: secondary_account_id
+      foreign: id
+
+    Parent:
+      class: Contract
+      local: parent_id
+      foreign: id
+
+    Client:
+      class: Client
+      local: client_id
+      foreign: id
+      foreignAlias: Contracts
+
+    SecondaryClient:
+      class: Client
+      local: secondary_client_id
+      foreign: id
+
+    OptionClient:
+      class: Client
+      local: option_client_id
+      foreign: id
+      foreignAlias: Contracts
+
+    SaleClient:
+      class: Client
+      local: sale_client_id
+      foreign: id
+      foreignAlias: Contracts
+
+    RentClient:
+      class: Client
+      local: rent_client_id
+      foreign: id
+      foreignAlias: Contracts
+
+Client:
+  columns:
+    id:
+      type: integer
+      length: 11
+      primary: true
+      unsigned: true
+      autoincrement: true
+
+    area_id:
+      type: integer
+      length: 11
+      unsigned: true
+
+    first_name:
+      type: string(255)
+      notnull: true
+
+    last_name:
+      type: string(255)
+      notnull: true
+
+    sex:
+      type: enum
+      values: ["M", "F"]
+      notnull: false
+
+    email:
+      type: string(255)
+      notnull: false
+
+    phone:
+      type: string(255)
+      notnull: false
+
+    phone_ext:
+      type: string(255)
+      notnull: false
+
+    phone2:
+      type: string(255)
+      notnull: false
+
+    phone2_ext:
+      type: string(255)
+      notnull: false
+
+    address1:
+      type: string(255)
+
+    address2:
+      type: string(255)
+
+    postal_code:
+      type: string(255)
+
+    notes:
+      type: Text
+
+  relations:
+    Area:
+      class: Area
+      local: area_id
+      foreign: id
+
+PropertyCondition:
+  actAs:
+    Timestampable: {}
+
+  columns:
+    id:
+      type: integer
+      length: 11
+      primary: true
+      unsigned: true
+      autoincrement: true
+
+    name:
+      type: string(255)
+      notnull: true
+
+    type:
+      type: enum
+      values: [Condition, Location, Distribution, Areas, Services, Security, Accepted, Equipment]
+
+    is_active:
+      type: boolean
+      default: true
+      notnull: true
+
+  relations:
+    Properties:
+      class: PropertyCondition
+      refClass: PropertyConditionRelation
+      local: condition_id
+      foreign: property_id
+
+PropertyConditionRelation:
+  columns:
+    condition_id:
+      type: integer
+      length: 11
+      primary: true
+      unsigned: true
+
+    property_id:
+      type: integer
+      length: 11
+      primary: true
+      unsigned: true
+
+  relations:
+    Property:
+      class: Property
+      local: property_id
+      foreign: id
+      onDelete: CASCADE
+      onUpdate: CASCADE
+
+    Condition:
+      class: PropertyCondition
+      local: condition_id
+      foreign: id
+      onDelete: CASCADE
+      onUpdate: CASCADE
+
+PropertyTag:
+  actAs:
+    Timestampable: {}
+    Translatable:
+      languages: [en, es]
+      fields:
+        name:
+          type: string
+          length: 255
+
+  columns:
+    id:
+      type: integer
+      length: 11
+      primary: true
+      unsigned: true
+      autoincrement: true
+
+    is_core:
+      type: boolean
+      default: false
+
+    is_active:
+      type: boolean
+      default: true
+      notnull: true
+
+    slug:
+      type: string
+      length: 255
+
+  relations:
+    Properties:
+      class: PropertyTag
+      refClass: PropertyTagRelation
+      local: tag_id
+      foreign: property_id
+
+PropertyTagRelation:
+  columns:
+    tag_id:
+      type: integer
+      length: 11
+      primary: true
+      unsigned: true
+
+    property_id:
+      type: integer
+      length: 11
+      primary: true
+      unsigned: true
+
+  relations:
+    Property:
+      class: Property
+      local: property_id
+      foreign: id
+      onDelete: CASCADE
+      onUpdate: CASCADE
+
+    Tag:
+      class: PropertyTag
+      local: tag_id
+      foreign: id
+      onDelete: CASCADE
+      onUpdate: CASCADE
+
+PropertyCategory:
+  actAs:
+    Timestampable: {}
+    Translatable:
+      languages: [en, es]
+      fields:
+        name:
+          type: string
+          length: 255
+
+  columns:
+    id:
+      type: integer
+      length: 11
+      primary: true
+      unsigned: true
+      autoincrement: true
+
+    name:
+      type: string
+      length: 255
+
+    type:
+      type: enum
+      values: [Residential, Commercial, "Land"]
+
+    parent_id:
+      type: integer
+      length: 11
+      primary: true
+      unsigned: true
+
+PropertyPhoto:
+  actAs:
+    Timestampable: {}
+  columns:
+    id:
+      type: integer
+      length: 11
+      primary: true
+      unsigned: true
+      autoincrement: true
+
+    property_id:
+      type: integer
+      length: 11
+      unsigned: true
+
+    original:
+      type: string
+      length: 255
+
+    small:
+      type: string
+      length: 255
+
+    medium:
+      type: string
+      length: 255
+
+    large:
+      type: string
+      length: 255
+
+    description:
+      type: string
+      length: 255
+
+    is_approved:
+      type: boolean
+      default: true
+      notnull: false
+
+  relations:
+    Property:
+      class: Property
+      local: property_id
+      foreign: id
+      foreignAlias: Photos
+
+PropertyUnit:
+  actAs:
+    Timestampable: {}
+  columns:
+    id:
+      type: integer
+      length: 11
+      primary: true
+      unsigned: true
+      autoincrement: true
+
+    property_id:
+      type: integer
+      length: 11
+      unsigned: true
+
+    sqf:
+      type: decimal(12,2)
+
+    bathrooms:
+      type: decimal(12,1)
+
+    half_bathrooms:
+      type: integer
+      length: 10
+
+    rooms:
+      type: integer
+      length: 10
+
+    rent_price:
+      type: decimal(12,2)
+
+    is_available:
+      type: boolean
+      default: true
+      notnull: false
+
+    available_at:
+      type: timestamp
+
+  relations:
+    Property:
+      class: Property
+      local: property_id
+      foreign: id
+      foreignAlias: Units
+
+PropertyOffer:
+  actAs:
+    Timestampable: {}
+  columns:
+    id:
+      type: integer
+      length: 11
+      primary: true
+      unsigned: true
+      autoincrement: true
+
+    property_id:
+      type: integer
+      length: 11
+      unsigned: true
+
+    account_id:
+      type: integer
+      length: 11
+      primary: true
+      unsigned: true
+
+    first_name:
+      type: string(255)
+
+    last_name:
+      type: string(255)
+
+    email:
+      type: string(255)
+      notnull: false
+
+    phone:
+      type: string(255)
+      notnull: false
+
+    phone_ext:
+      type: string(255)
+      notnull: false
+
+    phone2:
+      type: string(255)
+      notnull: false
+
+    price:
+      type: decimal(12,2)
+
+    counter:
+      type: decimal(12,2)
+
+    method:
+      type: enum
+      values: [Cash, Financed]
+
+    notes:
+      type: Text
+
+    ocurred_at:
+      type: timestamp
+
+  relations:
+    Property:
+      class: Property
+      local: property_id
+      foreign: id
+      foreignAlias: Offers
+
+    Account:
+      class: Account
+      local: account_id
+      foreign: id
+      foreignAlias: Offers
+
+DocumentCategory:
+  actAs:
+    Timestampable: {}
+  columns:
+    id:
+      type: integer
+      length: 11
+      primary: true
+      unsigned: true
+      autoincrement: true
+
+    company_id:
+      type: integer
+      length: 11
+      unsigned: true
+
+    parent_id:
+      type: integer
+      length: 11
+      unsigned: true
+
+    name:
+      type: string
+      length: 255
+
+    description:
+      type: text
+
+    is_active:
+      type: boolean
+      default: true
+      notnull: false
+
+  relations:
+    Parent:
+      class: DocumentCategory
+      local: parent_id
+      foreign: id
+      foreignAlias: Childs
+
+Document:
+  actAs:
+    Timestampable: {}
+  columns:
+    id:
+      type: integer
+      length: 11
+      primary: true
+      unsigned: true
+      autoincrement: true
+
+    category_id:
+      type: integer
+      length: 11
+      unsigned: true
+
+    name:
+      type: string
+      length: 255
+
+    description:
+      type: text
+
+    is_active:
+      type: boolean
+      default: true
+      notnull: false
+
+    path:
+      type: string
+      length: 255
+
+  relations:
+    Category:
+      class: DocumentCategory
+      local: category_id
+      foreign: id
+      foreignAlias: Documents
+
+Goal:
+  actAs:
+    Timestampable: {}
+
+  columns:
+    id:
+      type: integer
+      length: 11
+      primary: true
+      unsigned: true
+      autoincrement: true
+
+    account_id:
+      type: integer
+      length: 11
+      unsigned: true
+
+    production_unit_id:
+      type: integer
+      length: 11
+      unsigned: true
+
+    year:
+      type: integer
+      length: 11
+      notnull: true
+
+    listings:
+      type: integer
+      length: 11
+
+    listings_volume:
+      type: integer
+      length: 11
+
+    listings_price_average:
+      type: integer
+      length: 11
+
+    listings_commission_average:
+      type: integer
+      length: 11
+
+    options:
+      type: integer
+      length: 11
+
+    options_volume:
+      type: integer
+      length: 11
+
+    closings:
+      type: integer
+      length: 11
+
+    closings_volume:
+      type: integer
+      length: 11
+
+    closings_earnings:
+      type: integer
+      length: 11
+
+    closings_price_average:
+      type: integer
+      length: 11
+
+    closings_commission_average:
+      type: integer
+      length: 11
+
+  relations:
+    Account:
+      class: Account
+      local: account_id
+      foreign: id
+      foreignAlias: Goals
+
+    ProductionUnit:
+      class: ProductionUnit
+      local: production_unit_id
+      foreign: id
+      foreignAlias: Goals
+
+PropertyStat:
+  actAs:
+    Timestampable: {}
+
+  columns:
+    id:
+      type: integer
+      length: 11
+      primary: true
+      unsigned: true
+      autoincrement: true
+
+    property_id:
+      type: integer
+      length: 11
+      unsigned: true
+
+    type:
+      type: string(255)
+      default: "view"
+
+  relations:
+    Property:
+      class: Property
+      local: property_id
+      foreign: id
+      onDelete: CASCADE
+      onUpdate: CASCADE
+
+PropertyPriceLog:
+  actAs:
+    Timestampable: {}
+  columns:
+    id:
+      type: integer
+      length: 11
+      primary: true
+      unsigned: true
+      autoincrement: true
+
+    property_id:
+      type: integer
+      length: 11
+      unsigned: true
+
+    account_id:
+      type: integer
+      length: 11
+      unsigned: true
+
+    sale_price:
+      type: decimal
+      length: 10
+      scale: 2
+
+    old_sale_price:
+      type: decimal
+      length: 10
+      scale: 2
+
+    rent_price:
+      type: decimal
+      length: 10
+      scale: 2
+
+    old_rent_price:
+      type: decimal
+      length: 10
+      scale: 2
+
+  relations:
+    Property:
+      class: Property
+      local: property_id
+      foreign: id
+      foreignAlias: PriceLogs
+      onDelete: CASCADE
+      onUpdate: CASCADE
+
+    Account:
+      class: Account
+      local: account_id
+      foreign: id
+      foreignAlias: PriceLogs
+
+InstantOffer:
+  columns:
+    id:
+      type: integer
+      length: 11
+      primary: true
+      unsigned: true
+      autoincrement: true
+
+    name:
+      type: string(255)
+      notnull: true
+
+    phone:
+      type: string(255)
+
+    email:
+      type: string(255)
+
+    property_type:
+      type: string(255)
+
+    address:
+      type: text
+
+    city:
+      type: string(255)

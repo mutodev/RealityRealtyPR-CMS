@@ -1,0 +1,53 @@
+<?php
+
+    $this->title = 'Activation Email';
+    $link     = url( 'account.validate'            );
+    $link_key = url( 'account.validate?key='. $key );
+
+?>
+<h1 style="font-weight:bold;font-size:2em;margin:.5em 0;">
+    <?= t('Hello, %0' , $name); ?>
+</h1>
+
+<p>
+    <?= t("Thanks for creating your account at Reality Realty, you are almost done.
+    For security purposes we need you to verify your email by cliking on the button bellow or entering
+    the code specified below on our site."); ?>
+</p>
+
+<div style='text-align:center'>
+
+
+    <strong>
+        <?= t('To complete your registration click on this button:'); ?>
+    </strong>
+
+    <br />
+    <br />
+
+    <a href='<?= $link_key;?>' style='display: block; text-decoration: none; width:200px; margin:0 auto;border:solid #3b6e22 1px; border-bottom:solid #2c5115 1px; cursor:pointer; -moz-border-radius: 4px; -webkit-border-radius: 4px ; border-radius: 4px'>
+        <span style='display: block; padding:6px 0 6px 0; background-color:#68a64c; border-top:solid #98c286 1px; text-align:center; color:#ffffff; -moz-border-radius: 4px; -webkit-border-radius: 4px ; border-radius: 4px'>
+            <?= t("Validate your account"); ?>
+        </span>
+    </a>
+
+    <br />
+    <br />
+
+    <strong>
+        <?= t("or you can enter the following validation code by visiting"); ?> <br />
+        <a href='<?= $link; ?>'> <?= $link; ?> </a>
+    </strong>
+
+    <br />
+    <br />
+    <br />
+    <div style='width:300px;margin:0 auto;font-weight:bold;color:#604401;font-size:40px;background:#F9F9E8;border:3px outset #604401;padding:10px;'>
+        <?= strtoupper($key); ?>
+        <div style='font-size:8px;'> <?= t("enter this code at rpm.realityrealtypr.com"); ?> </div>
+    </div>
+
+    <br />
+    <br />
+
+</div>

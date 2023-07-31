@@ -1,0 +1,11 @@
+<div class="panel">
+    <div class="panel-body container-fluid">
+        <a class="btn btn-success btn-sm" href="<?= $accountId ? url('.edit?account_id='.$accountId) : url('.edit?production_unit_id='.$productionUnitId); ?>"><i class="fa fa-plus"></i>&nbsp;&nbsp;<?= t('Add New Goal') ?></a>
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-body container-fluid">
+		<?= $Table->render(); ?>
+	</div>
+</div>

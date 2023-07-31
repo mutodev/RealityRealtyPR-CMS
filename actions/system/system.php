@@ -1,0 +1,3 @@
+<?php
+
+    redirect('system.organizations');

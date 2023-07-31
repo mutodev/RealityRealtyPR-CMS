@@ -1,0 +1,15 @@
+
+elements:
+    key:
+        box_renderer: 
+            type: 1Column            
+            border: false
+        type:    Text
+        label:   'Validation Code'
+        required: true
+
+    save:
+        type:  Button
+        class: ''
+        image: /img/icons/login.png
+        label: Validate Account

@@ -1,0 +1,45 @@
+source: FROM PropertyOffer
+columns:
+    id:
+        label: 'ID #'
+        source: id
+        class: hidden-xs-down
+
+    ocurred_at:
+        source: ocurred_at
+        label: Date
+        decorator: {name: 'LocalDateTime', format: 'short'}
+
+    price:
+        source: price
+        decorator: Dollars
+
+    account_id:
+        class: hidden-xs-down
+        label: Agent
+        source: PropertyOffer.Account.id
+        content: >
+            %{PropertyOffer.Account.getFullName}
+
+    client:
+        class: hidden-xs-down
+        label: Client
+        source: PropertyOffer.first_name
+        content: >
+            %{PropertyOffer.first_name} %{PropertyOffer.last_name}
+
+    actions:
+        type: Actions
+        label: ' '
+        width: 1px
+        actions:
+
+            edit:
+                icon: pencil
+                label: Edit
+                link:  '.edit?id=%{id}&property_id=%{PropertyOffer.property_id}'
+
+#            delete:
+#                label: '<i class="fa fa-trash-o"></i>'
+#                link:    .delete?id=%{id}
+#                confirm: true

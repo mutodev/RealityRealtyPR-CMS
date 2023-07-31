@@ -1,0 +1,183 @@
+<?php
+    $Section = helper("Section");
+
+    Configure::write("seo.title" , 'Proyectos Nuevos - '.$Project->nombre.', '.$Project->pueblotxt );
+?>
+
+<!-- MAIN CONTENT -->
+<div class="container projects-view">
+    <div id="content">
+
+        <br />
+
+        <div style="text-align:center;">
+            <a href="<?= $Project->getLogo(); ?>" target="_blank" rel="photos">
+                <span>
+                    <img src="<?= $Project->getLogo() ?>" width="204" height="151" />
+                </span>
+            </a>
+            <?php for( $i = 1; $i <= 4; $i++ ): ?>
+                <?php if($Project->getPhoto($i)): ?>
+                <a href="<?= $Project->getPhoto($i); ?>" target="_blank" rel="photos" >
+                    <span>
+                        <img src="<?= $Project->getPhoto($i); ?>" width="204" height="151" />
+                    </span>
+                </a>
+                <?php endif ?>
+            <?php endfor; ?>
+
+            <h2><?= trim($Project->nombre) ?>, <?= ($Project->pueblo) ?></h2>
+        </div>
+
+        <table width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #a7a9ac;border-bottom:1px solid #a7a9ac;">
+            <tr>
+                <td width="50%" valign="top" style="border-right:1px solid #a7a9ac; padding:20px 40px 20px 20px;border-bottom:1px solid #a7a9ac;">
+                    <table width="100%" cellpadding="0" cellspacing="0">
+                        <?php if($Project->pueblotxt): ?>
+                            <tr>
+                                <th style="padding: 5px;border-bottom:1px solid #a7a9ac">
+                                    PUEBLO       
+                                </th>
+                                <td style="padding: 5px;border-bottom:1px solid #a7a9ac">
+                                    <?= $Project->pueblo ?>
+                                </td>
+                            </tr>
+                        <?php endif ?>
+                        
+                            <tr>
+                                <th style="padding: 5px;border-bottom:1px solid #a7a9ac">
+                                    TIPO DE UNIDAD       
+                                </th>
+                                <td style="padding: 5px;border-bottom:1px solid #a7a9ac">
+                                    <?= $Project->getCategory() ?>
+                                </td>
+                            </tr>
+                        
+                        <?php if($Project->price_min): ?>
+                            <tr>
+                                <th style="padding: 5px;border-bottom:1px solid #a7a9ac">
+                                    PRECIOS DESDE       
+                                </th>
+                                <td style="padding: 5px;border-bottom:1px solid #a7a9ac">
+                                    <?= '$'.number_format($Project->price_min, 0) ?>
+                                </td>
+                            </tr>
+                        <?php endif ?>
+                        <?php if($Project->qty): ?>
+                            <tr>
+                                <th style="padding: 5px;border-bottom:1px solid #a7a9ac">
+                                    TOTAL DE UNIDADES       
+                                </th>
+                                <td style="padding: 5px;border-bottom:1px solid #a7a9ac">
+                                    <?= $Project->qty ?>
+                                </td>
+                            </tr>
+                        <?php endif ?>
+                        <?php if($Project->free): ?>
+                            <tr>
+                                <th style="padding: 5px;border-bottom:1px solid #a7a9ac">
+                                    UNIDADES DISPONIBLES       
+                                </th>
+                                <td style="padding: 5px;border-bottom:1px solid #a7a9ac">
+                                    <?= $Project->free ?>
+                                </td>
+                            </tr>
+                        <?php endif ?>
+                        <?php if($Project->sqmt): ?>
+                            <tr>
+                                <th style="padding: 5px;border-bottom:1px solid #a7a9ac">
+                                    METROS CUADRADOS       
+                                </th>
+                                <td style="padding: 5px;border-bottom:1px solid #a7a9ac">
+                                    <?= $Project->sqmt ?>
+                                </td>
+                            </tr>
+                        <?php endif ?>
+                        <?php if($Project->sqft): ?>
+                            <tr>
+                                <th style="padding: 5px;border-bottom:1px solid #a7a9ac">
+                                    PIES CUADRADOS       
+                                </th>
+                                <td style="padding: 5px;border-bottom:1px solid #a7a9ac">
+                                    <?= $Project->sqft ?>
+                                </td>
+                            </tr>
+                        <?php endif ?>
+                        <?php if($Project->distribution): ?>
+                            <tr>
+                                <th style="padding: 5px;border-bottom:1px solid #a7a9ac">
+                                    DISTRIBUCION
+                                </th>
+                                <td style="padding: 5px;border-bottom:1px solid #a7a9ac">
+                                    <?= $Project->distribution ?>
+                                </td>
+                            </tr>
+                        <?php endif ?>
+                        <?php if($Project->address): ?>
+                            <tr>
+                                <th style="padding: 5px;border-bottom:1px solid #a7a9ac">
+                                    DIRECCION FISICA 
+                                </th>
+                                <td style="padding: 5px;border-bottom:1px solid #a7a9ac">
+                                    <?= $Project->address ?>
+                                </td>
+                            </tr>
+                        <?php endif ?>
+                        <?php if($Project->plong && $Project->plat): ?>
+                            <tr>
+                                <th style="padding: 5px;">
+                                    COORDENADAS
+                                </th>
+                                <td style="padding: 5px;">
+                                    <?= $Project->plat ?>, <?= $Project->plong ?>
+                                </td>
+                            </tr>
+                        <?php endif ?>
+                    </table>
+                </td>
+                <td width="50%" valign="top" style="padding:20px 40px 20px 20px;border-bottom:1px solid #a7a9ac;">
+                    <?= $Project->description ?>
+
+                    <br />
+
+                    <a href="/projects/print?id=<?= $Project->id ?>" target="_blank">
+                        Descargar Flyer
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td valign="top" width="50%" style="padding:20px 40px 20px 20px">
+                    <?php if($Project->plong && $Project->plat): ?>
+                    <div id="map2" style="width:100%; height:300px;"></div>
+                    <?php endif ?>
+                </td>
+                <td valign="top" width="50%" style="padding:20px 40px 20px 20px">
+                    <h3>Para más información</h3>
+
+                    <br />
+
+                    <?= $Project->horario ?>
+
+                    <br />
+
+                    <?= $this->partial('contact', array('Contact' => $Contact)); ?>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<?= $Section->start("javascriptFooter"); ?>
+<?= $Section->render("javascriptFooter"); ?>
+
+<script type="text/javascript">
+
+    jQuery(document).ready(function(){
+        
+        jQuery("a[rel='photos']").colorbox({maxWidth: "100%", maxHeight: "100%", scrolling: false, current: "imagen {current} de {total}"});
+
+    });
+
+</script>
+
+<?= $Section->end(); ?>

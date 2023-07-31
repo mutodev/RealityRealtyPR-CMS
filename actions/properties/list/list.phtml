@@ -1,0 +1,35 @@
+<div class="container mt10">
+    <ol class="breadcrumb realty-breadcrumb">
+        <li><a href="<?= url('/') ?>"><?= t('translation321') ?></a></li>
+        <li><a href="<?= url('/') ?>"><?= t('translation322') ?></a></li>
+        <li class="active"><?= t('translation324') ?></li>
+    </ol>
+
+    <h2 class="margin-top"><?= t('translation323') ?></h2>
+
+    <?php if ($Properties->count()): ?>
+        <script type="text/javascript">
+          var addthis_share =
+            {
+              url: '<?= url('.?'.http_build_query(array('ids' => $savedProperties))) ?>'
+            }
+        </script>
+        <div class="clearfix mt20">
+            <div class="pull-left">
+    <!--            <span class="glyphicon glyphicon-print" aria-hidden="true"></span> <a href="--><?//= url('.?action=pdf') ?><!--">--><?//= t('translation327'); ?><!--</a><br />-->
+                <span class="glyphicon glyphicon-share" aria-hidden="true"></span> <a class="addthis_button_compact" href="<?= url('.?'.http_build_query(array('ids' => $savedProperties))) ?>"><span><?= t('translation328'); ?></span></a>
+            </div>
+            <div class="pull-right">
+                <a href="<?= url('.?action=delete') ?>"><?= t('translation325'); ?></a> <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </div>
+        </div>
+    <?php endif ?>
+</div>
+
+<?php if ($Properties->count()): ?>
+<?= $this->partial('properties', compact('Properties', 'Pagination')); ?>
+<?php else: ?>
+<div class="container">
+    <h4><?= t('translation326'); ?></h4>
+</div>
+<?php endif; ?>

@@ -1,0 +1,72 @@
+<?php
+
+$Javascript = helper('Javascript');
+
+$Css = helper('Css');
+$Css->add('/css/morris.css');
+
+?>
+
+<?php if ($action != 'export'): ?>
+    <div class="panel">
+        <div class="panel-body container-fluid">
+        <?= $Search->render(); ?>
+        </div>
+    </div>
+<?php endif ?>
+
+<div class="panel">
+    <div class="panel-body container-fluid">
+        <div class="yammon-table-container yammon-table-sortable yammon-table-groupable yammon-table-hideable">
+            <table class="yammon-table table table-dark table-hover table-bordered">
+                <thead class="yammon-table-thead">
+                <tr class="yammon-table-row-headers">
+                    <th column="photo" columntype="Text" class="yammon-table-header yammon-table-header-even yammon-table-header-first yammon-table-header-sortable yammon-table-header-groupable yammon-table-header-hideable" style="width : 80px">
+                        <div class="yammon-table-dropdown">
+                                Photo
+                        </div>
+                    </th>
+                    <th column="title" columntype="Text" class="yammon-table-header yammon-table-header-odd yammon-table-header-sortable yammon-table-header-groupable yammon-table-header-hideable" style="width : auto">
+                        <div class="yammon-table-dropdown">
+                                Description
+                        </div>
+                    </th>
+                    <th column="stats" columntype="Text" class="yammon-table-header yammon-table-header-even yammon-table-header-last yammon-table-header-hideable" style="width : auto">
+                        <div class="yammon-table-dropdown">
+								<span>
+									Views
+								</span>
+                        </div>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php foreach($results as $stat): ?>
+                    <tr class="yammon-table-row yammon-table-row-even yammon-table-row-extra" style="">
+                        <td class="yammon-table-column yammon-table-column-even yammon-table-column-first">
+                            <div class="yammon-table-column-container">
+                                <div style="text-align: center">
+                                    <a target="_blank" href="/propiedades/view?force=1&amp;id=98443">
+                                        <img src="<?= @$stat['Property']['Photos'][0]['original'] ?>" height="50">
+                                    </a>
+                                </div>
+
+                            </div>
+                        </td>
+                        <td class="yammon-table-column yammon-table-column-odd">
+                            <div class="yammon-table-column-container">
+                                <?= renderDescription($stat) ?>
+                            </div>
+                        </td>
+                        <td class="yammon-table-column yammon-table-column-even yammon-table-column-last">
+                            <div class="yammon-table-column-container">
+                                <?= $stat['stat'] ?>
+                            </div>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

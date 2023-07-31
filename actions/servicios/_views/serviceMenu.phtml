@@ -1,0 +1,19 @@
+<style>
+    .serviceMenu li {
+        list-style: none;
+    }
+
+    .serviceMenu li::before {
+        content: "\276F";
+        color: red;
+        display: inline-block;
+        width: 1em;
+        margin-right: 10px;
+    }
+</style>
+
+<ul class="serviceMenu">
+    <?php foreach ($services as $service => $label): ?>
+        <li><a href="/servicios?service=<?= $service ?>"><?= $label ?></a></li>
+    <?php endforeach; ?>
+</ul>

@@ -1,0 +1,51 @@
+source: FROM Account LEFT JOIN Account.Roles LEFT JOIN Account.Branch
+columns:
+
+    id:
+        label: "ID #"
+        source: id
+        width: 60px
+
+    name:
+        label: Name
+        source: [first_name, last_name]
+        content: %{first_name} %{last_name}
+
+    branch:
+        source: Account.Branch.name
+
+    email:
+        source: email
+        decorator: email
+        class: hidden-xs-down
+
+    phone:
+        source: phone
+        decorator: phone
+        class: hidden-xs-down
+
+    type:
+        source: type
+        content: %{type} \ %{position}
+        class: hidden-xs-down
+
+    active:
+        label: Active
+        class: hidden-xs-down
+        source: active
+        decorator: boolean
+
+    actions:
+        label: ''
+        width: 1px
+        type: Actions
+        actions:
+            edit:
+                icon: pencil
+                label: Edit
+                link:  .edit?id=%{id}
+
+            goals:
+                icon: line-chart
+                label: Goals
+                link:  backend.company.settings.goals?account_id=%{id}

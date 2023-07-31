@@ -1,0 +1,73 @@
+<?php
+
+$Javascript = helper('Javascript');
+
+$Css = helper('Css');
+$Css->add('/css/morris.css');
+
+$this->breadcrumbBtn = array(
+    'url'   => url('.edit'),
+    'label' => t('Property'),
+    'icon'  => 'plus'
+);
+
+?>
+
+<?php if ($action != 'export'): ?>
+    <div class="panel">
+        <div class="panel-body container-fluid">
+        <?= $Search->render(); ?>
+        </div>
+    </div>
+
+    <div class="panel">
+        <div class="panel-body container-fluid">
+            <?php if(Auth::hasPermission('property.manage')): ?>
+            <a class="btn btn-success btn-xs pull-left" href="<?= url('.edit') ?>">
+                <i class="fa fa-plus"></i>&nbsp;<?= t('Property') ?>
+            </a>
+            <a class="btn btn-default btn-xs pull-right" target="_blank" href="<?= url('.?'.http_build_query(array_merge($_GET, array('action' => 'export')))) ?>">
+                <i class="fa fa-download"></i>&nbsp;<?= t('Export') ?>
+            </a>
+            <?php endif ?>
+
+            <span class="mr10">REO's & Investors Properties</span>
+
+            <a class="pull-right mr10" target="_blank" href="https://1firstbank.res.net/">
+                <img height="25" src="/fb.png" />
+            </a>
+
+            <a class="pull-right mr10" target="_blank" href="https://deshow.com/">
+                <img height="25" src="/ds.png" />
+            </a>
+
+            <a class="pull-right mr10" target="_blank" href="http://orientalpcs.azurewebsites.net/">
+                <img height="25" src="/or.png" />
+            </a>
+
+            <a class="pull-right mr10" target="_blank" href="https://www.homepath.com/">
+                <img height="25" src="/hp.png" />
+            </a>
+
+            <a class="pull-right mr10" target="_blank" href="https://www.hudhomestore.com/Home/Index.aspx">
+                <img height="25" src="/hh.png" />
+            </a>
+
+            <a class="pull-right mr10" target="_blank" href="http://www.spsreo.com/Property/Search">
+                <img height="25" src="/sp.png" />
+            </a>
+
+            <?php if($PadDocument): ?>
+            <a class="pull-right mr10" target="_blank" href="https://s3.amazonaws.com/app-propiedades/<?= $PadDocument->path ?>">
+                <img height="25" src="/pad.png" />
+            </a>
+            <?php endif ?>
+        </div>
+    </div>
+<?php endif ?>
+
+<div class="panel">
+    <div class="panel-body container-fluid">
+        <?= $Table->render(); ?>
+    </div>
+</div>

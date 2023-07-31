@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		body{
+			font-family:sans-serif;
+		}
+	</style>
+</head>
+<body style="margin:0;padding:0">
+	<div style="border-top: 1px solid #b1b1b1; border-bottom: 1px solid #B1B1B1">
+		<table cellpadding="0" cellspacing="0" width="480">
+			<tr>
+                <td width="10%" style="text-align:left;padding:5px;">
+                    <h2 style="margin:0;font-size:2.8em;padding:10px 10px;">
+                        <?php if( $Property->for_sale): ?>
+                            Venta
+                        <?php elseif( $Property->for_rent): ?>
+                            Renta
+                        <?php endif ?>
+                    </h2>
+                </td>
+				<td width="60%" align="center">
+					<img src="https://s3.amazonaws.com/app-propiedades/flyer-logo.png" width="200" />
+				</td>
+                <td width="30%" style="text-align:right;padding:5px;">
+                    <h2 style="margin:0;font-size:2.8em;padding:10px 10px;">
+                        <?php if($Property->for_rent): ?>
+                            <?php if( !empty($Property->rent_price) ) : ?>
+                                $<?= number_format( $Property->rent_price ); ?>
+                            <?php else: ?>
+                                $<?= t("LLAMAR"); ?>
+                            <?php endif; ?>
+                        <?php elseif($Property->for_sale): ?>
+                            <?php if( !empty($Property->sale_price) ) : ?>
+                                $<?= number_format( $Property->sale_price ); ?>
+                            <?php else: ?>
+                                $<?= t("LLAMAR"); ?>
+                            <?php endif; ?>
+                        <?php endif; ?>
+                    </h2>
+                </td>
+			</tr>
+		</table>
+	</div>
+
+	<div style="padding:10px;margin-top:0px;text-align:center;">
+		<?php if(count($Property->Photos)): ?>
+            <div style="height: 360px">
+                <img src="<?= $Property->Photos[0]->original ?>" style="height:440px;max-width:100%" />
+            </div>
+            <table style="width: 565px; margin: 0 auto;position: relative; z-index: 999999">
+                <tr>
+                    <?php for($i = 1; $i <= 3;$i++): ?>
+                        <?php if($Property->Photos[$i]): ?>
+                            <td>
+                                <img src="<?= $Property->Photos[$i]->original ?>" style="display:block;height:120px;width:180px;border: 2px solid white;" />
+                            </td>
+                        <?php endif; ?>
+                    <?php endfor; ?>
+                </tr>
+            </table>
+		<?php endif ?>
+	</div>
+
+    <div style="margin-top: 0px; text-align: center;">
+        <h1 style="margin:0"><?= $Property->title ?></h1>
+        <span style="border-top: 2px solid #ef3a3a;padding-top: 10px;"><?= $Property->Area->name ?></span>
+    </div>
+
+    <div style="margin-top: 10px; text-align: center;">
+        <table width="100%">
+            <tr>
+                <td width="120" align="left" valign="top" style="padding-right: 20px;">
+                   <strong>Propiedad #<?= $Property->id ?></strong><br /><br />
+
+                    <?php if($Property->rooms): ?>
+                        <?= $Property->rooms ?> cuartos<br />
+                    <?php endif ?>
+                    <?php if($Property->bathrooms): ?>
+                        <?= (float)$Property->bathrooms ?> baños<br />
+                    <?php endif; ?>
+                    <?php if($Property->sqf): ?>
+                        <?= $Property->sqf ?> p.c<br />
+                    <?php endif ?>
+                </td>
+                <td align="left" valign="top" style="padding-left: 20px; border-left: 1px solid #b1b1b1;">
+                    <strong>Descripción</strong><br />
+                    <small style="font-size: .8em;"><?= $Property->flyer_description ?></small>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="margin-top: 10px; text-align: center;border-top: 1px solid #b1b1b1; border-bottom: 1px solid #b1b1b1; padding: 10px 0">
+        <table>
+            <tr>
+                <td valign="top" align="left">
+                    <?php if ( $Broker->s3_photo ): ?>
+                        <img src='<?= $Broker->s3_photo ?>' height="110" />
+                    <?php endif; ?>
+                </td>
+                <td valign="top" align="left" style="padding-left: 20px;">
+                    <strong><?= $Broker->getFullName() ?></strong>
+                    <?php if($Broker->license): ?><br /><small>Lic. <?= $Broker->license; ?></small><?php endif; ?>
+
+                    <br />
+                    <br />
+                    <strong><?= t('translation335'); ?></strong><br />
+                    <?= decorator('phone', $Broker->phone) ?>
+                    <br />
+                    <?= $Broker->email; ?>
+                </td>
+                <td valign="top" align="left" style="padding-left: 20px; border-left: 1px solid #b1b1b1;">
+                    <small><?= t('translation345'); ?></small><br />
+                    <strong>realityrealtypr.com/p/<?= $Property->id ?></strong>
+                    <br />
+                    <br />
+                    <?= t('translation346') ?><br />
+                    <strong><?= decorator('phone', $Broker->Branch->phone) ?></strong>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

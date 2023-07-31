@@ -1,0 +1,41 @@
+div.pagination{
+	text-align: left;
+	padding:    5px;
+	margin:     20px 0;
+}
+
+	div.pagination a , 
+	div.pagination span{
+		display:          inline-block;
+		outline:          1px solid #999;
+		padding:          3px 8px;
+		margin:           4px;
+		color:            #000033;
+		text-decoration:  none;
+        background-color: white;		
+	}
+
+	div.pagination span {
+		color:   gray;
+	}
+	
+	div.pagination a {
+
+	}
+	
+        div.pagination a:hover {
+            color:            black;
+            background-color: #DFDFDF;		
+        }
+        div.pagination .current{
+            background-color: #4F4F4F;
+            color:            white;
+            outline:          black;
+            font-weight:      bold;		
+        }
+
+	div.pagination .ellipsis{
+		outline:  0;
+		padding:  3px 2px;
+		margin:   2px;
+	}

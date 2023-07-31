@@ -1,0 +1,15 @@
+elements:
+    username:
+        element: text
+        
+    password:
+        element: password        
+        
+    remember_me:
+        element: checkbox
+        text:    'Remember me for 2 weeks'
+        label:   ''
+
+    button:
+        element: button
+        label:   Login

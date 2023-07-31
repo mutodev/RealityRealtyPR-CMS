@@ -1,0 +1,129 @@
+class: form-bordered
+attributes:
+    role: form
+elements:
+
+    summary:
+        type: Summary
+
+    header_general:
+        type:  Header
+        label: General Information
+
+    ocurred_at:
+        label:    Date
+        required: true
+        class:    form-control
+        format:  '%M/%d/%Y%p'
+        output:   Y-m-d
+        type:     DateTime
+        timezone_input: <?= Configure::read('datetime.timezone')."\n" ?>
+
+    price:
+        required: true
+        class:    form-control
+        type:     Price
+
+    method:
+        type: Select
+        class:    form-control
+        options:
+            Cash: Cash
+            Financed: Financed
+
+    account_id:
+        label: Agent
+        class: form-control
+        required: true
+        type:     Select
+        source_callback: companyAgents
+
+    header_client:
+        type:  Header
+        label: Client Information
+
+    first_name:
+        label:    First Name
+        required: true
+        class:    form-control
+
+    last_name:
+        label:    Last Name
+        required: true
+        class:    form-control
+
+    phone_container:
+        type: container
+        collect_errors: true
+        box_renderer:
+            type: 1Column
+            highlight: true
+            border: true
+            margin: '0'
+            padding: '0'
+        layout_renderer:
+            type:    grid
+            columns: 2
+            class: ym-form-box-column2
+            style:   'width: 100%;'
+
+        elements:
+
+            phone:
+                label:    Phone
+                type:     Phone
+                required: true
+                class:    form-control
+
+            phone_ext:
+                label:    Ext
+                type:     Text
+                class:    form-control
+                colwidth: 100px
+                validations:
+                    RegularExpression:
+                        regex: '/^[0-9#*w]+$/i'
+
+    phone_container2:
+        type: container
+        collect_errors: true
+        box_renderer:
+            type: 1Column
+            highlight: true
+            border: true
+            margin: '0'
+            padding: '0'
+        layout_renderer:
+            type:    grid
+            columns: 2
+            class: ym-form-box-column2
+            style:   'width: 100%;'
+
+        elements:
+
+            phone2:
+                label:    Phone
+                type:     Phone
+                class:    form-control
+
+            phone2_ext:
+                label:    Ext
+                type:     Text
+                class:    form-control
+                colwidth: 100px
+                validations:
+                    RegularExpression:
+                        regex: '/^[0-9#*w]+$/i'
+
+    email:
+        type:     Email
+        label:    Email
+        class:    form-control
+
+    notes:
+        class:    form-control
+        type: TextArea
+
+    buttons:
+        type:  Buttons
+        class: form-group

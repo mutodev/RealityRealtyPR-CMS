@@ -1,0 +1,22 @@
+class: form-bordered
+attributes:
+    role: form
+elements:
+
+    summary:
+        type: Summary
+
+    name:
+        type: Text
+        class: form-control
+        required: true
+
+    is_active:
+        type: Checkbox
+        label: ''
+        text: Unit is active
+        default: 1
+
+    buttons:
+        type:  Buttons
+        class: form-group

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		body{
+			font-family:sans-serif;
+		}
+	</style>
+</head>
+<body style="margin:0;padding:0">
+
+	<div style="width:100%;padding:0 10px 10px 10px">
+		<table cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td width="60%">
+					<img src="https://s3.amazonaws.com/app-propiedades/flyer-logo.png" width="350" />
+				</td>
+				<td width="40%" style="text-align:center;color:white;padding:5px;">
+					<h2 style="margin:0;font-size:2.8em;background:#db2d27;padding:10px 10px;width:260px;">
+						<?php if( $Property->for_sale): ?>
+							FOR SALE
+						<?php elseif( $Property->for_rent): ?>
+							FOR RENT
+						<?php endif ?>
+					</h2>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<div style="padding:10;margin-top:0px;height:470px;overflow:hidden;text-align:center;">
+		<?php if(count($Property->Photos)): ?>
+			<img src="<?= $Property->Photos[0]->original ?>" style="display:block;height:470px;max-width:100%" />
+		<?php endif ?>
+	</div>
+
+	<div style="margin-top:10px;height:240px">
+		<table cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+				<td valign="top" width="50%">
+					<div style="background:#dc2a1c;color:white;font-weight:bold;padding:5px 10px;padding-left:30px;font-size:.7em;">
+						PROPERTY SPECS
+					</div>
+
+					<div style="padding: 0 10px;">
+						<table width="100%">
+							<tr>
+								<th width="100" align="left" style="font-weight:bold;border-bottom:2px dotted #bcbdc0;font-size:.9em;">
+									ID NUMBER
+								</th>
+								<td align="left" style="border-bottom:2px dotted #bcbdc0;border-left:4px solid #bcbdc0;font-size:.9em;">
+									<div style="padding-left:15px;">
+										<?= $Property->id ?>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th width="100" align="left" style="font-weight:bold;border-bottom:2px dotted #bcbdc0;font-size:.9em;">
+									<?= t('CATEGORY'); ?>
+								</th>
+								<td align="left" style="border-bottom:2px dotted #bcbdc0;border-left:4px solid #bcbdc0;font-size:.9em;">
+									<div style="padding-left:15px;">
+										<?= $Property->Category->name ?>
+									</div>
+								</td>
+							</tr>
+							<?php if($Property->rooms): ?>
+							<tr>
+								<th width="100" align="left" style="font-weight:bold;border-bottom:2px dotted #bcbdc0;font-size:.9em;">
+									ROOMS
+								</th>
+								<td align="left" style="border-bottom:2px dotted #bcbdc0;border-left:4px solid #bcbdc0;font-size:.9em;">
+									<div style="padding-left:15px;">
+										<?= $Property->rooms ?>
+									</div>
+								</td>
+							</tr>
+							<?php endif ?>
+							<?php if($Property->bathrooms): ?>
+							<tr>
+								<th width="100" align="left" style="font-weight:bold;border-bottom:2px dotted #bcbdc0;font-size:.9em;">
+									BATHROOMS
+								</th>
+								<td align="left" style="border-bottom:2px dotted #bcbdc0;border-left:4px solid #bcbdc0;font-size:.9em;">
+									<div style="padding-left:15px;">
+										<?= (float)$Property->bathrooms ?>
+									</div>
+								</td>
+							</tr>
+							<?php endif ?>
+							<?php if($Property->sqm): ?>
+							<tr>
+								<th width="100" align="left" style="font-weight:bold;border-bottom:2px dotted #bcbdc0;font-size:.9em;">
+									SITE AREA
+								</th>
+								<td align="left" style="border-bottom:2px dotted #bcbdc0;border-left:4px solid #bcbdc0;font-size:.9em;">
+									<div style="padding-left:15px;">
+										<?= $Property->sqm ?>
+									</div>
+								</td>
+							</tr>
+							<?php endif ?>
+							<?php if($Property->sqf): ?>
+							<tr>
+								<th width="100" align="left" style="font-weight:bold;border-bottom:2px dotted #bcbdc0;font-size:.9em;">
+									BUILDING AREA
+								</th>
+								<td align="left" style="border-bottom:2px dotted #bcbdc0;border-left:4px solid #bcbdc0;font-size:.9em;">
+									<div style="padding-left:15px;">
+										<?= $Property->sqf ?>
+									</div>
+								</td>
+							</tr>
+							<?php endif ?>
+							<?php if (!empty($Property->catastro)): ?>
+						    <tr>
+								<th width="100" align="left" style="font-weight:bold;border-bottom:2px dotted #bcbdc0;font-size:.9em;">
+									CATASTRO
+								</th>
+								<td align="left" style="border-bottom:2px dotted #bcbdc0;border-left:4px solid #bcbdc0;font-size:.9em;">
+									<div style="padding-left:15px;">
+										<?= $Property->catastro ?>
+									</div>
+								</td>
+							</tr>
+						    <?php endif; ?>
+						    <?php if (!empty($Property->longitude) && !empty($Property->latitude)): ?>
+						    <tr>
+								<th width="100" align="left" style="font-weight:bold;border-bottom:2px dotted #bcbdc0;font-size:.9em;">
+									COORDINATES
+								</th>
+								<td align="left" style="border-bottom:2px dotted #bcbdc0;border-left:4px solid #bcbdc0;font-size:.9em;">
+									<div style="padding-left:15px;">
+										<?= $Property->latitude ?>, <?= $Property->longitude ?>
+									</div>
+								</td>
+							</tr>
+						    <?php endif; ?>
+							<?php if($Property->description): ?>
+								<tr>
+									<td colspan="2" align="left" style="border-bottom:2px dotted #bcbdc0;font-size:.9em;">
+										<div style="text-align: justify;text-justify: inter-word;">
+											<span style="font-weight:bold">DESCRIPTION</span> <?= $Property->description ?>
+										</div>
+									</td>
+								</tr>
+							<?php endif ?>
+						</table>
+					</div>
+				</td>
+				<td valign="top" width="50%" style="background-color:white;text-align:center;">
+					<div style="padding: 0 0 10px 10px;">
+						<h2 style="margin:0;font-size:1.5em;"><?= $Property->title ?>, <?= $Property->Area->name ?></h2>
+					</div>
+
+					<div style="padding: 0 0 0 10px;">
+						<h1 style="margin:0;background:url('https://s3.amazonaws.com/app-propiedades/bg.png');border: 10px solid #dc2a1c;border-top-width:0;border-bottom-width:0;padding:5px;color:white;text-align:center;">
+
+							<?php if($Property->for_rent): ?>
+								<?php if( !empty($Property->rent_price) ) : ?>
+					                $<?= number_format( $Property->rent_price ); ?>
+					            <?php else: ?>
+					                $<?= t("CALL"); ?>
+					            <?php endif; ?>
+					        <?php elseif($Property->for_sale): ?>
+								<?php if( !empty($Property->sale_price) ) : ?>
+					                $<?= number_format( $Property->sale_price ); ?>
+					            <?php else: ?>
+					                $<?= t("CALL"); ?>
+					            <?php endif; ?>
+					        <?php endif; ?>
+				        </h1>
+				    </div>
+			        <div style="padding: 0 10px;margin-top:10px;">
+			        	<table>
+				        	<tr>
+					        	<td valign="top">
+					        		<?php if ( $Broker->s3_photo ): ?>
+			                          	<img src='<?= $Broker->s3_photo ?>' height="110" />
+			                        <?php endif; ?>
+					        	</td>
+					        	<td valign="top">
+					        		<table>
+			                            <tr>
+			                              <td colspan="2">
+			                              	<strong><?= $Broker->getFullName() ?><?php if($Broker->license): ?>, Lic. <?= $Broker->license; ?><?php endif; ?></strong>
+			                              </td>
+			                            </tr>
+
+			                            <?php if ( $Broker->position ): ?>
+			                                <tr>
+			                                    <td colspan="2" class="pl10"><?= $Broker->position ?></td>
+			                                  </tr>
+			                            <?php endif ?>
+
+										<tr>
+		                                    <td colspan="2" class="pl10">
+		                                    	Móvil: <?= decorator('phone', $Broker->phone) ?>
+		                                    </td>
+		                                  </tr>
+
+		                                  <tr>
+		                                    <td colspan="2" class="pl10">
+		                                    	Oficina: <?= decorator('phone', $Broker->Branch->phone) ?>
+		                                    </td>
+		                                  </tr>
+
+			                            <?php if ( $Broker->email ): ?>
+			                              <tr>
+			                                <td colspan="2" class="pl10"><?= $Broker->email; ?></td>
+			                              </tr>
+			                            <?php endif; ?>
+			                        </table>
+					        	</td>
+				        	</tr>
+			        	</table>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<div style="background:#dc2a1c;color:white;text-align:center;padding:10px;margin-top:20px;">
+		<p style="margin:0;font-size:.7em;">
+			For more information and photos about this property, go to our website:
+		</p>
+		<p style="margin:0;">
+			<strong style="font-size:1.5em">WWW.REALITYREALTYPR.COM</strong>
+		</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+.ENV
+.env
+.DS_Store
+.DS_Store?
+writable/*
+public/uploads/*
+.idea/
+public/css/cover-sass.css.map

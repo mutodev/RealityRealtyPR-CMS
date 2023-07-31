@@ -1,0 +1,771 @@
+Agency:
+    actAs:
+        Timestampable:     {}
+        Upload:
+            fields:
+                logo: { path: 'public/uploads/agency/logo' }
+                email_logo: { path: 'public/uploads/agency/email_logo' }
+
+    columns:
+        id:
+            type:          integer
+            length:        11
+            primary:       true
+            unsigned:      true
+            autoincrement: true
+
+        name:
+            type:          string(255)
+            notnull:       true
+
+        subdomain:
+            type:          string(255)
+            notnull:       false
+
+        is_active:
+            type:          boolean
+            notnull:       true
+            default:       true
+
+    relations:
+
+        Organizations:
+            class:    Organization
+            type:     many
+            local:    id
+            foreign:  agency_id
+
+Company:
+    actAs:
+        Timestampable:     {}
+
+    columns:
+        id:
+            type:          integer
+            length:        11
+            primary:       true
+            unsigned:      true
+            autoincrement: true
+
+        organization_id:
+            type:          integer
+            length:        11
+            unsigned:      true
+
+        name:
+            type:          string(255)
+            notnull:       true
+
+        timezone:
+            type:          string(255)
+            notnull:       true
+            default:       America/Puerto_Rico
+
+        is_active:
+            type:          boolean
+            notnull:       true
+            default:       true
+
+    relations:
+
+        Accounts:
+            class:    Account
+            type:     many
+            local:    id
+            foreign:  company_id
+
+        Organization:
+            class:    Organization
+            local:    organization_id
+            foreign:  id
+
+Organization:
+    actAs:
+        Timestampable:     {}
+
+    columns:
+        id:
+            type:          integer
+            length:        11
+            primary:       true
+            unsigned:      true
+            autoincrement: true
+
+        name:
+            type:          string(255)
+            notnull:       true
+
+        timezone:
+            type:          string(255)
+            notnull:       true
+            default:       America/Puerto_Rico
+
+        agency_id:
+            type:          integer
+            length:        11
+            unsigned:      true
+
+        is_active:
+            type:          boolean
+            notnull:       true
+            default:       true
+
+    relations:
+
+        Accounts:
+            class:    Account
+            type:     many
+            local:    id
+            foreign:  organization_id
+
+        Companies:
+            class:    Company
+            type:     many
+            local:    id
+            foreign:  organization_id
+
+        Agency:
+            class:    Agency
+            local:    agency_id
+            foreign:  id
+
+Department:
+    actAs:
+        Timestampable:     {}
+
+    columns:
+        id:
+            type:          integer
+            length:        11
+            primary:       true
+            unsigned:      true
+            autoincrement: true
+
+        company_id:
+            type:          integer
+            length:        11
+            unsigned:      true
+
+        account_id:
+            type:          integer
+            length:        11
+            unsigned:      true
+
+        name:
+            type: string
+            length: 255
+            notnull: true
+
+        email:
+            type:          string(255)
+            notnull:       false
+
+        phone:
+            type:          string(255)
+            notnull:       false
+
+    relations:
+
+        Company:
+            class:    Company
+            local:    company_id
+            foreign:  id
+
+        Account:
+            class:    Account
+            local:    account_id
+            foreign:  id
+
+Branch:
+    actAs:
+        Timestampable:     {}
+
+    columns:
+        id:
+            type:          integer
+            length:        11
+            primary:       true
+            unsigned:      true
+            autoincrement: true
+
+        company_id:
+            type:          integer
+            length:        11
+            unsigned:      true
+
+        area_id:
+            type:          integer
+            length:        11
+            unsigned:      true
+
+        name:
+            type: string
+            length: 255
+            notnull: true
+
+        email:
+            type:          string(255)
+            notnull:       false
+
+        phone:
+            type:          string(255)
+            notnull:       false
+
+        phone_ext:
+            type:          string(255)
+            notnull:       false
+
+        phone2:
+            type:          string(255)
+            notnull:       false
+
+        phone2_ext:
+            type:          string(255)
+            notnull:       false
+
+        address1:
+            type:          string(255)
+
+        address2:
+            type:          string(255)
+
+        postal_code:
+            type:          string(255)
+
+    relations:
+
+        Accounts:
+            class:    Account
+            type:     many
+            local:    id
+            foreign:  branch_id
+
+        Company:
+            class:    Company
+            local:    company_id
+            foreign:  id
+
+        Area:
+            class:    Area
+            local:    area_id
+            foreign:  id
+
+#=========================================================
+
+Account:
+    actAs:
+        Upload:
+            fields:
+                landing_header: { path: 'public/uploads/account/landing/header' }
+        Timestampable:     {}
+        Translatable:
+            languages: [en,es]
+            fields:
+                landing_quote:
+                    type:      text
+
+                landing_description:
+                    type:          text
+
+    columns:
+        id:
+            type:          integer
+            length:        11
+            primary:       true
+            unsigned:      true
+            autoincrement: true
+
+        company_id:
+            type:          integer
+            length:        11
+            unsigned:      true
+
+        organization_id:
+            type:          integer
+            length:        11
+            unsigned:      true
+
+        branch_id:
+            type:          integer
+            length:        11
+            unsigned:      true
+
+        staff_id:
+            type:          integer
+            length:        5
+            unsigned:      true
+
+        first_name:
+            type:          string(255)
+            notnull:       true
+
+        last_name:
+            type:          string(255)
+            notnull:       true
+
+        username:
+            type:          string(255)
+            notnull:       false
+
+        password_hash:
+            type:          string(255)
+            notnull:       false
+
+        password_salt:
+            type:          string(255)
+            notnull:       false
+
+        last_login:
+            type:          date
+            notnull:       false
+
+        last_login_attempt:
+            type:          integer
+            notnull:       false
+
+        login_tries:
+            type:          integer
+            notnull:       true
+            default:       0
+
+        sex:
+            type:          enum
+            values:        ['M','F']
+            notnull:       false
+
+        email:
+            type:          string(255)
+            notnull:       false
+
+        phone:
+            type:          string(255)
+            notnull:       false
+
+        phone_ext:
+            type:          string(255)
+            notnull:       false
+
+        phone2:
+            type:          string(255)
+            notnull:       false
+
+        phone2_ext:
+            type:          string(255)
+            notnull:       false
+
+        internal_id:
+            type:          string(255)
+            notnull:       false
+
+        language:
+            type:          string(255)
+            notnull:       false
+
+        receive_email_notifications:
+            type:          boolean
+            notnull:       true
+            default:       true
+
+        receive_sms_notifications:
+            type:          boolean
+            notnull:       true
+            default:       false
+
+        config_method_call_bypass_manual_confirmation:
+            type:          boolean
+            notnull:       true
+            default:       false
+
+        config_method_call_allow_multiple_calls:
+            type:          boolean
+            notnull:       true
+            default:       false
+
+        active:
+            type:          boolean
+            notnull:       true
+            default:       false
+
+        activation_key:
+            type:          string(255)
+            notnull:       false
+
+        activation_key_expires_at:
+            type:          timestamp
+            notnull:       false
+
+        password_key:
+            type:          string(255)
+            notnull:       false
+
+        password_key_expires_at:
+            type:          timestamp
+            notnull:       false
+
+        position:
+            type:          string(255)
+            notnull:       false
+
+        s3_photo:
+            type:          string(255)
+            notnull:       false
+
+        show_in_list:
+            type:          boolean
+            default:       false
+
+        license:
+            type:          string(255)
+            notnull:       false
+
+        is_realtor:
+            type:          boolean
+            default:       false
+
+        auction:
+            type:          boolean
+            default:       false
+
+        commercial:
+            type:          boolean
+            default:       false
+
+        resell:
+            type:          boolean
+            default:       false
+
+        short_sales:
+            type:          boolean
+            default:       false
+
+        new_developments:
+            type:          boolean
+            default:       false
+
+        relocation:
+            type:          boolean
+            default:       false
+
+        foreclosure:
+            type:          boolean
+            default:       false
+
+        is_top_agent:
+            type:          boolean
+            default:       false
+
+        show_all_properties:
+            type:          boolean
+            default:       true
+
+        type:
+            type:          enum
+            values:        [Broker, Administrator, Manager]
+
+        twitter:
+            type:          string(255)
+            notnull:       false
+
+        facebook:
+            type:          string(255)
+            notnull:       false
+
+        instagram:
+            type:          string(255)
+            notnull:       false
+
+    relations:
+
+        Company:
+            class:    Company
+            local:    company_id
+            foreign:  id
+
+        Branch:
+            class:    Branch
+            local:    branch_id
+            foreign:  id
+
+        Groups:
+            class:    AccountGroup
+            refClass: AccountGroupRelation
+            local:    account_id
+            foreign:  group_id
+
+        Organization:
+            class:    Organization
+            local:    organization_id
+            foreign:  id
+
+        Roles:
+            class:    Role
+            refClass: AccountRole
+            local:    account_id
+            foreign:  role_id
+
+        Permissions:
+            class:    Permission
+            refClass: PermissionRule
+            local:    account_id
+            foreign:  permission_id
+
+        Rules:
+            class:    PermissionRule
+            type:     many
+            local:    id
+            foreign:  account_id
+
+#==========================================================
+
+AccountGroup:
+    actAs:
+        Timestampable:     {}
+
+    columns:
+        id:
+            type:          integer
+            length:        11
+            primary:       true
+            unsigned:      true
+            autoincrement: true
+
+        company_id:
+            type:          integer
+            length:        11
+            unsigned:      true
+
+        name:
+            type:          string(255)
+            notnull:       true
+
+    relations:
+
+        Company:
+            class:    Company
+            local:    company_id
+            foreign:  id
+
+        Accounts:
+            class:    Account
+            refClass: AccountGroupRelation
+            local:    group_id
+            foreign:  account_id
+
+AccountGroupRelation:
+    columns:
+        account_id:
+            type:          integer
+            length:        11
+            primary:       true
+            unsigned:      true
+
+        group_id:
+            type:          integer
+            length:        11
+            primary:       true
+            unsigned:      true
+
+    relations:
+        Account:
+            class:    Account
+            local:    account_id
+            foreign:  id
+            onDelete: CASCADE
+            onUpdate: CASCADE
+
+        Group:
+            class:    AccountGroup
+            local:    group_id
+            foreign:  id
+            onDelete: CASCADE
+            onUpdate: CASCADE
+
+#==========================================================
+
+Role:
+    actAs: [ NestedSet, Timestampable]
+    columns:
+        id:
+            type:          string
+            length:        255
+            primary:       true
+
+        name:
+            type:          string
+            length:        255
+            notnull:       true
+
+        description:
+            type:          string
+            notnull:       false
+
+        rule_weight:
+            type:          integer
+            notnull:       false
+
+    relations:
+        Accounts:
+            class:    Account
+            refClass: AccountRole
+            local:    role_id
+            foreign:  account_id
+
+        Permissions:
+            class:    Permission
+            refClass: PermissionRule
+            local:    role_id
+            foreign:  permission_id
+
+        Rules:
+            class:    PermissionRule
+            type:     many
+            local:    id
+            foreign:  role_id
+
+
+#==========================================================
+
+AccountRole:
+    actAs: [ Timestampable ]
+    columns:
+        account_id:
+            type:          integer
+            length:        11
+            primary:       true
+            unsigned:      true
+
+        role_id:
+            type:          string
+            length:        255
+            primary:       true
+
+        location_id:
+            type:          integer
+            length:        11
+            primary:       true
+            unsigned:      true
+            default:       500
+
+    relations:
+        Account:
+            class:    Account
+            local:    account_id
+            foreign:  id
+            onDelete: CASCADE
+            onUpdate: CASCADE
+
+        Role:
+            class:    Role
+            local:    role_id
+            foreign:  id
+            onDelete: CASCADE
+            onUpdate: CASCADE
+
+        Location:
+            class:    Area
+            type:     one
+            local:    location_id
+            foreign:  id
+
+#==========================================================
+
+Permission:
+    actAs: [ Timestampable ]
+    columns:
+        id:
+            type:          string
+            length:        255
+            primary:       true
+
+        group:
+            type:          string
+            length:        255
+            notnull:       true
+
+        name:
+            type:          string
+            length:        255
+
+        description:
+            type:          string
+            length:        255
+
+        resource:
+            type:          string
+            length:        255
+
+        resource_name:
+            type:          string
+            length:        255
+
+#==========================================================
+
+PermissionRule:
+    actAs: [ Timestampable ]
+    columns:
+        id:
+            type:          integer
+            length:        11
+            primary:       true
+            unsigned:      true
+            autoincrement: true
+
+        #requester
+        account_id:
+            type:          integer
+            length:        11
+            unsigned:      true
+            notnull:       false
+
+        role_id:
+            type:          string
+            length:        255
+            notnull:       false
+
+        #resource
+        resource_id:
+            type:          string
+            length:        255
+            notnull:       false
+
+        resource_class:
+            type:          string
+            length:        255
+            notnull:       false
+
+        #permission
+        permission_id:
+            type:          string
+            length:        255
+            notnull:       true
+
+        #allow deny
+        value:
+            type:          boolean
+            notnull:       true
+            default:       true
+
+    relations:
+        Account:
+            class:    Account
+            type:     one
+            local:    account_id
+            foreign:  id
+            onDelete: CASCADE
+            onUpdate: CASCADE
+
+        Role:
+            class:    Role
+            type:     one
+            local:    role_id
+            foreign:  id
+            onDelete: CASCADE
+            onUpdate: CASCADE
+
+        Permission:
+            class:    Permission
+            type:     one
+            local:    permission_id
+            foreign:  id
+            onDelete: CASCADE
+            onUpdate: CASCADE

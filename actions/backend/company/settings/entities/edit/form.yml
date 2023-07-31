@@ -1,0 +1,107 @@
+class: form-bordered
+attributes:
+    role: form
+elements:
+
+    summary:
+        type: Summary
+
+    name:
+        type: Text
+        class: form-control
+        required: true
+
+    type:
+        type: Select
+        class: form-control
+        required: true
+        options:
+            BANK: Bank
+            COMPANY: Company
+            INVESTOR: Investor
+
+    start_at:
+        type:     DateTime
+        format:   '%Y-%m-%d %p'
+        split:    false
+        output:   'Y-m-d\tH:i:00'
+        class:    form-control
+        default:  <?= strtotime('today 00:00:00 '.Configure::read('datetime.timezone'))."\n" ?>
+
+    end_at:
+        type:     DateTime
+        format:   '%Y-%m-%d %p'
+        split:    false
+        output:   'Y-m-d\tH:i:00'
+        class:    form-control
+        default:  <?= strtotime('today 00:00:00 '.Configure::read('datetime.timezone'))."\n" ?>
+
+    agreement:
+        type: Select
+        class:    form-control
+        options:
+            Exclusive: Exclusive
+            'Semi-Exclusive': Semi-Exclusive
+            Open: Open
+
+    is_active:
+        type: Checkbox
+        label: ''
+        text: Entity is active
+        default: 1
+
+    contacts_header:
+        type: Header
+        label: Contacts
+
+    Contacts:
+        type: Repeat
+        class: ym-form-box-column2
+        start_repeats: 1
+        layout_renderer:
+            type:    Vertical
+
+        box_renderer:
+            type: 1Column
+            highlight: true
+            border: true
+            margin: '0 0 5px 0'
+            padding: '0 10px 0px 10px'
+
+        default_renderers:
+            box_renderer:
+                type: 1Column
+                margin: 3px 0
+                padding: 0px
+                border: false
+
+            label_renderer:
+                small: true
+        elements:
+            name:
+                class:    form-control
+
+            email:
+                type: Email
+                class:    form-control
+
+            phone:
+                type: Phone
+                class:    form-control
+
+            notes:
+                type: TextArea
+                class:    form-control
+
+            controls:
+                type: Content
+                content: >
+                    <div style="margin-top: 1px; margin-left: 0;">
+                         <a class="btn btn-default btn-xs ym-form-repeat-more" href="javascript:void(0)" style="padding: 0px 5px; font-size: 9px;"><i class="fa fa-plus"></i></a>
+                         <a class="btn btn-default btn-xs ym-form-repeat-less" href="javascript:void(0)" style="padding: 0px 5px; font-size: 9px;"><i class="fa fa-minus"></i></a>
+                    </div>
+
+
+    buttons:
+        type:  Buttons
+        class: form-group

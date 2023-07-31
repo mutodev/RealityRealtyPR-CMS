@@ -1,0 +1,92 @@
+<style>
+    .nav-tabs-details a {
+        text-transform: uppercase;
+        font-size: 12px;
+    }
+
+    .grey-bg {
+        margin-top: 40px;
+        background: #EFEFEF;
+        padding: 40px;
+    }
+
+    .grey-bg-list {
+        margin-top: 20px
+    }
+
+    .grey-bg-list li {
+        line-height: 40px;
+        list-style: none;
+        font-size: 14px;
+    }
+
+    .grey-bg-list li::before {
+        content: "\271A";
+        color: red;
+        display: inline-block;
+        width: 1em;
+        margin-right: 10px;
+    }
+
+    .secondary-list li {
+        list-style: none;
+    }
+
+    .secondary-list li::before {
+        content: "\271A";
+        color: red;
+        display: inline-block;
+        width: 1em;
+        font-size: 9px;
+        margin-right: 10px;
+    }
+
+    .service-content {
+        font-size: 16px;
+    }
+
+    .service-detail .service-icon {
+        width: 150px;
+    }
+</style>
+
+<?php if($activeService==='luxe'): ?>
+<style>
+    .view-header {
+    background-image: url(/images/luxe-header.jpg?v1);
+    background-size: cover;
+    background-position: center center;
+    margin-bottom: 20px;
+}
+
+    .view-header .container {
+        position: relative;
+        height: 300px;
+    }
+
+
+
+    .view-image {
+        height: 100px;
+        position: absolute;
+        bottom: -50px;
+        right: 20px;
+    }
+</style>
+<?php endif; ?>
+
+<div class="container mt20">
+    <ol class="breadcrumb realty-breadcrumb">
+        <li><a href="<?= url('/') ?>"><?= t('translation321') ?></a></li>
+        <li><a href="<?= url('/servicios') ?>"><?= t('translation1005') ?></a></li>
+        <?php if ($activeService): ?>
+        <li class="active"><?= $services[$activeService] ?></li>
+        <?php endif ?>
+    </ol>
+</div>
+
+<div class="container mt20">
+    <div class="service-content">
+        <?= $this->partial($activeService ? $activeService: 'services', ['hideButton' => true, 'services' => $services, 'activeService' => $activeService]); ?>
+    </div>
+</div>

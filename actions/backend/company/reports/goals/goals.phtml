@@ -1,0 +1,118 @@
+<style>
+    @media print {
+        .site-menubar,
+        .hide-print,
+        .page-header {
+            display: none;
+        }
+
+        .page-content {
+            padding: 0 !important;
+        }
+
+        .page {
+            background-color: #fff;
+        }
+    }
+
+    .mbox {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin: 10px 100px 10px 25px;
+        padding-left: 20px;
+    }
+
+    .mbox span {
+        margin-left: 5px;
+    }
+</style>
+
+<div class="panel hide-print">
+    <div class="panel-body container-fluid">
+        <?= $Search->render(); ?>
+    </div>
+</div>
+
+<div class="row">
+    <?php foreach (array_keys($report) as $name): ?>
+        <div class="col-sm-6">
+            <div class="card card-shadow card-completed-options">
+                <div class="card-block p-30">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="counter text-left blue-grey-700">
+                                <div class="counter-label mt-10"><?= $report[$name]['title'] ?>
+                                </div>
+                                <div class="counter-number font-size-40 mt-10">
+                                    <?= number_format($summary[$name]['quantity']) ?>/<?= number_format($goals[$name]) ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="pie-progress pie-progress-sm" data-plugin="pieProgress" data-valuemax="100"
+                                 data-barcolor="#57c7d4" data-size="100" data-barsize="10"
+                                 data-goal="<?= min(intval(@($summary[$name]['quantity'] / $goals[$name]) * 100), 100) ?>"
+                                 aria-valuenow="<?= min(intval(@($summary[$name]['quantity'] / $goals[$name]) * 100), 100) ?>"
+                                 role="progressbar">
+                                <span class="pie-progress-number blue-grey-700 font-size-20">
+                                  %<?= intval(@($summary[$name]['quantity'] / $goals[$name]) * 100) ?>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <?php if(in_array($name, ['listings', 'closings'])): ?>
+                    <div class="row">
+                        <table class="table">
+                            <tr>
+                                <th>
+
+                                </th>
+                                <th>
+                                    <?= t('Current'); ?>
+                                </th>
+                                <th>
+                                    <?= t('Goal'); ?>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <?= t('Volume'); ?>
+                                </th>
+                                <td>
+                                    <?= @number_format($summary[$name]['volume']) ?>
+                                </td>
+                                <td>
+                                    <?= @number_format($goals["{$name}_volume"]) ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <?= t('Price Average'); ?>
+                                </th>
+                                <td>
+                                    $<?= @number_format($summary[$name]['price_average'] / $summary[$name]['quantity']) ?>
+                                </td>
+                                <td>
+                                    $<?= @number_format($goals["{$name}_price_average"]) ?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <?= t('Commission Average'); ?>
+                                </th>
+                                <td>
+                                    <?= $summary[$name]['commission_average'] ?>
+                                </td>
+                                <td>
+                                    <?= @number_format($goals["{$name}_commission_average"] / $summary[$name]['quantity']) ?>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <?php endif ?>
+                </div>
+            </div>
+        </div>
+    <?php endforeach; ?>
+</div>

@@ -1,0 +1,109 @@
+class: form-bordered
+attributes:
+    role: form
+elements:
+
+    summary:
+        type: Summary
+
+    header_contact:
+        type:  Header
+        label: Branch Information
+
+    name:
+        label:    Name
+        required: true
+        class:    form-control
+
+    phone_container:
+        type: container
+        collect_errors: true
+        box_renderer:
+            type: 1Column
+            highlight: true
+            border: true
+            margin: '0'
+            padding: '0'
+        layout_renderer:
+            type:    grid
+            columns: 2
+            class: ym-form-box-column2
+            style:   'width: 100%;'
+
+        elements:
+
+            phone:
+                label:    Phone
+                type:     Phone
+                required: true
+                class:    form-control
+
+            phone_ext:
+                label:    Ext
+                type:     Text
+                class:    form-control
+                colwidth: 100px
+                validations:
+                    RegularExpression:
+                        regex: '/^[0-9#*w]+$/i'
+
+    phone_container2:
+        type: container
+        collect_errors: true
+        box_renderer:
+            type: 1Column
+            highlight: true
+            border: true
+            margin: '0'
+            padding: '0'
+        layout_renderer:
+            type:    grid
+            columns: 2
+            class: ym-form-box-column2
+            style:   'width: 100%;'
+
+        elements:
+
+            phone2:
+                label:    Phone
+                type:     Phone
+                class:    form-control
+
+            phone2_ext:
+                label:    Ext
+                type:     Text
+                class:    form-control
+                colwidth: 100px
+                validations:
+                    RegularExpression:
+                        regex: '/^[0-9#*w]+$/i'
+
+    email:
+        type:     Email
+        label:    Email
+        class:    form-control
+
+    header_address:
+        type:  Header
+        label: Address
+
+    address1:
+        label: Address
+        class:    form-control
+
+    address2:
+        label: Address (cont)
+        class:    form-control
+
+    area_id:
+        label: City
+        type: Select
+        source: FROM Area WHERE country_id = 89
+        class:    form-control
+
+    postal_code:
+        class:    form-control
+
+    buttons:
+        type:  Buttons
+        class: form-group

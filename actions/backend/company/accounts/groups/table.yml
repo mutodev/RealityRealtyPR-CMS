@@ -1,0 +1,16 @@
+source: FROM AccountGroup
+columns:
+
+    name:
+        label: Name
+        source: name
+
+    actions:
+        label: ''
+        width: 1px
+        type: Actions
+        actions:
+            edit:
+                icon: pencil
+                label: Edit
+                link:  .edit?id=%{id}

@@ -1,0 +1,306 @@
+<style type="text/css">
+
+    .broker-info .photo {
+        float: left;
+        width: 110px;
+        margin-left: 20px;
+    }
+
+    .broker-info .bar {
+        clear: both;
+    }
+
+    .broker-info .info1 {
+        float: left;
+        width: 270px;
+    }
+
+    .broker-info .info2 {
+        float: left;
+        width: 220px;
+        margin-left: 30px;
+    }
+
+    table.styled {
+        margin: 0px;
+        font-size: 11px;
+    }
+
+    table.styled th {
+        width: 25%;
+        padding: 2px;
+    }
+
+    table.styled td {
+        width: 75%;
+        padding: 2px;
+    }
+
+    #content-inner {
+        padding: 10px 0px;
+    }
+
+    .agent {
+        width: 250px;
+        margin: 0 auto 60px auto;
+        padding: 0 20px 20px 20px;
+        min-height: 500px;
+        position: relative;
+        border: 1px solid #EFEFEF;
+    }
+
+    .agent-image {
+        margin: 0 -20px 10px -20px;
+        overflow: hidden;
+    }
+
+    .buttons {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 20px;
+    }
+
+    .buttons .btn {
+        width: 100%
+    }
+
+    .buttons .normalBtn {
+        color: white;
+    }
+
+    .search-agents {
+        padding: 30px 10px;
+        margin-bottom: 20px;
+    }
+
+    .search-agents .btn {
+        width: 100%;
+    }
+
+</style>
+
+<div class="service-detail padding-bottom justified">
+    <div class="row padding-bottom margin-top">
+        <div class="col-xs-12 col-sm-3">
+            <?= $this->partial('serviceMenu', ['services' => $services]); ?>
+        </div>
+        <div class="col-xs-12 col-sm-9">
+            <h1 class="general__title"><?= $services[$activeService] ?></h1>
+
+            <div class="mt20 service-icon"><img src="/img/specialized/luxe.png" height="100%" /></div>
+
+            <p class="mt20">Nuestra división de lujo cuenta con un equipo especializado y enfocado en la venta y/o alquiler de propiedades de lujo en todo Puerto Rico. Sea en la ciudad, áreas turísticas de playa o montaña, en Reality Realty tenemos el plan de mercadeo más completo dirigido a este tipo de vendedor o comprador.</p>
+
+            <p class="mt20">Entre los medios más efectivos que utilizamos para llegar a clientes "high-end" a nivel global está la inclusión de Reality Realty, de manera exclusiva en Puerto Rico, en la revista <a href="https://www.luxuryportfolio.com/Property?QuickSearch=Reality%2BRealty" target="_blank"><strong>Luxury Portfolio</strong></a>. Esta revista cuenta con la mejor distribución en medios relevantes dirigidos a este mercado, tales como The Wall Street Journal, Unique Homes, Mansion Global y Galerie Magazine.</p>
+
+            <p class="mt20">Contamos, además, con el Servicio de "Concierge VIP" para ofrecer servicios exclusivos, desde transportación hasta cuido de niños, mensajería, chef, instalación de servicios y utilidades, entre otros.</p>
+
+<br /><br />
+            <h1 class="general__title">Nuestros Agentes</h1>
+
+<div id="content" class="below mt40">
+        <div class="">
+            <div class="row">
+                <?php $i = 1;
+                $last = count($Brokers);
+                foreach ($Brokers
+
+                as $key => $Agent) : ?>
+                <div class="col-xs-12 col-sm-3 result result-<?php echo ($key % 4) ? 'odd' : 'even' ?>">
+                    <div class="agent">
+                        <div class="agent-image">
+                            <?php if ($Agent->_data['s3_photo']): ?>
+                                <img src='<?= $Agent['s3_photo'] ?>' class="img-responsive"/>
+                            <?php else: ?>
+                                <div style="height: 248px; width: 248px; padding: 100px 30px; opacity: .5;">
+                                    <img src='<?= $Agent['s3_photo'] ?>' class="img-responsive"/>
+                                </div>
+                            <?php endif; ?>
+                            <?php if ($Agent->is_top_agent) : ?>
+                                <img class="top-agent" src="/img/top.png" />
+                            <?php endif; ?>
+                        </div>
+                        <div>
+                            <h3><?= $Agent['first_name'] ?> <?= $Agent['last_name'] ?></h3>
+                            <strong>
+                                <small><?= $Agent['position'] ?></small>
+                            </strong><br/>
+                            <?php if ($Agent['license']): ?>
+                                <small><?= t('Lic.') ?> <?= htmlentities($Agent['license']) ?></small>
+                            <?php endif; ?>
+                        </div>
+                        <div class="mt5 clearfix">
+                            <div class="pull-left">
+                                <small><strong><?= t('translation334'); ?>:</strong></small><br/>
+                                <?php if ($Agent->commercial): ?>
+                                    <span><?= t('translation336') ?></span><br/>
+                                <?php endif ?>
+                                <?php if ($Agent->resell): ?>
+                                    <span><?= t('translation5') ?></span><br/>
+                                <?php endif ?>
+                                <?php if ($Agent->relocation): ?>
+                                    <span><?= t('translation338') ?></span><br/>
+                                <?php endif ?>
+                            </div>
+                            <div class="pull-right">
+                                <small><strong><?= t('translation137'); ?>:</strong></small><br/>
+                                <?= htmlentities($Agent['phone']) ?>
+                            </div>
+                        </div>
+
+                        <div class="buttons">
+                            <?php if (count($Agent['Properties']) > 0 || AccountTable::secoundById($Agent['id'])): ?>
+                                <a class="btn btn-default normalBtnWhite" href='/propiedades?search[user_id]=<?= $Agent['id'] ?>'><?= t('translation140'); ?> <?= $Agent['first_name'] ?> </a>
+                            <?php endif; ?>
+                            <a class="mt5 btn btn-default normalBtn" href='/contactenos?broker_id=<?= $Agent['id'] ?>'><?= t('translation347'); ?></a>
+                        </div>
+                    </div>
+                </div>
+
+                <?php if ($i == $last): ?>
+            </div>
+            <?php elseif ($i % 4 == 0): ?>
+        </div>
+        <div class="row">
+            <?php endif ?>
+
+            <?php $i++; ?>
+
+            <?php endforeach; ?>
+        </div>
+
+    </div>
+
+<br /><br />
+            <h1 class="general__title">Nuestros Listados</h1>
+            
+            <div class="results">
+                <?php foreach($Properties as $Property): ?>
+                <div class="row">
+                    <div class="result">
+                        <?= $this->partial('save-property', array('Property' => $Property, 'size' => 'small')); ?>
+                        <div class="container-fluid same-heigth nopadding">
+                            <div class="col-sm-4 col-xs-12">
+                                <a href="<?=  PropertyTable::url_property( $Property ) ?>" class="viewDetails"><?= t('translation1056') ?></a>
+                                <a class="result-image" href='<?=  PropertyTable::url_property( $Property ) ?>' title='<?= $Property->title; ?>'>
+                                    <?php if( count($Property->Photos) ) : ?>
+                                        <?php /* <img src='<?= $Property->mainimg->get(90); ?>' alt='<?= $Property->title; ?>' /> */ ?>
+                                        <img class="img-responsive listing-image" src='<?php echo $Property->Photos[0]->getThumborPhoto('large'); ?>' alt='<?php echo $Property->title;?>'/>
+                                    <?php else: ?>
+                                        <img class="img-responsive listing-image" src='/images/filler.png' alt='<?= t('No hay foto') ?>' />
+                                    <?php endif; ?>
+
+                                    <?php if($Property->contract_id && $Property->Contract->status == 'Optioned'): ?>
+                                        <span class='label-img'><?= t('translation1041') ?></span>
+                                    <?php endif; ?>
+                                </a>
+                            </div>
+                            <div class="col-sm-8 col-xs-12">
+                                <div class="result-content">
+                                    <h3 class="list-main-title"><a href='<?=  PropertyTable::url_property( $Property ) ?>' title='<?= $Property->title; ?>'><?= $Property->title; ?></a></h3>
+
+                                    <div class="clearfix">
+                                        <div class="pull-left">
+                                            <p><?= $Property->Area->name ?></p>
+                                        </div>
+                                        <div class="pull-right">
+                                            <p><?= t('translation156'); ?> #<a class="list-id-property" href='<?=  PropertyTable::url_property( $Property ) ?>' title='<?= $Property->title; ?>'><?= $Property->id; ?></a></p>
+                                        </div>
+                                    </div>
+                                    <hr class="list-hr">
+                                    <div class="row">
+                                        <?php if( $Property->for_sale ) : ?>
+                                            <div class="col-xs-12">
+                                                <strong>
+                                                    <?= t('translation174'); ?>
+
+                                                    <?= $Property->sale_price ? '$' . number_format($Property->sale_price) : t('translation175') ?>
+
+                                                    <?php if( $Property->sale_price_type == 1  ): ?>
+                                                        <?= t("x p<sup>2</sup>"); ?>
+                                                    <?php elseif( $Property->sale_price_type == 2 ): ?>
+                                                        <?= t("x m<sup>2</sup>"); ?>
+                                                    <?php endif; ?>
+                                                </strong>
+                                            </div>
+                                        <?php endif; ?>
+
+                                        <?php if( $Property->for_rent ) : ?>
+                                            <div class="col-xs-12">
+                                                <strong>
+                                                    <?= t('translation176'); ?>
+
+                                                    <?= $Property->rent_price ? '$' . number_format($Property->rent_price) : t('translation175') ?>
+
+                                                    <?php if( $Property->rent_price_type == 1  ): ?>
+                                                        <span> <?= t("x m<sup>2</sup>"); ?> </span>
+                                                    <?php elseif( $Property->rent_price_type == 2 ): ?>
+                                                        <span> <?= t("x p<sup>2</sup>"); ?> </span>
+                                                    <?php endif; ?>
+                                                </strong>
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>
+                                    <div class="row mt5 clearfix">
+                                        <div class="col-xs-12 propertyDetails">
+                                            <?php if($Property->rooms): ?>
+                                                <span class="mr10">
+                <!--                    <span class="glyphicon glyphicon-bed" aria-hidden="true"></span>-->
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><defs><style>.class1{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.58px;}</style></defs><title>bed_icon</title><rect class="class1" x="7.98" y="29.27" width="34.04" height="6.04"/><line class="class1" x1="10.49" y1="35.79" x2="10.49" y2="38.67"/><line class="class1" x1="39.27" y1="35.79" x2="39.27" y2="38.67"/><rect class="class1" x="15.58" y="18.84" width="7.01" height="4.3" rx="0.8"/><rect class="class1" x="27.09" y="18.84" width="7.01" height="4.3" rx="0.8"/><polyline class="class1" points="15.53 21.4 11.88 21.4 7.98 29.32 42.02 29.32 38.12 21.4 34.23 21.4"/><line class="class1" x1="27.04" y1="21.4" x2="22.72" y2="21.4"/><path class="class1" d="M34.23,21.4h3.6V12.59c0-.8-.35-1.26-1.15-1.26H13.32a1.25,1.25,0,0,0-1.39,1.26V21.4h3.6"/><line class="class1" x1="22.72" y1="21.4" x2="27.04" y2="21.4"/></svg>
+                                    <?= $Property->rooms; ?> <?= t('translation168'); ?>
+                                </span>
+                                            <?php endif; ?>
+
+                                            <?php if($Property->bathrooms): ?>
+                                                <span class="mr10">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><defs><style>.class1{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.58px;}</style></defs><title>bath_icon</title><rect class="class1" x="8.09" y="24.12" width="33.82" height="3.6" rx="1.8"/><path class="class1" d="M40.79,27.72H9.21l.72,5a5.36,5.36,0,0,0,5.36,5.36H34.71a5.36,5.36,0,0,0,5.36-5.36Z"/><path class="class1" d="M11.21,36.21l-1,2.39a1.61,1.61,0,1,0,3,1.19L14,37.94A5.31,5.31,0,0,1,11.21,36.21Z"/><path class="class1" d="M38.79,36.21l1,2.39a1.61,1.61,0,1,1-3,1.19L36,37.94A5.31,5.31,0,0,0,38.79,36.21Z"/><path class="class1" d="M10.25,23.58V13.51a4.31,4.31,0,0,1,4.32-4.32h0a4.31,4.31,0,0,1,3.58,1.9"/><path class="class1" d="M22.84,14.1H14.57l.16-.29a4.5,4.5,0,0,1,4-2.37h0a4.52,4.52,0,0,1,4,2.37Z"/><line class="class1" x1="14.57" y1="17.1" x2="14.57" y2="17.82"/><line class="class1" x1="18.88" y1="17.1" x2="18.88" y2="17.82"/><line class="class1" x1="16.73" y1="19.98" x2="16.73" y2="20.7"/><line class="class1" x1="21.04" y1="19.98" x2="21.04" y2="20.7"/><line class="class1" x1="23.2" y1="17.1" x2="23.2" y2="17.82"/></svg>
+                                    <?= (float)$Property->bathrooms; ?> <?= t('translation169'); ?>
+                                </span>
+                                            <?php endif; ?>
+
+                                            <?php if($Property->sqf): ?>
+                                                <span class="mr10">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><defs><style>.class1{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.58px;}</style></defs><title>area_icon</title><line class="class1" x1="18.63" y1="12.21" x2="41.28" y2="12.21"/><line class="class1" x1="10.75" y1="39.65" x2="10.75" y2="17"/><rect class="class1" x="18.63" y="17" width="22.65" height="22.65"/><line class="class1" x1="12.43" y1="17" x2="8.72" y2="17"/><line class="class1" x1="12.43" y1="39.65" x2="8.72" y2="39.65"/><line class="class1" x1="41.28" y1="14.06" x2="41.28" y2="10.35"/><line class="class1" x1="18.63" y1="14.06" x2="18.63" y2="10.35"/></svg>
+                                    <?= number_format($Property->sqf); ?> <?= t('translation170'); ?>
+                                </span>
+                                            <?php endif; ?>
+
+                                            <?php if($Property->is_short_sale): ?>
+                                                <span class="mr10">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><defs><style>.class1{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.58px;}</style></defs><title>reposeida_icon</title><path class="class1" d="M20.58,18.9,8.55,31a.65.65,0,0,0-.19.45V43.86A.64.64,0,0,0,9,44.5H32.4a.65.65,0,0,0,.65-.64V31.47a.65.65,0,0,0-.19-.45l-12-12.12C20.58,18.64,20.83,18.64,20.58,18.9Z"/><rect class="class1" x="17.4" y="35.74" width="6.62" height="8.76" rx="0.72"/><line class="class1" x1="5.55" y1="33.65" x2="20.58" y2="18.9"/><line class="class1" x1="35.68" y1="33.65" x2="20.65" y2="18.9"/><circle class="class1" cx="31.56" cy="18.39" r="0.69"/><path class="class1" d="M23.81,21.9A10.2,10.2,0,0,1,25,20.55c2.42-2.42,5.52-3.25,6.92-1.85"/><path class="class1" d="M32.12,22.55A9.64,9.64,0,0,1,30,25.62c-2.42,2.42-5.52,3.24-6.92,1.84"/><path class="class1" d="M36.57,5.64l7.74,7.74a.46.46,0,0,1,0,.67l-8.26,8.27a.47.47,0,0,1-.33.14l-7.89.15a.48.48,0,0,1-.48-.49l.14-7.89a.52.52,0,0,1,.14-.32L35.9,5.64A.46.46,0,0,1,36.57,5.64Z"/></svg>
+                                    <?= t('Short Sale'); ?>
+                                </span>
+                                            <?php endif; ?>
+                                            <?php if($Property->is_repossessed): ?>
+                                                <span class="mr10">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><defs><style>.class1{fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.58px;}</style></defs><title>reposeida_icon</title><path class="class1" d="M20.58,18.9,8.55,31a.65.65,0,0,0-.19.45V43.86A.64.64,0,0,0,9,44.5H32.4a.65.65,0,0,0,.65-.64V31.47a.65.65,0,0,0-.19-.45l-12-12.12C20.58,18.64,20.83,18.64,20.58,18.9Z"/><rect class="class1" x="17.4" y="35.74" width="6.62" height="8.76" rx="0.72"/><line class="class1" x1="5.55" y1="33.65" x2="20.58" y2="18.9"/><line class="class1" x1="35.68" y1="33.65" x2="20.65" y2="18.9"/><circle class="class1" cx="31.56" cy="18.39" r="0.69"/><path class="class1" d="M23.81,21.9A10.2,10.2,0,0,1,25,20.55c2.42-2.42,5.52-3.25,6.92-1.85"/><path class="class1" d="M32.12,22.55A9.64,9.64,0,0,1,30,25.62c-2.42,2.42-5.52,3.24-6.92,1.84"/><path class="class1" d="M36.57,5.64l7.74,7.74a.46.46,0,0,1,0,.67l-8.26,8.27a.47.47,0,0,1-.33.14l-7.89.15a.48.48,0,0,1-.48-.49l.14-7.89a.52.52,0,0,1,.14-.32L35.9,5.64A.46.46,0,0,1,36.57,5.64Z"/></svg>
+                                    <?= t('Repo'); ?>
+                                </span>
+                                            <?php endif; ?>
+                                        </div>
+                                    </div>
+                                    <div class="row mt5 clearfix">
+                                        <div class="col-xs-12">
+                                            <?= $Property->description ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+
+            <center>
+            <a href="https://www.luxuryportfolio.com/Browse/MN/Caribbean/Puerto_Rico" target="_blank"><svg style="width: 300px" id="main-logo-icon" viewBox="0 0 348.05 129.37">
+                    <path class="path" fill="#3c8095" d="M87.7 48.98c0 8.88-5.08 17.18-13.89 19.98v-2.31c4.2-2.28 6.35-6.16 6.35-17.84 0-15.29-6.64-17.77-13.68-17.77h-16.2v58.38h-7.1V28.73h23.31c8.23 0 21.21 2.64 21.21 20.25z"></path>
+                    <path class="path" fill="#3c8095" d="M50.28 98.22v2.3h-25.6V28.73h6.98v69.49h18.62zM68.77 40.33v60.19h-7.09V40.33h7.09z"></path>
+                    <path class="path" fill="#59595b" d="M110.34 100.52V83.01h-3.09v17.51h3.09zm19.51.27h.82V83.01h-1.77l.2 12.31-11.34-12.51h-.9v17.71h1.77l-.2-12.31 11.42 12.58zm18.09-16.11v-1.67h-12.93v1.67l4.93-.1v15.95H143V84.58l4.94.1zm15.49 15.84V98.8l-8.1.15v-6.5l7.77.05v-1.67l-7.77.05v-6.3l8.1.15v-1.72h-11.16v17.51h11.16zm19.58 0l-6.75-7.32c3.01-.22 5.23-2.29 5.23-4.93 0-2.96-2.62-5.26-6.25-5.26h-6.13v17.51h3.06v-7.6l6.95 7.6h3.89zm-10.83-15.94h2.24c2.02 0 3.89 1.17 3.89 3.69s-1.87 3.69-3.89 3.69h-2.24v-7.38zm27.55 16.21h.82V83.01h-1.77l.2 12.31-11.34-12.51h-.9v17.71h1.77l-.2-12.31 11.42 12.58zm21.53-.27l-8.05-17.71h-.82l-8.22 17.71h1.99l2.69-6.03h6.38l2.62 6.03h3.41zm-6.7-7.6h-5.03l2.54-5.73 2.49 5.73zm20.35-8.24v-1.67h-12.93v1.67l4.93-.1v15.95h3.06V84.58l4.94.1zm7.72 15.84V83.01h-3.09v17.51h3.09zm23.27-8.74c0-4.98-3.99-8.97-8.97-8.97s-8.97 3.99-8.97 8.97c0 4.96 3.99 8.94 8.97 8.94 4.99 0 8.97-3.99 8.97-8.94zm-3.21 0c0 4.14-2.54 7.4-5.75 7.4s-5.75-3.26-5.75-7.4c0-4.13 2.54-7.42 5.75-7.42s5.75 3.28 5.75 7.42zm21.23 9.01h.82V83.01h-1.77l.2 12.31-11.34-12.51h-.9v17.71h1.77l-.2-12.31 11.42 12.58zm21.52-.27l-8.05-17.71h-.82l-8.22 17.71h1.99l2.69-6.03h6.38l2.62 6.03h3.41zm-6.7-7.6h-5.03l2.54-5.73 2.49 5.73zm21.47 7.6V98.8l-8.1.15V83.01h-3.06v17.51h11.16zM119.21 61c0-2.96-2.29-5.16-5.53-5.16h-6.48v17.51h3.06v-7.22h3.41c3.25.01 5.54-2.16 5.54-5.13zm-3.19 0c0 2.24-1.59 3.59-3.51 3.59h-2.24v-7.18h2.24c1.92.01 3.51 1.35 3.51 3.59zm24.89 3.62c0-4.98-3.99-8.97-8.97-8.97s-8.97 3.99-8.97 8.97c0 4.96 3.99 8.94 8.97 8.94s8.97-3.99 8.97-8.94zm-3.21 0c0 4.13-2.54 7.4-5.76 7.4-3.21 0-5.75-3.26-5.75-7.4 0-4.14 2.54-7.42 5.75-7.42 3.22-.01 5.76 3.28 5.76 7.42zm22.14 8.74l-6.75-7.32c3.01-.22 5.23-2.29 5.23-4.93 0-2.96-2.62-5.26-6.25-5.26h-6.13v17.51h3.07v-7.6l6.95 7.6h3.88zm-10.83-15.94h2.24c2.02 0 3.89 1.17 3.89 3.69s-1.87 3.69-3.89 3.69h-2.24v-7.38zm25.61.1v-1.67h-12.93v1.67l4.93-.1v15.94h3.07V57.42l4.93.1zm15.49.05v-1.72h-11.16v17.51h3.14v-8.07l7.7.05v-1.67l-7.7.05v-6.3l8.02.15zm22.03 7.05c0-4.98-3.99-8.97-8.97-8.97s-8.97 3.99-8.97 8.97c0 4.96 3.99 8.94 8.97 8.94s8.97-3.99 8.97-8.94zm-3.22 0c0 4.13-2.54 7.4-5.75 7.4s-5.75-3.26-5.75-7.4c0-4.14 2.54-7.42 5.75-7.42 3.21-.01 5.75 3.28 5.75 7.42zm19.41 8.74v-1.72l-8.1.15V55.85h-3.06v17.51h11.16zm7.98 0V55.85h-3.09v17.51h3.09zm23.26-8.74c0-4.98-3.99-8.97-8.97-8.97s-8.97 3.99-8.97 8.97c0 4.96 3.99 8.94 8.97 8.94 4.99 0 8.97-3.99 8.97-8.94zm-3.21 0c0 4.13-2.54 7.4-5.75 7.4s-5.75-3.26-5.75-7.4c0-4.14 2.54-7.42 5.75-7.42 3.21-.01 5.75 3.28 5.75 7.42zM118.36 46.2v-1.72l-8.1.15V28.69h-3.06V46.2h11.16zm16.65-7.1V28.69h-3.06v10.34c0 3.56-1.27 5.81-3.89 5.81s-3.89-2.24-3.89-5.81V28.69h-3.06V39.1c0 4.53 2.94 7.3 6.95 7.3 4.03 0 6.95-2.76 6.95-7.3zm19.88 7.1l-6.63-9.49 6.18-8.02h-2.34l-4.78 6.58-4.58-6.58h-3.64l6.18 8.89-6.5 8.62h2.37l5.13-7.15 4.96 7.15h3.65zm17.71-7.1V28.69h-3.06v10.34c0 3.56-1.27 5.81-3.89 5.81s-3.89-2.24-3.89-5.81V28.69h-3.06V39.1c0 4.53 2.94 7.3 6.95 7.3 4.04 0 6.95-2.76 6.95-7.3zm20.03 7.1l-6.75-7.32c3.01-.23 5.23-2.29 5.23-4.93 0-2.96-2.62-5.26-6.25-5.26h-6.13V46.2h3.07v-7.6l6.95 7.6h3.88zm-10.84-15.94h2.24c2.02 0 3.89 1.17 3.89 3.69s-1.87 3.69-3.89 3.69h-2.24v-7.38zm28.18-1.57h-2.32l-5.06 8.05-5.33-8.05h-3.69l6.6 9.77v7.75h3.19v-7.75l6.61-9.77zM320 86.7h.5v-1.12h.37l.68 1.12h.52l-.71-1.15c.37-.04.65-.28.65-.75 0-.53-.31-.82-.96-.82H320v2.72zm.5-2.3h.37c.31-.01.65.01.65.38s-.34.38-.65.38h-.37v-.76zm-1.97.96a2.39 2.39 0 0 0 2.39 2.39c1.31 0 2.38-1.07 2.38-2.39s-1.07-2.39-2.38-2.39a2.39 2.39 0 0 0-2.39 2.39zm.42 0c0-1.08.88-1.96 1.96-1.96s1.96.88 1.96 1.96-.88 1.96-1.96 1.96-1.96-.88-1.96-1.96z"></path>
+                </svg></a>
+            </center>
+        </div>
+    </div>
+</div>

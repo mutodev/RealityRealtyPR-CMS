@@ -1,0 +1,26 @@
+source: Entity
+default: advanced
+fields:
+    name:
+        source: Entity.name
+
+    type:
+        source: Entity.type
+        element:
+            type: Select
+            class: form-control
+            options:
+                BANK: Bank
+                COMPANY: Company
+                INVESTOR: Investor
+
+    active:
+        label: Status
+        source: Entity.is_active
+        element:
+            type: Select
+            class: form-control
+            default: 1
+            options:
+                1: Active
+                0: Inactive

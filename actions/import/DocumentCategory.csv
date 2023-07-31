@@ -1,0 +1,30 @@
+"id","company_id","name","parent_id"
+1,1,"Reventa",NULL
+2,1,"Short Sales",NULL
+3,1,"Departamento Comercial- Reventa",NULL
+4,1,"Departamento REPO? Residencial",NULL
+5,1,"Departamento REPO-Comercial",NULL
+6,1,"Otras",NULL
+7,1,"Paquete de Listado",1
+8,1,"Paquete de Opción",1
+9,1,"Paquete de Arrendamiento",1
+10,1,"Formas Misceláneas",1
+11,1,"Formas Misceláneas",1
+12,1,"Paquete de Listado",2
+13,1,"Paquete de Opción",2
+14,1,"Formas Misceláneas",2
+15,1,"Paquete de Listado",3
+16,1,"Paquete de Opción",3
+17,1,"Paquete de Arrendamiento",3
+18,1,"Formas Misceláneas",3
+19,1,"Hoja de Inspeccion",4
+20,1,"Perfil de Oferta",4
+21,1,"Formas Miscelaneas",4
+22,1,"Hoja de Inspección",5
+23,1,"Perfil de Oferta",5
+24,1,"Formas Miscelaneas",5
+25,1,"Formas Administrativas",6
+26,1,"Otras Instituciones",NULL
+27,1,"Propiedades Reposeidas",26
+28,1,"Documentos Administrativos",26
+29,1,"Paquete de Opción Ingles",1

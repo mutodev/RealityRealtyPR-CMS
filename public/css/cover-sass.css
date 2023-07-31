@@ -1,0 +1,215 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_general\.scss}line{font-family:\000033}}
+.general__title {
+  margin: 0 0 .4rem 0;
+  font-weight: bold !important; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_general\.scss}line{font-family:\000037}}
+.general__subtitle {
+  margin: 0 0 2.6rem 0;
+  line-height: 2.8rem; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_general\.scss}line{font-family:\0000311}}
+.general__paragraph {
+  margin: 0 0 2.6rem 0; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\000033}}
+.about-us__banner-wrapper {
+  position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\000037}}
+.about-us__breadcrumb {
+  margin-top: 6rem; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\0000311}}
+.about-us__banner-slogan {
+  position: absolute;
+  background-color: rgba(240, 70, 69, 0.9);
+  padding: .9rem 2rem;
+  bottom: -6%;
+  left: 50%;
+  transform: translateX(-50%); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\0000321}}
+.about-us__banner-slogan-title {
+  color: white;
+  font-size: 1.2rem;
+  margin: 0;
+  font-style: italic; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\0000328}}
+.about-us__us {
+  padding: 8rem 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\0000334}}
+.about-us__us-quote-left i {
+  position: absolute;
+  top: 10%;
+  left: 2; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\0000341}}
+.about-us__us-quote-right {
+  text-align: right; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\0000343}}
+  .about-us__us-quote-right i {
+    position: absolute;
+    top: 76%;
+    right: 8%; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\0000350}}
+.about-us__us-quotes {
+  color: #f04645; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\0000352}}
+  .about-us__us-quotes i {
+    font-size: 3rem; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\0000358}}
+.about-us__us-wrapper {
+  padding: 6rem;
+  position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\0000363}}
+.about-us__mission-vission-title {
+  font-size: 2.6rem;
+  font-weight: bold; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\0000368}}
+.about-us__mission-vission-text {
+  font-style: italic; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\0000372}}
+.about-us__values {
+  padding: 3rem;
+  background-color: #f7f7f5;
+  position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\0000376}}
+  .about-us__values:before {
+    content: '';
+    top: 0;
+    position: absolute;
+    border-bottom: 2px #f04645 solid;
+    width: 120px;
+    z-index: 0;
+    left: 50%;
+    transform: translateX(-50%); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\0000379}}
+  .about-us__values:after {
+    content: '';
+    bottom: 0;
+    position: absolute;
+    border-bottom: 2px #f04645 solid;
+    width: 120px;
+    z-index: 0;
+    left: 50%;
+    transform: translateX(-50%); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\0000384}}
+.about-us__sister-companies {
+  padding: 8rem 0;
+  background-color: #f7f7f5;
+  position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\0000388}}
+  .about-us__sister-companies:before {
+    content: '';
+    top: 0;
+    position: absolute;
+    border-bottom: 2px #f04645 solid;
+    width: 120px;
+    z-index: 0;
+    left: 50%;
+    transform: translateX(-50%); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\0000391}}
+  .about-us__sister-companies:after {
+    content: '';
+    bottom: 0;
+    position: absolute;
+    border-bottom: 2px #f04645 solid;
+    width: 120px;
+    z-index: 0;
+    left: 50%;
+    transform: translateX(-50%); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\0000396}}
+.about-us__values-title {
+  font-weight: bold;
+  margin-top: 1rem; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\00003101}}
+.about-us__values-wrapper {
+  padding: 2rem 4rem; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\00003105}}
+.about-us__leadership {
+  padding: 8rem 0;
+  position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\00003108}}
+  .about-us__leadership:after {
+    content: '';
+    bottom: 0;
+    position: absolute;
+    border-bottom: 2px #f04645 solid;
+    width: 120px;
+    z-index: 0;
+    left: 50%;
+    transform: translateX(-50%); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\00003113}}
+.about-us__director {
+  padding: .5rem .5rem; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\00003117}}
+.about-us__director-wrapper {
+  width: 100%;
+  background-size: cover;
+  min-height: 260px;
+  padding-right: 2.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\00003125}}
+  .about-us__director-wrapper:hover > .about-us__director-background {
+    opacity: 1; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\00003130}}
+.about-us__director-background {
+  opacity: 0;
+  background-color: rgba(240, 70, 69, 0.9);
+  padding: 1rem 0 2rem 1.4rem; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\00003134}}
+  .about-us__director-background p {
+    margin: 0;
+    color: #FFFFFF; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\00003140}}
+.about-us__director-name {
+  font-size: 1.8rem; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\00003145}}
+.about-us__director-position {
+  font-size: 1rem; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\00003150}}
+.about-us__our-team {
+  padding: 8rem 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\00003156}}
+.about-us__leadership-caribbean p {
+  font-size: 1rem;
+  font-weight: 700; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\00003162}}
+.about-us__our-clients {
+  padding: 8rem 0;
+  position: relative; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\00003165}}
+  .about-us__our-clients:before {
+    content: '';
+    top: 0;
+    position: absolute;
+    border-bottom: 2px #f04645 solid;
+    width: 120px;
+    z-index: 0;
+    left: 50%;
+    transform: translateX(-50%); }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\00003170}}
+.about-us__part-of-realty {
+  padding: 8rem 0; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\00003174}}
+.about-us__part-of-realty-button {
+  background-color: #ed3938 !important;
+  border: none;
+  color: white;
+  border-radius: 0 !important;
+  cursor: pointer;
+  padding: 1rem 3rem;
+  margin-top: 3rem; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/mixins\/general\.scss}line{font-family:\000039}}
+  .about-us__part-of-realty-button:hover {
+    color: white;
+    text-decoration: none; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\00003179}}
+.about-us__part-of-realty-text {
+  margin-top: 3rem; }
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_about-us\.scss}line{font-family:\00003181}}
+  .about-us__part-of-realty-text input[type=text] {
+    font-size: 1.6rem; }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/\/Users\/matiaspenas\/webdeveloper\/edu\/realityrealtypr-cms\/public\/sass\/inc\/_homepage\.scss}line{font-family:\000034}}
+.homeSearch__services a {
+  padding: 0 2rem; }
+
+/*# sourceMappingURL=cover-sass.css.map */

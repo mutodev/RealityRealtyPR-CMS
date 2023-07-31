@@ -1,0 +1,42 @@
+source: FROM Goal
+columns:
+
+    year:
+        label: Year
+        source: year
+
+    listings:
+        label: Listings
+        source: listings
+        content: >
+            Units: %{listings}<br />
+            Volume: %{listings_volume}<br />
+            Price Average: %{listings_price_average}<br />
+            Commission Average: %{listings_commission_average}
+
+    options:
+        label: Options
+        source: options
+        content: >
+            Units: %{options}<br />
+            Volume: %{options_volume}
+
+    closings:
+        label: Closings
+        source: closings
+        content: >
+            Units: %{closings}<br />
+            Volume: %{closings_volume}<br />
+            Earnings: %{closings_earnings}<br />
+            Price Average: %{closings_price_average}<br />
+            Commission Average: %{closings_commission_average}
+
+    actions:
+        label: ''
+        width: 1px
+        type: Actions
+        actions:
+            edit:
+                icon: pencil
+                label: Edit
+                link:  .edit?id=%{id}&account_id=<?= get('account_id') ?>&production_unit_id=<?= get('production_unit_id') ?>

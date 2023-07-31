@@ -1,0 +1,36 @@
+class: form-bordered
+attributes:
+    role: form
+name: Account
+elements:
+    summary:
+        type: Summary
+
+    current_key:
+        type:        Password
+        label:       Current password
+        description: Enter the current password
+        required:    true
+        class:       form-control
+
+    password:
+        type:     Password
+        label:    New password
+        required: true
+        class:    form-control
+        validations:
+            equals:
+                element: password2
+                message: %{label} and Retype new password must be equal
+            password:
+                min: 6
+
+    password2:
+        type:     Password
+        label:    Confirm new password
+        required: true
+        class:    form-control
+
+    buttons:
+        type:  Buttons
+        class: form-group

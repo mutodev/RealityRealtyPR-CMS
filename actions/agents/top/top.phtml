@@ -1,0 +1,199 @@
+<?php
+$Section    = helper("Section");
+
+define('DISABLE_GLOBAL_CONTACT_FORM', true);
+?>
+
+<style>
+    .navbar-nav>li {
+        float: left;
+    }
+
+    .navbarAgentMenu .navbar-nav {
+        display: inline-block;
+        float: none;
+    }
+
+    .navbarAgentMenu .navbar-collapse {
+        text-align: center;
+    }
+
+    .navbarAgentMenu a {
+        text-transform: uppercase;
+    }
+
+    .header-image {
+        background: url('<?= $Agent->getFormattedLandingHeader() ? $Agent->getFormattedLandingHeader() : '/img/stock/Landing_Preliminar.png' ?>') no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+</style>
+
+<div class="header-image">
+    <div class="container pt40 pb40">
+        <h1><?= $Agent->getFullName() ?></h1>
+        <q><?= $Agent->landing_quote ?></q>
+    </div>
+</div>
+
+<nav class="navbarAgentMenu navbar navbar-default mt40" role="navigation">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav">
+            <li><a href="#profile"><?= t('translation332'); ?></a></li>
+            <li><a href="#listings"><?= t('translation1052'); ?></a></li>
+            <li><a href="#sell"><?= t('translation1053'); ?></a></li>
+<!--            <li><a href="#buy">--><?//= t('translation1054'); ?><!--</a></li>-->
+            <li><a href="#contact"><?= t('translation1055'); ?></a></li>
+        </ul>
+    </div><!-- /.navbar-collapse -->
+</nav>
+
+<div class="container mt40">
+    <h2 id="profile" class="centered-title"><span><?= t('translation332') ?><br /><span></span></span></h2>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-3">
+            <?php if ( $Agent->s3_photo ): ?>
+                <img src='<?= $Agent->s3_photo ?>' style="width: 100%" />
+            <?php else: ?>
+                <img src='/img/no-avatar.jpg' style="width: 100%" />
+            <?php endif; ?>
+        </div>
+
+        <div class="col-xs-12 col-sm-9">
+            <h3><?= $Agent->getFullName() ?></h3>
+            <?php if ($Agent->position): ?>
+                <strong><?= $Agent->position ?></strong>
+            <?php endif ?>
+            <?php if ($Agent->license): ?>
+                <p>Lic. <?= $Agent->license ?></p>
+            <?php endif ?>
+
+            <br />
+            <strong><?= t('translation334') ?></strong><br />
+            <?php if ($Agent->commercial): ?>
+                <span><?= t('translation336') ?></span><br />
+            <?php endif ?>
+            <?php if ($Agent->resell): ?>
+                <span><?= t('translation337') ?></span><br />
+            <?php endif ?>
+            <?php if ($Agent->relocation): ?>
+                <span><?= t('translation338') ?></span><br />
+            <?php endif ?>
+
+            <br />
+            <strong><?= t('translation335') ?></strong><br />
+            <span><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span> <?= decorator('phone', $Agent->phone) ?></span>&nbsp;&nbsp;&nbsp;&nbsp;<span><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <?= decorator('email', $Agent->email) ?></span>
+
+            <?php if($Agent->twitter || $Agent->instagram || $Agent->facebook): ?>
+            <br />
+            <br />
+            <strong><?= t('translation2023') ?></strong><br />
+            <ul>
+                <?php if($Agent->twitter): ?>
+                <li>
+                    <a href="<?= $Agent->twitter ?>" target="_blank">Twitter</a>
+                </li>
+                <?php endif ?>
+                <?php if($Agent->facebook): ?>
+                <li>
+                    <a href="<?= $Agent->facebook ?>" target="_blank">Facebook</a>
+                </li>
+                <?php endif ?>
+                <?php if($Agent->instagram): ?>
+                <li>
+                    <a href="<?= $Agent->instagram ?>" target="_blank">Instagram</a>
+                </li>
+                <?php endif ?>
+            </ul>
+            <?php endif ?>
+
+            <p class="mt30"><?= $Agent->landing_description ?></p>
+        </div>
+    </div>
+</div>
+
+<div class="container mt40">
+    <h2 id="listings" class="centered-title">
+        <span>
+            <?php if (Configure::read('lang') == 'es'): ?>
+                <?= t('translation331') ?> <?= $Agent->first_name ?>
+            <?php else: ?>
+                <?= $Agent->first_name ?><?= t('translation331') ?>
+            <?php endif ?>
+            <br /><span></span></span>
+        </span>
+    </h2>
+
+    <?= $this->partial('search'); ?>
+</div>
+
+<?php if ($Properties->count()): ?>
+    <?= $this->partial('properties', compact('Properties', 'Pagination')); ?>
+<?php else: ?>
+    <div class="container mt40">
+        <h4><?= t('translation326'); ?></h4>
+    </div>
+<?php endif; ?>
+
+
+<div class="container mt40">
+    <h2 id="contact" class="centered-title"><span><?= t('translation333') ?><br /><span></span></span></span></h2>
+
+    <form action="/contactenos" method="post" class="mt40 contact form form-horizontal col-xs-12 col-sm-6" style="margin-left: auto; margin-right: auto; float: none;" id="contactForm">
+
+        <div class="row padding-bottom">
+            <div class="col-xs-12 col-sm-6">
+                <div class="">
+                    <input placeholder="<?= t('translation132'); ?>" type="text" class='contactField name' name='var1' value="" />
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+                <div class="">
+                    <div style='display:none'>
+                        <input name='email' value="" />
+                    </div>
+                    <input placeholder="Email" type="text" class='contactField mail' name='var3' />
+                </div>
+            </div>
+        </div>
+
+        <div class="row padding-bottom">
+            <div class="col-xs-12 col-sm-12">
+                <input type="hidden" value="<?= $Agent->id ?>" name="broker_id" />
+
+                <div class="">
+                    <textarea class='contactField msg' name='var4' rows="10" style="height: 100px"><?= t('translation342'); ?></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="row padding-bottom">
+            <div class="col-xs-12">
+                <div class="text-center">
+                    <input type="submit" class="normalBtn" value="<?= t('translation32'); ?>" />
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<?= $Section->start("javascriptFooter"); ?>
+<?= $Section->render("javascriptFooter"); ?>
+
+<script type="text/javascript">
+
+  jQuery(document).ready(function(){
+
+    jQuery('#contactForm').bind('submit.contactForm', function() {
+      sendContactForm('main' , jQuery(this) );
+      return false;
+    });
+
+  });
+
+</script>
+
+<?= $Section->end(); ?>

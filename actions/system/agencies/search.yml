@@ -1,0 +1,24 @@
+source: Agency
+default: advanced
+fields:
+
+    id:
+        type: String
+        source: co.id
+
+    name:
+        type: String
+        source: co.name
+
+    active:
+        type: Boolean
+        source: is_active
+        label: Status
+        element:
+            type: Select
+            class: form-control
+            default: 1
+            options:
+                1: Active
+                0: Inactive
+

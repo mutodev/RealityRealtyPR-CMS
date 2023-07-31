@@ -1,0 +1,60 @@
+.ym-form-wizardsummary {
+    padding: 5px 10px;
+    margin:  5px 0 15px;
+}
+
+.ym-form-wizardsummary table {
+    width:   100%;
+}
+
+.ym-form-wizardsummary table td {
+    vertical-align: middle;
+    text-align: center;
+
+    border-right: 1px solid #ccc;
+}
+
+.ym-form-wizardsummary table td.last {
+    border: 0px;
+}
+
+.ym-form-wizardsummary span {
+    display:  -moz-inline-stack;
+    display:  inline-block;
+    zoom:     1;
+    *display: inline;
+}
+
+.ym-form-wizardsummary span.step-number {
+    -webkit-border-radius: 30px;
+    -moz-border-radius:    30px;
+    border-radius:        30px;
+
+    padding:          4px 16px;
+    font-size:        1.8em;
+    font-weight:      bold;
+    color:            #fff;
+    background-color: #ccc;
+    margin-right:     7px;
+}
+
+.ym-form-wizardsummary span.step-text {
+    color: #ccc;
+    font-size: 1.6em;
+}
+
+.ym-form-wizardsummary td.visited span.step-number {
+    background-color: #9D9D9D;
+}
+
+.ym-form-wizardsummary td.visited span.step-text {
+    color: #8b8b8b;
+}
+
+.ym-form-wizardsummary td.current span.step-number {
+    background-color: #707070;
+}
+
+.ym-form-wizardsummary td.current span.step-text {
+    color: #000;
+}

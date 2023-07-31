@@ -1,0 +1,2 @@
+<?php $saved = in_array($Property->id, Session::read('properties', [])); ?>
+<div class="property-save <?= $saved ? 'saved': '' ?> <?= $size ?>" data-property="<?= $Property->id ?>"><span class="glyphicon glyphicon-<?= $saved ? 'star' : 'star-empty' ?>" aria-hidden="true"></span></div>

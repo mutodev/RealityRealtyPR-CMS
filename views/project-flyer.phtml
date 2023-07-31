@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style>
+		body{
+			font-family:sans-serif;
+		}
+
+		th{
+			text-align: left;
+		}
+	</style>
+</head>
+<body style="margin:0;padding:0">
+
+<img src="http://realityrealtypr.com/img/top-flyer.png" width="100%" />
+
+<br />
+
+	<!-- MAIN CONTENT -->
+<div class="container projects-view">
+
+    <div id="content">
+
+	    <table width="100%" cellspacing="0" cellpadding="0">
+	    	<tr>
+	    		<td width="150" align="center">
+	    			<img src="http://realityrealtypr.com/img/Logo-01.png" width="200" />
+	    		</td>
+	    		<td width="200" style="text-align:center;">
+	    			<span style="font-size:1.2em;color:#828282">PROYECTOS NUEVOS</span>
+	    		</td>
+	    		<td width="150" align="center">
+	    			<img src="<?= $Project->getLogo() ?>" height="80" />
+	    		</td>
+	    	</tr>
+	    </table>
+
+        <div style="background-color:#d9261c;height:10px;margin:10px 0">
+
+        </div>
+
+        <div style="text-align:center;">
+            <?php for( $i = 1; $i <= 3; $i++ ): ?>
+            	<?php if($Project->getPhoto($i)): ?>
+                <a style="display:inline-block;width:204px;<?php if($i == 2): ?>margin: 0 50px;<?php endif ?>" href="<?= $Project->getPhoto($i); ?>" target="_blank">
+                    <img src="<?= $Project->getPhoto($i); ?>" width="204" height="151" />
+                </a>
+            	<?php endif; ?>
+            <?php endfor; ?>
+
+            <h2 style="margin: 10px 0"><?= trim($Project->nombre) ?>, <?= ($Project->pueblo) ?></h2>
+        </div>
+
+        <div style="border-top:1px solid #a7a9ac;">
+	        <table cellspacing="0" cellpadding="0" width="100%">
+	            <tr style="border-bottom:1px solid #a7a9ac;">
+	                <td width="50%" valign="top" style="border-right:1px solid #a7a9ac;border-bottom:1px solid #a7a9ac;">
+	                	<div style="padding:20px 40px 20px 20px;">
+		                    <table width="100%" cellpadding="0" cellspacing="0">
+		                        <?php if($Project->pueblo): ?>
+		                            <tr>
+		                                <th style="padding: 3px;border-bottom:1px solid #a7a9ac;font-size:14px;">
+		                                    PUEBLO       
+		                                </th>
+		                                <td style="padding: 3px;border-bottom:1px solid #a7a9ac;font-size:14px;">
+		                                    <?= $Project->pueblo ?>
+		                                </td>
+		                            </tr>
+		                        <?php endif ?>
+		                        
+		                            <tr>
+		                                <th style="padding: 3px;border-bottom:1px solid #a7a9ac;font-size:14px;">
+		                                    TIPO DE UNIDAD       
+		                                </th>
+		                                <td style="padding: 3px;border-bottom:1px solid #a7a9ac;font-size:14px;">
+		                                    <?= $Project->getCategory() ?>
+		                                </td>
+		                            </tr>
+		                        
+		                        <?php if($Project->price_min): ?>
+		                            <tr>
+		                                <th style="padding: 3px;border-bottom:1px solid #a7a9ac;font-size:14px;">
+		                                    PRECIOS DESDE       
+		                                </th>
+		                                <td style="padding: 3px;border-bottom:1px solid #a7a9ac;font-size:14px;">
+		                                    <?= '$'.number_format($Project->price_min, 0) ?>
+		                                </td>
+		                            </tr>
+		                        <?php endif ?>
+		                        <?php if($Project->qty): ?>
+		                            <tr>
+		                                <th style="padding: 3px;border-bottom:1px solid #a7a9ac;font-size:14px;">
+		                                    TOTAL DE UNIDADES       
+		                                </th>
+		                                <td style="padding: 3px;border-bottom:1px solid #a7a9ac;font-size:14px;">
+		                                    <?= $Project->qty ?>
+		                                </td>
+		                            </tr>
+		                        <?php endif ?>
+		                        <?php if($Project->free): ?>
+		                            <tr>
+		                                <th style="padding: 3px;border-bottom:1px solid #a7a9ac;font-size:14px;">
+		                                    UNIDADES DISPONIBLES       
+		                                </th>
+		                                <td style="padding: 3px;border-bottom:1px solid #a7a9ac;font-size:14px;">
+		                                    <?= $Project->free ?>
+		                                </td>
+		                            </tr>
+		                        <?php endif ?>
+		                        <?php if($Project->sqmt): ?>
+		                            <tr>
+		                                <th style="padding: 3px;border-bottom:1px solid #a7a9ac;font-size:14px;">
+		                                    METROS CUADRADOS       
+		                                </th>
+		                                <td style="padding: 3px;border-bottom:1px solid #a7a9ac;font-size:14px;">
+		                                    <?= $Project->sqmt ?>
+		                                </td>
+		                            </tr>
+		                        <?php endif ?>
+		                        <?php if($Project->sqft): ?>
+		                            <tr>
+		                                <th style="padding: 3px;border-bottom:1px solid #a7a9ac;font-size:14px;">
+		                                    PIES CUADRADOS       
+		                                </th>
+		                                <td style="padding: 3px;border-bottom:1px solid #a7a9ac;font-size:14px;">
+		                                    <?= $Project->sqft ?>
+		                                </td>
+		                            </tr>
+		                        <?php endif ?>
+		                        <?php if($Project->distribution): ?>
+		                            <tr>
+		                                <th style="padding: 3px;border-bottom:1px solid #a7a9ac;font-size:14px;">
+		                                    DISTRIBUCION
+		                                </th>
+		                                <td style="padding: 3px;border-bottom:1px solid #a7a9ac;font-size:14px;">
+		                                    <?= $Project->distribution ?>
+		                                </td>
+		                            </tr>
+		                        <?php endif ?>
+		                        <?php if($Project->address): ?>
+		                            <tr>
+		                                <th style="padding: 3px;border-bottom:1px solid #a7a9ac;font-size:14px;">
+		                                    DIRECCION FISICA 
+		                                </th>
+		                                <td style="padding: 3px;border-bottom:1px solid #a7a9ac;font-size:14px;">
+		                                    <?= $Project->address ?>
+		                                </td>
+		                            </tr>
+		                        <?php endif ?>
+		                        <?php if($Project->plong && $Project->plat): ?>
+		                            <tr>
+		                                <th style="padding: 3px;font-size:14px;">
+		                                    COORDENADAS
+		                                </th>
+		                                <td style="padding: 3px;font-size:14px;">
+		                                    <?= $Project->plat ?>, <?= $Project->plong ?>
+		                                </td>
+		                            </tr>
+		                        <?php endif ?>
+		                    </table>
+		                </div>
+	                </td>
+	                <td width="50%" valign="top" style="border-bottom:1px solid #a7a9ac;">
+	                	<div style="padding:20px 40px 20px 20px;">
+	                    	<?php if($Project->amenities1): ?>
+		                        <ul>
+		                        <?php for($i = 1; $i <= 15;$i++ ): ?>
+		                            <?php if($Project->{'amenities'.$i}): ?>
+		                            <li>
+		                                <?= $Project->{'amenities'.$i} ?>
+		                            </li>
+		                            <?php endif ?>
+		                        <?php endfor; ?>
+		                        </ul>
+		                    <?php endif ?>
+	                    </div>
+	                </td>
+	            </tr>
+	            <tr>
+	                <td valign="top" width="50%">
+	                	<div style="padding:20px 40px 20px 20px">
+		                	<?php if($Project->getMap()): ?>
+		                    <img src="<?= $Project->getMap() ?>" width="350" height="200" />
+							<?php endif ?>
+						</div>
+	                </td>
+	                <td valign="top" width="50%">
+	                	<div style="padding:20px 40px 20px 20px">
+		                    <h3 style="margin:0">Para más información</h3>
+
+		                    <br />
+
+		                    <?= $Project->horario ?>
+
+		                    <?php if($Broker): ?>
+		                    <br />
+
+		                    <table cellpadding="0" cellspacing="0">
+					        	<tr>
+						        	<td valign="top">
+						        		<?php if ( $Broker['user_foto'] ): ?>
+				                          	<img src='<?= $Broker['user_foto'] ?>' height="100" />
+				                        <?php endif; ?>
+						        	</td>
+						        	<td valign="top">
+						        		<table>
+				                            <tr>
+				                              <td colspan="2"><strong><?= $Broker['user_firstname'] ?> <?= $Broker['user_lastname'] ?>, <?= t('Lic.') ?> <?php if ( $Broker['user_lic'] ): ?><?= htmlentities($Broker['user_lic']) ?><?php endif; ?></strong>
+				                              </td>
+				                            </tr>
+
+				                            <?php if ( $Broker['user_position'] ): ?>
+				                                <tr>
+				                                    <td colspan="2" class="pl10"><?= $Broker['user_position'] ?></td>
+				                                  </tr>
+				                            <?php endif ?>
+
+			                            	<tr>
+			                                    <td colspan="2" class="pl10">
+			                                    	Mobile: <?= htmlentities( $Broker['user_tel2'] ) ?>
+			                                    </td>
+			                                  </tr>
+
+			                                  <tr>
+			                                    <td colspan="2" class="pl10">
+			                                    	Office: <?= htmlentities( $Broker['user_tel1'] ) ?>
+			                                    </td>
+			                                  </tr>
+
+				                            <?php if ( $Broker['user_email'] ): ?>
+				                              <tr>
+				                                <td colspan="2" class="pl10"><?= $Broker['user_email']; ?></td>
+				                              </tr>
+				                            <?php endif; ?>
+				                        </table>	
+						        	</td>
+					        	</tr>
+				        	</table>
+				        	<?php endif ?>
+				        </div>
+	                </td>
+	            </tr>
+	        </table>
+	    </div>
+    </div>
+</div>
+<img src="http://realityrealtypr.com/img/bot-flyer.png" width="100%" />
+</body>
+</html>

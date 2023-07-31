@@ -1,0 +1,39 @@
+@mixin realtyButton{
+
+    background-color: #ed3938 !important;
+    border: none;
+    color: white;
+    border-radius: 0 !important;
+    cursor: pointer;
+    padding: 1rem 3rem;
+    &:hover{
+        color: white;
+        text-decoration: none;
+    }
+    
+}
+
+
+@mixin redTopBorder{
+    content: '';
+    top: 0;
+    position: absolute;
+    border-bottom: 2px $redColor solid;
+    width: 120px;
+    z-index:0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@mixin redBottomBorder{
+    content: '';
+    bottom: 0;
+    position: absolute;
+    border-bottom: 2px $redColor solid;
+    width: 120px;
+    z-index:0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+

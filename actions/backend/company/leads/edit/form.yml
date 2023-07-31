@@ -1,0 +1,126 @@
+class: form-bordered
+attributes:
+    role: form
+elements:
+
+    summary:
+        type: Summary
+
+    header_general:
+        type:  Header
+        label: General Information
+
+    first_name:
+        type:     Text
+        required: true
+        class:    form-control
+
+    last_name:
+        type:     Text
+        class:    form-control
+
+    email:
+        type:     Text
+        class:    form-control
+
+    phone:
+        type:     Text
+        class:    form-control
+
+    source_id:
+        type: Select
+        label: Source
+        source: FROM LeadSource
+        class:    form-control
+
+    type:
+        type: Select
+        class:    form-control
+        required: true
+        options:
+            Buyer: Buyer
+            Seller: Seller
+            Rent: Rent
+
+
+    account_id:
+        label: Assigned to
+        type: Select
+        source: FROM Account WHERE active = 1 ORDER BY first_name ASC
+        source_label_tpl: %{Account.getFullName}
+        class: form-control
+        source_group: Account.Branch.name
+
+    notes:
+        type: TextArea
+        class: form-control
+
+    header_search:
+        type:  Header
+        label: Interested
+
+    property_id:
+        label: 'Property #'
+        type: Text
+
+    header_alerts:
+        type:  Header
+        label: Alerts
+
+    Searches:
+        type: Repeat
+        class: ym-form-box-column2
+        start_repeats: 1
+        layout_renderer:
+            type:    grid
+            columns: 2
+            style:   'width: 100%; margin-bottom: 15px;'
+            valign:  top
+
+        box_renderer:
+            type: 1Column
+            highlight: true
+            border: true
+            margin: '0 0 5px 0'
+            padding: '0 10px 0px 10px'
+
+        default_renderers:
+            box_renderer:
+                type: 1Column
+                margin: 3px 0
+                padding: 0px
+                border: false
+
+            label_renderer:
+                small: true
+        elements:
+            area_id:
+                label: City
+                class:    form-control
+                type:          Select
+                source: FROM Area WHERE country_id = 89
+
+            category_id:
+                label: Category
+                class:    form-control
+                type:          Select
+                source: FROM PropertyCategory
+                source_group: PropertyCategory.type
+
+            price_min:
+                type:          Price
+
+            price_max:
+                type:          Price
+
+            controls:
+                type: Content
+                content: >
+                       <div style="margin-top: 1px; margin-left: 0;">
+                            <a class="btn btn-default btn-xs ym-form-repeat-more" href="javascript:void(0)" style="padding: 0px 5px; font-size: 9px;"><i class="fa fa-plus"></i></a>
+                            <a class="btn btn-default btn-xs ym-form-repeat-less" href="javascript:void(0)" style="padding: 0px 5px; font-size: 9px;"><i class="fa fa-minus"></i></a>
+                       </div>
+
+    buttons:
+        type:  Buttons
+        class: form-group

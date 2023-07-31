@@ -1,0 +1,366 @@
+"id","email","first_name","last_name","position","s3_photo","branch_id","show_in_list","license"
+1,"ac@listmax.com","Alberto","Casas","Agente de Bienes Raíces",0,23,0,4063660
+90,"caguas@realityrealtypr.com","Reality Realty","Caguas","Administrativo","https://s3.amazonaws.com/users-rr/90/foto.png",23,0,53
+1441,"cardonar@realityrealtypr.com","Ricardo","Cardona","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/1441/foto.png",23,0,"C-18115"
+2860,"NUNEZA@REALITYREALTYPR.NET","Alfonso","Nunez","Agente de Bienes Raíces",0,NULL,1,1530
+3776,"nievesr@realityrealtypr.com","Raymond","Nieves","Vice-Presidente Administrativo","https://s3.amazonaws.com/users-rr/3776/foto.png",51,1,"N/A"
+4345,"bayamon@realityrealtypr.com","Reality Realty","Bayamon","Administrativo","https://s3.amazonaws.com/users-rr/4345/foto.png",24,0,53
+4346,"carolina@realityrealtypr.com","Reality Realty","Bayamón","Administrativo","https://s3.amazonaws.com/users-rr/4346/foto.png",0,0,53
+4714,"guadalupej@realityrealtypr.com","Judith","Guadalupe","Agente de Bienes Raíces",0,49,1,"007"
+5770,"ruizle@realityrealtypr.com","Leida","Ruiz","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/5770/foto.png",23,0,"C-18096"
+8339,"humacao@realityrealtypr.com","Reality Realty","Humacao","Administrativo","https://s3.amazonaws.com/users-rr/8339/foto.png",0,0,53
+8370,"lopezr@realityrealtypr.com","raymond","lopez","Agente de Bienes Raíces",0,0,1,16582
+9899,"oborges@realityrealtypr.com","Omayra","Borges Gomez","Agente de Bienes Raíces",0,NULL,1,8086
+9900,"benitezj@realityrealtypr.com","Juan","Benitez","Agente de Bienes Raíces",0,0,1,11434
+9996,"ramosm@realityrealtypr.com","Mario","Ramos","Agente de Bienes Raíces",0,49,1,"C-15318"
+10007,"torresr@realityrealtypr.com","Reinaldo","Torres","COO - Principal Oficial de Operaciones","https://s3.amazonaws.com/users-rr/10007/foto.png",51,1,"C-10709"
+10010,"zavalai@realityrealtypr.com","Ivan","Zavala Steidel","CEO - Principal Oficial Ejecutivo","https://s3.amazonaws.com/users-rr/10010/foto.png",51,1,"C-8903"
+10094,"hernandezi@realityrealtypr.com","Israel","Hernández","Agente de Bienes Raíces",0,0,1,10765
+11114,"alejandroi@realityrealtypr.com","Ismael","Alejandro","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/11114/foto.png",23,1,"C-9126"
+11604,"serranol@realityrealtypr.com","Lorna L","Serrano Sierra","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/11604/foto.png",49,0,"C-13009"
+13963,"arroyos@realityrealtypr.com","Sonia","Arroyo","Agente de Bienes Raíces",0,0,1,13183
+13964,"cabezudok@realityrealtypr.com","Kelvin Y.","Cabezudo","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/13964/foto.png",23,1,"C-13113"
+13965,"cachom@realityrealtypr.com","Marcos","Cacho","Agente de Bienes Raíces",0,0,1,14977
+13966,"carrasquillor@realityrealtypr.com","Roberto","Carrasquillo","Agente de Bienes Raíces",0,0,1,625
+13967,"cartagenaj@realityrealtypr.com","Jose","Cartagena","Agente de Bienes Raíces",0,NULL,1,14664
+13968,"corderos@realityrealtypr.com","Samuel","Cordero","Agente de Bienes Raíces",0,0,1,1668
+13969,"delgadoj@realityrealtypr.com","Jaime","Delgado","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/13969/foto.png",23,1,"V-372"
+13970,"fernandezm@realityrealtypr.com","Maria S.","Fernandez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/13970/foto.png",23,1,"V-2307"
+13971,"maldonadoa@realityrealtypr.com","Martiza","Maldonado","Agente de Bienes Raíces",0,0,1,2286
+13972,"anai@realityrealtypr.com","Ana I.","Martinez","Agente de Bienes Raíces",0,NULL,1,14865
+13973,"martinezf@realityrealtypr.com","Florin","Martinez","Agente de Bienes Raíces",0,NULL,1,13578
+13974,"munozg@realityrealtypr.com","Gladys","Munoz","Agente de Bienes Raíces",0,NULL,1,14759
+13975,"ortizd@realityrealtypr.com","Doris","Ortiz","Agente de Bienes Raíces",0,0,1,12401
+13976,"cperez@realityrealtypr.com","Charlie","Perez","Agente de Bienes Raíces",0,0,1,9686
+13977,"quilesr@realityrealtypr.com","Rafael","Quiles","Agente de Bienes Raíces",0,0,1,15864
+13978,"riveral@realityrealtypr.com","Lucy","Rivera","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/13978/foto.png",23,0,8207
+13979,"riverarey@realityrealtypr.com","Reinaldo","Rivera","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/13979/foto.png",23,0,13356
+13980,"rodrigueza@realityrealtypr.com","Alexis","Rodriguez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/13980/foto.png",49,1,"C-9970"
+13981,"rodriguezsu@realityrealtypr.com","Suzette","Rodriguez","Agente de Bienes Raíces",0,0,1,8552
+13982,"romanv@realityrealtypr.com","Vilmarie","Roman","Agente de Bienes Raíces",0,NULL,1,15862
+13983,"rosados@realityrealtypr.com","Sybil","Rosado","Agente de Bienes Raíces",0,0,1,2349
+13984,"sanantonioa@realityrealtypr.com","Amilcar","San Antonio","Agente de Bienes Raíces",0,0,1,14487
+13985,"sancheze@realityrealtypr.com","Enrique","Sanchez","Agente de Bienes Raíces",0,0,1,2136
+13986,"santaigoc@realityrealtypr.com","Carmen S.","Santiago","Agente de Bienes Raíces",0,NULL,1,14961
+13987,"schroderc@realityrealtypr.com","Carmen R.","Schroder","Agente de Bienes Raíces",0,NULL,1,15180
+13988,"sotom@realityrealtypr.com","Miguel","Soto","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/13988/foto.png",23,0,11003
+13989,"suarezm@realityrealtypr.com","Maribel","SÃºarez","Agente de Bienes Raíces",0,0,1,320
+13990,"vazquezc@realityrealtypr.com","Celso","Vazquez","Agente de Bienes Raíces",0,0,1,916
+13991,"zayass@realityrealtypr.com","Sofia","Zayas","Agente de Bienes Raíces",0,0,1,2240
+13992,"borgeso@realityrealtypr.com","Omayra","Borges","Agente de Bienes Raíces",0,NULL,1,8086
+13993,"ugobonoa@realityrealtypr.com","Alberto","Ugobono","Agente de Bienes Raíces",0,0,1,14757
+13994,"medinay@realityrealtypr.com","Yelitza","Medina","Agente de Bienes Raíces",0,0,1,16083
+13995,"riverav@realityrealtypr.com","Vanessa","Rivera","Agente de Bienes Raíces",0,NULL,1,8040
+13996,"pereze@realityrealtypr.com","Elizabeth","Perez","Agente de Bienes Raíces",0,0,1,9117
+13997,"lopezd@realityrealtypr.com","Daisy","Lopez","Agente de Bienes Raíces",0,0,1,13917
+13998,"delarosaa@realityrealtypr.com","Angel","De La Rosa","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/13998/foto.png",23,0,14129
+13999,"diazj@realityrealtypr.com","Jennifer","Diaz","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/13999/foto.png",23,1,"C-11573"
+14000,"guzmand@realityrealtypr.com","Iris Dennisse","Guzman","Agente de Bienes Raíces",0,0,1,6933
+14001,"vazquezm@realityrealtypr.com","May Lyn","Vazquez","Agente de Bienes Raíces",0,0,1,617
+14002,"casillasr@realityrealtypr.com","Roxannie","Casillas","Agente de Bienes Raíces",0,0,1,14915
+14003,"","Omar","Ortiz","Agente de Bienes Raíces",0,0,1,14512
+14004,"baezr@realityrealtypr.com","Roberto","Baez","Agente de Bienes Raíces",0,0,1,14670
+14005,"gonzalezp@realityrealtypr.com","Pedro","Gonzalez","Agente de Bienes Raíces",0,0,1,13391
+14006,"gonzalezg@realityrealtypr.com","Gerardo","Gonzalez","Agente de Bienes Raíces",0,0,1,15332
+14007,"santiagol@realityrealtypr.com","Luis","Santiago","Agente de Bienes Raíces",0,NULL,1,15325
+14008,"amadora@realityrealtypr.com","Maria A.","Amador","Agente de Bienes Raíces",0,NULL,1,8046
+14009,"santiagot@realityrealtypr.com","Carmen T.","Santiago","Agente de Bienes Raíces",0,49,1,15333
+14010,"lebronl@realityrealtypr.com","Lucy M.","Lebron","Agente de Bienes Raíces",0,0,1,12533
+14011,"acevedol@realityrealtypr.com","Luz M.","Acevedo","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/14011/foto.png",49,1,"C-11266"
+14012,"romanm@realityrealtypr.com","Milagros","Roman","Agente de Bienes Raíces",0,0,1,13719
+14013,"gonzalezr@realityrealtypr.com","Miriam J.","Gonzalez","Agente de Bienes Raíces",0,NULL,1,11343
+14014,"rodriguezs@realityrealtypr.com","Sara","Rodriguez","Agente de Bienes Raíces",0,0,1,14727
+14015,"riveraa1@realityrealtypr.com","Amneris","Rivera","Agente de Bienes Raíces",0,0,1,10354
+14016,"roblesd@realityrealtypr.com","Deborah","Robles","Agente de Bienes Raíces",0,0,1,14386
+14671,"papaleor@realityrealtypr.com","Raul","Papaleo","Agente de Bienes Raíces",0,0,1,14531
+14770,"perezre@realityrealtypr.com","Rene","Perez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/14770/foto.png",49,1,"C-12272"
+15042,"velezw@realityrealtypr.com","Wanda","Velez","Agente de Bienes Raíces",0,0,1,2308
+15558,"riverae@realityrealtypr.com","Eric","Rivera","Agente de Bienes Raíces",0,0,1,13308
+15559,"castrow@realityrealtypr.com","Wilma","Castro","Agente de Bienes Raíces",0,0,1,13308
+15731,"delvalles@realityrealtypr.com","Sandra","Del Valle","Agente de Bienes Raíces",0,50,1,"053"
+15732,"cartagena@realityrealtypr.com","Jose","Cartagena","Agente de Bienes Raíces",0,NULL,1,"053"
+15736,"cortese@realityrealtypr.com","Edgar","Cortes","Agente de Bienes Raíces",0,0,1,15548
+15795,"ferrero@realityrealtypr.com","Orlando","Ferrer","Agente de Bienes Raíces",0,0,1,2222
+15796,"prattse@realityrealtypr.com","Elsie","Pratts","Agente de Bienes Raíces",0,0,1,14304
+15798,"gonzalezm@realityrealtypr.com","Miriam J.","Gonzalez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/15798/foto.png",49,1,"C-11343"
+15799,"camachow@realityrealtypr.com","Waleska","Camacho","Agente de Bienes Raíces",0,0,1,15680
+15857,"msoto@realityrealtypr.com","Mayra","Soto","Agente de Bienes Raíces",0,0,1,"053"
+16044,"vargasv@realityrealtypr.com","Vilma","Vargas","Agente de Bienes Raíces",0,0,1,15793
+16129,"alejandroc@realityrealtypr.com","Carlos","Alejandro","Agente de Bienes Raíces",0,0,1,"053"
+16140,"avilesi@realityrealtypr.com","Israel","Aviles","Agente de Bienes Raíces",0,NULL,1,7380
+16163,"martinezvXXX@realityrealtypr.com","Victor ","Martinez","Agente de Bienes Raíces",0,NULL,1,"053"
+16191,"garciam@realityrealtypr.com","Massiel ","Garcia","Agente de Bienes Raíces",0,0,1,2609
+16731,"gonzalezy@realityrealtypr.com","Yolanda","Gonzalez","Agente de Bienes Raíces",0,23,0,"053"
+16921,"hernandezj@realityrealtypr.com","Juan Luis","Hernandez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/16921/foto.png",23,1,"V-442"
+16930,"riveras@realityrealtypr.com","Sonia","Rivera","Agente de Bienes Raíces",0,0,1,16250
+17665,"rosarioo@realityrealtypr.com","Odalis","Rosario","Agente de Bienes Raíces",0,23,1,"053"
+18091,"garciam@realityrealtypr.como","Meralys ","Garcia","Agente de Bienes Raíces",0,0,1,"c-16491"
+18092,"baezro@realityrealtypr.como","Roberto","Baez","Agente de Bienes Raíces",0,0,1,14670
+19124,"metro@realityrealtypr.com","RealityRealty","Metro","Administrativo","https://s3.amazonaws.com/users-rr/19124/foto.png",50,0,53
+19143,"ortizn@realityrealtypr.com","Nancy","Ortiz","Agente de Bienes Raíces",0,0,1,7566
+19319,"torruellasf@realityrealtypr.com","Frances ","Torruellas","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/19319/foto.png",23,0,16544
+19546,"martineza@realityrealtypr.com","Ana H.","Martinez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/19546/foto.png",49,0,"C-8154"
+19610,"scordero@realityrealtypr.com","Samuel","Cordero","Agente de Bienes Raíces",0,NULL,1,1668
+20874,"pagane@realityrealtypr.com","Edwin","Pagan Serrano","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/20874/foto.png",49,1,"C-18151"
+32611,"brasa@realityrealtypr.com","Ana A. ","Bras","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32611/foto.png",50,1,"C-5423"
+32612,"acevedoa@realityrealtypr.com","Angel","Acevedo","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32612/foto.png",50,1,"C-15148"
+32613,"marreroa@realityrealtypr.com","Angel","Marrero Torres","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32613/foto.png",24,0,"V-3265"
+32614,"ruiza@realityrealtypr.com","Antonio","Ruiz de Viñaspre","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32614/foto.png",50,1,"V-2614"
+32615,"firpib@realityrealtypr.com","Brenda ","Firpi","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32615/foto.png",50,1,"C-10106"
+32616,"santanab@realityrealtypr.com","Bryant","Santana","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32616/foto.png",50,1,"C-18315"
+32617,"arroyoc@realityrealtypr.com","Carlos","Arroyo","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32617/foto.png",50,1,"V-133"
+32618,"carmenrivas@islacoqui.com","Carmen M.","Rivas","Agente de Bienes Raíces",0,50,1,"V-1195"
+32619,"carmenramirez@islacoqui.com","Carmen V.","Ramirez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32619/foto.png",50,1,"C-4928"
+32620,"paganc@realityrealtypr.com","Cesar R.","Pagan","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32620/foto.png",50,1,"C-6198"
+32621,"colond@realityrealtypr.com","Delfin R","Colon","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32621/foto.png",50,1,"V-476"
+32622,"barbosae@realityrealtypr.com","Edward A","Barbosa","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32622/foto.png",50,1,"V-918"
+32623,"gonzaleze@realityrealtypr.com","Eileen","Gonzalez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32623/foto.png",50,0,"V-2996"
+32624,"oteroe@realityrealtypr.com","Elsa ","Otero","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32624/foto.png",50,1,"C-4984"
+32625,"evelyncolon@islacoqui.com","Evelyn","Flores","Agente de Bienes Raíces",0,50,1,"C-17358"
+32626,"franciscosaldana@islacoqui.com","Francisco A","Saldaña","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32626/foto.png",50,0,"C-17506"
+32627,"pumarejof@realityrealtypr.com","Frank R","Pumarejo","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32627/foto.png",50,1,"C-10026"
+32628,"molinag@realityrealtypr.com","Gilberto","Molina","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32628/foto.png",50,1,"C-9175"
+32629,"felicianoh@realityrealtypr.com","Hector","Feliciano","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32629/foto.png",49,1,"V-2627"
+32630,"solah@realityrealtypr.com","Hector J","Sola","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32630/foto.png",50,1,"C-12101"
+32631,"marinh@realityrealtypr.com","Hiram A.","Marin","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32631/foto.png",50,1,"C-17213"
+32632,"ginzburg@islacoqui.com","Irene","Ginzburg","Agente de Bienes Raíces",0,50,1,"V-456"
+32633,"roblesi@realityrealtypr.com","Ismael","Robles","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32633/foto.png",24,1,"C-7974"
+32634,"negroni@realityrealtypr.com","Ivette M. ","Negron","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32634/foto.png",50,1,"C-11894"
+32635,"blondetj@realityrealtypr.com","Jose","Blondet","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32635/foto.png",23,0,"C-10018"
+32636,"josejirau@islacoqui.com","Jose","Jirau","Agente de Bienes Raíces",0,50,1,"V-3238"
+32637,"joseolmos@islacoqui.com","Jose O.","Olmos","Agente de Bienes Raíces",0,50,1,"C-1435"
+32638,"ramirezj@realityrealtypr.com","Jose A","Ramirez Perez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32638/foto.png",50,1,"C-17359"
+32639,"febusj@realityrealtypr.com","Juan","Febus","Oficial de Cierre","https://s3.amazonaws.com/users-rr/32639/foto.png",51,0,"C-8324"
+32640,"kochk@realityrealtypr.com","Kim T.","Koch","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32640/foto.png",50,1,"C-18248"
+32641,"rodriguezld@realityrealtypr.com","Ladydiana","Rodriguez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32641/foto.png",50,1,"V-89"
+32642,"pirallol@realityrealtypr.com","Lirio M. ","Pirallo","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32642/foto.png",50,1,"C-16458"
+32643,"jimenezl@realityrealtypr.com","Lourdes","Jimenez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32643/foto.png",50,1,"C-3897"
+32644,"velezl@realityrealtypr.com","Luis ","Velez","Agente de Bienes Raíces",0,0,1,"C-7956"
+32645,"martinezma@realityrealtypr.com","Maria","Martinez Colon","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32645/foto.png",49,1,"C-15510"
+32646,"nietos@realityrealtypr.com","Maria Soledad","Nieto","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32646/foto.png",50,1,"C-10631"
+32647,"marthasegurola@islacoqui.com","Martha","Mendez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32647/foto.png",50,0,"C-344"
+32648,"leonm@realityrealtypr.com","Migdalia","Leon","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32648/foto.png",50,1,"C-13029"
+32649,"melendezm@realityrealtypr.com","Miguel S.","Melendez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32649/foto.png",50,1,"V-312"
+32650,"betancourtm@realityrealtypr.com","Milagros","Betancourt","Gerente Sucursal Bayamón","https://s3.amazonaws.com/users-rr/32650/foto.png",24,1,"C-158"
+32651,"riverami@realityrealtypr.com","Milagros","Rivera","Gerente Sucursal Metro","https://s3.amazonaws.com/users-rr/32651/foto.png",50,1,"C-2591"
+32652,"rodriguezn@realityrealtypr.com","Nelson","Rodriguez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32652/foto.png",49,1,"V-886"
+32653,"sanchezn@realityrealtypr.com","Nelson","Sanchez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32653/foto.png",50,1,"V-2806"
+32654,"ibarran@realityrealtypr.com","Nitza E.","Ibarra","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32654/foto.png",24,1,"C-15483"
+32655,"normaflores@islacoqui.com","Norma","Mercado","Agente de Bienes Raíces",0,50,1,"C-527"
+32656,"rosan@realityrealtypr.com","Nylsa","Rosa","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32656/foto.png",50,1,"C-7400"
+32657,"rosao@realityrealtypr.com","Olga M. ","Rosa","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32657/foto.png",50,1,"C-11730"
+32658,"ortizo@realityrealtypr.com","Orlando","Ortiz","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32658/foto.png",50,1,"V-1236"
+32659,"bouisp@realityrealtypr.com","Patrick","Bouis","Agente de Bienes Raíces",0,50,1,"C-14797"
+32660,"raulmorales@islacoqui.com","Raul","Alvarez","Agente de Bienes Raíces",0,50,1,"V-3121"
+32661,"raullopez@islacoqui.com","Raul E.","Lopez","Agente de Bienes Raíces",0,50,1,"V-393"
+32662,"nievessa@realityrealtypr.com","Samuel","Nieves","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32662/foto.png",24,1,"C-14612"
+32663,"trigos@realityrealtypr.com","Sara","Trigo","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32663/foto.png",50,1,"C-12185"
+32664,"soniaflores@islacoqui.com","Sonia M.","Flores","Agente de Bienes Raíces",0,50,1,"V-3018"
+32665,"suheilcintron@islacoqui.com","Suheil ","Cintron","Agente de Bienes Raíces",0,50,1,"C-12109"
+32666,"ramosw@realityrealtypr.com","William ","Ramos","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32666/foto.png",24,1,"C-16914"
+32667,"hernandezs@realityrealtypr.com","Samuel ","Hernandez","Agente de Bienes Raíces",0,50,1,219
+32668,"segurolam@realityrealtypr.com","Martha","Segurola","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32668/foto.png",50,1,"C-344"
+32669,"mendez@realityrealtypr.com","Sandra ","Mendez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32669/foto.png",50,0,"053"
+32670,"mendezs@realityrealtypr.com","Sandra","Mendez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32670/foto.png",50,0,NULL
+32673,"joseguzman@islacoqui.com ","Jose A. ","Guzman","Agente de Bienes Raíces",0,50,1,"C-4483"
+32674,"abrahammaldonado@islacoqui.com ","Abraham","Maldonado","Agente de Bienes Raíces",0,50,1,12030
+32675,"diaza@realityrealtypr.com","Angel L.","Diaz Marrero","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32675/foto.png",24,1," V-2946"
+32676,"gonzalezca@realityrealtypr.com","Carla","Gonzalez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32676/foto.png",50,1,"C-4928"
+21358,"centenom@realityrealtypr.com","Maria ","Centeno","Agente de Bienes Raíces",0,0,1,10229
+21393,"valdezm@realityrealtypr.com","Marcia","Valdez","Gerente Dpto. Comercial","https://s3.amazonaws.com/users-rr/21393/foto.png",51,1,"C-11495"
+21619,"gajatev@realityrealtypr.com","Veronica","Gajate","Agente de Bienes Raíces",0,23,1,NULL
+21623,"maisonetl@realityrealtypr.com","Leroy","Maisonet","Agente de Bienes Raíces",0,0,1,2871
+21669,"barreirof@realityrealtypr.com","Fernando","Barreiro","Agente de Bienes Raíces",0,0,1,15742
+21728,"ayenden@realityrealtypr.com","Nilza N.","Ayende ","Agente de Bienes Raíces",0,0,1,"16-366"
+21829,"rodriguezw@realityrealtypr.com","Wanda C.","Rodriguez","Agente de Bienes Raíces",0,0,1,16485
+21871,"olivoj@realityrealtypr.com","Jorge","Olivo","Agente de Bienes Raíces",0,0,1,"053"
+22213,"alvaradot@realityrealtypr.com","Tomas","Alvarado Perez","Agente de Bienes Raíces",0,0,1,9357
+22287,"romana@realityrealtypr.com","Angier","Roman","Agente de Bienes Raíces",0,0,1,14574
+22513,"cobroke@realityrealtypr.com","Co-Broke","Client","Agente de Bienes Raíces",0,0,1,53
+22617,"bonetam@realityrealtypr.com","Mayra","Boneta","Agente de Bienes Raíces",0,0,1,"053"
+22657,"castrom@realityrealtypr.com","Maria L.","Castro","Agente de Bienes Raíces",0,0,1,"053"
+22658,"calderonm@realityrealtypr.com","Madeline ","Calderon","Agente de Bienes Raíces",0,0,1,"053"
+22659,"cardonac@realityrealtypr.com","Carmen N.","Cardona","Agente de Bienes Raíces",0,0,1,7608
+22660,"gomezj@realityrealtypr.com","Jose A.","Gomez","Agente de Bienes Raíces",0,0,1,8116
+22661,"quinonese@realityrealtypr.com","Elinaldo","Quiñones","Agente de Bienes Raíces",0,0,1,16771
+22662,"riveraf@realityrealtypr.com","Felix","Rivera","Agente de Bienes Raíces",0,0,1,12179
+22663,"rovirac@realityrealtypr.com","Carlos W.","Rovira","Agente de Bienes Raíces",0,0,1,16915
+22664,"candelarior@realityrealtypr.com","Raul","Candelario","Agente de Bienes Raíces",0,0,1,16003
+22665,"bigasi@realityrealtypr.com","Ivelisse M.","Bigas","Agente de Bienes Raíces",0,0,1,13400
+22666,"vidalz@realityrealtypr.com","Zuleika","Vidal","Agente de Bienes Raíces",0,0,1,16017
+22667,"sancheza@realityrealtypr.com","Alexis ","Sánchez","Agente de Bienes Raíces",0,0,1,15105
+22668,"arellanol@realityrealtypr.com","Livia M.","Arellano","Agente de Bienes Raíces",0,0,1,16946
+22669,"vazquezi@realityrealtypr.com","Irma","Vazquez","Agente de Bienes Raíces",0,0,1,15810
+23265,"rodriguezl@realityrealtypr.com","Laurie","Rodriguez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/23265/foto.png",49,1,10682
+23266,"rodriguezv@realityrealtypr.com","Victor M.","Rodriguez","Agente de Bienes Raíces",0,0,1,14791
+23717,"mundom@realityrealtypr.com","Martha","Mundo","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/23717/foto.png",0,0,11245
+23738,"martinezb@realityrealtypr.com","Braulia","Martinez","Agente de Bienes Raíces",0,0,1,8548
+23764,"vinasr@realityrealtypr.com","Rosa","Viñas","Gerente de Sucursal","https://s3.amazonaws.com/users-rr/23764/foto.png",23,0,"C-17850"
+23778,"arellanoi@realityrealtypr.com","Livia","Arellano","Agente de Bienes Raíces",0,NULL,1,NULL
+23782,"serranolxxx@realityrealtypr.com","Lorna","Serrano","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/23782/foto.png",49,0,NULL
+32679,"lopeza@realityrealtypr.com","Aliber ","Lopez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32679/foto.png",51,1,"C-16565"
+23950,"igarcia@realityrealtypr.com","iveleslie","garcia","Agente de Bienes Raíces",0,NULL,1,NULL
+24057,"garciai@realityrealtypr.com","Iveleslie ","Garcia","Agente de Bienes Raíces",0,0,1,2917
+24277,"serranov@realityrealtypr.com","Vivian","Serrano","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/24277/foto.png",49,1,"V-1133"
+32595,"sanchezd@realityrealtypr.com","Dyannette","Sanchez Vazquez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32595/foto.png",49,0,"C-18230"
+32596,"vicenteg@realityrealtypr.com","Gilberto","Vicente","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32596/foto.png",23,0,"C-18068"
+32597,"suazon@realityrealtypr.com","Nicole","Suazo","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32597/foto.png",49,1,"V-3247"
+32598,"estradap@realityrealtypr.com","Polet V","Estrada Perez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32598/foto.png",49,1,"C-11807"
+32599,"infocomercial@realityrealtypr.com","Reality Realty","Departamento Comercial","Administrativo","https://s3.amazonaws.com/users-rr/32599/foto.png",51,0,"E-053"
+32600,"nievess@realityrealtypr.com","Sara","Nieves","Agente de Bienes Raíces",0,49,1,"E-053"
+32601,"almendroj@realityrealtypr.com","Jose L. ","Almendro","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32601/foto.png",49,0,"C-5843"
+32610,"rodriguezad@realityrealtypr.com","Ady","Rodriguez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32610/foto.png",50,1,"C-11527"
+32602,"monserratem@realityrealtypr.com","Magaly","Monserrate","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32602/foto.png",23,1,"C-16060"
+32678,"fernandezmy@realityrealtypr.com","Myriam","Fernandez Gonzalez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32678/foto.png",49,1,"C-4230"
+32603,"torresj@realityrealtypr.com","Joseph","Torres","Agente de Bienes Raíces",0,49,1,"C-18327"
+32604,"hernandeze@realityrealtypr.com","Efrain ","Hernandez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32604/foto.png",49,0,"C-12424"
+32605,"nunezy@realityrealtypr.com","Ykailah","Nunez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32605/foto.png",23,0,53
+32606,"delgadoi@realityrealtypr.com","Ivymar ","Delgado","Agente de Bienes Raíces",0,49,1,"053"
+32607,"betancesl@realityrealtypr.com","Luis Jose","Betances ","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32607/foto.png",49,0,"C18277"
+32608,"andradea@realityrealtypr.com","Adela ","Andrade","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32608/foto.png",51,1,"C-2869"
+32609,"nazarioe@realityrealtypr.com","Elda ","Nazario","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32609/foto.png",23,1,"V-3317"
+24474,"tiradom@realityrealtypr.com","Moises","Tirado Romero","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/24474/foto.png",49,1,"C-7711"
+24580,"santosy@realityrealtypr.com","Yralda ","Santos ","Agente de Bienes Raíces",0,0,1,2589
+25168,"serranom@realityrealtypr.com","Mary","Serrano","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/25168/foto.png",49,0,"C-16979"
+25496,"colonh@realityrealtypr.com","Hector","Colon","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/25496/foto.png",23,1,"C-14620"
+25497,"braceroe@realityrealtypr.com","Erick","Bracero","Gerente Dpto. Reposeidas & Proyectos Nuevos","https://s3.amazonaws.com/users-rr/25497/foto.png",51,1,"C-8221"
+25531,"porratac@realityrealtypr.com","Candida","Porrata","Agente de Bienes Raíces",0,0,1,16446
+25716,"lugoa@realityrealtypr.com","Angela","Lugo","Agente de Bienes Raíces",0,23,1,"053"
+25965,"velezd@realityrealtypr.com","Dilma ","Velez ","Agente de Bienes Raíces",0,0,1,2815
+25966,"rodriguezj@realityrealtypr.com","Javier","Rodriguez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/25966/foto.png",23,1,"V-2991"
+25967,"perezno@realityrealtypr.com","Rafael ","Perez","Agente de Bienes Raíces",0,NULL,1,1919
+25968,"reyesd@realityrealtypr.com","David","Reyes","Agente de Bienes Raíces",0,0,1,13002
+26066,"perezq@realityrealtypr.com","Juan E.","Perez ","Agente de Bienes Raíces",0,0,1,"01785"
+26101,"ortizm@realityrealtypr.com","Miguel","Ortiz","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/26101/foto.png",0,1,2939
+26103,"perezi@realityrealtypr.com","Ingrid ","Perez","Agente de Bienes Raíces",0,0,1,10807
+26272,"lozadav@realityrealtypr.com","Vanessa","Lozada","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/26272/foto.png",49,0,"C-8390"
+26328,"marreroe@realityrealtypr.com","Evelyn","Marrero","Agente de Bienes Raíces",0,0,1,5210
+26350,"nuneze@realityrealtypr.com","Eldin","Nunez Rios","Agente de Bienes Raíces",0,0,1,"C-15980"
+26383,"lserrano@realityrealtypr.com","Luz","Serrano","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/26383/foto.png",23,1,"C-14459"
+26384,"perezr@realityrealtypr.com","Ramon","Perez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/26384/foto.png",51,0,"C-15000"
+26646,"telladoa@realityrealtypr.com","Angel","Tellado","Agente de Bienes Raíces",0,0,1,11680
+26647,"mercadoa@realityrealtypr.com","Arnaldo","Mercado","Agente de Bienes Raíces",0,0,1,"C-6034"
+26648,"branaj@realityrealtypr.com","Jose ","Brana","Agente de Bienes Raíces",0,0,1,"C-12984"
+26649,"lazaron@realityrealtypr.com","Nydia","Lazaro","Agente de Bienes Raíces",0,0,1,"V-2821"
+28614,"cardonae@realityrealtypr.com","Edsel","Cardona","Agente de Bienes Raíces",0,0,1,15858
+28615,"melendeze@realityrealtypr.com","Edgardo","Melendez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/28615/foto.png",49,0,"C-9371"
+28616,"riveram@realityrealtypr.com","Mitzi E.","Rivera Felix","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/28616/foto.png",49,0,"C-18122"
+28617,"diazh@realityrealtypr.com","Hiram","Diaz","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/28617/foto.png",49,1,"C-15458"
+28734,"santos@realityrealtypr.com","Yralda","Santos","Agente de Bienes Raíces",0,NULL,1,2589
+28795,"propertyworld@realityrealtypr.com","Manuel ","Bourzac","Agente de Bienes Raíces",0,23,1,8243
+29034,"torreso@realityrealtypr.com","Olga","Torres Montalvo","Agente de Bienes Raíces",0,0,1,"C-16497"
+29035,"ecsrealty@realityrealtypr.com","Edwin","Colon Santiago","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/29035/foto.png",51,0,"C-5553"
+29037,"salvac@realityrealtypr.com","Cristian","Salva Javier","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/29037/foto.png",51,1,"C-10915"
+29273,"maldonadoo@realityrealtypr.com","Oscar","Maldonado","Agente de Bienes Raíces",0,0,1,5318
+30168,"serranomil@realityrealtypr.com","Milton ","Serrano","Gerente Sucursal San Juan","https://s3.amazonaws.com/users-rr/30168/foto.png",49,1,"C-12272"
+32680,"pujolj@realityrealtypr.com","Jaime","Pujol","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32680/foto.png",49,1,"C-17967"
+32681,"homare@realityrealtypr.com","Ernesto","Homar","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32681/foto.png",50,1,"C-10955"
+32682,"cartagenai@realityrealtypr.com","Irma ","Cartagena","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32682/foto.png",49,0,"C-10296"
+32683,"eduardito58@gmail.com","Eduardo","Cosme","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32683/foto.png",23,1,NULL
+30738,"chusaneXXX@realityrealtypr.lcom","Eva ","Chusan ","Agente de Bienes Raíces",0,NULL,1,15583
+30739,"chusane@realityrealtypr.com","Eva","Chusan","Agente de Bienes Raíces",0,0,1,15583
+30866,"concepciona@realityrealtypr.com","Alexander","Concepcion","Agente de Bienes Raíces",0,0,1,"C-17339"
+30905,"pereza@realityrealtyprx.com","Awilda","Perez","Agente de Bienes Raíces",0,0,1,9217
+30907,"medinao@realityrealtypr.com","Odalis","Medina","Agente de Bienes Raíces",0,0,1,17353
+31309,"riveraj@realityrealtypr.com","Jorge ","Rivera","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/31309/foto.png",49,1,"C-14508"
+31310,"millanj@realityrealtypr.com","Joel F.","Millan","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/31310/foto.png",49,0,"C-12010"
+31866,"martinezv@realityrealtypr.com","Victor ","Martinez","Agente de Bienes Raíces",0,0,1,17008
+31979,"figueroac@realityrealtypr.com","Carmen ","Figueroa","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/31979/foto.png",51,1,"C-16482"
+31980,"riverac@realityrealtypr.com","Cesar","Rivera","Agente de Bienes Raíces",0,49,1,"053"
+32086,"riveraca@realityrealtypr.com","Carmelo","Rivera","Agente de Bienes Raíces",0,0,1,"V-3036"
+32152,"goytiav@realityrealtypr.com","Victor","Goytia","Gerente Dpto. Short Sale","https://s3.amazonaws.com/users-rr/32152/foto.png",51,1,"C-14249"
+32168,"dayna@realityrealtypr.com","Dayna","Monteagudo","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32168/foto.png",23,0,"053"
+32248,"caraballoa@realityrealtypr.com","Alex","Caraballo","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32248/foto.png",49,0,"V-2651"
+32281,"cobrokeclientbayamon@realityrealtypr.com@","Co-broke","Client","Agente de Bienes Raíces",0,0,1,53
+32282,"quilesj@realityrealtypr.com","Jose A","Quiles","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32282/foto.png",49,0,"C-17505"
+32293,"cruzc@realityrealtypr.com","Carlos","Cruz","Agente de Bienes Raíces",0,49,1,"V-3063"
+32330,"castillof@realityrealtypr.com","Felix ","Castillo","Agente de Bienes Raíces",0,0,1,9638
+32302,"claudios@realityrealtypr.com","Sandra","Claudio","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32302/foto.png",23,0,"V-13806"
+32303,"agostinia@realityrealtypr.com","Andre","Agostini","Agente de Bienes Raíces",0,23,1,11727
+32304,"lopezana@realityrealtypr.com","Ana S.","Lopez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32304/foto.png",23,0,"V-17431"
+32305,"vazquezw@realityrealtypr.com","Wilson","Vazquez","Agente de Bienes Raíces",0,49,1,15777
+32306,"santiagoe@realityrealtypr.com","Eric","Santiago","Agente de Bienes Raíces",0,49,1,6523
+32317,"dejesuse@realityrealtypr.com","Edmarie","De Jesus","Agente de Bienes Raíces",0,49,1,17622
+32318,"sanchezc@realityrealtypr.com","Carmen","Sánchez","Agente de Bienes Raíces",0,49,1,3069
+32319,"mojicam@realityrealtypr.com","Mayra","Mojica","Agente de Bienes Raíces",0,49,1,17282
+32333,"serranoc@realityrealtypr.com","Carol","Serrano","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32333/foto.png",49,0,17629
+32336,"riveraju@realityrealtypr.com","Juan Antonio","Rivera","Agente de Bienes Raíces",0,49,1,1199
+32338,"diazje@realityrealtypr.com","Jessica","Diaz","Asistente Sucursal San Juan","https://s3.amazonaws.com/users-rr/32338/foto.png",49,1,53
+32339,"romanl@realityrealtypr.com","Lizandra","Román","Agente de Bienes Raíces",0,0,1,53
+32340,"santaellag@realityrealtypr.com","Gretchen","Santaella","Asistente Dpto. Reposeidas","https://s3.amazonaws.com/users-rr/32340/foto.png",51,1,53
+32341,"lopezj@realityrealtypr.com","Jeannette","Lopez","Asistente Dpto. Comercial","https://s3.amazonaws.com/users-rr/32341/foto.png",51,1,53
+32346,"rodriguezjo@realityrealtypr.com","Jorge","Rodriguez Colon","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32346/foto.png",49,0,"V-3087"
+32347,"lazud@realityrealtypr.com","Delmiliz","Lazu","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32347/foto.png",23,0,"C-17307"
+32357,"rodriguezu@realityrealtypr.com","Ursula ","Rodriguez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32357/foto.png",23,0,"C-17493"
+32364,"laureanogroup@realityrealtypr.com","Jaime ","Laureano","Agente de Bienes Raíces",0,0,1,"C-9162"
+32366,"nuneza@realityrealtypr.com","Alfonso","Nunez","Gerente Sucursal Caguas","https://s3.amazonaws.com/users-rr/32366/foto.png",0,0,"C-16672"
+32677,"molinarye@realityrealtypr.com","Euri","Molinary","Coordinadora Dpto. Relocalización","https://s3.amazonaws.com/users-rr/32677/foto.png",51,1,"C-18521"
+32370,"rodriguezjoel@realityrealtypr.com","Joel","Rodriguez Aleman","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32370/foto.png",51,1,"C-8811"
+32387,"romand@realityrealtypr.com","Dionisio","Roman","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32387/foto.png",51,1,"C-17707"
+32398,"serranoarg@realityrealtypr.com","Santiago","Serrano","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32398/foto.png",51,1,"C-14460"
+32399,"dejesusarg@realityrealtypr.com","Juan Carlos","De Jesús","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32399/foto.png",51,1,"C-14380"
+32400,"candelariom@realityrealtypr.com","Melanie ","Candelario ","Agente de Bienes Raíces",0,23,1,"053"
+32404,"claudiof@realityrealtypr.com","Fabian ","Claudio ","Agente de Bienes Raíces",0,23,1,"C-17758"
+32410,"orozcog@realityrealtypr.com","Gabriel","Orozco","Agente de Bienes Raíces",0,49,1,"C-17597"
+32411,"padillag@realityrealtypr.com","Glorinel","Padilla","Agente de Bienes Raíces",0,0,1,"C-15983"
+32426,"naveirac@realityrealtypr.com","Carlos","Naveira","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32426/foto.png",49,1,"V-3437"
+32437,"perezg@realityrealtypr.com","Ginette","Perez","Coordinadora RepoSubasta","https://s3.amazonaws.com/users-rr/32437/foto.png",51,1,"C-17675"
+32671,"garciay@realityrealtypr.com","Yazmin","Garcia","Agente de Bienes Raíces",0,0,1,"C-14327"
+32672,"guzmanj@realityrealtypr.com","José A. ","Guzmán ","Agente de Bienes Raíces",0,50,1,"C-4463"
+32430,"enriquezc@realityrealtypr.com","Carmen Ana","Enriquez","Agente de Bienes Raíces",0,49,1,16382
+32431,"jimenezg@realityrealtypr.com","Gabriel ","Jimenez ","Agente de Bienes Raíces",0,0,1,"C-17786"
+32435,"martinezo@realityrealtypr.com","Omar","Martinez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32435/foto.png",23,0,"V-2964"
+32442,"sanchezv@realityrealtypr.com","Verónica","Sánchez-Ortiz","Agente de Bienes Raíces",0,49,1,"V-2717"
+32445,"riveralm@realityrealtypr.com","Luz M","Rivera","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32445/foto.png",23,0,"053"
+32455,"suredaj@realityrealtypr.com","Jaime","Sureda","Agente de Bienes Raíces",0,0,1,"c-17455"
+32456,"santoss@realityrealtypr.com","Santa I","Santos","Agente de Bienes Raíces",0,49,1,"C-12278"
+32460,"lopezja@realityrealtypr.com","Jose ","Lopez","Agente de Bienes Raíces",0,49,1,"C-17805"
+32463,"uriartea@realityrealtypr.com","Alfredo","Uriarte","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32463/foto.png",51,1,"V-745"
+32477,"gonzalezc@realityrealtypr.com","Carmen M.","Gonzalez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32477/foto.png",49,1,"C-17893"
+32478,"amadorj@realityrealtypr.com","Juan Carlos","Amador","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32478/foto.png",51,1,"V-2949"
+32483,"ayusof@realityrealtypr.com","Felix","Ayuso","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32483/foto.png",49,1,"C-16932"
+32485,"donatol@realityrealtypr.com","Lisandra","Donato","Agente de Bienes Raíces",0,49,1,"C-13090"
+32493,"santalicesn@realityrealtypr.com","Nelson","Santalices","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32493/foto.png",23,1,"C-18154"
+32495,"nievesj@realityrealtypr.com","Juan C.","Nieves","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32495/foto.png",49,1,"C-18018"
+32506,"cortinar@realityrealtypr.com","Ricardo","Cortina","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32506/foto.png",49,0,"C-17061"
+32507,"vigilj@realityrealtypr.com","Jorge D","Vigil","Agente de Bienes Raíces",0,49,1,17657
+32557,"medinam@realityrealtypr.com","Migdalia","Medina","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32557/foto.png",23,0,"C-13034"
+32569,"lunaj@realityrealtypr.com","Juan C.","Luna","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32569/foto.png",23,0,"V-3231"
+32570,"mendezj@realityrealtypr.com","Joanna","Mendez","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32570/foto.png",51,0,"C-17869"
+32572,"mainardi@realityrealtypr.com","Raul F. ","Mainardi","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32572/foto.png",49,1,"C-16396"
+32577,"sopol@realityrealtypr.com","Lourdes","Sopo","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32577/foto.png",49,0,"C-17252"
+32578,"vicentemunoz@realityrealtypr.com","Vicente","Muñoz","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32578/foto.png",51,0,"C-13511"
+32585,"pereza@realityrealtypr.com","Alex","Perez","Agente de Bienes Raíces",0,49,1,"C-17767"
+32594,"anadiendouser@realityrealtypr.com","Anadiendo","Usuario","Agente de Bienes Raíces",0,NULL,1,987
+32593,"ruizl@realityrealtypr.com","Lizbeth","Ruiz","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32593/foto.png",49,1,"V-3239"
+32684,NULL,NULL,NULL,"Agente de Bienes Raíces",0,NULL,1,NULL
+32685,"eduardito5822@gmail.com","Pepe","Cosme","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32685/foto.png",0,0,2122212
+32686,"pubille@realityrealtypr.com","Edgardo","Pubill Diaz","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32686/foto.png",49,1,"C-18557"
+32687,"mundoc@realityrealtypr.com","Carlos","Mundo Padró","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32687/foto.png",49,1,"C-18443"
+32688,"gonzaleza@realityrealtypr.com","Arlene M.","González Robles","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32688/foto.png",50,0,"C-18562"
+32689,"irizzarrym@realityrealtypr.com","Caroline","Irizarry Matos","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32689/foto.png",49,0,"C-18551"
+32690,"lopezm@realityrealtypr.com","Magaly","Lopez Garcia","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32690/foto.png",49,1,"C-13208"
+32691,"sanchezl@realityrealtypr.com","Laurybet","Sánchez","Asistente Sucursal Caguas","https://s3.amazonaws.com/users-rr/32691/foto.png",23,0,NULL
+32692,"diazale@realityrealtypr.com","Alexandra","Diaz","Asistente Administrativa","https://s3.amazonaws.com/users-rr/32692/foto.png",23,0,NULL
+32693,"belardob@realityrealtypr.com","Bellatrix","Belardo Garay","Agente","https://s3.amazonaws.com/users-rr/32693/foto.png",49,1,NULL
+32694,"colong@realityrealtypr.com","Glorimar","Colón Maldonado","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32694/foto.png",49,1,"C-18706"
+32695,"bennazarr@realityrealtypr.com","Rafael","Bennazar","Agente","https://s3.amazonaws.com/users-rr/32695/foto.png",49,1,"C-18784"
+32696,"alonsom@realityrealtypr.com","Marisette","Alonso Rivera","Agente","https://s3.amazonaws.com/users-rr/32696/foto.png",49,1,"C-18713"
+32697,"lopezo@realityrealtypr.com","Omar","López Pérez","Agente","https://s3.amazonaws.com/users-rr/32697/foto.png",23,1,NULL
+32698,"britoy@realityrealtypr.com","Yulissa","Brito","Agente","https://s3.amazonaws.com/users-rr/32698/foto.png",49,1,NULL
+32699,"correar@realityrealtypr.com","Rosa","Correa Sotomayor","Agente","https://s3.amazonaws.com/users-rr/32699/foto.png",49,1,"C-18709"
+32700,"cruzf@realityrealtypr.com","Francisco","Cruz González","Agente","https://s3.amazonaws.com/users-rr/32700/foto.png",49,0,NULL
+32701,"ferrere@realityrealtypr.com","Elena","Ferrer Someillán","Agente","https://s3.amazonaws.com/users-rr/32701/foto.png",49,1,"C-18543"
+32702,"hernandezjo@realityrealtypr.com","Joselyn","Hernandez Rivera","Agente","https://s3.amazonaws.com/users-rr/32702/foto.png",23,1,NULL
+32703,"umpierrep@realityrealtypr.com","Pedro","Umpierre Torregrosa","Agente","https://s3.amazonaws.com/users-rr/32703/foto.png",49,1,"C-18723"
+32704,"riveraa@realityrealtypr.com","Anabelle","Rivera Caballero","Agente","https://s3.amazonaws.com/users-rr/32704/foto.png",49,0,"C-18546"
+32708,"mangualm@realityrealtypr.com","Maricruz","Mangual","Asistente Administrativa","https://s3.amazonaws.com/users-rr/32708/foto.png",23,0,NULL
+32705,"bernardr@realityrealtypr.com","Raymond","Bernard Hernández","Agente","https://s3.amazonaws.com/users-rr/32705/foto.png",50,0,"C-18563"
+32706,"couvertierc@realityrealtypr.com","Carmen Ana","Couvertier Dominguez","Agente","https://s3.amazonaws.com/users-rr/32706/foto.png",49,1,"V-3322"
+32707,"martinezr@realityrealtypr.com","Ricardo","Martinez","Artista Grafico","https://s3.amazonaws.com/users-rr/32707/foto.png",0,0,NULL
+32709,"ortizr@realityrealtypr.com","Rafael","Ortiz Vargas","Agente","https://s3.amazonaws.com/users-rr/32709/foto.png",49,1,"C-18517"
+32710,"moraleso@realityrealtypr.com","Omar","Morales Martinez","Agente","https://s3.amazonaws.com/users-rr/32710/foto.png",49,1,"C-18716"
+32711,"perezd@realityrealtypr.com","David","Perez Cerezo","Agente de Bienes Raíces","https://s3.amazonaws.com/users-rr/32711/foto.png",49,0,"V-3341"
+32712,"romanj@realityrealtypr.com","Janes N.","Roman Muñoz","Agente","https://s3.amazonaws.com/users-rr/32712/foto.png",49,1,"C-18792"
+32713,"eduardito5822222@gmail.com","Steve","Jobs","Agente de Bienes Raíces",0,0,0,NULL
+32714,"eduardito58111111@gmail.com","Steve","Jobs","Agente de Bienes Raíces",0,0,0,NULL

@@ -1,0 +1,29 @@
+source:      FROM Content
+defaultSort: title
+columns:
+
+    id:
+        source:   id
+        label:    Id
+        width:    55px
+
+    title:
+        source:   title
+        label:    Title
+        width:    auto
+        hideable: false
+
+    actions:
+        source:
+        label:     Actions
+        class:     actions
+        width:     100px
+        sortable:  false
+        groupable: false
+        hideable:  false
+        content:   >
+
+                   <a href='/admin/content/edit/?id=%{id}'>
+                     <img src='/img/actions/edit.png' alt='edit' title='edit' />
+                   </a>
+                   &nbsp;

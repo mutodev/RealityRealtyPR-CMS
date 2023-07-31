@@ -1,0 +1,428 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <div class="panel">
+                <div class="panel-body container-fluid">
+                    <div class="col-xs-12 col-sm-6">
+                        <?php if (Auth::hasPermission('property.manage')) : ?>
+                            <a class="btn btn-default btn-sm float-right" href="<?= url('..edit?id='.$Model->id) ?>">
+                                <i class="fa fa-pencil"></i>&nbsp;<?= t('Edit') ?>
+                            </a>
+                            <a class="btn btn-default btn-sm float-right" href="<?= url('..info?id='.$Model->id) ?>">
+                                <i class="fa fa-info-circle"></i>&nbsp;<?= t('Info') ?>
+                            </a>
+
+                            <a class="btn btn-default btn-sm float-right" href="<?= url('..internal?id='.$Model->id) ?>">
+                                <i class="fa fa-sticky-note-o"></i>&nbsp;<?= t('Internal') ?>
+                            </a>
+
+                            <a class="btn btn-default btn-sm" href="<?= url('..contract.edit?property_id='.$Model->id.'&id='.$Contract->id) ?>">
+                                <i class="fa fa-file-text-o"></i>&nbsp;<?= t('Contract') ?>
+                            </a>
+
+                            <?php if($Contract): ?>
+                                <?php if($Model->for_sale):?>
+                                    <a class="btn btn-default btn-sm" href="<?= url('..contract.change?status=option&property_id='.$Model->id.'&id='.$Contract->id) ?>">
+                                        <i class="fa fa-file-text-o"></i>&nbsp;<?= t('Option') ?>
+                                    </a>
+
+                                    <a class="btn btn-default btn-sm" href="<?= url('..contract.change?status=sale&property_id='.$Model->id.'&id='.$Contract->id) ?>">
+                                        <i class="fa fa-file-text-o"></i>&nbsp;<?= t('Close') ?>
+                                    </a>
+                                <?php endif ?>
+
+                                <?php if($Model->for_rent):?>
+                                <a class="btn btn-default btn-sm" href="<?= url('..contract.change?status=rent&property_id='.$Model->id.'&id='.$Contract->id) ?>">
+                                    <i class="fa fa-file-text-o"></i>&nbsp;<?= t('Rent') ?>
+                                </a>
+                                <?php endif ?>
+                            <?php endif ?>
+
+                            <a class="btn btn-default btn-sm" href="<?= url('..offers?property_id='.$Model->id) ?>">
+                                <i class="fa fa-tags"></i>&nbsp;<?= t('Offers') ?>
+                            </a>
+
+                            <a class="btn btn-default btn-sm" href="<?= url('..photos?id='.$Model->id) ?>">
+                                <i class="fa fa-camera"></i>&nbsp;<?= t('Photos') ?>
+                            </a>
+                        <?php else: ?>
+                        <a class="btn btn-default btn-sm float-right" href="<?= url('..description?id='.$Model->id) ?>">
+                            <i class="fa fa-pencil"></i>&nbsp;<?= t('Edit Description') ?>
+                        </a>
+                        <?php endif; ?>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div class="form-inline" style="width: auto;float: right;">
+                            <div class="form-group">
+                                <label>Flyer</label>
+
+                                <select id="output" class="form-control">
+                                    <option value="pdf">
+                                        PDF
+                                    </option>
+                                    <option value="image">
+                                        Image
+                                    </option>
+                                </select>
+                                <select id="broker_id" class="form-control">
+                                    <option value="<?= Auth::get()->id ?>">
+                                        With my information
+                                    </option>
+                                    <option value="">
+                                        With lister information
+                                    </option>
+                                </select>
+                                <a class="btn btn-primary btn-sm" href="javascript:void(0);" onclick="print()">Download</a>
+                            </div>
+
+        					<script>
+        					function print(){
+        						var broker_id = document.getElementById('broker_id').value;
+        						var output = document.getElementById('output').value;
+
+        						var url = 'https://realityrealtypr.com/properties/print?id=<?= $Model->id ?>';
+        						if(broker_id){
+        							url += '&broker_id='+broker_id;
+        						}
+        						if(output){
+        							url += '&output='+output;
+        						}
+
+        						window.location.href = url;
+        					}
+        					</script>
+        				</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-4">
+            <div class="panel">
+                <div class="panel-body container-fluid">
+                    <h5><?= t('Sale/Rent'); ?></h5>
+
+                    <p class="">
+                    <?php if($Model->for_sale): ?>
+                        <?= t('For Sale'); ?>: <strong><?= decorator('dollars', $Model->sale_price); ?></strong><br />
+                    <?php endif ?>
+                    <?php if($Model->for_rent): ?>
+                        <?= t('For Rent'); ?>: <strong><?= decorator('dollars', $Model->rent_price); ?></strong><br />
+                    <?php endif ?>
+                    </p>
+
+                    <h5><?= t('Property'); ?></h5>
+
+                    <p class="">
+                        <?= t('Category') ?>: <?= $Model->Category->name ?><br />
+                        ID #: <span><?= $Model->id ?></span><br />
+                        Internal ID #: <span><?= $Model->internal_number ?></span><br />
+
+                        <?php if($Model->cpr_number): ?>
+                            ClasificadosPR ID #: <span><?= $Model->cpr_number ?></span><br />
+                        <?php endif ?>
+
+                        <?php if($Model->co_number): ?>
+                            Clasificados Online ID #: <span><?= $Model->co_number ?></span><br />
+                        <?php endif ?>
+
+                        <?php if($Model->mls_number): ?>
+                            MLS ID #: <span><?= $Model->mls_number ?></span><br />
+                        <?php endif ?>
+                    </p>
+
+                    <?php if($Model->rooms || $Model->bathrooms): ?>
+                    <h5><?= t('Rooms'); ?></h5>
+
+                    <p class="">
+                        <?= t('Beds'); ?>: <strong><?= $Model->rooms ?></strong><br />
+                        <?= t('Baths'); ?>: <strong><?= (float)$Model->bathrooms ?></strong>
+                    </p>
+                    <?php endif ?>
+
+                    <?php if($Model->description): ?>
+                    <h5><?= t('Description'); ?></h5>
+
+                    <p class="">
+                        <?= $Model->description ?>
+                    </p>
+                    <?php endif ?>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            <div class="panel">
+                <div class="panel-body container-fluid">
+                    <h5><?= t('Location'); ?></h5>
+
+                    <p class="">
+                        <?= $Model->address1 ?>
+                        <?php if($Model->address2): ?>
+                            ,<br /><?= $Model->address2 ?>
+                        <?php endif ?>
+                        <br />
+                        <?= $Model->Area->name ?> <?= $Model->postal_code ?>
+                    </p>
+
+                    <?php if($Model->latitude || $Model->longitude): ?>
+
+                        <h5><?= t('Coordinates'); ?></h5>
+
+                        <p class="">
+                            <?= t('Latitude'); ?>: <strong><?= $Model->latitude ?></strong><br />
+                            <?= t('Longitude'); ?>: <strong><?= $Model->longitude ?></strong>
+                        </p>
+                    <?php endif ?>
+
+                    <h5><?= t('Area'); ?></h5>
+                    <?php if($Model->sqf): ?>
+                        <?= t('Sqf'); ?>: <span><?= number_format($Model->sqf) ?></span><br />
+                    <?php endif ?>
+                    <?php if($Model->sqm): ?>
+                        <?= t('Sqm'); ?>: <span><?= number_format($Model->sqm) ?></span><br />
+                    <?php endif ?>
+                    <?php if($Model->cuerdas): ?>
+                        <?= t('Cuerdas'); ?>: <span><?= number_format($Model->cuerdas) ?></span><br />
+                    <?php endif ?>
+
+                    <?php if($Model->catastro): ?>
+
+                        <h5><?= t('Catastro'); ?></h5>
+
+                        <p class="">
+                            <?= t('Catastro'); ?>: <strong><?= $Model->catastro ?> <button class='copy' data-clipboard-text="<?= $Model->catastro ?>">Catastro Digital</button</strong>
+                        </p>
+
+                        <script type="text/javascript">
+                          var clipboard = new Clipboard('.copy');
+
+                          clipboard.on('success', function(e) {
+                            window.open('https://www.satasgis.crimpr.net/catastrodigital/');
+
+                            e.clearSelection();
+                          });
+
+                          clipboard.on('error', function(e) {
+                            console.error('Action:', e.action);
+                            console.error('Trigger:', e.trigger);
+                          });
+                        </script>
+                    <?php endif ?>
+
+                    <?php foreach($conditionsByType as $type => $conditions): ?>
+                        <h5><?= t($type); ?></h5>
+
+                        <p class="">
+                            <?= implode(', ', $conditions); ?>
+                        </p>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+
+            <div class="panel">
+                <div class="panel-body container-fluid">
+                    <?php if($Contract): ?>
+
+                        <h5><?= t('Status'); ?></h5>
+
+                        <p>
+                            <span style="padding: 10px; border-radius: 8px; font-size: 20px;" class="badge <?= in_array($Contract->status, array(
+                            0 => 'Optioned',
+                            1 => 'Closed',
+                            3 => 'Rented',
+                            5 => 'Out of Market',
+                        )) ? 'badge-danger' : 'badge-info' ?>">
+                            <?= $Contract->status ?>
+                            </span>
+                        </p>
+
+
+                        <h5><?= t('Owner'); ?></h5>
+
+                        <p>
+                            <?php $Client = $Contract->Client; ?>
+                            <strong><?= $Client->first_name ?> <?= $Client->last_name ?></strong>
+                            <br />
+                            <?= decorator('phone', $Client->phone) ?>
+                            <br />
+                            <?= $Client->address1 ?>
+                            <?php if($Client->address2): ?>
+                                <br />
+                                <?= $Client->address2 ?>
+                            <?php endif ?>
+                            <?= $Client->Area->name ?>, <?= $Client->postal_code ?>
+                        </p>
+
+
+                        <?php if($Contract->end_at): ?>
+                        <h5><?= t('Contract expires'); ?></h5>
+
+                        <p>
+                            <?= decorator('LocalDateTime', $Contract->end_at) ?>
+                        </p>
+
+                        <h5><?= t('Commission'); ?></h5>
+
+                        <p>
+                            <?= $Contract->sale_value ?>
+                        </p>
+                        <?php endif ?>
+
+                        <h5><?= t('Agents'); ?></h5>
+
+                        <p class="">
+                            <?php $Account = $Model->Agent; ?>
+                            <strong><?= $Account->first_name ?> <?= $Account->last_name ?></strong>
+                            <br />
+                            <?= decorator('phone',$Account->phone) ?>
+                            <?php if($Account->phone2): ?>
+                                <br />
+                                <?= decorator('phone',$Account->phone2) ?>
+                            <?php endif ?>
+                            <?php if($Account->email): ?>
+                                <br />
+                                <?= decorator('email',$Account->email) ?>
+                            <?php endif ?>
+                        </p>
+
+                        <?php if($Account = $Contract->Secondary): ?>
+                        <p class="">
+                            <strong><?= $Account->first_name ?> <?= $Account->last_name ?></strong>
+                            <br />
+                            <?= decorator('phone',$Account->phone) ?>
+                            <?php if($Account->phone): ?>
+                                <br />
+                                <?= decorator('phone',$Account->phone) ?>
+                            <?php endif ?>
+                            <?php if($Account->email): ?>
+                                <br />
+                                <?= decorator('email',$Account->email) ?>
+                            <?php endif ?>
+                        </p>
+                        <?php endif ?>
+
+                    <?php endif ?>
+
+                    <h5><?= t('Price Logs'); ?></h5>
+
+                    <table>
+                        <tr>
+                            <th>Date</th>
+                            <th>Sale Price</th>
+                            <th>Rent Price</th>
+                        </tr>
+                        <?php foreach($PriceLogs as $PriceLog): ?>
+                            <tr>
+                                <td>
+                                    <?= decorator('DateTime', $PriceLog->created_at) ?>
+                                </td>
+                                <td>
+                                    <?= decorator('Dollars', $PriceLog->sale_price) ?>
+                                </td>
+                                <td>
+                                    <?= decorator('Dollars', $PriceLog->rent_price) ?>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </table>
+
+                    <?php if($Model->internal_notes): ?>
+                        <h5><?= t('Notes'); ?></h5>
+
+                        <p>
+                            <?= $Model->internal_notes ?>
+                        </p>
+                    <?php endif ?>
+
+                    <?php if($Model->showing_instructions): ?>
+                        <h5><?= t('Instructions'); ?></h5>
+
+                        <p>
+                            <?= $Model->showing_instructions ?>
+
+                            <?php if($Model->key_number): ?>
+                                <br />
+                                <?= t('Key Number'); ?>: <?= $Model->key_number ?>
+                            <?php endif ?>
+
+                            <?php if($Model->key_box): ?>
+                                <br />
+                                <?= t('Box'); ?>: <?= $Model->key_box ?>
+                            <?php endif ?>
+                        </p>
+                    <?php endif ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php if ($Model->category_id == 4): ?>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <div class="panel">
+                <div class="panel-body container-fluid">
+                    <h5 class="inline"><?= t('Units'); ?></h5>
+
+                    <?php if (Auth::hasPermission('property.manage')): ?>
+                    <a class="btn btn-xs btn-success pull-right" href="<?= url('..unit?id='.$Model->id) ?>"><?= t('New Unit'); ?></a>
+                    <?php endif ?>
+
+                    <br /><br />
+                    <div class="row">
+                        <?php if($Model->Units->count()): ?>
+                        <?php foreach($Model->Units as $Unit): ?>
+                            <div class="col-xs-6 col-sm-4 col-md-3">
+                                <?php if($Unit->sqf): ?>
+                                    <?= t('Sqf'); ?>: <span><?= $Unit->sqf ?></span><br />
+                                <?php endif ?>
+
+                                <?php if($Unit->bathrooms): ?>
+                                    <?= t('Bathrooms'); ?>: <span><?= (float)$Unit->bathrooms ?></span><br />
+                                <?php endif ?>
+
+                                <?php if($Unit->rooms): ?>
+                                    <?= t('Rooms'); ?>: <span><?= $Unit->rooms ?></span><br />
+                                <?php endif ?>
+
+                                <?php if($Unit->rent_price): ?>
+                                    <?= t('Rent Price'); ?>: <strong><?= decorator('dollars', $Unit->rent_price); ?></strong><br />
+                                <?php endif ?>
+
+                                <?php if($Unit->available_at): ?>
+                                    <?= t('Rooms'); ?>: <span><?= date('Y-m-d', strtotime($Unit->available_at)); ?></span><br />
+                                <?php endif ?>
+                            </div>
+                        <?php endforeach ?>
+                        <?php endif ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php endif ?>
+    <?php if($Model->Photos->count()): ?>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <div class="panel">
+                <div class="panel-body container-fluid">
+                    <h5><?= t('Photos'); ?></h5>
+
+                    <?php foreach($Model->Photos as $Photo): ?>
+                    <div class="col-xs-6 col-sm-4 col-md-3 image">
+                        <div class="thmb">
+                          <div class="thmb-prev">
+                            <a target="_blank" href="<?= $Photo->getThumborPhoto('large') ?>">
+                              <img src="<?= $Photo->small ?>" class="img-responsive img-thumbnail" alt="">
+                            </a>
+                          </div>
+                        </div><!-- thmb -->
+                    </div>
+                    <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php endif ?>
+</div>

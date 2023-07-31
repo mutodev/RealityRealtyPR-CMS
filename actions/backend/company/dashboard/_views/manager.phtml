@@ -1,0 +1,30 @@
+<?= $this->partial('properties.phtml', compact('Properties')) ?>
+
+<?= $this->partial('documents', compact('Properties')) ?>
+
+<?php if(Auth::hasPermission('property.manage')): ?>
+    <div class="panel">
+        <div class="panel-heading">
+            <h3 class="panel-title">
+                Quick Access
+            </h3>
+        </div>
+        <div class="panel-body container-fluid">
+            <a class="btn btn-success btn-sm pull-left" href="<?= url('..properties.edit') ?>">
+                <i class="fa fa-plus"></i>&nbsp;<?= t('Add New Property') ?>
+            </a>
+
+            <a class="btn btn-success btn-sm pull-left" href="<?= url('..accounts.edit') ?>">
+                <i class="fa fa-plus"></i>&nbsp;<?= t('Add New Agent') ?>
+            </a>
+
+            <a class="btn btn-success btn-sm pull-left" href="<?= url('..leads.edit') ?>">
+                <i class="fa fa-plus"></i>&nbsp;<?= t('Add New Lead') ?>
+            </a>
+
+            <a class="btn btn-success btn-sm pull-left" href="<?= url('..documents.edit') ?>">
+                <i class="fa fa-sticky-note"></i>&nbsp;<?= t('Add New Document') ?>
+            </a>
+        </div>
+    </div>
+<?php endif ?>

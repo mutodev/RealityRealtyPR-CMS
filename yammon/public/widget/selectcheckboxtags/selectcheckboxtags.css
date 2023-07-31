@@ -1,0 +1,58 @@
+    .tag-box{
+        width:      390px;
+        min-height: 30px;
+        border:     1px solid gray;
+        padding:    3px;
+        font-size:  11px;  
+        background: #F5F5F5;
+    }
+    
+    .tag-box-empty{
+        line-height: 30px;
+        font-size:  12px;          
+        color:       #6F6F6F;
+        padding:     10px;
+    }
+    
+    .tag-box a {    
+        -webkit-border-radius:   9px 9px 9px 9px;    
+        -moz-border-radius:      9px 9px 9px 9px;    
+        border-radius:           9px 9px 9px 9px;    
+        background:              #DEE7F8;
+        border:                  1px solid #CAD8F3;
+        color:                   black;
+        display:                 inline-block;
+
+        margin:                  4px;
+        padding:                 2px 10px;
+        text-decoration:         none;
+    }
+    
+    .tag-box a .close{
+        float:      right;
+        display:    block;
+        height:     7px;
+        width:      7px;
+        margin:     5px 5px;
+        background: transparent url(close.gif) no-repeat 0 0;
+    }    
+    
+    .tag-box a:hover {
+        background-color: #BBCEF1; 
+        border-color:     #6D95E0;  
+        color:            black;        
+    }    
+    
+        .tag-box a:hover .close{
+            background-position: 0px -7px;
+        }
+        
+    .tag-box a:focus {
+        border-color:     #598BEC; 
+        background-color: #598BEC;
+        color:            white;        
+    }
+
+        .tag-box a:focus .close{
+            background-position: 0px -14px;
+        }

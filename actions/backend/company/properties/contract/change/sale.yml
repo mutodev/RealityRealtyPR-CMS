@@ -1,0 +1,164 @@
+class: form-bordered
+attributes:
+  role: form
+elements:
+  header_optioned:
+    type:  Header
+    label: Closed Information
+
+  status:
+    type: Select
+    class: form-control
+    required: true
+    default: Closed
+    options:
+      Failed: Cancel
+      Closed: Closed
+
+  sale_at:
+    label:    Date Sold
+    required: true
+    class:    form-control
+    format:  '%M/%d/%Y%p'
+    output:   Y-m-d
+    type:     DateTime
+    timezone_input: <?= Configure::read('datetime.timezone')."\n" ?>
+    default:  <?= strtotime('today 00:00:00 '.Configure::read('datetime.timezone'))."\n" ?>
+
+  sale_agreed:
+    type: Price
+
+  sale_commission:
+    type: Select
+    class:    form-control
+    default: null
+    options:
+      Fixed: Fixed
+      Percentage: Percentage
+
+  sale_value:
+    type: Number
+    depends:
+      .sale_commission
+
+  is_cobroke:
+    type: Checkbox
+
+  cobroke_name:
+    depends: .is_cobroke
+
+  cobroke_email:
+    depends: .is_cobroke
+
+  cobroke_phone:
+    depends: .is_cobroke
+
+  header_clients:
+    type:  Header
+    label: Client
+
+  Client:
+    label: ''
+    type: SubForm
+    elements:
+      id:
+        type: Hidden
+
+      first_name:
+        label:    First Name
+        required: true
+        class:    form-control
+
+      last_name:
+        label:    Last Name
+        required: true
+        class:    form-control
+
+      phone_container:
+        type: container
+        collect_errors: true
+        box_renderer:
+          type: 1Column
+          highlight: true
+          border: true
+          margin: '0'
+          padding: '0'
+        layout_renderer:
+          type:    grid
+          columns: 2
+          class: ym-form-box-column2
+          style:   'width: 100%;'
+
+        elements:
+
+          phone:
+            label:    Phone
+            type:     Phone
+            required: true
+            class:    form-control
+
+          phone_ext:
+            label:    Ext
+            type:     Text
+            class:    form-control
+            colwidth: 100px
+            validations:
+              RegularExpression:
+                regex: '/^[0-9#*w]+$/i'
+
+      phone_container2:
+        type: container
+        collect_errors: true
+        box_renderer:
+          type: 1Column
+          highlight: true
+          border: true
+          margin: '0'
+          padding: '0'
+        layout_renderer:
+          type:    grid
+          columns: 2
+          class: ym-form-box-column2
+          style:   'width: 100%;'
+
+        elements:
+
+          phone2:
+            label:    Phone
+            type:     Phone
+            class:    form-control
+
+          phone2_ext:
+            label:    Ext
+            type:     Text
+            class:    form-control
+            colwidth: 100px
+            validations:
+              RegularExpression:
+                regex: '/^[0-9#*w]+$/i'
+
+      email:
+        type:     Email
+        label:    Email
+        class:    form-control
+
+      address1:
+        label: Address
+        class:    form-control
+
+      address2:
+        label: Address (cont)
+        class:    form-control
+
+      area_id:
+        label: City
+        type: Select
+        source: FROM Area WHERE country_id = 89
+        class:    form-control
+
+      postal_code:
+        class:    form-control
+
+  buttons:
+    type:  Buttons
+    class: form-group

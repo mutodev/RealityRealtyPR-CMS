@@ -1,0 +1,19 @@
+source: Account
+default: advanced
+fields:
+    first_name:
+        source: Account.first_name
+
+    email:
+        source: Account.email
+
+    active:
+        label: Status
+        source: Account.active
+        element:
+            type: Select
+            class: form-control
+            default: 1
+            options:
+                1: Active
+                0: Inactive

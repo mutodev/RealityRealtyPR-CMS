@@ -1,0 +1,99 @@
+<form class="form-inline search-form clearfix" name="search" method="get" action="/propiedades" style="position: relative">
+    <div class="col-xs-12 col-sm-10 nopadding">
+        <input name="search[keywords]" type="text" class="form-control keywords shadowBottom" id="exampleInputName2"
+               placeholder="<?= t('translation343'); ?>">
+    </div>
+    <div class="col-xs-12 col-sm-2" style="padding-right: 0; padding-left: 5px;">
+        <input type="submit" class="normalBtn btn btn-default" value="<?= t('translation130') ?>"/>
+    </div>
+
+    <div class="clearfix mt10">
+        <a class="pull-left btn" href="<?= url('propiedades'); ?>">
+            <?= t('translation1026'); ?>
+        </a>
+        <a data-target="#advanced-search" class="toggle pull-right btn hidden-xs" href="">
+            <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span> <?= t('translation1029'); ?>
+        </a>
+    </div>
+
+    <div id="advanced-search" class="advanced-search shadowBottom" style="display: none">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <ul class="nav nav-tabs list-nav-tabs">
+                        <li role="presentation" <?php if ($type == 'venta'): ?>class="active"<?php endif ?>><a
+                                    href="<?= url('propiedades.venta') ?>"><?= t('translation151') ?></a></li>
+                        <li role="presentation" <?php if ($type == 'alquiler'): ?>class="active"<?php endif ?>><a
+                                    href="<?= url('propiedades.alquiler') ?>"><?= t('translation316') ?></a></li>
+                        <li role="presentation" <?php if (empty($type)): ?>class="active"<?php endif ?>><a
+                                    href="<?= url('propiedades') ?>"><?= t('translation320') ?></a></li>
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-3">
+                    <select name="search[area]" class="searchField">
+                        <option value=""><?= t('translation154'); ?></option>
+                        <?php foreach ($propertyAreas as $key => $propertyArea): ?>
+                            <option value="<?= $key ?>" <?php if ($searchFilter['area'] == $key) echo 'selected="selected"'; ?> ><?= $propertyArea ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+                <div class="col-xs-12 col-sm-3">
+                    <select id="price_from" name="search[price_from]" class="priceField searchField extendedField">
+                        <option value='' class='sale'><?= t('translation157'); ?></option>
+
+                        <?php for ($i = 250; $i <= 3500; $i += 250): ?>
+                            <option value='<?= $i ?>'
+                                    class='rent' <? if ($searchFilter['price_from'] == $i) echo 'selected="selected"'; ?>>
+                                $<?= number_format($i) ?></option>
+                        <?php endfor; ?>
+
+                        <?php for ($i = 50000; $i <= 500000; $i += 25000): ?>
+                            <option value='<?= $i ?>'
+                                    class='sale' <? if ($searchFilter['price_from'] == $i) echo 'selected="selected"'; ?>>
+                                $<?= number_format($i) ?></option>
+                        <?php endfor; ?>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+<!--                    <input name="search[keywords]" type="text"-->
+<!--                           class="searchField useDefault" rel="--><?//= t('translation155'); ?><!--"-->
+<!--                           placeholder="--><?//= t('translation155'); ?><!--"/>-->
+                </div>
+                <div class="col-xs-12 col-sm-3">
+                    <input type='hidden' name='search[property_type]' value=''/>
+                    <select name="search[property_type]" class="searchField">
+                        <option value=""><?= t('translation153') ?></option>
+                        <?php foreach ($propertyTypes as $typec => $types): ?>
+                            <option value="<?= $typec ?>"><?= $typec ?></option>
+                            <?php foreach ($types as $option): ?>
+                                <option value="<?= $typec . ':' . $option['id'] ?>" <?php if ($category == $option['id']) echo 'selected="selected"'; ?>>
+                                    &nbsp;- <?= $option['label']; ?></option>
+                            <?php endforeach; ?>
+                        <?php endforeach; ?>
+                    </select>
+
+                </div>
+
+                <div class="col-xs-12 col-sm-3">
+                    <select id="price_to" name="search[price_to]" class="priceField searchField extendedField">
+                        <option value='' class='sale'><?= t('translation158'); ?></option>
+
+                        <?php for ($i = 250; $i <= 3500; $i += 250): ?>
+                            <option value='<?= $i ?>'
+                                    class='rent' <? if ($searchFilter['price_to'] == $i) echo 'selected="selected"'; ?>>
+                                $<?= number_format($i) ?></option>
+                        <?php endfor; ?>
+
+                        <?php for ($i = 50000; $i <= 500000; $i += 25000): ?>
+                            <option value='<?= $i ?>'
+                                    class='sale' <? if ($searchFilter['price_to'] == (string)$i) echo 'selected="selected"'; ?>>
+                                $<?= number_format($i) ?></option>
+                        <?php endfor; ?>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,59 @@
+<div id="contact">
+    <div class="container-fluid contact-h">
+        <div class="row">
+            <div class="container">
+                <div class="header">
+                    <h1><span><?= t('translation114'); ?></span></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6">
+
+                <h2><span><?= t('translation113'); ?></span></h2>
+                    
+                <p><?= t('translation25'); ?></p>
+                <br />
+
+                <form action="" method="post" class="contact form" id="mainContactForm">
+                                    
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <input type="text" class='contactField name' name='var1' value="" placeholder="<?= t('translation27'); ?>" />
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" class='contactField mail' name='var3' placeholder="<?= t('translation28'); ?>" />
+                            </div>
+
+                            <input type="hidden" class='contactField mail' name='email' placeholder="<?= t('translation28'); ?>" />
+
+                            <div class="form-group">
+                                <input type="text" class='contactField phone' name='var2' value=""  placeholder="<?= t('translation29'); ?>" />
+                            </div>
+                        </div>
+                        <div class="col-xs-12">
+                            <div class="form-group">
+                                <textarea class='contactField msg' name='var4' placeholder="<?= t('translation30'); ?>" rows="3"></textarea>
+                            </div>
+
+                            <div class="form-group pull-right">
+                                <input type="reset" class="normalBtn" value="Clear" />
+                                <span>|</span>
+                                <input type="submit" class="normalBtn" value="<?= t('translation32'); ?>" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 map nopadding">
+                <div id="map-canvas"></div>
+            </div>
+        </div>
+    </div>
+</div>

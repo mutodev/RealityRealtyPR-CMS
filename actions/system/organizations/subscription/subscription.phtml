@@ -1,0 +1,25 @@
+<div class="ym-form-header">
+    <h3>General Information</h3>
+
+    <dl>
+        <dt>Organization</dt>
+        <dd><?= $Model->Organization->name ?></dd>
+        <?php if ($Model->chargebee_subscription_id): ?>
+        <br />
+        <dt>ChargeBee Subscription ID</dt>
+        <dd>
+        <?php if ($Model->chargebee_subscription_id): ?>
+            <a href="https://<?= $_ENV['CHARGEBEE_SITE'] ?>.chargebee.com/subscriptions?Subscriptions.search=<?= $Model->chargebee_subscription_id ?>" target="_blank"><?= $Model->chargebee_subscription_id ?></a>
+        <?php else: ?>
+            None
+        <?php endif; ?>
+        </dd>
+        <br />
+        <dt>Plan</dt>
+        <dd> <?= $Model->id ? plan_name($Model->Plan) : 'Custom' ?></dd>
+        <?php endif; ?>
+    </dl>
+
+</div>
+
+<?= $Form->render() ?>

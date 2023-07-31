@@ -1,0 +1,106 @@
+ <div class="container-fluid contentpanel-nopadding">
+	<div class="row">
+		<div class="col-xs-12">
+
+			<h4><?=t("Account Management");?></h4>
+
+			<a class='btn btn-default' href='<?= url('.edit') ?>'>
+			    <i class="fa fa-pencil-square-o"></i>
+			    <?= t("Update Information"); ?>
+			</a>
+
+			<a class='btn btn-default' href='<?= url('.password') ?>'>
+			    <i class="fa fa-lock"></i>
+			    <?= t("Change Password"); ?>
+			</a>
+		</div>
+	</div>
+	<br />
+	<div class="row">
+		<div class="col-xs-12">
+			<h4><?=t("General Information");?></h4>
+
+			<table class='table'>
+				<tr>
+					<th width="15%">
+						<?= t('Name:'); ?>
+					</th>
+					<td>
+						<?= $Account->first_name; ?> <?= $Account->last_name; ?>
+					</td>
+				</tr>
+				<tr>
+					<th width="15%">
+						<?= t('Role:'); ?>
+					</th>
+					<td>
+						<?= $Account->Roles[0]->name; ?>
+					</td>
+				</tr>
+				<tr>
+					<th width="15%">
+						<?= t('Email:'); ?>
+					</th>
+					<td>
+
+						<?php if( $Account->email ) : ?>
+		    				<?= decorator( 'email' , $Account->email ); ?>
+		                <?php endif; ?>
+					</td>
+				</tr>
+
+				<?php if( !empty($Account->phone) ): ?>
+				<tr>
+					<th width="15%">
+						<?= t('Phone:'); ?>
+					</th>
+					<td>
+		    		    <?= decorator( 'phone' , $Account->phone ); ?>
+					</td>
+				</tr>
+				<?php endif; ?>
+
+				<?php if( !empty($Account->phone2) ): ?>
+				<tr>
+					<th width="15%">
+						<?= t('Alternate Phone:'); ?>
+					</th>
+					<td>
+		    		    <?= decorator( 'phone' , $Account->phone2 ); ?>
+					</td>
+				</tr>
+				<?php endif; ?>
+
+				<?php if( !empty($Account->fax) ): ?>
+				<tr>
+					<th width="15%">
+						<?= t('Fax:'); ?>
+					</th>
+					<td>
+						<?= $Text->phone($Account->fax); ?>
+					</td>
+				</tr>
+				<?php endif; ?>
+			</table>
+		</div>
+	</div>
+	<?php if( !empty($Account->Company->name) ): ?>
+	<div class="row">
+		<div class="col-xs-12">
+			<h4><?=t("Company");?></h4>
+
+			<table class='table'>
+				<?php $Company = $Account->Company; ?>
+				<tr>
+					<th width="15%">
+						<?= t('Name'); ?>:
+					</th>
+					<td>
+						<?= $Company->name; ?>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<?php endif; ?>
+</div>

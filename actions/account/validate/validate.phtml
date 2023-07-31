@@ -1,0 +1,79 @@
+<section>
+
+    <div class="panel panel-signin" style="margin-top: 160px;">
+        <div class="panel-body">
+            <img src="<?= Configure::read('branding.logo') ?>" style="width:200px;margin:0 auto; display:block">
+            <h4 class="text-center mb5 mt0">Validate your account</h4>
+            <p class="text-center">We sent you an email with a code to validate your account</p>
+
+            <?php if( $errors = $FormValidate->getErrors() ): ?>
+                <div class="alert alert-danger">
+                <?php foreach( $errors as $error ): ?>
+                    <li>
+                        <?= $error ?>
+                    </li>
+                <?php endforeach ?>
+                </div>
+            <?php endif; ?>
+
+            <div class="mb30"></div>
+
+            <form action="<?= url('.'); ?>" method="post">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="input-group mb15">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                            <input type="text" class="form-control" placeholder="Enter Code" name="validate[key]" value="<?= $FormValidate->get('key')->getValue(); ?>">
+                        </div><!-- input-group -->
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="mb15">
+                            <button name="validate[save]" type="submit" class="btn btn-success btn-block">Validate <i class="fa fa-angle-right ml5"></i></button>
+                        </div><!-- input-group -->
+                    </div>
+                </div><!-- row -->
+            </form>
+
+            <br />
+            <h4 class="text-center mb5">Didn't receive the email?</h4>
+            <p class="text-center">Didn't receive the email? check your spam folder or enter your email into the form below</p>
+
+            <?php if( $errors = $FormResend->getErrors() ): ?>
+                <div class="alert alert-danger">
+                <?php foreach( $errors as $error ): ?>
+                    <li>
+                        <?= $error ?>
+                    </li>
+                <?php endforeach ?>
+                </div>
+            <?php endif; ?>
+
+            <div class="mb30"></div>
+
+            <form action="<?= url('.'); ?>" method="post">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="input-group mb15">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                            <input type="text" class="form-control" placeholder="Enter Email" name="resend[email]" value="<?= $FormResend->get('email')->getValue(); ?>">
+                        </div><!-- input-group -->
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="mb15">
+                            <button name="resend[resend]" type="submit" class="btn btn-success btn-block">Resend Email <i class="fa fa-angle-right ml5"></i></button>
+                        </div><!-- input-group -->
+                    </div>
+                </div><!-- row -->
+            </form>
+
+        </div><!-- panel-body -->
+        <div class="panel-footer">
+            <a href="<?= url('account.login') ?>" class="btn btn-primary btn-block">Already a Member? Sign In</a>
+        </div><!-- panel-footer -->
+    </div><!-- panel -->
+
+</section>
+
+
+
+

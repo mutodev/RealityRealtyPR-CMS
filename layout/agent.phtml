@@ -1,0 +1,141 @@
+<?php
+
+$Css = helper('Css');
+$Javascript = helper('Javascript');
+$Section = helper("Section");
+
+$Css->add('/css/bootstrap.min.css');
+$Css->add('/css/cover.css');
+$Css->add('/css/slider.css');
+$Css->add('/css/colorbox/colorbox.css');
+$Css->add('/css/jAlerts/jquery.alerts.css');
+
+/*$Javascript->add('/js/jquery-1.4.2.min.js');*/
+$Javascript->add('/js/jquery-1.12.4.min.js');
+//$Javascript->add('/js/jquery.browser.min.js');
+$Javascript->add('/js/jquery.tools.min.js');
+$Javascript->add('/js/jquery.alerts.js');
+$Javascript->add('/js/jquery.json-2.2.min.js');
+$Javascript->add('/js/jquery.DefaultText.js');
+$Javascript->add('/js/jquery.anythingslider.js');
+//$Javascript->add('/js/jquery.colorbox-min.js');
+$Javascript->add('/js/common.js');
+
+$urii = @$_SERVER['REQUEST_URI'];
+$uri = explode('/', $urii);
+foreach ($uri as $k => $v) {
+    $uri[$k] = current(explode('?', $v));
+}
+
+$langs = [
+    'en' => t('English'),
+    'es' => t('Spanish')
+];
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>
+        Reality Realty,
+        <?php if ( Configure::exists("seo.title") ): ?>
+            <?= Configure::read("seo.title") ?>
+        <?php else: ?>
+            <?= t('translation125'); ?>
+        <?php endif; ?>
+    </title>
+
+    <?php if ( Configure::exists("seo.description") ): ?>
+        <meta name="description" content="<?= Configure::read("seo.description") ?>" />
+    <?php else: ?>
+        <meta name="description" content="Bienes Raices Puerto Rico busqueda de propiedades en venta o alquiler, Casas, Apartamentos, Oficinas, Terrenos , Locales Comerciales y Edificios." />
+    <?php endif; ?>
+
+    <meta name="keywords" content="bienes raices en puerto rico, real estate puerto rico, hogares, apartamentos, casas, fincas, terrenos, propiedades en puerto rico, venta de casas, venta de residencias, alquiler de apartamentos, venta de propiedades puerto rico" />
+
+    <?php if ( Configure::exists("seo.canonical") ): ?>
+        <link rel="canonical" href="<?= Configure::read("seo.canonical") ?>" />
+    <?php endif; ?>
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+    <?= $Css->render(); ?>
+</head>
+<body>
+
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default menu-header">
+    <div class="container">
+        <div class="row header-top">
+            <div class="hidden-xs navbar-left">
+                <a target="_blank" class="btn" href="https://www.facebook.com/realityrealtypr/">
+                    <img src="/img/facebook.png">
+                </a>
+                <span class="grey">|</span>
+                <a target="_blank" class="btn" href="https://twitter.com/realityrealtyp">
+                    <img src="/img/twitter.png">
+                </a>
+                <span class="grey">|</span>
+                <a target="_blank" class="btn" href="https://www.instagram.com/prrealityrealty/">
+                    <img src="/img/instagram.png">
+                </a>
+            </div>
+            <div class="hidden-xs navbar-right">
+                <div class="tell-us inline-imp vl"><p class="navbar-text navbar-right "><?= t('translation347'); ?></p>
+                </div>
+                <div class="inline-imp">
+                    <div class="tell-us-icon inline-imp"><a href="tel:<?= $Agent->phone ?>"><span class="glyphicon glyphicon-earphone"
+                                                                                        aria-hidden="true"></span></a></div>
+                    <div class="tell-us-icon inline-imp"><a href="#contact"><span class="glyphicon glyphicon-envelope"
+                                                                                                   aria-hidden="true"></span></a></div>
+                </div>
+            </div>
+        </div>
+        <div class="row header-bottom text-center">
+            <img width="200" src="/img/Logo-01.png"/>
+        </div>
+    </div>
+</nav>
+
+<?= $this->getContent(); ?>
+
+<div class="footer-agent mt40 pt40 pb40 bg-grey text-center">
+    <span class="red-line"></span>
+
+    <div class="mt40">
+        <?= t('translation339'); ?>
+        <br />
+        <br />
+        <img src="/img/logo-small.png" width="60" />
+        <br />
+        <br />
+        <?= t('translation340') ?> © <?= date('Y') ?> Reality Realty PSC. <?= t('translation341') ?>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<?php
+$Javascript->add('/js/bootstrap.min.js');
+?>
+<?= $Javascript->render(); ?>
+
+<?= $Section->render("javascriptFooter"); ?>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="/js/ie10-viewport-bug-workaround.js"></script>
+
+<!--Google Maps API-->
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDN3LWxZqLR2kcGo8pCYj_7n9YJ0UGF7F0"></script>
+
+<script src="/js/custom.js"></script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<!--<script type="text/javascript" src="https://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5320741e1495deeb"></script>-->
+</body>
+</html>

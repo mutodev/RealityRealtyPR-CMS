@@ -1,0 +1,146 @@
+class: form-bordered
+attributes:
+    role: form
+elements:
+
+    summary:
+        type: Summary
+
+    header_contact:
+        type:  Header
+        label: Contact Information
+
+    first_name:
+        label:    First Name
+        required: true
+        class:    form-control
+
+    last_name:
+        label:    Last Name
+        required: true
+        class:    form-control
+
+    phone_container:
+        type: container
+        collect_errors: true
+        box_renderer:
+            type: 1Column
+            highlight: true
+            border: true
+            margin: '0'
+            padding: '0'
+        layout_renderer:
+            type:    grid
+            columns: 2
+            class: ym-form-box-column2
+            style:   'width: 100%;'
+
+        elements:
+
+            phone:
+                label:    Phone
+                type:     Phone
+                required: true
+                class:    form-control
+
+            phone_ext:
+                label:    Ext
+                type:     Text
+                class:    form-control
+                colwidth: 100px
+                validations:
+                    RegularExpression:
+                        regex: '/^[0-9#*w]+$/i'
+
+    email:
+        type:     Email
+        label:    Email
+        class:    form-control
+        readonly: true
+
+    header_socials:
+        type:  Header
+        label: Social
+
+    twitter:
+        type: Website
+        class:    form-control
+
+    facebook:
+        type: Website
+        class:    form-control
+
+    instagram:
+        type: Website
+        class:    form-control
+
+    header_extras:
+        type:  Header
+        label: Landing
+
+    landing_header:
+        label: Header Photo
+        type: FileImageAsync
+        class:    form-control
+
+    landing_quote_es:
+        type: TextArea
+        class:    form-control
+        label: Header Quote (Spanish)
+
+    landing_quote_en:
+        type: TextArea
+        class:    form-control
+        label: Header Quote (English)
+
+    landing_description_es:
+        type: TextArea
+        class: form-control
+        label: Description (Spanish)
+
+    landing_description_en:
+        type: TextArea
+        class: form-control
+        label: Description (English)
+
+    show_all_properties:
+        type: Checkbox
+        label: ''
+        text: Show all properties in landing?
+        default: 1
+
+    header_credentials:
+        type:  Header
+        label: Account Credentials
+
+    username:
+        label:    Username
+        class:    form-control
+        validations:
+            unique:
+                source:    'Account.username'
+                source_id: id
+                message:   There is already an account registered with this username
+                id: <?= Auth::getId() ?>
+
+    password:
+        label: Password
+        type:  Password
+        class:    form-control
+        validations:
+            Password:
+                strong: false
+                min:    5
+
+    password_confirmation:
+        label: Password Confirmation
+        type:  Password
+        class:    form-control
+        validations:
+          equals:
+             element: password
+             message: %{label} and Password must be equal
+
+    buttons:
+        type:  Buttons
+        class: form-group

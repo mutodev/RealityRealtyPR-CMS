@@ -1,0 +1,37 @@
+source: FROM DocumentCategory
+columns:
+    name:
+        label: 'Name'
+        source: DocumentCategory.name
+
+    description:
+        label: Description
+        source: DocumentCategory.description
+
+    category:
+        label: 'Parent'
+        source: category_id
+        content: >
+            %{renderCats:*}
+
+    is_active:
+        label: 'Active?'
+        source: is_active
+        decorator: Boolean
+
+    actions:
+        type: Actions
+        label: ' '
+        width: 1px
+        actions:
+
+            edit:
+                icon: pencil
+                label: Edit
+                link:  '.edit?id=%{id}'
+
+            delete:
+                icon: trash
+                label: Delete
+                confirm: true
+                link:  '.delete?id=%{id}'

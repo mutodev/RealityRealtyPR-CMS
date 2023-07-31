@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+
+    <style type="text/css">
+      body {
+        background: #000;
+      }
+
+      #content {
+        background: transparent;
+        padding:    0px 20px 20px;
+      }
+
+      .error {
+        color: red;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <?php if ($isDone): ?>
+
+	<script type="text/javascript">
+        parent.closeSendByEmail();
+    </script>
+
+    <?php else: ?>
+
+    <div style="background: #ECECEC; width: 93%; height: 375px; border:0px; padding: 20px 10px; margin: 25px auto 0 auto;">
+
+     <h2 style="color: #660000"><?= $Property->name ?></h2>
+     <span>Proporcione la siguiente informaci&oacute;n para enviar la propiedad por correo electr&oacute;nico.</span>
+
+     <form action="" method="post" class="contact">
+
+      <div id="content">
+          <div class="header">Tus datos:</div>
+
+            <label for='name'>Nombre<?php if (isset($errors['myname'])): ?>: <span class="error"><?= $errors['myname'] ?></span><?php endif; ?></label>
+            <input class='contactField name' name='myname' value="<?= @$values['myname'] ?>" />
+
+            <label for='mail'>Email<?php if (isset($errors['myemail'])): ?>: <span class="error"><?= $errors['myemail'] ?></span><?php endif; ?></label>
+            <input class="contactField mail" name='myemail' value="<?= @$values['myemail'] ?>" />
+
+          <div class="header">A quien lo envias:</div>
+
+            <label for='name'>Nombre<?php if (isset($errors['name'])): ?>: <span class="error"><?= $errors['name'] ?></span><?php endif; ?></label>
+            <input class='contactField name' name='name' value="<?= @$values['name'] ?>" />
+
+            <label for='mail'>Email<?php if (isset($errors['email'])): ?>: <span class="error"><?= $errors['email'] ?></span><?php endif; ?></label>
+            <input class="contactField mail" name='email' value="<?= @$values['email'] ?>" />
+
+            <input type='hidden' name='id' value='<?= $id ?>' />
+            <br /><br /><br />
+            <div style="text-align: right; padding-right: 10px;"><input type="submit" class="sendByEmail normalBtn" value="Enviar" /></div>
+
+      </div>
+
+     </form>
+
+    </div>
+    <?php endif; ?>
+
+
+  </body>
+</html>

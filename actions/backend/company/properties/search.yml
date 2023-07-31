@@ -1,0 +1,142 @@
+source: Property LEFT JOIN Property.Category LEFT JOIN Property.Area
+default: advanced
+fields:
+    title:
+        label: Keywords
+        source: [Property.title, Property.id, Property.internal_number, Property.Area.name, Property.Area.city, Property.address1]
+        element:
+            type: Text
+            class: form-control
+
+    status:
+        label: Status
+        source: Property.Contract.status
+        empty: 'All'
+        element:
+            type: SelectCheckbox
+            class: form-control
+            options:
+                Optioned: Optioned
+                Closed: Closed
+                Rented: Rented
+                Failed: Canceled
+                'Current Listing': Current Listing
+
+    for_sale:
+        label: For Sale
+        source: Property.for_sale
+        empty: 'All'
+        element:
+            type: Select
+            class: form-control
+            options:
+                1: Yes
+                0: No
+
+    for_rent:
+        label: For Rent
+        source: Property.for_rent
+        empty: 'All'
+        element:
+            type: Select
+            class: form-control
+            options:
+                1: Yes
+                0: No
+
+    repo:
+        label: REPO
+        source: Property.is_repossessed
+        empty: 'All'
+        element:
+            type: Select
+            class: form-control
+            options:
+                1: Yes
+                0: No
+
+    short_sale:
+        label: Short Sale
+        source: Property.is_short_sale
+        empty: 'All'
+        element:
+            type: Select
+            class: form-control
+            options:
+                1: Yes
+                0: No
+
+    is_featured:
+        label: Is Featured?
+        source: Property.is_featured
+        empty: 'All'
+        element:
+            type: Select
+            class: form-control
+            options:
+                1: Yes
+                0: No
+
+    production_unit_id:
+        label: Production Unit
+        source: Property.production_unit_id
+        element:
+            type: Select
+            class: form-control
+            source: FROM ProductionUnit
+            source_label: ProductionUnit.name
+
+    type:
+        label: Type
+        source: Property.Category.type
+        empty: 'All'
+        element:
+            type: Select
+            class: form-control
+            options:
+                Residential: Residential
+                Commercial: Commercial
+                Land: Land
+
+    category_id:
+        label: Category
+        source: Property.category_id
+        element:
+            type: Select
+            class: form-control
+            source: FROM PropertyCategory
+            source_key: id
+            source_group: type
+
+    area_id:
+        label: City
+        source: Property.area_id
+        element:
+            type: Select
+            class: form-control
+            source: FROM Area WHERE country_id = 89
+
+    price_from:
+        label: Price from
+        source: [Property.sale_price, Property.rent_price]
+        operators:
+            - GreaterThanOrEqual
+        element:
+            type:     Price
+
+    price_to:
+        label: Price to
+        source: [Property.sale_price, Property.rent_price]
+        operators:
+            - LessThanOrEqual
+        element:
+            type:     Price
+
+    broker:
+        source: Property.account_id
+        element:
+            type: Select
+            source: FROM Account LEFT JOIN Account.Branch WHERE active = 1 ORDER BY first_name ASC
+            source_label_tpl: %{Account.getFullName}
+            source_group_tpl: %{iff: Account.Branch.name, Account.Branch.name, 'None'}
+            class: form-control

@@ -1,0 +1,9 @@
+elements:
+
+    photos:
+      label: ''
+      type: Photos
+
+    buttons:
+        type:  Buttons
+        class: form-group

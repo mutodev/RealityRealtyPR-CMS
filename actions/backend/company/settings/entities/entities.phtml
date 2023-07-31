@@ -1,0 +1,18 @@
+<div class="panel">
+    <div class="panel-body container-fluid">
+		<?= $Search->render(); ?>
+	</div>
+</div>
+
+
+<div class="panel">
+    <div class="panel-body container-fluid">
+        <a class="btn btn-success btn-sm" href="<?= url('.edit') ?>"><i class="fa fa-plus"></i>&nbsp;&nbsp;<?= t('Add New Entity') ?></a>
+    </div>
+</div>
+
+<div class="panel">
+    <div class="panel-body container-fluid">
+		<?= $Table->render(); ?>
+	</div>
+</div>

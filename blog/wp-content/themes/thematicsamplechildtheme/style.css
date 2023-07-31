@@ -1,0 +1,327 @@
+/*   
+Theme Name: Reality Realty Theme
+Theme URI: 
+Description: Company custom WordPress theme
+Author: Ma Web Group
+Author URI: http://www.mawebgroup.com/
+Template: thematic
+Version: 1.0
+Tags: Thematic
+.
+Thematic is © Ian Stewart http://themeshaper.com/
+.
+*/
+
+/* Reset browser defaults 
+@import url('../thematic/library/styles/reset.css');
+*/
+
+/* Apply basic typography styles 
+@import url('../thematic/library/styles/typography.css');
+*/
+
+/* Apply a basic layout */
+@import url('../thematic/library/layouts/2c-r-fixed.css');
+
+/* Apply basic image styles */
+@import url('../thematic/library/styles/images.css');
+
+/* Apply default theme styles and colors */
+/* It's better to actually copy over default.css into this file (or link to a copy in your child theme) if you're going to do anything outrageous */
+@import url('../thematic/library/styles/default.css');
+
+/* Prepare theme for plugins */
+@import url('../thematic/library/styles/plugins.css');
+
+#main-content{
+  margin-top: 20px;
+}
+
+* {
+  margin:  0px;
+  padding: 0px;
+}
+
+table {
+  border-collapse: separate;
+  border-spacing:  3px;
+}
+
+a img        { border: 0px; }
+
+#subbody {
+  background: url('/img/top-bg.png') repeat-x;
+}
+
+input.email  { display: none; }
+
+input.text, textarea.text {
+  background:  url(/img/input-textbox-bg.gif) top left repeat-x #ffffff;
+  border:      0px;
+  border-left: 1px solid #b6b6b6;
+  padding-top: 4px;
+}
+
+input.button {
+  border:         0px;
+  color:          #fff;
+  text-transform: uppercase;
+  -moz-border-radius:    11px;
+  -webkit-border-radius: 11px;
+  -khtml-border-radius:  11px;
+  border-radius:         11px;
+}
+
+#web-main {
+  width:        926px;
+  margin-left:  auto;
+  margin-right: auto;
+}
+
+#header {
+  background: url(/img/header_bg.png) top right no-repeat;
+  height:     144px;
+}
+
+#header div.title {
+  position:     absolute;
+  margin:       44px 0 0 412px;
+  *margin-left: 65px;
+  font-weight:  bold;
+  font-size:    14px;
+  line-height:  22px;
+}
+
+#header div.title span {
+  margin-left: 13px;
+  color:       #fff;
+  font-size:   16px;
+}
+
+#header ul {
+  list-style-type: none;
+  position:        absolute;
+  height:          24px;
+  margin:          113px 0 0 343px;
+  *margin-left:    0px;
+  width:           525px;
+}
+
+#header ul li {
+  float: left;
+}
+
+#header ul li a {
+  float:         left;
+  display:       block;
+  padding-left:  45px;
+  line-height:   26px;
+  font-size:     15px;
+  height:        22px;
+  color:         #000;
+}
+
+#header ul li:first-child a {
+  padding-left:  0px;
+}
+
+#logo {
+  float: left;
+}
+
+#main {
+  background:  url(/img/container-bg.png) #fff repeat-x;
+  margin-left: 6px;
+  width:       906px;
+  padding:     0px;
+}
+
+#sub-main {
+   width:       100%;
+   background:  url(/img/blog/main-bg.gif) transparent repeat-y;
+   position:    relative;
+   overflow:    hidden;
+}
+
+.main-aside {
+  width:            218px;
+  background-color: #fff;
+  margin:           0px !important;
+  color:            #000;
+  right:            6px;
+}
+
+.main-aside ul {
+  padding: 0;
+}
+
+.widgetcontainer {
+  padding:    8px 15px 8px 15px;
+}
+
+.widgetcontainer ul {
+  color: #e50000;
+}
+
+.aside input {
+  /*width: 180px;*/
+}
+
+.aside ul ul, .aside form, .aside table {
+  margin-bottom: 0px;
+}
+
+#content {
+  margin:      0px;
+  width:       672px;
+  margin-left: 5px;
+}
+
+#content > div {
+  margin:  15px 10px 20px 10px;
+}
+
+#primary {
+  border:         0px;
+  padding-bottom: 30px;
+}
+
+#primary .xoxo {
+  margin-bottom: 0px;
+}
+
+h3.widgettitle {
+  background:  black;
+  margin:      0 -10px;
+  padding:     5px 10px;
+  font-style:  normal;
+  font-weight: bold;
+  color: white;
+  font-size:   13px;
+  margin-bottom: 15px;
+}
+
+#search-2 h3 {
+  display: none;
+}
+
+
+#footer {
+  border-top: 0px;
+  background: url(/img/footer.png) no-repeat;
+  height:     104px;
+  margin:     -12px 0 0 -6px;
+  padding:    0px;
+  position:   relative;
+  height:     104px;
+  overflow:   hidden;
+}
+
+#footer div.titles {
+  color:         #333;
+  font-size:     14px;
+  line-height:   25px;
+  margin-bottom: 0px;
+  padding-top:   14px;
+
+}
+
+#footer div.links {
+  float:       left;
+  width:       300px;
+  line-height: 13px;
+}
+
+#footer div.links ul {
+  list-style-type:  none;
+  margin-left:      18px;
+  float:            left;
+}
+
+#footer div.links ul a {
+  color:       #333;
+  font-size:   12px;
+  font-style:  italic;
+}
+
+#footer div.followUs {
+  float:        left;
+  width:        100px;
+  margin-left:  60px;
+  padding-top:  10px;
+}
+
+#footer div.followUs a img {
+  margin-right:    3px;
+  margin-top:      -2px;
+}
+
+#footer div.followUs a {
+  text-decoration: none;
+}
+
+#footer div.followUs a:hover span {
+  text-decoration: underline;
+}
+
+#footer div.contactUs {
+  float:        left;
+  margin-left:  145px;
+  margin-top:   -4px;
+}
+
+#footer div.contactUs input, #footer div.contactUs textarea {
+  font-size: 11px;
+}
+
+#footer input.button {
+  background-image: url(/img/footer-inputbtn-bg.png);
+  width:            48px;
+  height:           48px;
+  font-size:        13px;
+  border:           0px;
+  margin-left:      5px;
+}
+
+#footer div.contactPhones {
+  display: none;
+}
+
+#footer .contactUs table {
+  border: 0px;
+}
+
+#footer .contactUs tr {
+  border: 0px;
+}
+
+#footer .contactUs th, #footer .contactUs td {
+  padding: 0px;
+  vertical-align: top;
+}
+
+#footer .text {
+  width: 217px;
+}
+
+#respond {
+  background-color: transparent;
+}
+
+#content .hentry{
+    border-bottom: 1px solid #666;
+    padding: 0;
+}
+
+#content .hentry:last-child{
+  border-bottom: none;
+}
+
+a,
+a, 
+a:hover, 
+a:link, 
+a:visited, 
+a:active{
+  color: #bc2f2c;
+}

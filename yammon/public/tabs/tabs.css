@@ -1,0 +1,87 @@
+.yammon-tabs{
+    margin: 0 10px;
+}
+
+    .yammon-tabs-ul{
+        padding-left:  10px;
+    }
+
+    .yammon-tabs-ul ul{
+        display:  block;
+        margin:   0;
+        padding:  0 0 0 0;
+        position: relative;
+        top:      1px;
+    }
+
+        .yammon-tabs-ul li{
+            display:      block;
+            margin:       0;
+            padding:      0;        
+            float:        left;
+            margin-right: 5px;
+        }
+
+            /* All States */
+            .yammon-tabs-ul li a{
+                display:               block;
+                padding:               5px 10px;
+                text-decoration:       none; 
+                border:                1px solid #636363;
+                outline:               0;
+                -webkit-border-radius: 4px 4px 0 0;
+                -moz-border-radius:    4px 4px 0 0;
+                border-radius:         4px 4px 0 0;                  
+            }
+
+            .yammon-tabs-ul li.yammon-tabs-active a ,
+            .yammon-tabs-ul li.yammon-tabs-active a:hover{
+                border-bottom:  1px solid #F7F7F7;                
+            }
+
+            /* Normal State */
+            .yammon-tabs-ul li a{
+                background:      #EBEBEB;
+                color:           black;
+            }
+
+            /* Hover State */
+            .yammon-tabs-ul li a:hover{
+                background: #F3F3F3;
+                color:      #5B5B5B;
+            }
+
+            /* Active State */
+            .yammon-tabs-ul li.yammon-tabs-active a ,
+            .yammon-tabs-ul li.yammon-tabs-active a:hover{
+                background:     #F7F7F7; 
+                color:          black;
+                font-weight:    bold;
+            }
+
+
+
+    .yammon-tabs-container{
+        clear:                 both;
+        border:                1px solid #636363;
+        padding:               0px;
+        background:            #F7F7F7;
+        box-shadow:            2px 2px 5px #4F4F4F;
+        -webkit-box-shadow:    2px 2px 5px #4F4F4F;
+        -moz-box-shadow:       2px 2px 5px #4F4F4F;
+        -webkit-border-radius: 0 4px 4px 4px;
+        -moz-border-radius:    0 4px 4px 4px;
+        border-radius:         0 4px 4px 4px;
+    }
+
+        .yammon-tabs-content{
+            display: none;
+            padding: 10px;
+            -webkit-border-radius: 4px 4px 4px 4px;
+            -moz-border-radius:    4px 4px 4px 4px;
+            border-radius:         4px 4px 4px 4px;                
+        }
+
+        .yammon-tabs-content-active{
+            display: block;
+        }

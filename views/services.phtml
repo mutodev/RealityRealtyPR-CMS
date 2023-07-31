@@ -1,0 +1,78 @@
+<style>
+    .service {
+        background: white;
+        min-height: 282px;
+        padding: 20px;
+        position: relative;
+        text-align: center;
+        margin: 0 auto;
+        border: 1px solid #EFEFEF;
+        font-size: 14px !important;
+        display: block;
+        text-decoration: none !important;
+    }
+
+    .sliderCustom .item-service {
+        padding: 40px 20px 20px 20px;
+    }
+
+    .service-learn {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+
+    .services-slider .slideController {
+        position: static;
+    }
+
+    .services-slider h3 {
+        text-transform: uppercase;
+    }
+
+    .services-slider .carousel-indicators li {
+        background: #ef3a3a !important;
+    }
+    .services-left {
+        background: #ed3938 !important;
+        min-height: 250px;
+        padding: 61px;
+        color: white;
+        font-size: 1.4em;
+    }
+
+    .services-left .normalBtn {
+        border: 1px solid white;
+    }
+
+    .service span {
+        display: block;
+        font-size: 14px !important;
+        text-transform: uppercase;
+    }
+</style>
+
+<div class="row mt20">
+    <div class="col-xs-12 col-sm-9 mb">
+        <div class="services-left">
+            <p><?= t('translation1060'); ?></p>
+
+            <?php if (!@$hideButton): ?>
+            <a class="normalBtn btn mt20" href="/servicios"><?= t('translation1062'); ?> <i class="fas fa-arrow-right"></i></a>
+            <?php endif ?>
+        </div>
+    </div>
+    <?php foreach($services as $service => $s): ?>
+        <div class="col-xs-12 col-sm-3 mb item item-service <?= $service == 'luxe' ? 'active': '' ?>">
+            <a href="/servicios?service=<?= $service ?>" class="service">
+                <div class="service-icon <?= $service ?>-icon"></div>
+
+                <span class="block mt30"><?= $s['title'] ?></span>
+
+                <span class="service-learn"><strong><small><?= t('translation1085') ?> <i class="fas red-font fa-chevron-right"></i></small></strong></span>
+            </a>
+        </div>
+    <?php endforeach; ?>
+</div>

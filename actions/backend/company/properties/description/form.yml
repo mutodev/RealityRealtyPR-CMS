@@ -1,0 +1,39 @@
+class: form-bordered
+attributes:
+    role: form
+elements:
+
+    summary:
+        type: Summary
+
+    header_general:
+        type:  Header
+        label: General Information
+
+    description_es:
+        label: Description (Spanish)
+        type:     TextArea
+        classes:  form-control
+
+    description_en:
+        label: Description (English)
+        type:     TextArea
+        classes:  form-control
+
+    header_flyer:
+        type:  Header
+        label: Flyer
+
+    flyer_description_es:
+        label: Description (Spanish)
+        type:     TextArea
+        classes:  form-control
+
+    flyer_description_en:
+        label: Description (English)
+        type:     TextArea
+        classes:  form-control
+
+    buttons:
+        type:  Buttons
+        class: form-group

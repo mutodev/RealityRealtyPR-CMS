@@ -1,0 +1,26 @@
+class: form-bordered
+attributes:
+    role: form
+elements:
+    summary:
+
+    header_general:
+        type: header
+        label: General Information
+
+    name:
+        label:    Name
+        required: true
+        class:    form-control
+
+    timezone:
+        label: Time zone
+        type: Select
+        class: form-control
+        required: true
+        source_callback: dateTimezonesList
+        default: America/Puerto_Rico
+
+    buttons:
+        type:  Buttons
+        class: form-group

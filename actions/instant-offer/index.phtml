@@ -1,0 +1,124 @@
+<style>
+    .grey-bg-list > li {
+        list-style: none;
+        font-size: 14px;
+        margin-bottom: 15px;
+        line-height: 25px;
+        text-align: justify;
+    }
+
+    .grey-bg-list > li::before {
+        content: "\25A0";
+        color: red;
+        display: inline-block;
+        width: 1em;
+        margin-right: 10px;
+        font-size: 20px;
+    }
+
+    input {
+        border: solid #dddddd 1px !important;
+    }
+
+    .about-us__values-wrapper {
+        padding: 0 !important;
+    }
+
+    .header-bg {
+        min-height: 370px;
+        position: relative;
+        background: url('/io.jpg') center;
+        background-size: cover;
+    }
+
+    .label {
+        position: absolute;
+        left: 50%;
+        margin-left: -82px;
+        top: 50%;
+        margin-top: -50px;
+    }
+</style>
+
+<div class="header-bg">
+    <div class="label">
+        <img src="/Title.png" height="100" />
+    </div>
+</div>
+
+<section class="about-us">
+    <div class="container about-us__breadcrumb">
+        <ol class="breadcrumb realty-breadcrumb">
+            <li><a href="<?= url('/') ?>"><?= t('translation321') ?></a></li>
+            <li class="active"><?= t('Instant Offer') ?></li>
+        </ol>
+    </div>
+    <div class="container">
+        <?= $Flash; ?>
+
+        <div class="row about-us__us" style="padding-top: 0">
+            <div class="col-xs-12 col-sm-7">
+                <h1 class="general__title"> <?= t('Objetivo'); ?></h1>
+                <br /><br />
+
+                <div style="padding-right: 20px; text-align: justify">
+                <p>Este programa está dirigido a todos los vendedores de propiedades con interés de que su propiedad sea evaluada para una posible compra inmediata CASH, sin pasar por el proceso de mercadeo y sin costos por servicios de corretaje por parte del vendedor. Incluye todo tipo de propiedad residencial, comercial o terreno, con excepción de negocios en operación y “short-sales”.</p>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-5" >
+                <img style="margin-top: 20px" src="/Icon_Big_1.png" height="150" />
+            </div>
+        </div>
+    </div>
+    <div class="about-us__values">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 about-us__values-wrapper">
+                    <h1 class="about-us__values-title"><?= t('Criterios de Participación'); ?></h1>
+                    <br />
+                    <ul class="grey-bg-list">
+                        <li>Completar todos los datos solicitados debajo y uno de nuestros representantes de la
+                            División de Adquisiciones se estará comunicando con usted.</li>
+                        <li>Ser el propietario o representante autorizado, si el dueño es una corporación.</li>
+                        <li>Disponibilidad digital de los siguientes documentos:
+                            <ul style="margin-left: 30px;margin-top: 20px;">
+                                <li>Escritura de Compraventa</li>
+                                <li>Certificación del CRIM</li>
+                                <li>Fotos interiores y exteriores de la propiedad</li>
+                                <li>Video, si es posible</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-6 about-us__values-wrapper">
+                    <h1 class="about-us__values-title"><?= t('Evaluación'); ?></h1>
+                    <br />
+                    <ul class="grey-bg-list">
+                        <li>
+                            Una vez recibida toda la documentación, la División de Adquisiciones tendrá un
+                            máximo de 48 horas para someter una oferta o declinar interés.</li>
+                        <li>De haber alguna oferta, se someterá formalmente por escrito vía correo electrónico.</li>
+                        <li>Los propietarios tendrán un término de 24 horas para contestar si es aprobada.</li>
+                        <li>Una vez aprobada, se coordinará la firma del contrato de opción por un término
+                            máximo de 30 días o según los términos de compra, en caso de haber alguna otra
+                            negociación. Para los fines del depósito recibido, se estará utilizando la cuenta
+                            “escrow” de Reality Realty.</li>
+                        <li>Si no procede la oferta, se referirá el caso a uno de nuestros corredores en Reality
+                            Realty para asistirle en la venta de su propiedad por la vía tradicional.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row about-us__us" style="padding-top: 40px">
+            <div class="col-xs-12">
+                <h1 class="general__title"> <?= t('Formulario'); ?></h1>
+                <br /><br />
+
+                <?= $Form ?>
+            </div>
+        </div>
+    </div>
+</section>

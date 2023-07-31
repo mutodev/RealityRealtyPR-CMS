@@ -1,0 +1,17 @@
+source:   Account
+fields:
+
+    name: 
+        source:    [Account.first_name , Account.last_name]
+        
+    username:
+        source: Account.username
+
+    email:
+        source: [ Account.email , Account.email2 ]
+
+    phone:
+        source: [ Account.cellphone , Account.phone , Account.fax ]
+
+    active:
+        source: [ Account.active ]

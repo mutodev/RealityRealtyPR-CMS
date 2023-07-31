@@ -1,0 +1,645 @@
+PropertyCondition:
+    condition_1:
+        name: Nueva
+        type: Condition 
+        is_active: 1 
+
+    condition_2:
+        name: Propiedad vieja
+        type: Condition 
+        is_active: 1 
+
+    condition_3:
+        name: Excelentes condiciones
+        type: Condition 
+        is_active: 1 
+
+    condition_4:
+        name: Buenas Condiciones
+        type: Condition 
+        is_active: 1 
+
+    condition_5:
+        name: Condiciones pobres
+        type: Condition 
+        is_active: 1 
+
+    condition_6:
+        name: Condiciones promedio
+        type: Condition 
+        is_active: 1 
+
+    condition_7:
+        name: Remodelado
+        type: Condition 
+        is_active: 1 
+
+    condition_8:
+        name: Necesita remodelación
+        type: Condition 
+        is_active: 1 
+
+    condition_9:
+        name: Urbana
+        type: Location 
+        is_active: 1 
+
+    condition_10:
+        name: Rural
+        type: Location 
+        is_active: 1 
+
+    condition_11:
+        name: Vista panoramica
+        type: Location 
+        is_active: 1 
+
+    condition_12:
+        name: Vista a laguna
+        type: Location 
+        is_active: 1 
+
+    condition_13:
+        name: Vista al mar
+        type: Location 
+        is_active: 1 
+
+    condition_14:
+        name: Frente al mar
+        type: Location 
+        is_active: 1 
+
+    condition_15:
+        name: Cerca de mall
+        type: Location 
+        is_active: 1 
+
+    condition_16:
+        name: Cerca de Escuela
+        type: Location 
+        is_active: 1 
+
+    condition_17:
+        name: Cerca de Hospital
+        type: Location 
+        is_active: 1 
+
+    condition_18:
+        name: Lote de esquina
+        type: Location 
+        is_active: 1 
+
+    condition_19:
+        name: Cul-d-sac
+        type: Location 
+        is_active: 1 
+
+    condition_20:
+        name: Vacacional
+        type: Location 
+        is_active: 1 
+
+    condition_21:
+        name: De Playa
+        type: Location 
+        is_active: 1 
+
+    condition_22:
+        name: De Campo
+        type: Location 
+        is_active: 1 
+
+    condition_23:
+        name: Avenida
+        type: Location 
+        is_active: 1 
+
+    condition_24:
+        name: Accesible a vías principales
+        type: Location 
+        is_active: 1 
+
+    condition_25:
+        name: Cerca de parque
+        type: Location 
+        is_active: 1 
+
+    condition_26:
+        name: Alfombra
+        type: Distribution 
+        is_active: 1 
+
+    condition_27:
+        name: Almacen
+        type: Distribution 
+        is_active: 1 
+
+    condition_28:
+        name: Area de Carga
+        type: Distribution 
+        is_active: 1 
+
+    condition_29:
+        name: Balcón
+        type: Distribution 
+        is_active: 1 
+
+    condition_30:
+        name: Biblioteca
+        type: Distribution 
+        is_active: 1 
+
+    condition_31:
+        name: Cava de Vinos
+        type: Distribution 
+        is_active: 1 
+
+    condition_32:
+        name: Pisos de Cerámica
+        type: Distribution 
+        is_active: 1 
+
+    condition_33:
+        name: Cocina-Comedor
+        type: Distribution 
+        is_active: 1 
+
+    condition_34:
+        name: Cocina
+        type: Distribution 
+        is_active: 1 
+
+    condition_35:
+        name: Comedor
+        type: Distribution 
+        is_active: 1 
+
+    condition_36:
+        name: Cortinas
+        type: Distribution 
+        is_active: 1 
+
+    condition_37:
+        name: Gazebo
+        type: Distribution 
+        is_active: 1 
+
+    condition_38:
+        name: Cuarto de Huéspedes
+        type: Distribution 
+        is_active: 1 
+
+    condition_39:
+        name: Cuarto de Juegos
+        type: Distribution 
+        is_active: 1 
+
+    condition_40:
+        name: Cuarto de Servicio
+        type: Distribution 
+        is_active: 1 
+
+    condition_41:
+        name: Deck de Madera
+        type: Distribution 
+        is_active: 1 
+
+    condition_42:
+        name: Desagues
+        type: Distribution 
+        is_active: 1 
+
+    condition_43:
+        name: Family
+        type: Distribution 
+        is_active: 1 
+
+    condition_44:
+        name: Gimnasio
+        type: Distribution 
+        is_active: 1 
+
+    condition_45:
+        name: Cuarto de Laundry
+        type: Distribution 
+        is_active: 1 
+
+    condition_46:
+        name: Marquesina Sencilla
+        type: Distribution 
+        is_active: 1 
+
+    condition_47:
+        name: Marquesina doble
+        type: Distribution 
+        is_active: 1 
+
+    condition_48:
+        name: Marquesina Extendida
+        type: Distribution 
+        is_active: 1 
+
+    condition_49:
+        name: Piscina
+        type: Distribution 
+        is_active: 1 
+
+    condition_50:
+        name: Terraza Abierta
+        type: Distribution 
+        is_active: 1 
+
+    condition_51:
+        name: Kitchenette
+        type: Distribution 
+        is_active: 1 
+
+    condition_52:
+        name: Cuarto de Oficina
+        type: Distribution 
+        is_active: 1 
+
+    condition_53:
+        name: Media Cancha de Baloncesto
+        type: Distribution 
+        is_active: 1 
+
+    condition_54:
+        name: Pisos en Mármol
+        type: Distribution 
+        is_active: 1 
+
+    condition_55:
+        name: Estacionamiento/s
+        type: Distribution 
+        is_active: 1 
+
+    condition_56:
+        name: Estacionamiento Bajo Techo
+        type: Distribution 
+        is_active: 1 
+
+    condition_57:
+        name: Puertas de Garaje
+        type: Distribution 
+        is_active: 1 
+
+    condition_58:
+        name: Recepción
+        type: Distribution 
+        is_active: 1 
+
+    condition_59:
+        name: Recibidor
+        type: Distribution 
+        is_active: 1 
+
+    condition_60:
+        name: Sala
+        type: Distribution 
+        is_active: 1 
+
+    condition_61:
+        name: Sala-Comedor
+        type: Distribution 
+        is_active: 1 
+
+    condition_62:
+        name: Salón de Conferencias
+        type: Distribution 
+        is_active: 1 
+
+    condition_63:
+        name: Sauna
+        type: Distribution 
+        is_active: 1 
+
+    condition_64:
+        name: Tejas
+        type: Distribution 
+        is_active: 1 
+
+    condition_65:
+        name: Terraza de Concreto
+        type: Distribution 
+        is_active: 1 
+
+    condition_66:
+        name: Terraza de Concreto y Madera
+        type: Distribution 
+        is_active: 1 
+
+    condition_67:
+        name: Terraza de Madera
+        type: Distribution 
+        is_active: 1 
+
+    condition_68:
+        name: Area de Juegos para Niños
+        type: Areas 
+        is_active: 1 
+
+    condition_69:
+        name: Cancha de baloncesto
+        type: Areas 
+        is_active: 1 
+
+    condition_70:
+        name: Casa Club
+        type: Areas 
+        is_active: 1 
+
+    condition_71:
+        name: Establos
+        type: Areas 
+        is_active: 1 
+
+    condition_72:
+        name: Gazebo
+        type: Areas 
+        is_active: 1 
+
+    condition_73:
+        name: Jacuzzi
+        type: Areas 
+        is_active: 1 
+
+    condition_74:
+        name: Landscaping
+        type: Areas 
+        is_active: 1 
+
+    condition_75:
+        name: Piscina
+        type: Areas 
+        is_active: 1 
+
+    condition_76:
+        name: Piscina Comunal
+        type: Areas 
+        is_active: 1 
+
+    condition_77:
+        name: Taller
+        type: Areas 
+        is_active: 1 
+
+    condition_78:
+        name: Cancha de tennis
+        type: Areas 
+        is_active: 1 
+
+    condition_79:
+        name: Cancha de volleyball
+        type: Areas 
+        is_active: 1 
+
+    condition_80:
+        name: Media Cancha de Baloncesto
+        type: Areas 
+        is_active: 1 
+
+    condition_81:
+        name: Acceso Controlado
+        type: Security 
+        is_active: 1 
+
+    condition_82:
+        name: Rejas
+        type: Security 
+        is_active: 1 
+
+    condition_83:
+        name: Guardia de Seguridad
+        type: Security 
+        is_active: 1 
+
+    condition_84:
+        name: Sistema de Alarma
+        type: Security 
+        is_active: 1 
+
+    condition_85:
+        name: Tormenteras
+        type: Security 
+        is_active: 1 
+
+    condition_86:
+        name: Tele-Entry
+        type: Security 
+        is_active: 1 
+
+    condition_87:
+        name: Verjada
+        type: Security 
+        is_active: 1 
+
+    condition_88:
+        name: Verjada en Cemento
+        type: Security 
+        is_active: 1 
+
+    condition_89:
+        name: Mobiliario
+        type: Services 
+        is_active: 1 
+
+    condition_90:
+        name: Facilidades de Hotel
+        type: Services 
+        is_active: 1 
+
+    condition_91:
+        name: CableTV
+        type: Services 
+        is_active: 1 
+
+    condition_92:
+        name: Electricidad
+        type: Services 
+        is_active: 1 
+
+    condition_93:
+        name: Internet
+        type: Services 
+        is_active: 1 
+
+    condition_94:
+        name: Agua
+        type: Services 
+        is_active: 1 
+
+    condition_95:
+        name: Mantenimiento Jardín
+        type: Services 
+        is_active: 1 
+
+    condition_96:
+        name: Servicio de Alarma
+        type: Services 
+        is_active: 1 
+
+    condition_97:
+        name: Mantenimiento del Complejo
+        type: Services 
+        is_active: 1 
+
+    condition_98:
+        name: Arrendamiento con Opcion a Compra
+        type: Accepted 
+        is_active: 1 
+
+    condition_99:
+        name: Permuta
+        type: Accepted 
+        is_active: 1 
+
+    condition_100:
+        name: Plan 8
+        type: Accepted 
+        is_active: 1 
+
+    condition_101:
+        name: Animales
+        type: Accepted 
+        is_active: 1 
+
+    condition_102:
+        name: Nevera
+        type: Equipment 
+        is_active: 1 
+
+    condition_103:
+        name: Estufa Eléctrica
+        type: Equipment 
+        is_active: 1 
+
+    condition_104:
+        name: Estufa de Gas
+        type: Equipment 
+        is_active: 1 
+
+    condition_105:
+        name: Horno
+        type: Equipment 
+        is_active: 1 
+
+    condition_106:
+        name: Microonda
+        type: Equipment 
+        is_active: 1 
+
+    condition_107:
+        name: Lavadora de Platos
+        type: Equipment 
+        is_active: 1 
+
+    condition_108:
+        name: Filtro de Agua
+        type: Equipment 
+        is_active: 1 
+
+    condition_109:
+        name: Triturador
+        type: Equipment 
+        is_active: 1 
+
+    condition_110:
+        name: Lavadora
+        type: Equipment 
+        is_active: 1 
+
+    condition_111:
+        name: Secadora
+        type: Equipment 
+        is_active: 1 
+
+    condition_112:
+        name: Combo de lavadora/secadora
+        type: Equipment 
+        is_active: 1 
+
+    condition_113:
+        name: Cisterna con Motor
+        type: Equipment 
+        is_active: 1 
+
+    condition_114:
+        name: Tanque de Agua
+        type: Equipment 
+        is_active: 1 
+
+    condition_115:
+        name: Abanicos
+        type: Equipment 
+        is_active: 1 
+
+    condition_116:
+        name: Aire Central
+        type: Equipment 
+        is_active: 1 
+
+    condition_117:
+        name: Aire de Consola
+        type: Equipment 
+        is_active: 1 
+
+    condition_118:
+        name: Aire de Ventana
+        type: Equipment 
+        is_active: 1 
+
+    condition_119:
+        name: Antena de TV
+        type: Equipment 
+        is_active: 1 
+
+    condition_120:
+        name: Calentador
+        type: Equipment 
+        is_active: 1 
+
+    condition_121:
+        name: Calentador Solar
+        type: Equipment 
+        is_active: 1 
+
+    condition_122:
+        name: Compactador de Basura
+        type: Equipment 
+        is_active: 1 
+
+    condition_123:
+        name: Elevador
+        type: Equipment 
+        is_active: 1 
+
+    condition_124:
+        name: Intercom
+        type: Equipment 
+        is_active: 1 
+
+    condition_125:
+        name: Antena Parabólica
+        type: Equipment 
+        is_active: 1 
+
+    condition_126:
+        name: Planta Eléctrica
+        type: Equipment 
+        is_active: 1 
+
+    condition_127:
+        name: Alarma
+        type: Equipment 
+        is_active: 1 
+
+    condition_128:
+        name: Transfer Switch
+        type: Equipment 
+        is_active: 1 
+
+    condition_129:
+        name: Sub-Estación Eléctrica
+        type: Equipment 
+        is_active: 1 

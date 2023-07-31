@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+	<style>
+        @page {
+            size: a4; 
+            margin:0;padding:0; // you can set margin and padding 0 
+        } 
+		body{
+			font-family: 'Montserrat', sans-serif;
+            color: #143156;
+		}
+	</style>
+</head>
+<body style="margin:0;padding:0">
+	<div style="margin: 10px 0;">
+		<table cellpadding="0" cellspacing="0" width="100%">
+			<tr>
+                <td width="400" style="text-align:left;padding:5px 5px 5px 40px;">
+                    <h2 style="margin:0;font-size:1.8em;text-decoration: underline;">
+                        <?php if( $Property->for_sale): ?>
+                            FOR SALE
+                        <?php elseif( $Property->for_rent): ?>
+                            FOR RENT
+                        <?php endif ?>
+                    </h2>
+                    <p style="text-transform: uppercase;margin: 0"><?= $Property->title ?>, <?= $Property->Area->name ?></p>
+                </td>
+                <td width="80" style="text-align:right;padding:5px;">
+                    <h2 style="margin:0;font-size:1.8em;padding:10px 40px 10px 40px;border-left:1px solid #143156;">
+                        <?php if($Property->for_rent): ?>
+                            <?php if( !empty($Property->rent_price) ) : ?>
+                                $<?= number_format( $Property->rent_price ); ?>
+                            <?php else: ?>
+                                $<?= t("LLAMAR"); ?>
+                            <?php endif; ?>
+                        <?php elseif($Property->for_sale): ?>
+                            <?php if( !empty($Property->sale_price) ) : ?>
+                                $<?= number_format( $Property->sale_price ); ?>
+                            <?php else: ?>
+                                $<?= t("LLAMAR"); ?>
+                            <?php endif; ?>
+                        <?php endif; ?>
+                    </h2>
+                </td>
+			</tr>
+		</table>
+	</div>
+
+	<div>
+		<?php if(count($Property->Photos)): ?>
+            <table width="100%">
+                <tr>
+                    <td width="600">
+                        <img src="<?= $Property->Photos[0]->original ?>" style="height:420px;width:100%" />
+                    </td>
+                    <!-- <td width="80">
+                        <img src="<?= $Property->Photos[1]->original ?>" style="height:340px;width:100%" />
+                    </td> -->
+                </tr>
+            </table>
+            <table width="100%">
+                <tr>
+                    <td width="300">
+                        <img src="<?= $Property->Photos[2]->original ?>" style="height:250px;width:100%" />
+                    </td>
+                    <td width="300">
+                        <img src="<?= $Property->Photos[3]->original ?>" style="height:250px;width:100%" />
+                    </td>
+                </tr>
+            </table>
+		<?php endif ?>
+	</div>
+
+    <div style="margin-top: 10px; text-align: center;">
+        <table width="100%">
+            <tr>
+                <td width="200" align="left" valign="top" style="padding: 20px 40px;">
+                    <h1 style="font-size: 1.2em;">Descripción</h1>
+
+                    <p style="font-size: .8em;">
+                    <?php if($Property->rooms): ?>
+                        <?= $Property->rooms ?> cuartos
+                    <?php endif ?>
+                    <?php if($Property->bathrooms): ?>
+                        / <?= (float)$Property->bathrooms ?> baños
+                    <?php endif; ?>
+                    <?php if($Property->sqf): ?>
+                        / <?= $Property->sqf ?> p.c
+                    <?php endif ?>
+                    </p>
+
+                    <p style="font-size: .8em"><?= strlen($Property->flyer_description) > 200 ? substr($Property->flyer_description, 0, 200) . '...' : $Property->flyer_description ?></p>
+
+                    <table width="100%">
+                        <tr>
+                            <td width="100">
+                                <small style="font-size: .5em"><?= t('translation345'); ?></small><br />
+                                <strong style="font-size: .6em">realityrealtypr.com/p/<?= $Property->id ?></strong>
+                            </td>
+                            <td align="right">
+                                <span style="font-size: .5em"><?= t('translation346') ?></span><br />
+                                <strong style="font-size: .6em">(787) 418-3020</strong>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="400" style="padding-left: 20px; border-left: 1px solid #143156;">
+                     <table>
+                        <tr>
+                            <td valign="top" align="left" style="padding-left: 20px;font-size: .8em; z-index: 100; position: relative;">
+                                <?php if ( $Broker->s3_photo ): ?>
+                                    <img src='<?= $Broker->s3_photo ?>' height="150" /><br />
+                                <?php endif; ?>
+                                <strong><?= $Broker->getFullName() ?></strong>
+                                <?php if($Broker->license): ?><br /><small>Lic. <?= $Broker->license; ?></small><?php endif; ?>
+
+                                <br />
+                                <br />
+                                <?= decorator('phone', $Broker->phone) ?>
+                                <br />
+                                <?= $Broker->email; ?>
+                            </td>
+                            <td>
+                                <img src="https://realityrealtypr.com/img/luxe-flyer.png" style="width: 280px; height: 280px; position: absolute; right: 0px; z-index: 1;" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

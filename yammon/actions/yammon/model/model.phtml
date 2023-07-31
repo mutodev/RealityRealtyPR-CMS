@@ -1,0 +1,74 @@
+
+<form method='post'>
+
+    <input name='hidden' type='hidden' />
+
+    <h1> <?= t("Do you want to generate models ?"); ?> </h1>
+    <p> <?= t("Do you want to generate models from your current database configuration"); ?> </p>
+
+    <?php if( !empty($message) ) : ?>
+        <div class='flash_error'>
+            <?= nl2br($message); ?>
+        </div>
+        <?php if( $ex ) : ?>
+        <div style='text-align:left'>
+        <table>
+            <tr>
+                <th>Message:</th>
+            </tr>
+            <tr>
+                <td> 
+                    <pre>
+                        <?= $ex->getMessage(); ?> 
+                    </pre>                        
+                </td>            
+            </tr>
+            <tr>
+                <th>File:</th>
+            </tr>
+            <tr>
+                <td> <?= $ex->getFile(); ?> <?= $ex->getLine(); ?> </td>                           
+            </tr>
+            <tr>
+                <th>Trace:</th>
+            </tr>
+            <tr>
+                <td>
+                    <pre><?= $ex->getTraceAsString(); ?></pre>
+                </td>
+            </tr>    
+        </table>
+        
+        <?php if( get('trace') ): ?>
+            <?php pr( $ex->getTrace() ); ?>
+        <?php endif; ?>        
+        </div>
+        <?php endif; ?>
+    <?php endif; ?>
+
+    <input name='mode' value='0' type='radio' <?= post('mode' , 0 ) == '0' ? "checked='checked'" : ""  ?>  />
+    <label> Make incremental changes </label>    
+    <br />
+
+    <input name='mode' value='1' type='radio' <?= post('mode' , 0 ) == '1' ? "checked='checked'" : ""  ?>  />
+    <label> Recreate Database and don't load data </label>    
+    <br />
+
+    <input name='mode' value='3' type='radio' <?= post('mode', 0 ) == '3' ? "checked='checked'" : ""  ?>  />
+    <label> Recreate Database and re-import data </label>    
+    <br />
+
+    <input name='mode' value='2' type='radio' <?= post('mode' , 0 ) == '2' ? "checked='checked'" : ""  ?>  />
+    <label> Recreate Database and load fixtures </label>    
+    <br />
+
+    <input name='mode' value='4' type='radio' <?= post('mode' , 0 ) == '4' ? "checked='checked'" : ""  ?>  />
+    <label> Generate Models From Yaml (No database changes) </label>
+    <br />
+
+    <div class='form_buttons'>
+        <button class='button positive'> Generate </button>
+        <a href='../' class='button negative'> Cancel </a>
+    </div>
+    
+</form>

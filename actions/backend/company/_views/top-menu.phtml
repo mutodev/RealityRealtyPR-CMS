@@ -1,0 +1,23 @@
+<?php if (Auth::hasPermission('organization:access')): ?>
+    <div id="companies-btn" class="btn-group btn-group-option">
+        <button type="button" class="btn btn-default dropdown-toggle" onClick="jQuery('#companies-btn').toggleClass('open')">
+          <span><i class="fa fa-building"></i>&nbsp;</span><span><?= Auth::get()->getActiveCompany()->name ?></span><span>&nbsp;&nbsp;<i class="fa fa-caret-down"></i></span>
+        </button>
+        <ul class="dropdown-menu pull-right" role="menu">
+            <?php foreach ($Companies as $Company): ?>
+            <li <?php if (Auth::get()->getActiveCompany()->id == $Company['id']): ?>class="active"<?php endif ?>>
+                <a href="<?= url('backend.organization.companies.login?id='.$Company['id']); ?>">
+                    <i class="fa fa-building"></i><?= $Company['name'] ?>
+                </a>
+            </li>
+            <?php endforeach ?>
+        </ul>
+    </div><!-- btn-group -->
+
+<?php else: ?>
+    <div id="companies-btn" class="btn-group btn-group-option">
+        <button class="btn btn-default" style="cursor: default;">
+          <i class="fa fa-building"></i>&nbsp;<?= Auth::get()->getActiveCompany()->name ?>
+        </button>
+    </div><!-- btn-group -->
+<?php endif ?>

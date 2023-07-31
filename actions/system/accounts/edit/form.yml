@@ -1,0 +1,75 @@
+class: form-bordered
+attributes:
+    role: form
+elements:
+
+    summary:
+        type: Summary
+
+    header_contact:
+        type:  Header
+        label: Contact Information
+
+    first_name:
+        label:    First Name
+        required: true
+        class:    form-control
+
+    last_name:
+        label:    Last Name
+        required: true
+        class:    form-control
+
+    phone:
+        type:     Phone
+        class:    form-control
+
+    phone2:
+        type:     Phone
+        label:    Alternate Phone
+        class:    form-control
+
+    header_credentials:
+        type:  Header
+        label: Account Credentials
+
+    email:
+        label:    Email
+        class:    form-control
+        required: true
+        validations:
+            unique:
+                source:    'Account.username'
+                source_id: id
+                message:   There is already an account registered with this email
+                id: <?= get('id') ?>
+
+    password:
+        label: Password
+        type:  Password
+        required: true
+        class:    form-control
+        validations:
+            Password:
+                strong: false
+                min:    5
+
+    password_confirmation:
+        label: Password Confirmation
+        type:  Password
+        required: true
+        class:    form-control
+        validations:
+          equals:
+             element: password
+             message: %{label} and Password must be equal
+
+    active:
+        type: Checkbox
+        label: ''
+        text: Account is active
+        default: 1
+
+    buttons:
+        type:  Buttons
+        class: form-group

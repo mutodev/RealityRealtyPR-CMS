@@ -1,0 +1,27 @@
+class: form-bordered
+attributes:
+    role: form
+elements:
+
+    summary:
+        type: Summary
+
+    header_contact:
+        type:  Header
+        label: Group Information
+
+    name:
+        label:    Name
+        required: true
+        class:    form-control
+
+    Agents:
+        type: CheckBoxes
+        label: 'Agents'
+        empty: No accounts
+        source:   FROM Account WHERE Account.company_id = <?= Auth::get()->getActiveCompany()->id ?> AND Account.active = 1 ORDER BY Account.first_name ASC, Account.last_name ASC
+        source_label_tpl: "%{Account.first_name} %{Account.last_name}"
+
+    buttons:
+        type:  Buttons
+        class: form-group

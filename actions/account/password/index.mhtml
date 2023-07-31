@@ -1,0 +1,12 @@
+
+<?= t('Account Information'); ?>  <br />
+<hr />
+
+<?= t('Email')    ?>: <?= $email; ?> <br />
+<?= t('Username') ?>: <?= $username; ?> <br />
+
+<?= t('Password Recovery'); ?> <br />
+<hr />
+Click on the link below to change your password <br />
+
+<a href='<?= Router::url('/' ) ?>accounts/recover/?code=<?= $code ?>'> Change Password </a>

@@ -1,0 +1,30 @@
+source:      FROM Account
+defaultSort: description
+columns:
+
+    id:
+        label:   Id
+        source:  id
+        width:   55px
+
+    name:
+        label:   Name
+        source:  Account.first_name
+        content: %{Account.first_name} %{Account.last_name}
+        
+    username:
+        label:   Username
+        source:  Account.username
+        
+    email:
+        label:   Email
+        source:  Account.email
+        
+    actions:
+        type:    Actions
+        label:   Actions
+        actions:
+            edit:
+                label: edit
+                link: .edit?id=%{Account.id}
+        width:  100px

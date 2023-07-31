@@ -1,0 +1,115 @@
+<style>
+
+    .product-slider #carousel {
+        margin: 0;
+    }
+
+    .product-slider #thumbcarousel {
+        margin: 20px 0 0;
+        padding: 0 45px;
+    }
+
+    .product-slider #thumbcarousel .item {
+        text-align: center;
+    }
+
+    .product-slider #thumbcarousel .item .thumb {
+        border: 2px solid #cecece;
+        width: 20%;
+        margin: 0 2px;
+        display: inline-block;
+        vertical-align: middle;
+        cursor: pointer;
+        max-width: 98px;
+    }
+
+    .product-slider #thumbcarousel .item .thumb:hover {
+        border-color: #1089c0;
+    }
+
+    .product-slider .item img {
+        width: 100%;
+        height: auto;
+    }
+
+    .carousel-control {
+        color: #0284b8;
+        text-align: center;
+        text-shadow: none;
+        font-size: 30px;
+        width: 30px;
+        height: 30px;
+        line-height: 20px;
+        top: 20%;
+    }
+
+    .carousel-control:hover, .carousel-control:focus, .carousel-control:active {
+        color: #333;
+    }
+
+    .carousel-caption, .carousel-control .fa {
+        font: normal normal normal 30px/26px FontAwesome;
+    }
+
+    .carousel-control {
+        background-color: rgba(0, 0, 0, 0);
+        bottom: auto;
+        font-size: 20px;
+        left: 0;
+        position: absolute;
+        top: 30%;
+        width: auto;
+    }
+
+    .carousel-control.right, .carousel-control.left {
+        background-color: rgba(0, 0, 0, 0);
+        background-image: none;
+        padding: 20px;
+        color: #cecece !important;
+    }
+
+    .carousel-control.right span, .carousel-control.left span {
+        font-size: 20px !important;
+    }
+
+    .carousel-control.left span {
+        margin-left: -15px;
+    }
+
+    .carousel-control.right span {
+        margin-right: -15px;
+    }
+
+</style>
+<div class="product-slider">
+    <div id="carousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <?php foreach ($Photos as $k => $Photo) : ?>
+                <div class="item <?php if ($k == 0): ?>active<?php endif ?>"><img src="<?= $Photo->getThumborPhoto('large') ?>"></div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+    <div class="clearfix">
+        <div id="thumbcarousel" class="carousel slide" data-interval="false">
+            <div class="carousel-inner">
+                <?php $i = 1; ?>
+                <div class="item active">
+                <?php foreach ($Photos as $k => $Photo) : ?>
+                        <div data-target="#carousel" data-slide-to="<?= $k ?>" class="thumb"><img
+                                    src="<?= $Photo->small ?>"></div>
+
+                    <?php if ($i % 5 == 0 && $i < count($Photos)): ?>
+                        </div>
+                        <div class="item">
+                    <?php endif ?>
+                    <?php $i++; ?>
+                <?php endforeach; ?>
+                </div>
+            </div>
+            <!-- /carousel-inner -->
+            <a class="left carousel-control" href="#thumbcarousel" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a> <a class="right carousel-control"
+                                                                                 href="#thumbcarousel" role="button"
+                                                                                 data-slide="next"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> </a></div>
+        <!-- /thumbcarousel -->
+    </div>
+</div>

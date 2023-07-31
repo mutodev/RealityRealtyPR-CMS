@@ -1,0 +1,334 @@
+<?php
+
+$Css = helper('Css');
+$Javascript = helper('Javascript');
+$Section = helper("Section");
+
+$Css->add('/css/bootstrap.min.css');
+$Css->add('/css/cover.css?v7');
+$Css->add('/css/cover-sass.css');
+$Css->add('/css/slider.css');
+$Css->add('/css/colorbox/colorbox.css');
+$Css->add('/css/jAlerts/jquery.alerts.css');
+
+/*$Javascript->add('/js/jquery-1.4.2.min.js');*/
+$Javascript->add('/js/jquery-1.12.4.min.js');
+//$Javascript->add('/js/jquery.browser.min.js');
+$Javascript->add('/js/jquery.tools.min.js');
+$Javascript->add('/js/jquery.alerts.js');
+$Javascript->add('/js/jquery.json-2.2.min.js');
+$Javascript->add('/js/jquery.DefaultText.js');
+$Javascript->add('/js/jquery.anythingslider.js');
+//$Javascript->add('/js/jquery.colorbox-min.js');
+$Javascript->add('/js/common.js');
+
+$urii = @$_SERVER['REQUEST_URI'];
+$uri = explode('/', $urii);
+foreach ($uri as $k => $v) {
+    $uri[$k] = current(explode('?', $v));
+}
+
+$langs = [
+    'en' => t('English'),
+    'es' => t('Spanish')
+];
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+    <title>
+        Reality Realty,
+        <?php if (Configure::exists("seo.title")): ?>
+            <?= Configure::read("seo.title") ?>
+        <?php else: ?>
+            <?= t('translation125'); ?>
+        <?php endif; ?>
+    </title>
+
+    <?php if (Configure::exists("seo.description")): ?>
+        <meta name="description" content="<?= Configure::read("seo.description") ?>"/>
+    <?php else: ?>
+        <meta name="description" content="Bienes Raices Puerto Rico busqueda de propiedades en venta o alquiler, Casas, Apartamentos, Oficinas, Terrenos , Locales Comerciales y Edificios."/>
+    <?php endif; ?>
+
+    <meta name="keywords" content="bienes raices en puerto rico, real estate puerto rico, hogares, apartamentos, casas, fincas, terrenos, propiedades en puerto rico, venta de casas, venta de residencias, alquiler de apartamentos, venta de propiedades puerto rico"/>
+
+    <?php if (Configure::exists("seo.canonical")): ?>
+        <link rel="canonical" href="<?= Configure::read("seo.canonical") ?>"/>
+    <?php endif; ?>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto&text=0123456789" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:3100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <?= $Css->render(); ?>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+<body>
+<!-- Fixed navbar -->
+<div class="pageTop general">
+    <div class="pageTopHeader">
+        <nav class="navbar navbar-default menu-header">
+            <div class="container">
+                <div class="row header-top">
+                    <div class="hidden-xs navbar-left navbar-socials">
+                        <a target="_blank" class="btn" href="https://www.facebook.com/realityrealtypr/">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a target="_blank" class="btn" href="https://twitter.com/realityrealtyp">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a target="_blank" class="btn" href="https://www.instagram.com/prrealityrealty/">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                    <div class="hidden-xs navbar-right">
+                        <div class="tell-us inline-imp vl"><p class="navbar-text navbar-right "><?= t('translation319'); ?></p>
+                        </div>
+                        <div class="inline-imp">
+                            <div class="tell-us-icon dropdown-tell-us inline-imp dropdown clearfix">
+                                <a class="dropdown-toggle" type="button" id="dropdownMenu4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="/new/call_icon-01.svg" />
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenu4">
+                                    <li>
+                                        <a href="tel:7877458777">
+                                            San Juan (787) 745-8777
+                                        </a>
+                                        <a href="tel:7877458792">
+                                            Caguas (787) 745-8792
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tell-us-icon inline-imp"><a href="<?= url('contactenos') ?>">
+                                    <img src="/new/mail_icon-01.svg" />
+                                </a></div>
+                        </div>
+
+                        <ul class="nav navbar-nav inline-imp ">
+                            <li class="<?= Session::read('properties', false) ? 'red-font' : '' ?>"><?= Session::read('properties', false) ? count(Session::read('properties')) : '' ?><span class="glyphicon glyphicon-<?= Session::read('properties', false) ? 'star' : 'star-empty' ?>" aria-hidden="true"></span><a class="inline-imp" href="<?= url('properties.list') ?>"><?= t('translation317'); ?></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row header-bottom">
+                    <div class="vcenter">
+                        <label for="navbar-toggle-cbox" class="navbar-toggle collapsed" data-toggle="collapse"
+                               data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </label>
+                        <a class="navbar-brand" href="/"></a>
+                    </div>
+                    <input type="checkbox" id="navbar-toggle-cbox">
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li <?php if (array_intersect(array('nosotros', 'conocenos', 'corredores', 'testimonios', 'unete', 'conocenos.html'), $uri)): ?>class="active"<?php endif ?>>
+                                <a href="/nosotros"><?= t('translation116'); ?><span class="grey hidden-xs">|</span></a></li>
+                            <li <?php if (array_intersect(array('servicios', 'info'), $uri)): ?>class="active"<?php endif ?>><a
+                                        href="/servicios"><?= t('translation118'); ?><span class="grey hidden-xs">|</span></a></li>
+                            <li <?php if (array_intersect(array('agents'), $uri)): ?>class="active"<?php endif ?>><a
+                                        href="/agents?type=Broker"><?= t('translation1091'); ?><span class="grey hidden-xs">|</span></a>
+                            </li>
+                            <li <?php if (array_intersect(array('propiedades', 'compra-venta', 'alquiler-renta'), $uri)): ?>class="active"<?php endif ?>>
+                                <a href="/propiedades"><?= t('translation1040'); ?><span class="grey hidden-xs">|</span></a>
+                            </li>
+    <!--                        <li><a href="/blog/">--><?//= t('translation121'); ?><!--<span class="grey hidden-xs">|</span></a></li>-->
+                            <li <?php if (array_intersect(array('instant-offer'), $uri)): ?>class="active"<?php endif ?>>
+                                <a style="white-space: pre;" href="/instant-offer"><?= t('Instant Offer'); ?><span class="grey hidden-xs">|</span></a>
+                            </li>
+                            <li <?php if (array_intersect(array('contactenos'), $uri)): ?>class="active"<?php endif ?>><a
+                                        style="border-right:none;" href="/contactenos"><?= t('translation122'); ?></a></li>
+                            <li class="visible-xs"><a href="/backend"><?= t('translation123'); ?></a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+
+                </div>
+            </div>
+        </nav>
+
+        <?= $Section->render("top"); ?>
+    </div>
+
+    <?php if (isset($top_id)): ?>
+        <?php if (!is_array($top_id)): ?>
+            <div id="<?= $top_id ?>" class="header-image hidden-xs"></div>
+        <?php else: ?>
+            <div id="slider" class="">
+                <ul>
+                    <?php foreach ($top_id as $i): ?>
+                        <li>
+                            <div id="<?= $i ?>" class="header-image"></div>
+                        </li>
+                    <?php endforeach ?>
+                </ul>
+            </div>
+        <?php endif; ?>
+    <?php endif ?>
+</div>
+
+<?= $this->getContent(); ?>
+
+<footer class="footer mt40">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-3">
+                <!--                <h3 class="footer-title">--><?//= t('translation1014'); ?><!--</h3>-->
+                <!---->
+                <!--                <a class="footer-item" href="--><?//= url('propiedades'); ?><!--">--><?//= t('translation1015'); ?><!--</a>-->
+                <!---->
+                <!--                <h3 class="footer-title">--><?//= t('translation1016'); ?><!--</h3>-->
+                <!---->
+                <!--                <a class="footer-item" href="--><?//= url('propiedades'); ?><!--">--><?//= t('translation1017'); ?><!--</a>-->
+                <div>
+                    <h3 class="footer-title">San Juan</h3>
+                    <p>1253 Ave. Fernandez Juncos,<br/>
+                        Esq. Roberto H. Todd, Pda. 18<br/>
+                        Santurce, PR <a class="red-font" href="https://goo.gl/maps/fHLyT7zDBGm" target="_blank"><i
+                                    class="fas fa-map-marker-alt"></i> <?= t('translation1030') ?></a></p>
+                    <a href="tel:(787) 745-8777">(787) 745-8777</a><br/>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <div class="mt20">
+                    <h3 class="footer-title">Caguas</h3>
+                    <p>Ave. Troche V-12<br/>Caguas, PR 00725 <a class="red-font" href="https://goo.gl/maps/CzTPjKEjRSJL6Tpu9" target="_blank"><i
+                                    class="fas fa-map-marker-alt"></i> <?= t('translation1030') ?></a></p>
+                    <a href="tel:(787) 745-8792">(787) 745-8792</a><br/>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <h3 class="footer-title">REALITY REALTY</h3>
+
+                <a class="footer-item" href="<?= url('propiedades'); ?>"><?= t('translation1000'); ?></a><br />
+                <a class="footer-item" href="<?= url('nosotros'); ?>"><?= t('translation1001'); ?></a><br />
+                <a class="footer-item" href="<?= url('agents'); ?>"><?= t('translation1002'); ?></a><br />
+                <a class="footer-item" href="<?= url('blog'); ?>"><?= t('translation1003'); ?></a><br />
+                <a class="footer-item" href="<?= url('contactanos'); ?>"><?= t('translation1004'); ?></a><br />
+                <a class="footer-item" href="<?= url('backend'); ?>"><?= t('Login'); ?></a>
+            </div>
+            <div class="col-xs-12 col-sm-3">
+                <h3 class="footer-title"><?= t('translation1005'); ?></h3>
+
+                <a class="footer-item" href="<?= url('servicios?service=reventa'); ?>"><?= t('translation1006'); ?></a><br />
+                <a class="footer-item" href="<?= url('servicios?service=reposeidas'); ?>"><?= t('translation1007'); ?></a><br />
+                <a class="footer-item" href="<?= url('servicios?service=luxe'); ?>"><?= t('translation1008'); ?></a><br />
+                <a class="footer-item" href="<?= url('servicios?service=commercial'); ?>"><?= t('translation1009'); ?></a><br />
+                <a class="footer-item" href="<?= url('servicios?service=relocalizacion'); ?>"><?= t('translation1010'); ?></a><br />
+                <a class="footer-item" href="<?= url('servicios?service=education'); ?>"><?= t('translation1011'); ?></a><br />
+                <a class="footer-item" href="<?= url('servicios?service=newdevelopments'); ?>"><?= t('translation1012'); ?></a><br />
+                <a class="footer-item" href="<?= url('servicios?service=consultoria'); ?>"><?= t('translation1013'); ?></a>
+            </div>
+        </div>
+        <div class="row bottom-row">
+            <div class="col-xs-12 text-center">
+                <svg style="width: 60px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><defs><style>.class11{fill:#d92726;}.cls-2{fill:#fff;}</style></defs><title>rr_icon</title><path class="class11" d="M25,38.63H7.48A2.48,2.48,0,0,1,5,36.15V26.43a2.78,2.78,0,0,1-1.32-5.22l20.64-9.69a1.55,1.55,0,0,1,1.36,0l20.64,9.69A2.78,2.78,0,0,1,45,26.43v9.72a2.48,2.48,0,0,1-2.48,2.48H25"/><path class="cls-2" d="M40.45,22.12V35a1,1,0,0,1-1,1H37.61a1,1,0,0,1-1-1V30.52H34a2.64,2.64,0,0,0-2.19,1.17l-2.3,3.42A1.94,1.94,0,0,1,27.9,36H22.34a1.93,1.93,0,0,1-1.61-.86l-2.31-3.42a2.61,2.61,0,0,0-2.18-1.17H13.63V35a1,1,0,0,1-1,1H10.78a1,1,0,0,1-1-1V22.12a1,1,0,0,1,1-1h8.68a6.31,6.31,0,0,1,3.95,1.43,4,4,0,0,1,1.25,3,2.81,2.81,0,0,1,0,.36,3.84,3.84,0,0,1-1.06,2.55,3.92,3.92,0,0,1-2.75,1.12,2,2,0,0,1,1.43,1l2.86,4.25L28,30.6a2,2,0,0,1,1.44-1,3.74,3.74,0,0,1-3.82-3.67,2.55,2.55,0,0,1,0-.35,4,4,0,0,1,1.25-3,6.31,6.31,0,0,1,3.95-1.43h8.69A1,1,0,0,1,40.45,22.12Zm-3.84,5.55v-3.5H31.22a1.75,1.75,0,0,0,0,3.5ZM20.77,25.92A1.75,1.75,0,0,0,19,24.17H13.64v3.5H19A1.74,1.74,0,0,0,20.77,25.92Z"/></svg><br />
+                <small><?= t('translation340') ?> © <?= date('Y') ?> Reality Realty PSC. <?= t('translation341') ?></small>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<?php
+$Javascript->add('/js/bootstrap.min.js');
+?>
+<?= $Javascript->render(); ?>
+
+<?= $Section->render("javascriptFooter"); ?>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="/js/ie10-viewport-bug-workaround.js"></script>
+
+<!--Google Maps API-->
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDN3LWxZqLR2kcGo8pCYj_7n9YJ0UGF7F0"></script>
+
+<script src="/js/custom.js"></script>
+
+<script type="text/javascript">
+  function initialize() {
+
+      <?php if($map): ?>
+      <?= $map; ?>
+      <?php endif ?>
+
+    if (document.getElementById("map-canvas")) {
+      var locations = [
+        ['<strong>Sucursal Caguas</strong><img style="float:right;margin:10px 0 0 20px" src="/img/caguas.jpg" width="150" /><br> />Ave. Troche V-12<br />Caguas, PR 00725<br />(787) 745-8792<br /><a target="_blank" href="https://www.google.com/maps/dir/Current+Location/18.232773,-66.022785"><?= t('translation128'); ?> <img src="/img/pin.png" /></a>', 18.232773, -66.022785, 19.44],
+        ['<strong><?= t('translation126'); ?> Metro</strong><br />Carr. 176 Km 1.1, Ave. Ana G. Mendez<br />San Juan, PR<br />(787) 758-1933<br /><a target="_blank" href="https://www.google.com/maps/dir/Current+Location/18.383118,-66.057167"><?= t('translation128'); ?> <img src="/img/pin.png" /></a>', 18.383118, -66.057167, 4],
+        ['<strong><?= t('translation126'); ?> San Juan</strong><img style="float:right;margin:10px 0 0 20px" src="/img/san-juan.jpg" width="150" /><br />1253 Ave. Fernandez Juncos, Esq. Roberto H. Todd, Pda. 18<br />Santurce, PR<br />(787) 522-8777<br /><a target="_blank" href="https://www.google.com/maps/dir/Current+Location/18.448955,-66.075282"><?= t('translation128'); ?> <img src="/img/pin.png" /></a>', 18.448955, -66.075282, 4]
+      ];
+
+      var mapOptions = {
+        center: new google.maps.LatLng(18.2257301, -65.9896227),
+        zoom: 10,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        scrollwheel: false,
+        draggable: false,
+        panControl: true,
+        zoomControl: true,
+        mapTypeControl: true,
+        scaleControl: true,
+        streetViewControl: true,
+        overviewMapControl: true,
+        rotateControl: true,
+      };
+
+      var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+      var infowindow = new google.maps.InfoWindow();
+
+      var marker, i;
+
+      var bound = new google.maps.LatLngBounds();
+
+      for (i = 0; i < locations.length; i++) {
+        marker = new google.maps.Marker({
+          position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+          map: map
+        });
+
+        bound.extend(new google.maps.LatLng(locations[i][2], locations[i][2]));
+
+        google.maps.event.addListener(marker, 'click', (function (marker, i) {
+          return function () {
+            infowindow.setContent(locations[i][0]);
+            infowindow.open(map, marker);
+          }
+        })(marker, i));
+      }
+    }
+  }
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-21501091-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-21501091-1');
+</script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<!--<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5320741e1495deeb"></script>-->
+<!-- Latest compiled and minified JavaScript -->
+<!-- Latest compiled and minified JavaScript -->
+
+</body>
+</html>

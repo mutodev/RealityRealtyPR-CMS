@@ -1,0 +1,37 @@
+<?php
+
+$this->classes = 'page-forgot-password layout-full';
+
+?>
+
+<!-- Page -->
+  <div class="page vertical-align text-xs-center" data-animsition-in="fade-in" data-animsition-out="fade-out">
+    <div class="page-content vertical-align-middle">
+      <h2><?= t('Change your password'); ?></h2>
+      <p><?= t('Provide us with a new password for your account'); ?></p>
+
+      <?php if( $errors = $Form->getErrors() ): ?>
+        <?php foreach( $errors as $error ): ?>
+            <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <strong>Oh snap!</strong> <?= $error ?>
+            </div>
+        <?php endforeach ?>
+    <?php endif; ?>
+
+      <form action="<?= url('.?key='.$Account->password_key); ?>" method="post" role="form" autocomplete="off">
+        <div class="form-group form-material floating" data-plugin="formMaterial">
+          <input name="Form[password]" type="password" class="form-control" placeholder="<?= t('New Password'); ?>" value="<?= $email; ?>">
+          <label class="floating-label" for="inputEmail"><?= t('New Password'); ?></label>
+        </div>
+        <div class="form-group form-material floating" data-plugin="formMaterial">
+          <input name="Form[confirm_password]" type="password" class="form-control" placeholder="<?= t('Confirm New Password'); ?>" value="<?= $email; ?>">
+          <label class="floating-label" for="inputEmail"><?= t('New Password'); ?></label>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary btn-block"><?= t('Change your password'); ?></button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- End Page -->

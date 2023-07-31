@@ -1,0 +1,39 @@
+source: Contract
+default: advanced
+fields:
+    date_from:
+        label: Date from
+        source: Contract.approved_at
+        type: Date
+        operators:
+            - After
+        element:
+            type:     DateTime
+            format:   '%Y-%m-%d %p'
+            split:    false
+            output:   'Y-m-d\tH:i:00'
+            class:    form-control
+            default:  <?= strtotime('last month 00:00:00 '.Configure::read('datetime.timezone'))."\n" ?>
+
+    date_to:
+        label: Date to
+        source: Contract.approved_at
+        type: Date
+        operators:
+            - Before
+        element:
+            type:     DateTime
+            format:   '%Y-%m-%d %p'
+            split:    false
+            output:   'Y-m-d\tH:i:00'
+            class:    form-control
+            default:  <?= strtotime('today 23:59:59 '.Configure::read('datetime.timezone'))."\n" ?>
+
+    production_unit_id:
+          label: Production Unit
+          source: Contract.Property.production_unit_id
+          element:
+              type: Select
+              class: form-control
+              source: FROM ProductionUnit
+              source_label: ProductionUnit.name

@@ -1,0 +1,25 @@
+class: form-bordered
+attributes:
+    role: form
+elements:
+
+    summary:
+        type: Summary
+
+    name:
+        type: Text
+        class: form-control
+        required: true
+
+    type:
+        type: Select
+        class: form-control
+        required: true
+        options:
+            Residential: Residential
+            Commercial: Commercial
+            Land: Land
+
+    buttons:
+        type:  Buttons
+        class: form-group

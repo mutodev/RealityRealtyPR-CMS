@@ -1,0 +1,62 @@
+<style>
+    .service {
+        background: white;
+        min-height: 250px;
+        width: 250px;
+        padding: 20px;
+        position: relative;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .sliderCustom .item-service {
+        padding: 40px 20px 20px 20px;
+    }
+
+    .service-learn {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+
+    .services-slider .slideController {
+        position: static;
+    }
+
+    .services-slider h3 {
+        text-transform: uppercase;
+    }
+
+    .services-slider .carousel-indicators li {
+        background: #ef3a3a !important;
+    }
+</style>
+
+<div class="sliderCustom services-slider" style="background: url('/img/services_carousel.png') no-repeat;">
+    <div class="carousel slide" id="carousel-services">
+        <ol class="carousel-indicators">
+            <li class="red-font active" data-target="#carousel-services" data-slide-to="<?= $c ?>"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="item item-service active">
+                <div class="service shadowBottom">
+                    <h3><?= t('Paso uno'); ?></h3>
+
+                    <small><?= t('Paso uno') ?></small>
+                </div>
+            </div>
+        </div>
+        <div class="slideController clearfix">
+            <a href="#carousel-services" class="left carousel-control" role="button"
+               data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"
+                                        aria-hidden="true"></span> <span class="sr-only">Previous</span>
+            </a>
+            <a href="#carousel-services" class="right carousel-control" role="button"
+               data-slide="next"> <span class="glyphicon glyphicon-chevron-right"
+                                        aria-hidden="true"></span> <span
+                    class="sr-only">Next</span> </a>
+        </div>
+    </div>
+</div>

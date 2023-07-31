@@ -1,0 +1,3 @@
+<?php
+
+	Action::setLayout('error');

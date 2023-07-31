@@ -1,0 +1,42 @@
+<?php
+
+$this->classes = 'page-login-v3 layout-full';
+
+?>
+
+<div class="page vertical-align text-xs-center" data-animsition-in="fade-in" data-animsition-out="fade-out">>
+    <div class="page-content vertical-align-middle">
+      <div class="panel">
+        <div class="panel-body">
+          <div class="brand">
+            <img class="brand-img" src="<?= Configure::read('branding.logo') ?>" alt="...">
+            <h2 class="brand-text font-size-18"><?= Configure::read('branding.name') ?></h2>
+          </div>
+
+          <?php if( $errors = $Form->getErrors() ): ?>
+                <?php foreach( $errors as $error ): ?>
+                    <div class="alert alert-danger">
+                        <strong>Oh snap!</strong> <?= $error ?>
+                    </div>
+                <?php endforeach ?>
+            <?php endif; ?>
+
+          <form method="post" action="#" autocomplete="off">
+            <div class="form-group form-material floating" data-plugin="formMaterial">
+              <input type="text" class="form-control" name="username" value="<?= $username; ?>" />
+              <label class="floating-label">Email</label>
+            </div>
+            <div class="form-group form-material floating" data-plugin="formMaterial">
+              <input type="password" class="form-control" name="password" />
+              <label class="floating-label">Password</label>
+            </div>
+            <div class="form-group clearfix">
+              <a class="pull-xs-right" href="<?= url('account.password') ?>"><?= t('Forgot password?'); ?></a>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block btn-lg m-t-40"><?= t('Sign in'); ?></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Page -->

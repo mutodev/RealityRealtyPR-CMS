@@ -1,0 +1,43 @@
+.yammon-search{
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius:    4px 4px 0 0;
+    border-radius:         4px 4px 0 0;
+    box-shadow:            2px 2px 5px #4F4F4F;
+    -webkit-box-shadow:    2px 2px 5px #4F4F4F;
+    -moz-box-shadow:       2px 2px 5px #4F4F4F;
+    border:                1px solid #BFBFBF;
+    background:            #F0F0F0;
+    padding:               10px;
+    margin-bottom:         20px;
+}
+
+    .yammon-search-header{
+        margin:         0px 0px 10px 0;
+        border-bottom:  1px solid #BFBFBF;    
+    }
+    
+    .yammon-search-header h1{
+        color:          black;
+        font-weight:    bold;
+        font-size:      1.1em;
+        padding:        2px 0px;
+    }
+
+    .yammon-search-switcher{
+        float: right;
+    }
+
+        .yammon-search-switcher a.active{
+            color: black;
+            font-weight: bold;
+        }
+    
+    .yammon-search .form_buttons{
+        text-align: left;
+    }
+    
+.yammon-search .yammon-search-simple .form_element_box{
+    margin: 0  !important;
+    padding: 0 !important;
+}
+

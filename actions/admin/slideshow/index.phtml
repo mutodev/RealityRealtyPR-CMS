@@ -1,0 +1,22 @@
+<?php
+
+$Css = helper('Css');
+
+$Css->add('/resources/form/css/button.css');
+$Css->add('/resources/form/css/buttons.css');
+
+?>
+
+<?= helper("header")->render( array(
+    "image"       => '/img/icon_slideshow.png' ,
+    "title"       => t('Manage Slideshow') ,
+)); ?>
+
+
+<a class='button positive' href='<?= url('.edit') ?>'>
+    <img src='/img/actions/add.png' />
+    Add an Image
+</a>
+
+
+<?= $Table->render(); ?>

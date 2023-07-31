@@ -1,0 +1,106 @@
+/* FileAsync */
+
+.form_element_plupload_filebox {
+
+}
+
+.form_element_plupload_filebox .plupload_state {
+    height: auto;
+}
+
+.form_element_plupload_filebox .plupload_uploading {
+    display: none;
+}
+
+.form_element_plupload_filebox .plupload_filename {
+    background:   url(../img/actions/file.png) no-repeat;
+    display:      block;
+    float:        left;
+    height:       16px;
+    padding-left: 20px;
+}
+
+.form_element_plupload_filebox .plupload_filesize {
+    float:       left;
+    height:      16px;
+    margin-left: 5px;
+}
+
+.form_element_plupload_filebox .plupload_loadingbar {
+    float:   left;
+    height:  13px;
+    margin:  1px 0 0 13px;
+    width:   50px;
+    border:  1px solid #bfbfbf;
+    padding: 0 1px;
+}
+
+.form_element_plupload_filebox .plupload_loadingbar div {
+    width:            0%;
+    margin:           1px 0;
+    height:           11px;
+    background-color: #0033CC;
+}
+
+.form_element_plupload_filebox .plupload_buttons {
+    margin-left: 4px;
+    float:       left;
+}
+
+.form_element_plupload_filebox .plupload_buttons a {
+    display:           block;
+    float:             left;
+    height:            auto;
+    padding-left:      20px;
+    margin-left:       9px;
+    background-repeat: no-repeat;
+}
+
+.form_element_plupload_filebox .plupload_buttons .plupload_button_cancel {
+    background-image: url(../img/actions/cancel.png);
+}
+
+.form_element_plupload_filebox .plupload_buttons .plupload_button_delete {
+    background-image: url(../img/actions/delete.png);
+}
+
+/* FileImageAsync */
+.form_element_plupload_filebox_image .plupload_filename {
+    background:    url(../img/actions/image.png) no-repeat;
+    height:        16px;
+    margin-bottom: 4px;
+}
+
+.form_element_plupload_filebox_image .plupload_loadingbar {
+    clear:      both;
+    margin:     2px 0 0 0;
+    width:      100px;
+}
+
+.form_element_plupload_filebox_image .plupload_button_download {
+    display: block;
+}
+
+.form_element_plupload_filebox_image .plupload_button_download img{
+    border:     1px solid #efefef;
+    background: white;
+    padding:    3px;
+}
+
+.form_element_plupload_filebox_image .plupload_edit .plupload_buttons {
+    clear:       both;
+    float:       none;
+    margin-left: 0px;
+}
+
+.form_element_plupload_filebox_image .plupload_edit .plupload_buttons a {
+    margin-left: 0px;
+    margin-top:  3px;
+}
+
+
+/* FileVideoAsync */
+
+.form_element_plupload_filebox_video .plupload_filename {
+    background:    url(../img/actions/video.png) no-repeat;
+}
